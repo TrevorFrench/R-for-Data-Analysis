@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "R for Data Analysis",
+    "section": "",
+    "text": "The preface gives you, as the author, the opportunity to introduce yourself to your readers and explain to them why they should hear what you have to say. This is where you build credibility, so you should give some insight into how you got to be an expert on your subject. You can toot your own horn a bit here.\nYou should use a preface to spark curiosity about your content and draw readers in. Here, you speak directly about the purpose, creation, or importance of your book. How did your book’s genesis come about? What was the pain point you were seeking to address when you decided you wanted to write a book, and why is that important to your readers? The preface is where you explain the who, when, and where of it all.\nMore info: https://greenleafbookgroup.com/learning-center/book-creation/distinguishing-between-a-foreword-a-preface-and-an-introduction#:~:text=A%20preface%20is%20written%20by,for%20what%20they%20can%20expect."
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "In the introduction, you should cover the promise of the book and any necessary definitions or methodology that are necessary to its understanding. The introduction is where you want to explain what your book is about by touching on the major themes. What are your readers going to get out of reading your book? What’s in it for them? Here is where you make your case."
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "3  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever."
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "1-what.html#history",
+    "href": "1-what.html#history",
+    "title": "1  What is R?",
+    "section": "1.2 History",
+    "text": "1.2 History"
+  },
+  {
+    "objectID": "1-what.html#r-vs.-python",
+    "href": "1-what.html#r-vs.-python",
+    "title": "1  What is R?",
+    "section": "1.3 R vs. Python",
+    "text": "1.3 R vs. Python"
+  },
+  {
+    "objectID": "what-is-r.html#history",
+    "href": "what-is-r.html#history",
+    "title": "1  What is R?",
+    "section": "1.2 History",
+    "text": "1.2 History"
+  },
+  {
+    "objectID": "what-is-r.html#r-vs.-python",
+    "href": "what-is-r.html#r-vs.-python",
+    "title": "1  What is R?",
+    "section": "1.3 R vs. Python",
+    "text": "1.3 R vs. Python"
+  },
+  {
+    "objectID": "setup.html#alternatives",
+    "href": "setup.html#alternatives",
+    "title": "2  Setup",
+    "section": "2.3 Alternatives",
+    "text": "2.3 Alternatives\n\n2.3.1 R Studio Cloud\n\n\n2.3.2 Replit\n\n\n2.3.3 Kaggle\n\n\n2.3.4 Deepnote\n\n\n2.3.5 Custom Text Editor"
+  },
+  {
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "2  Setup",
+    "section": "",
+    "text": "Before you do anything, you’ll need to download R. This download will allow your computer to interpret the R code you write later on.\n\nDownload R From R: The R Project for Statistical Computing\nSelect ‘download R’\n\n\n\nChoose any link but preferably the one closest to your physical location\n\n\n\nChoose your operating system\n\n\n\nPress ‘Install R for the first time’\n\n\n\nPress ‘download’\n\n\n\nOpen installer\n\n\n\nFollow the prompts and leave all options set as their default values"
+  },
+  {
+    "objectID": "setup.html#install-r-studio",
+    "href": "setup.html#install-r-studio",
+    "title": "2  Setup",
+    "section": "2.2 Install R Studio",
+    "text": "2.2 Install R Studio\nAfter you install R, you’ll need an environment to write and run your code in. Most people use a program called “R Studio” for this. To download R Studio follow the steps listed below:\n\nNavigate to the R Studio download site: Download the RStudio IDE\nPress the ‘download’ button under RStudio Desktop\n\n\n\nChoose the download option for your operating system\n\n\n\nOpen the installer and accept all defaults"
+  }
+]

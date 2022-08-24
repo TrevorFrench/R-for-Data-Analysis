@@ -1,0 +1,46 @@
+project:
+  type: book
+
+book:
+  title: "R for Data Analysis"
+  author: "Trevor French"
+  date: "8/16/2022"
+  chapters:
+    - index.qmd
+    - part: intro.qmd
+      chapters:
+      - what-is-r.qmd
+      - setup.qmd
+    - part: programming-basics.qmd
+      chapters: 
+        - operators.qmd
+        - functions.qmd
+        - data-structures.qmd
+        - libraries.qmd
+    - part: r-studio.qmd
+      chapters: 
+        - source.qmd
+        - console.qmd
+        - environment.qmd
+        - files.qmd
+    - part: data-manipulation.qmd
+      chapters: 
+        - working-with-csvs.qmd
+        - working-with-excel.qmd
+        - working-with-dataframes.qmd
+    - part: plotting.qmd
+    - part: statistics.qmd
+    - part: reporting.qmd
+    - part: shiny.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+

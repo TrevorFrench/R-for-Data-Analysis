@@ -1,0 +1,7 @@
+# What is R?
+
+## High-Level
+
+## History
+
+## R vs. Python

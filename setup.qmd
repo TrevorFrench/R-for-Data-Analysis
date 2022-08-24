@@ -1,0 +1,65 @@
+# Setup
+
+## Install R
+
+Before you do anything, you'll need to download R. This download will allow your computer to interpret the R code you write later on.
+
+1. Download R From R: [The R Project for Statistical Computing](https://www.r-project.org/)
+
+2. Select ‘download R’
+
+![](install-r-1.png)
+
+3. Choose any link but preferably the one closest to your physical location
+
+![](install-r-2.png)
+
+4. Choose your operating system
+
+![](install-r-3.png)
+
+5. Press ‘Install R for the first time’
+
+![](install-r-4.png)
+
+6. Press ‘download’
+
+![](install-r-5.png)
+
+7. Open installer
+
+![](install-r-6.png)
+
+8. Follow the prompts and leave all options set as their default values
+
+![](install-r-7.png)
+
+## Install R Studio
+
+After you install R, you'll need an environment to write and run your code in. Most people use a program called "R Studio" for this. To download R Studio follow the steps listed below:
+
+1. Navigate to the R Studio download site: [Download the RStudio IDE](https://www.rstudio.com/products/rstudio/download/) 
+
+2. Press the ‘download’ button under RStudio Desktop
+
+![](install-rstudio-1.png)
+
+3. Choose the download option for your operating system
+
+![](install-rstudio-2.png)
+
+4. Open the installer and accept all defaults
+
+![](install-rstudio-3.png)
+
+## Alternatives
+
+### R Studio Cloud
+
+### Replit
+
+### Kaggle
+
+### Deepnote
+
+### Custom Text Editor
