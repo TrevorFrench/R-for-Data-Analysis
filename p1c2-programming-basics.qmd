@@ -1,0 +1,62 @@
+# Programming Basics
+
+## Executing Code
+
+run selections rather than scripts
+
+When working in most programming languages, you will generally have the option to execute code one of two ways:
+
+- in the console
+- in a script
+
+### Console
+
+The first way to run code is directly in the console. If you're working in R Studio, you will access the console through the "console" pane (usually located in the bottom left portion). 
+
+Pictured here.
+
+Alternatively, if you downloaded R to your personal computer, you will likely be able to search your machine for an app named "RGui" and access the console this way as well.
+
+Pictured here.
+
+In the following example, the text 'print(3+2)' is typed into the console. The user then presses enter and sees the result: "[1] 5".
+
+```{r}
+print(3+2)
+```
+
+You may be wondering what "[1]" represents. This is simply a line number in the console and can be ignored for most practical purposes. Additionally, most of the examples in this book will be structured in this way: formatted code immediately followed by the code output.
+
+### Script
+
+You likely will be using scripts most of the time when working in R. A script is just a file that allows you to type out longer sequences of code and execute them all at once.
+
+For those of you following along in R Studio, you can create a script by pressing "Ctrl + Shift + N" on Windows or by selecting "R Script" from the "New File" dropdown in the top left corner.
+
+Pictured Here.
+
+From here you can type the same command from before into the source pane.
+
+Pictured Here.
+
+Now you'll want to save your file by pressing "Ctrl + S" on Windows or by selecting "Save" from the "File" dropdown in the top left corner. Now just give your file a name and your file will automatically be saved as a ".R" file.
+
+Pictured Here.
+
+Finally, select all of your code by pressing 
+
+## Comments
+
+### bulk, single, uncomment, best practices, print, view??
+
+## Variables
+
+## Operators
+
+## Functions
+
+## Loops
+
+## Conditionals
+
+## Libraries

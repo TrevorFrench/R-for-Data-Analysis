@@ -1,7 +1,23 @@
-# Preface {.unnumbered}
+# Introduction
 
-The preface gives you, as the author, the opportunity to introduce yourself to your readers and explain to them why they should hear what you have to say. This is where you build credibility, so you should give some insight into how you got to be an expert on your subject. You can toot your own horn a bit here.
+> "There is synthesis when, in combining therein judgments that are made known to us from simpler relations, one deduces judgments from them relative to more complicated relations. There is analysis when from a complicated truth one deduces more simple truths."  <br><br> -André-Marie Ampère
 
-You should use a preface to spark curiosity about your content and draw readers in. Here, you speak directly about the purpose, creation, or importance of your book. How did your book’s genesis come about? What was the pain point you were seeking to address when you decided you wanted to write a book, and why is that important to your readers? The preface is where you explain the who, when, and where of it all.
+Everyone is a data analyst. The purpose of this book is to inspire and enable anyone who reads it to reconsider the methods they currently employ to analyse data. This is not to suggest that the methodologies outlined will be useful or sufficient for everyone who reads it. Some analyses can be performed quickly without the need for additional computation while others will require advanced analytics techniques not outlined in this book; however, the aspiration is that all will be equipped with novel tools and ideas for approaching data analysis.
 
-More info: <https://greenleafbookgroup.com/learning-center/book-creation/distinguishing-between-a-foreword-a-preface-and-an-introduction#:~:text=A%20preface%20is%20written%20by,for%20what%20they%20can%20expect.>
+<!-- While I have specialized in analytics techniques through my M.S. in Data Analytics, B.S. in Business Analytics, and now my career as an Analytics Manager- I don't believe that specialization is required to begin using these techniques. -->
+
+## Prerequisites
+
+No prior knowledge is required to begin this book. The content will start at the very beginning by showing you how to set up your R environment and the basics of programming in R. By the end of the book, you will be able to perform intermediate analytics techniques such as linear regresion and automatic report generation.
+
+You will need an environment which you use to run your code. It is recommended that you download R and R Studio locally for this requirement. This book will walk you through how to do that as well as offer alternatives if that is not an option for you.
+
+## Structure of the Book
+
+- Part I (Fundamentals) will introduce you to the basics of programming in the context of R.
+- Part II (Data Acquisition) will teach you how to create, import, and access data.
+- Part III (Data Preparation) will show you how to begin preparing your data for analysis.
+- Part IV (Developing Insights) goes through the process of searching for and extracting insights from your data.
+- Part V (Reporting) demonstrates how to wrap your analysis up by developing and automating reports.
+
+Each part will be concluded with practical exercises for you to test your skills.

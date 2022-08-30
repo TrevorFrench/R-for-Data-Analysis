@@ -6,32 +6,28 @@ book:
   author: "Trevor French"
   date: "8/16/2022"
   chapters:
-    - index.qmd
-    - part: intro.qmd
+    - part: index.qmd
       chapters:
-      - what-is-r.qmd
-      - setup.qmd
-    - part: programming-basics.qmd
-      chapters: 
-        - operators.qmd
-        - functions.qmd
-        - data-structures.qmd
-        - libraries.qmd
-    - part: r-studio.qmd
-      chapters: 
-        - source.qmd
-        - console.qmd
-        - environment.qmd
-        - files.qmd
-    - part: data-manipulation.qmd
+      - p0c1-what-is-r.qmd
+      - p0c2-what-is-data-analysis.qmd
+      - p0c3-setup.qmd
+    - part: p1-fundamentals.qmd
+      chapters:
+        - p1c1-r-studio.qmd
+        - p1c2-programming-basics.qmd
+        - p1c3-data-types.qmd
+        - p1c4-data-structures.qmd
+    - part: p2-data-acquisition.qmd
+    - part: p3-data-preparation.qmd
       chapters: 
         - working-with-csvs.qmd
         - working-with-excel.qmd
         - working-with-dataframes.qmd
-    - part: plotting.qmd
-    - part: statistics.qmd
-    - part: reporting.qmd
-    - part: shiny.qmd
+    - part: p4-developing-insights.qmd
+      chapters: 
+        - plotting.qmd
+        - summary-statistics.qmd
+    - part: p5-reporting.qmd
     - references.qmd
 
 bibliography: references.bib

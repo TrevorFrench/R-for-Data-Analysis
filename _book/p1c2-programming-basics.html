@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>R for Data Analysis - 3&nbsp; Setup</title>
+<title>R for Data Analysis - 5&nbsp; Programming Basics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -15,6 +15,69 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -25,8 +88,8 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./p2-fundamentals.html" rel="next">
-<link href="./what-is-data-analysis.html" rel="prev">
+<link href="./p1c3-data-types.html" rel="next">
+<link href="./p1c1-r-studio.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -65,7 +128,7 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Setup</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Programming Basics</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -88,14 +151,9 @@ ul.task-list{list-style: none;}
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./p1-introduction.html" class="sidebar-item-text sidebar-link">Introduction</a>
+            <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -103,24 +161,24 @@ ul.task-list{list-style: none;}
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./what-is-r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is R?</span></a>
+  <a href="./p0c1-what-is-r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is R?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./what-is-data-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is Data Analysis</span></a>
+  <a href="./p0c2-what-is-data-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is Data Analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./setup.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Setup</span></a>
+  <a href="./p0c3-setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Setup</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./p2-fundamentals.html" class="sidebar-item-text sidebar-link">Fundamentals</a>
+            <a href="./p1-fundamentals.html" class="sidebar-item-text sidebar-link">Part I: Fundamentals</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -128,32 +186,32 @@ ul.task-list{list-style: none;}
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-studio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Familiar with R Studio</span></a>
+  <a href="./p1c1-r-studio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Familiar with R Studio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./programming-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Programming Basics</span></a>
+  <a href="./p1c2-programming-basics.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Programming Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data-types.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Types</span></a>
+  <a href="./p1c3-data-types.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Types</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structures</span></a>
+  <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structures</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">Data Acquisition</span>
+      <span class="sidebar-item-text sidebar-link text-start">Part II: Data Acquisition</span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./p4-data-preparation.html" class="sidebar-item-text sidebar-link">Data Preparation</a>
+            <a href="./p3-data-preparation.html" class="sidebar-item-text sidebar-link">Part III: Data Preparation</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -178,7 +236,7 @@ ul.task-list{list-style: none;}
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./p5-developing-insights.html" class="sidebar-item-text sidebar-link">Developing Insights</a>
+            <a href="./p4-developing-insights.html" class="sidebar-item-text sidebar-link">Part IV: Developing Insights</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -197,7 +255,7 @@ ul.task-list{list-style: none;}
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">Reporting</span>
+      <span class="sidebar-item-text sidebar-link text-start">Part V: Reporting</span>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -213,16 +271,20 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#install-r" id="toc-install-r" class="nav-link active" data-scroll-target="#install-r"> <span class="header-section-number">3.1</span> Install R</a></li>
-  <li><a href="#install-r-studio" id="toc-install-r-studio" class="nav-link" data-scroll-target="#install-r-studio"> <span class="header-section-number">3.2</span> Install R Studio</a></li>
-  <li><a href="#alternatives" id="toc-alternatives" class="nav-link" data-scroll-target="#alternatives"> <span class="header-section-number">3.3</span> Alternatives</a>
+  <li><a href="#executing-code" id="toc-executing-code" class="nav-link active" data-scroll-target="#executing-code"> <span class="header-section-number">5.1</span> Executing Code</a>
   <ul class="collapse">
-  <li><a href="#r-studio-cloud" id="toc-r-studio-cloud" class="nav-link" data-scroll-target="#r-studio-cloud"> <span class="header-section-number">3.3.1</span> R Studio Cloud</a></li>
-  <li><a href="#replit" id="toc-replit" class="nav-link" data-scroll-target="#replit"> <span class="header-section-number">3.3.2</span> Replit</a></li>
-  <li><a href="#kaggle" id="toc-kaggle" class="nav-link" data-scroll-target="#kaggle"> <span class="header-section-number">3.3.3</span> Kaggle</a></li>
-  <li><a href="#deepnote" id="toc-deepnote" class="nav-link" data-scroll-target="#deepnote"> <span class="header-section-number">3.3.4</span> Deepnote</a></li>
-  <li><a href="#custom-text-editor" id="toc-custom-text-editor" class="nav-link" data-scroll-target="#custom-text-editor"> <span class="header-section-number">3.3.5</span> Custom Text Editor</a></li>
+  <li><a href="#console" id="toc-console" class="nav-link" data-scroll-target="#console"> <span class="header-section-number">5.1.1</span> Console</a></li>
   </ul></li>
+  <li><a href="#comments" id="toc-comments" class="nav-link" data-scroll-target="#comments"> <span class="header-section-number">5.2</span> Comments</a>
+  <ul class="collapse">
+  <li><a href="#bulk-single-uncomment-best-practices-print-view" id="toc-bulk-single-uncomment-best-practices-print-view" class="nav-link" data-scroll-target="#bulk-single-uncomment-best-practices-print-view"> <span class="header-section-number">5.2.1</span> bulk, single, uncomment, best practices, print, view??</a></li>
+  </ul></li>
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables"> <span class="header-section-number">5.3</span> Variables</a></li>
+  <li><a href="#operators" id="toc-operators" class="nav-link" data-scroll-target="#operators"> <span class="header-section-number">5.4</span> Operators</a></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"> <span class="header-section-number">5.5</span> Functions</a></li>
+  <li><a href="#loops" id="toc-loops" class="nav-link" data-scroll-target="#loops"> <span class="header-section-number">5.6</span> Loops</a></li>
+  <li><a href="#conditionals" id="toc-conditionals" class="nav-link" data-scroll-target="#conditionals"> <span class="header-section-number">5.7</span> Conditionals</a></li>
+  <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries"> <span class="header-section-number">5.8</span> Libraries</a></li>
   </ul>
 </nav>
     </div>
@@ -231,7 +293,7 @@ ul.task-list{list-style: none;}
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Setup</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Programming Basics</span></h1>
 </div>
 
 
@@ -245,75 +307,51 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<section id="install-r" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="install-r"><span class="header-section-number">3.1</span> Install R</h2>
-<p>Before you do anything, you’ll need to download R. This download will allow your computer to interpret the R code you write later on.</p>
-<ol type="1">
-<li><p>Download R From R: <a href="https://www.r-project.org/">The R Project for Statistical Computing</a></p></li>
-<li><p>Select ‘download R’</p></li>
-</ol>
-<p><img src="./images/setup/install-r-1.png" class="img-fluid"></p>
-<ol start="3" type="1">
-<li>Choose any link but preferably the one closest to your physical location</li>
-</ol>
-<p><img src="./images/setup/install-r-2.png" class="img-fluid"></p>
-<ol start="4" type="1">
-<li>Choose your operating system</li>
-</ol>
-<p><img src="./images/setup/install-r-3.png" class="img-fluid"></p>
-<ol start="5" type="1">
-<li>Press ‘Install R for the first time’</li>
-</ol>
-<p><img src="./images/setup/install-r-4.png" class="img-fluid"></p>
-<ol start="6" type="1">
-<li>Press ‘download’</li>
-</ol>
-<p><img src="./images/setup/install-r-5.png" class="img-fluid"></p>
-<ol start="7" type="1">
-<li>Open installer</li>
-</ol>
-<p><img src="./images/setup/install-r-6.png" class="img-fluid"></p>
-<ol start="8" type="1">
-<li>Follow the prompts and leave all options set as their default values</li>
-</ol>
-<p><img src="./images/setup/install-r-7.png" class="img-fluid"></p>
+<section id="executing-code" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="executing-code"><span class="header-section-number">5.1</span> Executing Code</h2>
+<p>run selections rather than scripts</p>
+<p>When working in most programming languages, you will generally have the option to execute code one of two ways:</p>
+<ul>
+<li>in the console</li>
+<li>in a script</li>
+</ul>
+<section id="console" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="console"><span class="header-section-number">5.1.1</span> Console</h3>
+<p>The first way to run code is directly in the console. If you’re working in R Studio, you will access the console through the “console” pane (usually located in the bottom left portion).</p>
+<p>Pictured here.</p>
+<p>Alternatively, if you downloaded R to your personal computer, you will likely be able to search your machine for an app named “RGui” and access the console this way as well.</p>
+<p>Pictured here.</p>
+<p>If you wer</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="dv">3</span><span class="sc">+</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="install-r-studio" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="install-r-studio"><span class="header-section-number">3.2</span> Install R Studio</h2>
-<p>After you install R, you’ll need an environment to write and run your code in. Most people use a program called “R Studio” for this. To download R Studio follow the steps listed below:</p>
-<ol type="1">
-<li><p>Navigate to the R Studio download site: <a href="https://www.rstudio.com/products/rstudio/download/">Download the RStudio IDE</a></p></li>
-<li><p>Press the ‘download’ button under RStudio Desktop</p></li>
-</ol>
-<p><img src="./images/setup/install-rstudio-1.png" class="img-fluid"></p>
-<ol start="3" type="1">
-<li>Choose the download option for your operating system</li>
-</ol>
-<p><img src="./images/setup/install-rstudio-2.png" class="img-fluid"></p>
-<ol start="4" type="1">
-<li>Open the installer and accept all defaults</li>
-</ol>
-<p><img src="./images/setup/install-rstudio-3.png" class="img-fluid"></p>
 </section>
-<section id="alternatives" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="alternatives"><span class="header-section-number">3.3</span> Alternatives</h2>
-<section id="r-studio-cloud" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="r-studio-cloud"><span class="header-section-number">3.3.1</span> R Studio Cloud</h3>
+<section id="comments" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="comments"><span class="header-section-number">5.2</span> Comments</h2>
+<section id="bulk-single-uncomment-best-practices-print-view" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="bulk-single-uncomment-best-practices-print-view"><span class="header-section-number">5.2.1</span> bulk, single, uncomment, best practices, print, view??</h3>
 </section>
-<section id="replit" class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="replit"><span class="header-section-number">3.3.2</span> Replit</h3>
 </section>
-<section id="kaggle" class="level3" data-number="3.3.3">
-<h3 data-number="3.3.3" class="anchored" data-anchor-id="kaggle"><span class="header-section-number">3.3.3</span> Kaggle</h3>
+<section id="variables" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="variables"><span class="header-section-number">5.3</span> Variables</h2>
 </section>
-<section id="deepnote" class="level3" data-number="3.3.4">
-<h3 data-number="3.3.4" class="anchored" data-anchor-id="deepnote"><span class="header-section-number">3.3.4</span> Deepnote</h3>
+<section id="operators" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="operators"><span class="header-section-number">5.4</span> Operators</h2>
 </section>
-<section id="custom-text-editor" class="level3" data-number="3.3.5">
-<h3 data-number="3.3.5" class="anchored" data-anchor-id="custom-text-editor"><span class="header-section-number">3.3.5</span> Custom Text Editor</h3>
+<section id="functions" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="functions"><span class="header-section-number">5.5</span> Functions</h2>
+</section>
+<section id="loops" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="loops"><span class="header-section-number">5.6</span> Loops</h2>
+</section>
+<section id="conditionals" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="conditionals"><span class="header-section-number">5.7</span> Conditionals</h2>
+</section>
+<section id="libraries" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="libraries"><span class="header-section-number">5.8</span> Libraries</h2>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -416,13 +454,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./what-is-data-analysis.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is Data Analysis</span></span>
+      <a href="./p1c1-r-studio.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Familiar with R Studio</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./p2-fundamentals.html" class="pagination-link">
-        <span class="nav-page-text">Fundamentals</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./p1c3-data-types.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Types</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

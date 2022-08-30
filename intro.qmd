@@ -1,5 +1,0 @@
-# Introduction
-
-An introduction is much more closely related to the content and is necessary for the book’s comprehension, but it is distinct enough that it should be kept separate from the rest of the text.
-
-In the introduction, you should cover the promise of the book and any necessary definitions or methodology that are necessary to its understanding. The introduction is where you want to explain what your book is about by touching on the major themes. What are your readers going to get out of reading your book? What’s in it for them? Here is where you make your case.

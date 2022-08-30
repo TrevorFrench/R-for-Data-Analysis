@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "R for Data Analysis",
     "section": "",
-    "text": "The preface gives you, as the author, the opportunity to introduce yourself to your readers and explain to them why they should hear what you have to say. This is where you build credibility, so you should give some insight into how you got to be an expert on your subject. You can toot your own horn a bit here.\nYou should use a preface to spark curiosity about your content and draw readers in. Here, you speak directly about the purpose, creation, or importance of your book. How did your book’s genesis come about? What was the pain point you were seeking to address when you decided you wanted to write a book, and why is that important to your readers? The preface is where you explain the who, when, and where of it all.\nMore info: https://greenleafbookgroup.com/learning-center/book-creation/distinguishing-between-a-foreword-a-preface-and-an-introduction#:~:text=A%20preface%20is%20written%20by,for%20what%20they%20can%20expect."
+    "text": "“There is synthesis when, in combining therein judgments that are made known to us from simpler relations, one deduces judgments from them relative to more complicated relations. There is analysis when from a complicated truth one deduces more simple truths.”  -André-Marie Ampère\n\nEveryone is a data analyst. The purpose of this book is to inspire and enable anyone who reads it to reconsider the methods they currently employ to analyse data. This is not to suggest that the methodologies outlined will be useful or sufficient for everyone who reads it. Some analyses can be performed quickly without the need for additional computation while others will require advanced analytics techniques not outlined in this book; however, the aspiration is that all will be equipped with novel tools and ideas for approaching data analysis.\n\n\n\nNo prior knowledge is required to begin this book. The content will start at the very beginning by showing you how to set up your R environment and the basics of programming in R. By the end of the book, you will be able to perform intermediate analytics techniques such as linear regresion and automatic report generation.\nYou will need an environment which you use to run your code. It is recommended that you download R and R Studio locally for this requirement. This book will walk you through how to do that as well as offer alternatives if that is not an option for you.\n\n\n\n\nPart I (Fundamentals) will introduce you to the basics of programming in the context of R.\nPart II (Data Acquisition) will teach you how to create, import, and access data.\nPart III (Data Preparation) will show you how to begin preparing your data for analysis.\nPart IV (Developing Insights) goes through the process of searching for and extracting insights from your data.\nPart V (Reporting) demonstrates how to wrap your analysis up by developing and automating reports.\n\nEach part will be concluded with practical exercises for you to test your skills."
   },
   {
     "objectID": "intro.html",
     "href": "intro.html",
     "title": "Introduction",
     "section": "",
-    "text": "In the introduction, you should cover the promise of the book and any necessary definitions or methodology that are necessary to its understanding. The introduction is where you want to explain what your book is about by touching on the major themes. What are your readers going to get out of reading your book? What’s in it for them? Here is where you make your case."
+    "text": "No prior knowledge is required to begin this book. The content will start at the very beginning by showing you how to set up your R environment and the basics of programming in R. By the end of the book, you will be able to perform intermediate analytics techniques such as linear regresion and automatic report generation."
   },
   {
     "objectID": "summary.html",
@@ -58,22 +58,323 @@
   {
     "objectID": "setup.html#alternatives",
     "href": "setup.html#alternatives",
-    "title": "2  Setup",
-    "section": "2.3 Alternatives",
-    "text": "2.3 Alternatives\n\n2.3.1 R Studio Cloud\n\n\n2.3.2 Replit\n\n\n2.3.3 Kaggle\n\n\n2.3.4 Deepnote\n\n\n2.3.5 Custom Text Editor"
+    "title": "3  Setup",
+    "section": "3.3 Alternatives",
+    "text": "3.3 Alternatives\n\n3.3.1 R Studio Cloud\n\n\n3.3.2 Replit\n\n\n3.3.3 Kaggle\n\n\n3.3.4 Deepnote\n\n\n3.3.5 Custom Text Editor"
   },
   {
     "objectID": "setup.html",
     "href": "setup.html",
-    "title": "2  Setup",
+    "title": "3  Setup",
     "section": "",
     "text": "Before you do anything, you’ll need to download R. This download will allow your computer to interpret the R code you write later on.\n\nDownload R From R: The R Project for Statistical Computing\nSelect ‘download R’\n\n\n\nChoose any link but preferably the one closest to your physical location\n\n\n\nChoose your operating system\n\n\n\nPress ‘Install R for the first time’\n\n\n\nPress ‘download’\n\n\n\nOpen installer\n\n\n\nFollow the prompts and leave all options set as their default values"
   },
   {
     "objectID": "setup.html#install-r-studio",
     "href": "setup.html#install-r-studio",
-    "title": "2  Setup",
-    "section": "2.2 Install R Studio",
-    "text": "2.2 Install R Studio\nAfter you install R, you’ll need an environment to write and run your code in. Most people use a program called “R Studio” for this. To download R Studio follow the steps listed below:\n\nNavigate to the R Studio download site: Download the RStudio IDE\nPress the ‘download’ button under RStudio Desktop\n\n\n\nChoose the download option for your operating system\n\n\n\nOpen the installer and accept all defaults"
+    "title": "3  Setup",
+    "section": "3.2 Install R Studio",
+    "text": "3.2 Install R Studio\nAfter you install R, you’ll need an environment to write and run your code in. Most people use a program called “R Studio” for this. To download R Studio follow the steps listed below:\n\nNavigate to the R Studio download site: Download the RStudio IDE\nPress the ‘download’ button under RStudio Desktop\n\n\n\nChoose the download option for your operating system\n\n\n\nOpen the installer and accept all defaults"
+  },
+  {
+    "objectID": "what-is-r.html",
+    "href": "what-is-r.html",
+    "title": "1  What is R?",
+    "section": "",
+    "text": "R is a statistical programming language used commonly for data analysis amongst other disciplines. It was built by Ross Ihaka and Robert Gentleman at the University of Auckland and was first released in 1993."
+  },
+  {
+    "objectID": "r-studio.html#source",
+    "href": "r-studio.html#source",
+    "title": "5  Getting Familiar with R Studio",
+    "section": "5.2 Source",
+    "text": "5.2 Source"
+  },
+  {
+    "objectID": "r-studio.html#console",
+    "href": "r-studio.html#console",
+    "title": "5  Getting Familiar with R Studio",
+    "section": "5.3 Console",
+    "text": "5.3 Console"
+  },
+  {
+    "objectID": "r-studio.html#environment",
+    "href": "r-studio.html#environment",
+    "title": "5  Getting Familiar with R Studio",
+    "section": "5.4 Environment",
+    "text": "5.4 Environment"
+  },
+  {
+    "objectID": "r-studio.html#files",
+    "href": "r-studio.html#files",
+    "title": "5  Getting Familiar with R Studio",
+    "section": "5.5 Files",
+    "text": "5.5 Files"
+  },
+  {
+    "objectID": "executing-code.html#scripts",
+    "href": "executing-code.html#scripts",
+    "title": "6  Executing Code",
+    "section": "6.2 Scripts",
+    "text": "6.2 Scripts"
+  },
+  {
+    "objectID": "data-structures.html",
+    "href": "data-structures.html",
+    "title": "14  Data Structures",
+    "section": "",
+    "text": "R and its libraries implement various statistical techniques, including linear, generalized linear and nonlinear modeling, classical statistical tests, spatial and time-series analysis, classification, clustering, and others. For computationally intensive tasks, C, C++, and Fortran code can be linked and called at run time. Another of R’s strengths is static graphics; it can produce publication-quality graphs that include mathematical symbols.[31]"
+  },
+  {
+    "objectID": "p1-introduction.html",
+    "href": "p1-introduction.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "No prior knowledge is required to begin this book. The content will start at the very beginning by showing you how to set up your R environment and the basics of programming in R. By the end of the book, you will be able to perform intermediate analytics techniques such as linear regresion and automatic report generation."
+  },
+  {
+    "objectID": "p1c1-what-is-r.html",
+    "href": "p1c1-what-is-r.html",
+    "title": "1  What is R?",
+    "section": "",
+    "text": "R is a statistical programming language used commonly for data analysis amongst other disciplines. It was built by Ross Ihaka and Robert Gentleman at the University of Auckland and was first released in 1993."
+  },
+  {
+    "objectID": "p1c3-setup.html",
+    "href": "p1c3-setup.html",
+    "title": "3  Setup",
+    "section": "",
+    "text": "Before you do anything, you’ll need to download R. This download will allow your computer to interpret the R code you write later on.\n\nDownload R From R: The R Project for Statistical Computing\nSelect ‘download R’\n\n\n\nChoose any link but preferably the one closest to your physical location\n\n\n\nChoose your operating system\n\n\n\nPress ‘Install R for the first time’\n\n\n\nPress ‘download’\n\n\n\nOpen installer\n\n\n\nFollow the prompts and leave all options set as their default values"
+  },
+  {
+    "objectID": "p1c3-setup.html#install-r-studio",
+    "href": "p1c3-setup.html#install-r-studio",
+    "title": "3  Setup",
+    "section": "3.2 Install R Studio",
+    "text": "3.2 Install R Studio\nAfter you install R, you’ll need an environment to write and run your code in. Most people use a program called “R Studio” for this. To download R Studio follow the steps listed below:\n\nNavigate to the R Studio download site: Download the RStudio IDE\nPress the ‘download’ button under RStudio Desktop\n\n\n\nChoose the download option for your operating system\n\n\n\nOpen the installer and accept all defaults"
+  },
+  {
+    "objectID": "p1c3-setup.html#alternatives",
+    "href": "p1c3-setup.html#alternatives",
+    "title": "3  Setup",
+    "section": "3.3 Alternatives",
+    "text": "3.3 Alternatives\n\n3.3.1 R Studio Cloud\n\n\n3.3.2 Replit\n\n\n3.3.3 Kaggle\n\n\n3.3.4 Deepnote\n\n\n3.3.5 Custom Text Editor"
+  },
+  {
+    "objectID": "p2c1-r-studio.html#source",
+    "href": "p2c1-r-studio.html#source",
+    "title": "4  Getting Familiar with R Studio",
+    "section": "4.2 Source",
+    "text": "4.2 Source"
+  },
+  {
+    "objectID": "p2c1-r-studio.html#console",
+    "href": "p2c1-r-studio.html#console",
+    "title": "4  Getting Familiar with R Studio",
+    "section": "4.3 Console",
+    "text": "4.3 Console"
+  },
+  {
+    "objectID": "p2c1-r-studio.html#environment",
+    "href": "p2c1-r-studio.html#environment",
+    "title": "4  Getting Familiar with R Studio",
+    "section": "4.4 Environment",
+    "text": "4.4 Environment"
+  },
+  {
+    "objectID": "p2c1-r-studio.html#files",
+    "href": "p2c1-r-studio.html#files",
+    "title": "4  Getting Familiar with R Studio",
+    "section": "4.5 Files",
+    "text": "4.5 Files"
+  },
+  {
+    "objectID": "p2c2-programming-basics.html#executing-code",
+    "href": "p2c2-programming-basics.html#executing-code",
+    "title": "5  Programming Basics",
+    "section": "5.2 Executing Code",
+    "text": "5.2 Executing Code"
+  },
+  {
+    "objectID": "p2c2-programming-basics.html#variables",
+    "href": "p2c2-programming-basics.html#variables",
+    "title": "5  Programming Basics",
+    "section": "5.3 Variables",
+    "text": "5.3 Variables"
+  },
+  {
+    "objectID": "p2c2-programming-basics.html#operators",
+    "href": "p2c2-programming-basics.html#operators",
+    "title": "5  Programming Basics",
+    "section": "5.4 Operators",
+    "text": "5.4 Operators"
+  },
+  {
+    "objectID": "p2c2-programming-basics.html#functions",
+    "href": "p2c2-programming-basics.html#functions",
+    "title": "5  Programming Basics",
+    "section": "5.5 Functions",
+    "text": "5.5 Functions"
+  },
+  {
+    "objectID": "p2c2-programming-basics.html#loops",
+    "href": "p2c2-programming-basics.html#loops",
+    "title": "5  Programming Basics",
+    "section": "5.6 Loops",
+    "text": "5.6 Loops"
+  },
+  {
+    "objectID": "p2c2-programming-basics.html#conditionals",
+    "href": "p2c2-programming-basics.html#conditionals",
+    "title": "5  Programming Basics",
+    "section": "5.7 Conditionals",
+    "text": "5.7 Conditionals"
+  },
+  {
+    "objectID": "p2c2-programming-basics.html#libraries",
+    "href": "p2c2-programming-basics.html#libraries",
+    "title": "5  Programming Basics",
+    "section": "5.8 Libraries",
+    "text": "5.8 Libraries"
+  },
+  {
+    "objectID": "p2c4-data-structures.html",
+    "href": "p2c4-data-structures.html",
+    "title": "7  Data Structures",
+    "section": "",
+    "text": "R and its libraries implement various statistical techniques, including linear, generalized linear and nonlinear modeling, classical statistical tests, spatial and time-series analysis, classification, clustering, and others. For computationally intensive tasks, C, C++, and Fortran code can be linked and called at run time. Another of R’s strengths is static graphics; it can produce publication-quality graphs that include mathematical symbols.[31]"
+  },
+  {
+    "objectID": "p0c1-what-is-r.html",
+    "href": "p0c1-what-is-r.html",
+    "title": "1  What is R?",
+    "section": "",
+    "text": "R is a statistical programming language used commonly for data analysis amongst other disciplines. It was built by Ross Ihaka and Robert Gentleman at the University of Auckland and was first released in 1993.\nR is an open-source project and is supported by the R Foundation, a not-for-profit organization.\nYou can learn more about R at https://www.r-project.org/"
+  },
+  {
+    "objectID": "p0c3-setup.html",
+    "href": "p0c3-setup.html",
+    "title": "3  Setup",
+    "section": "",
+    "text": "Before you do anything, you’ll need to download R. This download will allow your computer to interpret the R code you write later on.\n\nDownload R From R: The R Project for Statistical Computing\nSelect ‘download R’\n\n\n\nChoose any link but preferably the one closest to your physical location\n\n\n\nChoose your operating system\n\n\n\nPress ‘Install R for the first time’\n\n\n\nPress ‘download’\n\n\n\nOpen installer\n\n\n\nFollow the prompts and leave all options set as their default values"
+  },
+  {
+    "objectID": "p0c3-setup.html#install-r-studio",
+    "href": "p0c3-setup.html#install-r-studio",
+    "title": "3  Setup",
+    "section": "3.2 Install R Studio",
+    "text": "3.2 Install R Studio\nAfter you install R, you’ll need an environment to write and run your code in. Most people use a program called “R Studio” for this. To download R Studio follow the steps listed below:\n\nNavigate to the R Studio download site: Download the RStudio IDE\nPress the ‘download’ button under RStudio Desktop\n\n\n\nChoose the download option for your operating system\n\n\n\nOpen the installer and accept all defaults"
+  },
+  {
+    "objectID": "p0c3-setup.html#alternatives",
+    "href": "p0c3-setup.html#alternatives",
+    "title": "3  Setup",
+    "section": "3.3 Alternatives",
+    "text": "3.3 Alternatives\n\n3.3.1 R Studio Cloud\n\n\n3.3.2 Replit\n\n\n3.3.3 Kaggle\n\n\n3.3.4 Deepnote\n\n\n3.3.5 Custom Text Editor"
+  },
+  {
+    "objectID": "p1c1-r-studio.html#source",
+    "href": "p1c1-r-studio.html#source",
+    "title": "4  Getting Familiar with R Studio",
+    "section": "4.2 Source",
+    "text": "4.2 Source"
+  },
+  {
+    "objectID": "p1c1-r-studio.html#console",
+    "href": "p1c1-r-studio.html#console",
+    "title": "4  Getting Familiar with R Studio",
+    "section": "4.3 Console",
+    "text": "4.3 Console"
+  },
+  {
+    "objectID": "p1c1-r-studio.html#environment",
+    "href": "p1c1-r-studio.html#environment",
+    "title": "4  Getting Familiar with R Studio",
+    "section": "4.4 Environment",
+    "text": "4.4 Environment"
+  },
+  {
+    "objectID": "p1c1-r-studio.html#files",
+    "href": "p1c1-r-studio.html#files",
+    "title": "4  Getting Familiar with R Studio",
+    "section": "4.5 Files",
+    "text": "4.5 Files"
+  },
+  {
+    "objectID": "p1c2-programming-basics.html#executing-code",
+    "href": "p1c2-programming-basics.html#executing-code",
+    "title": "5  Programming Basics",
+    "section": "5.2 Executing Code",
+    "text": "5.2 Executing Code"
+  },
+  {
+    "objectID": "p1c2-programming-basics.html#variables",
+    "href": "p1c2-programming-basics.html#variables",
+    "title": "5  Programming Basics",
+    "section": "5.3 Variables",
+    "text": "5.3 Variables"
+  },
+  {
+    "objectID": "p1c2-programming-basics.html#operators",
+    "href": "p1c2-programming-basics.html#operators",
+    "title": "5  Programming Basics",
+    "section": "5.4 Operators",
+    "text": "5.4 Operators"
+  },
+  {
+    "objectID": "p1c2-programming-basics.html#functions",
+    "href": "p1c2-programming-basics.html#functions",
+    "title": "5  Programming Basics",
+    "section": "5.5 Functions",
+    "text": "5.5 Functions"
+  },
+  {
+    "objectID": "p1c2-programming-basics.html#loops",
+    "href": "p1c2-programming-basics.html#loops",
+    "title": "5  Programming Basics",
+    "section": "5.6 Loops",
+    "text": "5.6 Loops"
+  },
+  {
+    "objectID": "p1c2-programming-basics.html#conditionals",
+    "href": "p1c2-programming-basics.html#conditionals",
+    "title": "5  Programming Basics",
+    "section": "5.7 Conditionals",
+    "text": "5.7 Conditionals"
+  },
+  {
+    "objectID": "p1c2-programming-basics.html#libraries",
+    "href": "p1c2-programming-basics.html#libraries",
+    "title": "5  Programming Basics",
+    "section": "5.8 Libraries",
+    "text": "5.8 Libraries"
+  },
+  {
+    "objectID": "p1c4-data-structures.html",
+    "href": "p1c4-data-structures.html",
+    "title": "7  Data Structures",
+    "section": "",
+    "text": "R and its libraries implement various statistical techniques, including linear, generalized linear and nonlinear modeling, classical statistical tests, spatial and time-series analysis, classification, clustering, and others. For computationally intensive tasks, C, C++, and Fortran code can be linked and called at run time. Another of R’s strengths is static graphics; it can produce publication-quality graphs that include mathematical symbols.[31]"
+  },
+  {
+    "objectID": "p0c2-what-is-data-analysis.html",
+    "href": "p0c2-what-is-data-analysis.html",
+    "title": "2  What is Data Analysis",
+    "section": "",
+    "text": "I mean my definition is data science is like data analysis by programming. Which of course begs the question of what data analysis is, and so I think of data analysis as really any activity where the input is data and the output is understanding or knowledge or insights. So I think of that pretty broadly. And then to do data science you’re not doing it by pointing and clicking. You’re doing it by writing some code in a programming language.  -Hadley Wickham (https://sds-platform-private.s3-us-east-2.amazonaws.com/uploads/PT337-Transcript.pdf)"
+  },
+  {
+    "objectID": "p1c2-programming-basics.html",
+    "href": "p1c2-programming-basics.html",
+    "title": "5  Programming Basics",
+    "section": "",
+    "text": "run selections rather than scripts\nWhen working in most programming languages, you will generally have the option to execute code one of two ways:\n\nin the console\nin a script\n\n\n\nThe first way to run code is directly in the console. If you’re working in R Studio, you will access the console through the “console” pane (usually located in the bottom left portion).\nPictured here.\nAlternatively, if you downloaded R to your personal computer, you will likely be able to search your machine for an app named “RGui” and access the console this way as well.\nPictured here.\nIf you wer\n\nprint(3+2)"
+  },
+  {
+    "objectID": "p1c2-programming-basics.html#comments",
+    "href": "p1c2-programming-basics.html#comments",
+    "title": "5  Programming Basics",
+    "section": "5.2 Comments",
+    "text": "5.2 Comments\n\n5.2.1 bulk, single, uncomment, best practices, print, view??"
   }
 ]

@@ -1,0 +1,11 @@
+# What is Data Analysis
+
+> I mean my definition is data science is like data
+analysis by programming. Which of course begs the
+question of what data analysis is, and so I think of
+data analysis as really any activity where the input is
+data and the output is understanding or knowledge or
+insights. So I think of that pretty broadly. And then to
+do data science you're not doing it by pointing and
+clicking. You're doing it by writing some code in a
+programming language. <br><br> -Hadley Wickham (https://sds-platform-private.s3-us-east-2.amazonaws.com/uploads/PT337-Transcript.pdf)
