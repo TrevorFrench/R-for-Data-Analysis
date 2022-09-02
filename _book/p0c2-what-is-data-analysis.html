@@ -15,6 +15,25 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -204,7 +223,14 @@ ul.task-list{list-style: none;}
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-process-of-data-analysis" id="toc-the-process-of-data-analysis" class="nav-link active" data-scroll-target="#the-process-of-data-analysis"> <span class="header-section-number">2.1</span> The Process of Data Analysis</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"> <span class="header-section-number">2.2</span> Resources</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -226,10 +252,34 @@ ul.task-list{list-style: none;}
 </header>
 
 <blockquote class="blockquote">
-<p>I mean my definition is data science is like data analysis by programming. Which of course begs the question of what data analysis is, and so I think of data analysis as really any activity where the input is data and the output is understanding or knowledge or insights. So I think of that pretty broadly. And then to do data science you’re not doing it by pointing and clicking. You’re doing it by writing some code in a programming language. <br><br> -Hadley Wickham (https://sds-platform-private.s3-us-east-2.amazonaws.com/uploads/PT337-Transcript.pdf)</p>
+<p>I mean my definition is data science is like data analysis by programming. Which of course begs the question of what data analysis is, and so I think of data analysis as really any activity where the input is data and the output is understanding or knowledge or insights. So I think of that pretty broadly. And then to do data science you’re not doing it by pointing and clicking. You’re doing it by writing some code in a programming language. <br><br> -Hadley Wickham <span class="citation" data-cites="wickham20">(<a href="references.html#ref-wickham20" role="doc-biblioref">Eremenko 2020</a>)</span></p>
 </blockquote>
+<p>Data analysis at it’s most simple form is the process of searching for meaning in data with the ultimate goal being to draw insight from that meaning.</p>
+<section id="the-process-of-data-analysis" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="the-process-of-data-analysis"><span class="header-section-number">2.1</span> The Process of Data Analysis</h2>
+<p>The process of data analysis can be generally described in six steps:</p>
+<ol type="1">
+<li><p><strong>Gathering Requirements</strong> - Before one embarks on an analysis, it’s important to make sure the requirements are understood. Requirements include the questions which your stakeholders are hoping to answer as well as the technical requirements of how you are going to perform your analysis.</p></li>
+<li><p><strong>Data Acquisition</strong> - As you might imagine, you must acquire your data before conducting an analysis. This may be done through the methods such as manual creation of datasets, importing pre-constructed data, or leveraging APIs.</p></li>
+<li><p><strong>Data Preparation</strong> - Most data will not be received in the precise format you need to begin your analysis. The process of data preparation is where you will structure and add features to your data.</p></li>
+<li><p><strong>Developing Insights</strong> - Once your data is prepared, you can now begin to make sense of your data and develop insights about it’s meaning.</p></li>
+<li><p><strong>Reporting</strong> - Finally, it’s important to report on your data in such a way that the information is able to be digested by the people who need to see it when they need to see it.</p></li>
+</ol>
+<p>Other sources may include additional steps such as “acting on the analysis”. While this is a critical step for organizations to capture the full value of their data, I would argue that it occurs outside of the <em>analysis</em> process.</p>
+<p>This book will focus on the technical skills required to conduct an analysis. Because of this, we will be covering steps two through five.</p>
+</section>
+<section id="resources" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="resources"><span class="header-section-number">2.2</span> Resources</h2>
+<p>Data Science &amp; Big Data Analytics: Discovering, Analyzing, Visualizing and Presenting Data <a href="https://onlinelibrary.wiley.com/doi/book/10.1002/9781119183686" class="uri">https://onlinelibrary.wiley.com/doi/book/10.1002/9781119183686</a></p>
+<p>Managing the Analytics Life Cycle for Decisions at Scale <a href="https://www.sas.com/content/dam/SAS/en_us/doc/whitepaper1/manage-analytical-life-cycle-continuous-innovation-106179.pdf" class="uri">https://www.sas.com/content/dam/SAS/en_us/doc/whitepaper1/manage-analytical-life-cycle-continuous-innovation-106179.pdf</a></p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-wickham20" class="csl-entry" role="doc-biblioentry">
+Eremenko, Kirill. 2020. <span>“Hadley Wickham Talks Integration and Future of r and Python [Audio Podcast].”</span> SuperDataScience. <a href="https://www.superdatascience.com/podcast/hadley-wickham-talks-integration-and-future-of-python-and-r">https://www.superdatascience.com/podcast/hadley-wickham-talks-integration-and-future-of-python-and-r</a>.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

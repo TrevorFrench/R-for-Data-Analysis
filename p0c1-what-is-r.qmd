@@ -1,11 +1,35 @@
 # What is R?
 
-> R was a programming language that was designed specifically for the needs of statistics and data analysis. <br><br> -Hadley Wickham
+> R was a programming language that was designed specifically for the needs of statistics and data analysis. <br><br> -Hadley Wickham [@wickham21]
 
 <!-- (https://www.se-radio.net/2021/03/episode-450-hadley-wickham-on-r-and-tidyverse/) -->
 
 R is a statistical programming language used commonly for data analysis amongst other disciplines. It was built by Ross Ihaka and Robert Gentleman at the University of Auckland and was first released in 1993.
 
-R is an open-source project and is supported by the R Foundation, a not-for-profit organization.
+## History
+
+Robert Gentleman and Ross Ihaka "both had
+an interest in statistical computing and saw a common
+need for a better software environment in [their] Macintosh teaching laboratory. [They] saw no suitable commercial environment and [they] began to experiment to see what might be involved in developing one [them]selves." [@ihaka98]
+
+While R was officially first released in 1993, it wasn't until 1995 that Ross Ihaka and Robert Gentlemann were convinced by  Martin Mächler to release the source code freely [@ihaka98]. 
+
+## Resources
 
 You can learn more about R at <https://www.r-project.org/>
+
+Read Ross Ihaka's account of R's origination here <https://www.stat.auckland.ac.nz/~ihaka/downloads/Interface98.pdf>
+
+"What is R?"" by Microsoft <https://mran.microsoft.com/documents/what-is-r>
+
+R manuals by the R Development Core Team <https://cran.r-project.org/manuals.html>
+
+R-bloggers <https://www.r-bloggers.com/>
+
+R User Groups <https://www.meetup.com/pro/r-user-groups/>
+
+R Studio Community <https://community.rstudio.com/>
+
+The R Journal <https://journal.r-project.org/>
+
+Microsoft R Application Network <https://mran.microsoft.com/>

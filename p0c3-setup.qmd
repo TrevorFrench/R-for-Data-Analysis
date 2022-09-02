@@ -8,31 +8,66 @@ Before you do anything, you'll need to download R. This download will allow your
 
 2. Select ‘download R’
 
-![](/images/setup/install-r-1.png)
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: install-r-1
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/setup/install-r-1.png", dpi = 270)
+```
 
 3. Choose any link but preferably the one closest to your physical location
 
-![](/images/setup/install-r-2.png)
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: install-r-2
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/setup/install-r-2.png", dpi = 270)
+```
 
 4. Choose your operating system
 
-![](/images/setup/install-r-3.png)
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: install-r-3
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/setup/install-r-3.png", dpi = 270)
+```
 
 5. Press ‘Install R for the first time’
 
-![](/images/setup/install-r-4.png)
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: install-r-4
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/setup/install-r-4.png", dpi = 270)
+```
 
 6. Press ‘download’
 
-![](/images/setup/install-r-5.png)
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: install-r-5
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/setup/install-r-5.png", dpi = 270)
+```
 
 7. Open installer
 
-![](/images/setup/install-r-6.png)
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: install-r-6
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/setup/install-r-6.png", dpi = 270)
+```
 
 8. Follow the prompts and leave all options set as their default values
 
-![](/images/setup/install-r-7.png)
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: install-r-7
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/setup/install-r-7.png", dpi = 270)
+```
 
 ## Install R Studio
 
@@ -42,15 +77,30 @@ After you install R, you'll need an environment to write and run your code in. M
 
 2. Press the ‘download’ button under RStudio Desktop
 
-![](/images/setup/install-rstudio-1.png)
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: install-rstudio-1
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/setup/install-rstudio-1.png", dpi = 270)
+```
 
 3. Choose the download option for your operating system
 
-![](/images/setup/install-rstudio-2.png)
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: install-rstudio-2
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/setup/install-rstudio-2.png", dpi = 270)
+```
 
 4. Open the installer and accept all defaults
 
-![](/images/setup/install-rstudio-3.png)
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: install-rstudio-3
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/setup/install-rstudio-3.png", dpi = 270)
+```
 
 ## Alternatives
 
