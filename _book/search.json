@@ -270,7 +270,7 @@
     "href": "p0c3-setup.html#alternatives",
     "title": "3  Setup",
     "section": "3.3 Alternatives",
-    "text": "3.3 Alternatives\n\n3.3.1 R Studio Cloud\n\n\n3.3.2 Replit\n\n\n3.3.3 Kaggle\n\n\n3.3.4 Deepnote\n\n\n3.3.5 Custom Text Editor"
+    "text": "3.3 Alternatives\n\n3.3.1 R Studio Cloud\nR Studio Cloud offers users a way to replicate the full R Studio experience without having to download or set anything up on your personal computer. You can sign up for a free account here: \n\n\n\n\n\n\n\n3.3.2 Replit\nReplit allows users to code in 50+ languages in the browser. While you won’t be able to follow along with the R Studio specific examples, you will be able to run R code. You can sign up for a free account here: \n\n\n\n\n\n\n\n3.3.3 Kaggle\nKaggle is one of the most popular sites for data analysts to compete in data competitions, find data, and discuss data topics. They also have a feature that allows you to write and run R (and Python) code. You can sign up for a free account here:"
   },
   {
     "objectID": "p1c1-r-studio.html#source",
@@ -284,21 +284,21 @@
     "href": "p1c1-r-studio.html#console",
     "title": "4  Getting Familiar with R Studio",
     "section": "4.3 Console",
-    "text": "4.3 Console"
+    "text": "4.3 Console\nThe console pane is the bottom left pane in R Studio. This pane has three tabs: “Console”, “Terminal”, and “Background Jobs”.\n\nThe “Console” tab is where you will be able to run R code directly without writing a script (this will be covered in the next chapter).\nThe “Terminal” tab is the same terminal you have on your computer. This can be adjusted in the global options.\nThe “Background Jobs” tab is where you can start and manage processes that need to run behind the scenes."
   },
   {
     "objectID": "p1c1-r-studio.html#environment",
     "href": "p1c1-r-studio.html#environment",
     "title": "4  Getting Familiar with R Studio",
     "section": "4.4 Environment",
-    "text": "4.4 Environment"
+    "text": "4.4 Environment\nThe environment pane is the top right pane in R Studio. This is where you will manage all things related to your development environment."
   },
   {
     "objectID": "p1c1-r-studio.html#files",
     "href": "p1c1-r-studio.html#files",
     "title": "4  Getting Familiar with R Studio",
     "section": "4.5 Files",
-    "text": "4.5 Files"
+    "text": "4.5 Files\nThe files pane is the bottom right pane in R Studio."
   },
   {
     "objectID": "p1c2-programming-basics.html#executing-code",
@@ -404,5 +404,26 @@
     "title": "2  What is Data Analysis",
     "section": "2.2 Resources",
     "text": "2.2 Resources\nData Science & Big Data Analytics: Discovering, Analyzing, Visualizing and Presenting Data https://onlinelibrary.wiley.com/doi/book/10.1002/9781119183686\nManaging the Analytics Life Cycle for Decisions at Scale https://www.sas.com/content/dam/SAS/en_us/doc/whitepaper1/manage-analytical-life-cycle-continuous-innovation-106179.pdf\n\n\n\n\nEremenko, Kirill. 2020. “Hadley Wickham Talks Integration and Future of r and Python [Audio Podcast].” SuperDataScience. https://www.superdatascience.com/podcast/hadley-wickham-talks-integration-and-future-of-python-and-r."
+  },
+  {
+    "objectID": "p1c1-r-studio.html",
+    "href": "p1c1-r-studio.html",
+    "title": "4  Getting Familiar with R Studio",
+    "section": "",
+    "text": "You are able to customize how your version of R Studio looks by following these steps:\n\nOpen R Studio and choose ‘tools’ from the toolbar\n\n\n\n\n\n\n\nChoose ‘Global Options’\n\n\n\n\n\n\n\nChoose ‘Appearance’ and select your favorite theme from the ‘Editor Theme’ section\n\n\n\n\n\n\n\nPress ‘Apply’\n\nThere are other customization options avaialable as well. Feel free to explore the “Global Options” section to make your version of R Studio your own."
+  },
+  {
+    "objectID": "p1c1-r-studio.html#source-pane",
+    "href": "p1c1-r-studio.html#source-pane",
+    "title": "4  Getting Familiar with R Studio",
+    "section": "4.2 Source Pane",
+    "text": "4.2 Source Pane\nThe source pane is the top left pane in R Studio. This is where you will write and edit your code.\n\n\n\n\n\nIf you don’t see the source pane, you may need to create a new R Script by pressing “Ctrl + Shift + N” (“Cmd + Shift + N” on Mac) or by selecting “R Script” from the “New File” dropdown in the top left corner.\n\n\n\n\n\nEach element of the source pane is outlined below.\n\n\n\n\n\n\nShow in New Window- This allows you to pop the source pane into a new window by itself.\nSave Current Document- This saves the file contained in the tab you currently have active.\nSource on Save- Automatically sources your file every time you hit save. “Sourcing” is similar to “Running” in the sense that both will execute your code; however, sourcing will execute your saved file rather than sticking lines of code into the console.\nFind/Replace- this feature allows you to find and replace specified text, similar to find and replace features in other tools such as Excel.\nCode Tools- This brings up a menu of options which help you to code more efficiently. Some of these tools include formatting your code and help with function definitions.\nCompile Report- This allows you to compile a report directly from an R script without needing to use additional frameworks such as R Markdown.\nRun Current Selection- This allows you to highlight a portion of your code and run only that portion.\nRe-run Previous Code Region- This option will execute the last section of code that you ran.\nGo to Previous/Next Section/Chunk- These up and down arrows allow you to navigate through sections of your code without needing to scroll.\nSource Contents- This option will save your active document if it isn’t already saved and then source the file.\nOutline- Pressing this option will pop open an outline of your current file.\nAdjust Frame Size- These two options will adjust the size of the source pane inside of R Studio.\nSyntax Highlighting- This allows you to adjust the syntax highlighting of your active document to match the highlighting of other file types.\n“Jump To” Menu- This menu allows you to quickly jump to different sections of your code.\nCursor Position- This displays your current cursor position by row and column.\nRow Numbers- The lef-thand side of your document will display the row number for each line of your code.\nBack/Forward- These arrows are navigation tools that will allow you to redo/undo the following actions: opening a document (or switching tabs), going to a function definition, jumping to a line, and jumping to a function using the function menu (Paulson 2022).\nTab- This is a tab in the traditional sense, meaning you are able to have a collection of documents open displayed as tabs. These tabs will have the title of your document and often an icon of some sort to demonstrate the file type."
+  },
+  {
+    "objectID": "p1c1-r-studio.html#resources",
+    "href": "p1c1-r-studio.html#resources",
+    "title": "4  Getting Familiar with R Studio",
+    "section": "4.6 Resources",
+    "text": "4.6 Resources\nThis is where the difference between sourcing and running is.\nhttps://support.rstudio.com/hc/en-us/articles/200484448-Editing-and-Executing-Code\nhttps://support.rstudio.com/hc/en-us/articles/200484568-Code-Folding-and-Sections-in-the-RStudio-IDE\n()[https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE]\nBack and forward\nhttps://support.rstudio.com/hc/en-us/articles/200710523-Navigating-Code-in-the-RStudio-IDE\n\n\n\n\nPaulson, Josh. 2022. Navigating Code in the RStudio IDE. https://support.rstudio.com/hc/en-us/articles/200710523-Navigating-Code-in-the-RStudio-IDE."
   }
 ]

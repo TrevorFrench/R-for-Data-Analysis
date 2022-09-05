@@ -106,10 +106,33 @@ knitr::include_graphics("images/setup/install-rstudio-3.png", dpi = 270)
 
 ### R Studio Cloud
 
+R Studio Cloud offers users a way to replicate the full R Studio experience without having to download or set anything up on your personal computer. You can sign up for a free account here: [](https://rstudio.cloud/)
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: r-studio-cloud-1
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/setup/r-studio-cloud-1.png", dpi = 270)
+```
+
 ### Replit
+
+Replit allows users to code in 50+ languages in the browser. While you won't be able to follow along with the R Studio specific examples, you will be able to run R code. You can sign up for a free account here: [](https://replit.com/)
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: replit-1
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/setup/replit-1.png", dpi = 270)
+```
 
 ### Kaggle
 
-### Deepnote
+Kaggle is one of the most popular sites for data analysts to compete in data competitions, find data, and discuss data topics. They also have a feature that allows you to write and run R (and Python) code. You can sign up for a free account here: [](https://www.kaggle.com/)
 
-### Custom Text Editor
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: kaggle-1
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/setup/kaggle-1.png", dpi = 270)
+```

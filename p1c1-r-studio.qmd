@@ -2,10 +2,136 @@
 
 ## Customization
 
-## Source
+You are able to customize how your version of R Studio looks by following these steps:
+
+1. Open R Studio and choose ‘tools’ from the toolbar
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: customize-r-studio-1
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/customize-r-studio/customize-r-studio-1.png", dpi = 270)
+```
+
+2. Choose ‘Global Options’
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 50%;'"}
+#| label: customize-r-studio-2
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/customize-r-studio/customize-r-studio-2.png", dpi = 270)
+```
+
+3. Choose ‘Appearance’ and select your favorite theme from the ‘Editor Theme’ section
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: customize-r-studio-3
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/customize-r-studio/customize-r-studio-3.png", dpi = 270)
+```
+
+4. Press ‘Apply’
+
+There are other customization options avaialable as well. Feel free to explore the "Global Options" section to make your version of R Studio your own.
+
+## Source Pane
+
+The source pane is the top left pane in R Studio. This is where you will write and edit your code.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: source-pane-1
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/r-studio/source-pane-1.png", dpi = 270)
+```
+
+If you don't see the source pane, you may need to create a new R Script by pressing “Ctrl + Shift + N” ("Cmd + Shift + N" on Mac) or by selecting “R Script” from the “New File” dropdown in the top left corner.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: source-pane-2
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/r-studio/source-pane-2.png", dpi = 270)
+```
+
+Each element of the source pane is outlined below.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 90%;'"}
+#| label: source-pane-3
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/r-studio/source-pane-3.png", dpi = 270)
+```
+
+a. Show in New Window- This allows you to pop the source pane into a new window by itself.
+b. Save Current Document- This saves the file contained in the tab you currently have active.
+c. Source on Save- Automatically sources your file every time you hit save. "Sourcing" is similar to "Running" in the sense that both will execute your code; however, sourcing will execute your saved file rather than sticking lines of code into the console.
+d. Find/Replace- this feature allows you to find and replace specified text, similar to find and replace features in other tools such as Excel.
+e. Code Tools- This brings up a menu of options which help you to code more efficiently. Some of these tools include formatting your code and help with function definitions.
+f. Compile Report- This allows you to compile a report directly from an R script without needing to use additional frameworks such as R Markdown.
+g. Run Current Selection- This allows you to highlight a portion of your code and run only that portion.
+h. Re-run Previous Code Region- This option will execute the last section of code that you ran.
+i. Go to Previous/Next Section/Chunk- These up and down arrows allow you to navigate through sections of your code without needing to scroll.
+j. Source Contents- This option will save your active document if it isn't already saved and then source the file.
+k. Outline- Pressing this option will pop open an outline of your current file.
+l. Adjust Frame Size- These two options will adjust the size of the source pane inside of R Studio.
+m. Syntax Highlighting- This allows you to adjust the syntax highlighting of your active document to match the highlighting of other file types.
+n. "Jump To" Menu- This menu allows you to quickly jump to different sections of your code.
+o. Cursor Position- This displays your current cursor position by row and column.
+p. Row Numbers- The lef-thand side of your document will display the row number for each line of your code.
+q. Back/Forward- These arrows are navigation tools that will allow you to redo/undo the following actions: opening a document (or switching tabs), going to a function definition, jumping to a line, and jumping to a function using the function menu [@paulson22].
+r. Tab- This is a tab in the traditional sense, meaning you are able to have a collection of documents open displayed as tabs. These tabs will have the title of your document and often an icon of some sort to demonstrate the file type.
 
 ## Console
 
+The console pane is the bottom left pane in R Studio. This pane has three tabs: "Console", "Terminal", and "Background Jobs".
+
+- The "Console" tab is where you will be able to run R code directly without writing a script (this will be covered in the next chapter).
+
+- The "Terminal" tab is the same terminal you have on your computer. This can be adjusted in the global options.
+
+- The "Background Jobs" tab is where you can start and manage processes that need to run behind the scenes.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: console-pane-1
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/r-studio/console-pane-1.png", dpi = 270)
+```
+
 ## Environment
 
+The environment pane is the top right pane in R Studio. This is where you will manage all things related to your development environment.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: env-pane-1
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/r-studio/env-pane-1.png", dpi = 270)
+```
+
 ## Files
+
+The files pane is the bottom right pane in R Studio.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: files-pane-1
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/r-studio/files-pane-1.png", dpi = 270)
+```
+
+## Resources
+
+This is where the difference between sourcing and running is.
+
+https://support.rstudio.com/hc/en-us/articles/200484448-Editing-and-Executing-Code
+
+https://support.rstudio.com/hc/en-us/articles/200484568-Code-Folding-and-Sections-in-the-RStudio-IDE
+
+()[https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE]
+
+Back and forward
+
+https://support.rstudio.com/hc/en-us/articles/200710523-Navigating-Code-in-the-RStudio-IDE
