@@ -318,11 +318,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <section id="console" class="level3" data-number="5.1.1">
 <h3 data-number="5.1.1" class="anchored" data-anchor-id="console"><span class="header-section-number">5.1.1</span> Console</h3>
-<p>The first way to run code is directly in the console. If you’re working in R Studio, you will access the console through the “console” pane (usually located in the bottom left portion).</p>
-<p>Pictured here.</p>
+<p>The first way to run code is directly in the console. If you’re working in R Studio, you will access the console through the “console” pane.</p>
 <p>Alternatively, if you downloaded R to your personal computer, you will likely be able to search your machine for an app named “RGui” and access the console this way as well.</p>
-<p>Pictured here.</p>
-<p>In the following example, the text ‘print(3+2)’ is typed into the console. The user then presses enter and sees the result: “[1] 5”.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/programming-basics/RGui.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<p>In the following example, the text “print(3+2)”” is typed into the console. The user then presses enter and sees the result: “[1] 5”.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="dv">3</span><span class="sc">+</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -335,16 +338,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 data-number="5.1.2" class="anchored" data-anchor-id="script"><span class="header-section-number">5.1.2</span> Script</h3>
 <p>You likely will be using scripts most of the time when working in R. A script is just a file that allows you to type out longer sequences of code and execute them all at once.</p>
 <p>For those of you following along in R Studio, you can create a script by pressing “Ctrl + Shift + N” on Windows or by selecting “R Script” from the “New File” dropdown in the top left corner.</p>
-<p>Pictured Here.</p>
-<p>From here you can type the same command from before into the source pane.</p>
-<p>Pictured Here.</p>
-<p>Now you’ll want to save your file by pressing “Ctrl + S” on Windows or by selecting “Save” from the “File” dropdown in the top left corner. Now just give your file a name and your file will automatically be saved as a “.R” file.</p>
-<p>Pictured Here.</p>
-<p>Finally, select all of your code by pressing</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/r-studio/source-pane-2.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<p>From here you can type the same command from before into the source pane. Next, you’ll want to save your file by pressing “Ctrl + S” on Windows or by selecting “Save” from the “File” dropdown in the top left corner. Now just give your file a name and your file will automatically be saved as a “.R” file.</p>
+<p>Finally, run your newly created R script by pressing the “source” button.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/programming-basics/script-1.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
 </section>
 </section>
 <section id="comments" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="comments"><span class="header-section-number">5.2</span> Comments</h2>
+<p>Comments are present in most (if not all) programming languages. They allow the user to write text in their code that isn’t executed or read by computers. Comments can serve many purposes such as notes, instructions, or formatting.</p>
+<p>Comments are created in R by using the “#” symbol. Here’s an example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a comment</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="dv">3</span><span class="sc">+</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
+<p>Some programming languages allow you a “bulk-comment” feature which allows you to quickly comment out multiple consecutive lines of text. However, in R, there is no such option. Each line must begin with a “#” symbol, as such:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is the first line of a comment</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is the second line of a comment</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="dv">3</span><span class="sc">+</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
+<p>Comments don’t have to start at the beginning of a line. YOu are able to start comments anywhere on a line like in this example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="dv">3</span><span class="sc">+</span><span class="dv">2</span>) <span class="co"># This comment starts mid-line</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
 <section id="bulk-single-uncomment-best-practices-print-view" class="level3" data-number="5.2.1">
 <h3 data-number="5.2.1" class="anchored" data-anchor-id="bulk-single-uncomment-best-practices-print-view"><span class="header-section-number">5.2.1</span> bulk, single, uncomment, best practices, print, view??</h3>
 </section>
