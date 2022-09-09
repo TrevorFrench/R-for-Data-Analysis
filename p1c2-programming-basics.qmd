@@ -73,7 +73,7 @@ Some programming languages allow you a "bulk-comment" feature which allows you t
 print(3+2)
 ```
 
-Comments don't have to start at the beginning of a line. YOu are able to start comments anywhere on a line like in this example:
+Comments don't have to start at the beginning of a line. You are able to start comments anywhere on a line like in this example:
 
 ```{r}
 print(3+2) # This comment starts mid-line
@@ -83,12 +83,171 @@ print(3+2) # This comment starts mid-line
 
 ## Variables
 
+Variables are used in programming to give values to a symbol. In the following example we have a variable named "rate" which is equal to 15, a variable named "hours" which is equal to 4, and a variable named "total_cost" which is equal to rate * hours.
+
+```{r}
+rate <- 15
+hours <- 4
+total_cost <- rate * hours
+print(total_cost)
+```
+
 ## Operators
+
+The following image demonstrates the operators that are available to you in R.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: operators-1
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/programming-basics/operators-1.png", dpi = 270)
+```
 
 ## Functions
 
+Functions allow you to execute a predefined set of commands with just one command. The syntax of functions in R is as follows.
+
+```{r}
+# Create a function called function_name
+function_name <- function() {
+  print("Hello World!")
+}
+
+# Call your newly created function
+function_name()
+```
+
+To go one step further, you can also add "arguments" to a function. Arguments allow you to pass information into the function when it is called. Here's an example:
+
+```{r}
+# Create a function called add_numbers which will add 
+# two specified numbers together and print the result
+add_numbers <- function(x, y) {
+    print(x + y)
+}
+
+# Call your newly created function twice with different inputs
+add_numbers(2, 3)
+add_numbers(50, 50)
+```
+
+Finally, you can return a value from a function as such:
+
+```{r}
+# Create a function called calculate_raise which multiplies 
+# base_salary and annual_adjustment and returns the result
+calculate_raise <- function(base_salary, annual_adjustment) {
+    raise <- base_salary * annual_adjustment
+    return(raise)
+}
+
+# Calculate John's raise
+johns_raise <- calculate_raise(90000, .05)
+
+#Calculate Jane's raise
+janes_raise <- calculate_raise(100000, .045)
+
+print("John's Raise:")
+print(johns_raise)
+print("Jane's Raise:")
+print(janes_raise)
+```
 ## Loops
+
+There are two types of loops in R: while loops and for loops.
+
+### While Loops
+
+While loops are executed as follows:
+
+```{r}
+# Set i equal to 1
+i <- 1
+
+# While i is less than or equal to three, print i
+# The loop will increment the value of i after each print
+while (i <= 3) {
+  print(i)
+  i <- i + 1
+}
+```
+
+Additionally, you can add 'break' statements to while loops to stop the loop early.
+
+```{r}
+i <- 1
+
+while (i <= 10) {
+    print(i)
+    if (i == 5) {
+        print("Stopping halfway")
+        break
+    }
+    i <- i + 1
+}
+```
+### For Loops
+
+For loops are executed as follows:
+
+```{r}
+employees <- list("jane", "john")
+
+for (employee in employees) {
+  print(employee)
+}
+```
 
 ## Conditionals
 
+You are also able to execute a command if a condition is met by using "if" statements.
+
+```{r}
+if (2 > 0) {
+    print("true")
+}
+```
+
+You can add more conditions by adding "else if" statements.
+
+```{r}
+if (2 > 3) {
+    print("two is greater than three")
+} else if (2 < 3) {
+    print("two is not greater than three")
+}
+```
+
+Finally, you can catch anything that doesn't meet any of your conditions by adding an "else" statement at the end.
+
+```{r}
+x <- 20
+if (x < 20) {
+    print("x is less than 20")
+} else if (x > 20) {
+    print("x is greater than 20")
+} else {
+    print("x is equal to 20")
+}
+```
 ## Libraries
+
+Libraries allow you to access functions other people have created to perform common tasks.
+
+In this example, we will be installing and loading a common package named "dplyr".
+
+You first need to install it using the following command. 
+
+```{r}
+#| eval: false
+install.packages("dplyr")
+```
+
+Next, you will require the package by using this command.
+
+```{r}
+#| eval: false
+library(dplyr)
+```
+
+You are now able to access all of the functions available in the dplyr library!
