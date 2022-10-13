@@ -2,13 +2,65 @@
 
 There are six basic data structures in R
 
-- Vectors
-- Lists
-- Matrices
-- Factors
-- Data Frames
-- Arrays (Array with two dimensions is a matrix)
+- **Vectors** - Vectors contain of data which is ordered and of the same type.
+- **Lists** - Lists are a collection of objects.
+- **Matrices** - A matrix is a two-dimensional array where the data is all of the same type.
+- **Factors** - Factors are used to designate levels within categorical data.
+- **Data Frames** - A data frame contains two-dimensional data where the data can have different types.
+- **Arrays** - Arrays are objects which have more than two dimensions (n-dimensional).
 
-R's data structures include vectors, arrays, lists, and data frames.[26] Vectors are ordered collections of values and can be mapped to arrays of one or more dimensions in a column major order. That is, given an ordered collection of dimensions, one fills in values along the first dimension first, then fill in one-dimensional arrays across the second dimension, and so on.[27] R supports array arithmetics and in this regard is like languages such as APL and MATLAB.[26][28] The special case of an array with two dimensions is called a matrix. Lists serve as collections of objects that do not necessarily have the same data type. Data frames contain a list of vectors of the same length, plus a unique set of row names.[26] R has no scalar data type.[29] Instead, a scalar is represented as a length-one vector.[30]
+## Vectors
+```{r}
+x <- c(1, 3, 3, 7)
 
-R and its libraries implement various statistical techniques, including linear, generalized linear and nonlinear modeling, classical statistical tests, spatial and time-series analysis, classification, clustering, and others. For computationally intensive tasks, C, C++, and Fortran code can be linked and called at run time. Another of R's strengths is static graphics; it can produce publication-quality graphs that include mathematical symbols.[31]
+print(x)
+```
+
+## Lists
+```{r}
+first_name <- "John"
+last_name <- "Smith"
+favorite_numbers <- c(1, 3, 3, 7)
+
+person <- list(first_name, last_name, favorite_numbers)
+
+print(person)
+```
+
+## Matrices
+```{r}
+x <- matrix(
+        c(1,3,3,7,1,3,3,7,1,3,3,7)
+        , nrow = 3
+        , ncol = 4
+        , byrow = TRUE)
+
+print(x)
+```
+
+## Factors
+```{r}
+x <- c("Red", "Blue", "Red", "Yellow", "Yellow")
+
+colors <- factor(x)
+
+print(colors)
+```
+
+## Data Frames
+```{r}
+people <- c("John", "Jane")
+id <- c(1, 2)
+df <- data.frame(id = id, person = people)
+
+print(df)
+```
+
+## Arrays
+```{r}
+x <- array(
+        c(1,3,3,7,1,3,3,7,1,3,3,7)
+        , dim = c(1,4,3))
+
+print(x)
+```
