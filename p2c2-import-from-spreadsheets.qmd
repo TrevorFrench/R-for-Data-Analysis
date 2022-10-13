@@ -1,0 +1,18 @@
+# Import from Spreadsheets
+
+## Import from .csv Files
+
+```{r}
+#| eval: false
+input <- "C:/File Location/example.csv"
+df <- read.csv(input)
+```
+
+## Import from .xlsx Files
+
+```{r}
+#| eval: false
+library(readxl)
+input <- "C:/File Location/example.xlsx"
+df <- read_excel(input)
+```

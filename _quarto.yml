@@ -18,6 +18,10 @@ book:
         - p1c3-data-types.qmd
         - p1c4-data-structures.qmd
     - part: p2-data-acquisition.qmd
+      chapters:
+        - p2c1-included-datasets.qmd
+        - p2c2-import-from-spreadsheets.qmd
+        - p2c3-working-with-apis.qmd
     - part: p3-data-preparation.qmd
       chapters: 
         - working-with-csvs.qmd

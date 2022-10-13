@@ -1,0 +1,17 @@
+# Included Datasets
+
+```{r}
+data()
+```
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 90%;'"}
+#| label: console-pane-1
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/data-acquisition/data.png", dpi = 270)
+```
+
+```{r}
+data("iris")
+head(iris)
+```

@@ -1,0 +1,127 @@
+# Working with APIs
+
+## Install Packages
+
+``` r
+install.packages(c('httr', 'jsonlite'))
+```
+
+## Require Packages
+
+```{r}
+library('httr')
+library('jsonlite')
+```
+
+## Make Request
+
+Pass a URL into the 'GET' function and store the response in a variable called 'res'.
+
+```{r}
+#| eval: false
+res = GET("https://api.helium.io/v1/stats")
+print(res)
+```
+
+```{md}
+Response [https://api.helium.io/v1/stats]
+  Date: 2022-08-04 01:25
+  Status: 200
+  Content-Type: application/json; charset=utf-8
+  Size: 922 B
+```
+
+## Parse & Explore Data
+
+Use the 'fromJSON' function from the 'jsonlite' package to parse the response data and then print out the names in the resulting data set.
+
+```{r}
+#| eval: false
+data = fromJSON(rawToChar(res$content))
+
+names(data)
+```
+
+```{md}
+[1] "data"
+```
+
+Go one level deeper into the data set and print out the names again.
+
+```{r}
+#| eval: false
+data = data$data
+
+names(data)
+```
+
+```{md}
+[1] "token_supply"     "election_times"   "counts"           "challenge_counts" "block_times"
+```
+
+Alternatively, you can loop through the names as follows.
+
+```{r}
+#| eval: false
+for (name in names(data)){print(name)}
+```
+
+```{md}
+[1] "token_supply"
+[1] "election_times"
+[1] "counts"
+[1] "challenge_counts"
+[1] "block_times"
+```
+
+Get the 'token_supply' field from the data.
+
+```{r}
+#| eval: false
+token_supply = data$token_supply
+
+print(token_supply)
+```
+
+```{md}
+[1] 124675821
+```
+
+## Adding Parameters to Requests
+
+Add 'min_time' and 'max_time' as parameters on a different endpoint and print the resulting 'fee' data.
+
+```{r}
+#| eval: false
+res = GET("https://api.helium.io/v1/dc_burns/sum",
+    query = list(min_time = "2020-07-27T00:00:00Z"
+                 , max_time = "2021-07-27T00:00:00Z"))
+
+data = fromJSON(rawToChar(res$content))
+fee = data$data$fee
+print(fee)
+```
+
+```{md}
+[1] 10112755000
+```
+
+## Adding Headers to Requests
+
+Execute the same query as above except this time specify headers. This will likely be necessary when working with an API which requires an API Key.
+
+```{r}
+#| eval: false
+res = GET("https://api.helium.io/v1/dc_burns/sum",
+    query = list(min_time = "2020-07-27T00:00:00Z"
+                 , max_time = "2021-07-27T00:00:00Z"),
+    add_headers(`Accept`='application/json', `Connection`='keep-live'))
+
+data = fromJSON(rawToChar(res$content))
+fee = data$data$fee
+print(fee)
+```
+
+```{md}
+[1] 10112755000
+```
