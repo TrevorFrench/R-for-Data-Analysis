@@ -1,1 +1,65 @@
 # Data Types
+There are five basic data types in R:
+
+- **Numeric** - This is the default treatment for numbers. This data type includes integers and doubles.
+    - *Double* - A double allows you to store numbers as decimals. This is the default treatment for numbers.
+    - *Integer* - An integer is a subset of the numeric data type. This type will only allow whole numbers and is denoted by the letter "L".
+- **Complex** - This type is created by using the imaginary variable "i".
+- **Character** - This type is used for storing non-numeric text data.
+- **Logical** - Sometimes referred to as "boolean", this data type will store either "TRUE" or "FALSE".
+- **Raw** - Used less often, this data type will store data as raw bytes.
+
+## Numeric
+### Double
+```{r}
+x <- 6.2
+class(x)
+typeof(x)
+is.numeric(x)
+is.integer(x)
+is.double(x)
+```
+### Integer
+```{r}
+x <- 6L
+class(x)
+typeof(x)
+is.numeric(x)
+is.integer(x)
+is.double(x)
+```
+## Complex
+```{r}
+x <- 6i
+class(x)
+typeof(x)
+is.numeric(x)
+is.integer(x)
+is.double(x)
+```
+## Character
+```{r}
+x <- "Hello!"
+class(x)
+typeof(x)
+```
+## Logical
+```{r}
+x <- TRUE
+class(x)
+typeof(x)
+```
+
+## Raw
+```{r}
+x <- charToRaw("Hello!")
+print(x)
+class(x)
+typeof(x)
+
+x <- intToBits(6L)
+typeof(x)
+print(x)
+class(x)
+typeof(x)
+```

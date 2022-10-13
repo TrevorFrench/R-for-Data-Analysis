@@ -2,8 +2,6 @@
 
 ## Executing Code
 
-run selections rather than scripts
-
 When working in most programming languages, you will generally have the option to execute code one of two ways:
 
 - in the console
@@ -78,8 +76,6 @@ Comments don't have to start at the beginning of a line. You are able to start c
 ```{r}
 print(3+2) # This comment starts mid-line
 ```
-
-### bulk, single, uncomment, best practices, print, view??
 
 ## Variables
 
