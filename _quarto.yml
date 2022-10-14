@@ -24,14 +24,20 @@ book:
         - p2c3-working-with-apis.qmd
     - part: p3-data-preparation.qmd
       chapters: 
-        - working-with-csvs.qmd
-        - working-with-excel.qmd
-        - working-with-dataframes.qmd
+        - p3c1-data-cleaning.qmd
+        - p3c2-handling-missing-data.qmd
+        - p3c3-outliers.qmd
     - part: p4-developing-insights.qmd
-      chapters: 
-        - plotting.qmd
-        - summary-statistics.qmd
+      chapters:
+        - p4c1-summary-statistics.qmd
+        - p4c2-regression.qmd
+        - p4c3-plotting.qmd
     - part: p5-reporting.qmd
+      chapters: 
+        - p5c1-export-to-spreadsheets.qmd
+        - p5c2-formatting.qmd
+        - p5c3-r-markdown.qmd
+        - p5c4-r-shiny.qmd
     - references.qmd
 
 bibliography: references.bib

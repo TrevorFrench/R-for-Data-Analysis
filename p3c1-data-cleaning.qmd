@@ -1,0 +1,11 @@
+# Data Cleaning
+
+## Renaming Variables
+
+## Text to Columns
+
+## Replace Values
+
+## Drop Columns
+
+## Drop Rows

@@ -1,5 +1,7 @@
 # Included Datasets
 
+R comes with an assortment of datasets included by default. You can view a complete list of datsets available along with a brief description for each one by typing "data()" into your console.
+
 ```{r}
 data()
 ```
