@@ -92,6 +92,12 @@ print(total_cost)
 
 The following image demonstrates the operators that are available to you in R.
 
+***
+
+EXPLAIN ALL OF THE OPERATORS HERE (NOT JUST THE IMAGE AS AN EXPLANATION)
+
+***
+
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
 #| label: operators-1
 #| echo: false

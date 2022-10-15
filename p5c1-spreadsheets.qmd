@@ -1,0 +1,9 @@
+# Spreadsheets
+
+## Export
+-csvs and xlsx
+## Formatting
+- colors
+- tabs
+- font
+- etc

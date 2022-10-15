@@ -1,6 +1,4 @@
 # Introduction
-install-r-5 is duplicated
-need better images
 
 > "There is synthesis when, in combining therein judgments that are made known to us from simpler relations, one deduces judgments from them relative to more complicated relations. There is analysis when from a complicated truth one deduces more simple truths."  <br><br> -André-Marie Ampère [@Hofmann96]
 

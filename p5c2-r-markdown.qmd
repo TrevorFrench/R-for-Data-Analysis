@@ -1,0 +1,9 @@
+# R Markdown
+
+R Markdown allows you to create documents in a programmatic fashion that lends itself towards reproducibility.
+
+## Including Plots
+
+- Formats: https://rmarkdown.rstudio.com/formats.html
+
+- Resource: https://rmarkdown.rstudio.com/

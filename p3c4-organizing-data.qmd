@@ -1,0 +1,7 @@
+# Organizing Data
+
+## Sorting
+
+## Filtering
+
+## Grouping

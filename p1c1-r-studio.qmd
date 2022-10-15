@@ -64,24 +64,24 @@ Each element of the source pane is outlined below.
 knitr::include_graphics("images/r-studio/source-pane-3.png", dpi = 270)
 ```
 
-a. Show in New Window- This allows you to pop the source pane into a new window by itself.
-b. Save Current Document- This saves the file contained in the tab you currently have active.
-c. Source on Save- Automatically sources your file every time you hit save. "Sourcing" is similar to "Running" in the sense that both will execute your code; however, sourcing will execute your saved file rather than sticking lines of code into the console.
-d. Find/Replace- this feature allows you to find and replace specified text, similar to find and replace features in other tools such as Excel.
-e. Code Tools- This brings up a menu of options which help you to code more efficiently. Some of these tools include formatting your code and help with function definitions.
-f. Compile Report- This allows you to compile a report directly from an R script without needing to use additional frameworks such as R Markdown.
-g. Run Current Selection- This allows you to highlight a portion of your code and run only that portion.
-h. Re-run Previous Code Region- This option will execute the last section of code that you ran.
-i. Go to Previous/Next Section/Chunk- These up and down arrows allow you to navigate through sections of your code without needing to scroll.
-j. Source Contents- This option will save your active document if it isn't already saved and then source the file.
+a. **Show in New Window**- This allows you to pop the source pane into a new window by itself.
+b. **Save Current Document**- This saves the file contained in the tab you currently have active.
+c. **Source on Save**- Automatically sources your file every time you hit save. "Sourcing" is similar to "Running" in the sense that both will execute your code; however, sourcing will execute your saved file rather than sticking lines of code into the console.
+d. **Find/Replace**- this feature allows you to find and replace specified text, similar to find and replace features in other tools such as Excel.
+e. **Code Tools**- This brings up a menu of options which help you to code more efficiently. Some of these tools include formatting your code and help with function definitions.
+f. **Compile Report**- This allows you to compile a report directly from an R script without needing to use additional frameworks such as R Markdown.
+g. **Run Current Selection**- This allows you to highlight a portion of your code and run only that portion.
+h. **Re-run Previous Code Region**- This option will execute the last section of code that you ran.
+i. **Go to Previous/Next Section/Chunk**- These up and down arrows allow you to navigate through sections of your code without needing to scroll.
+j. **Source Contents**- This option will save your active document if it isn't already saved and then source the file.
 k. Outline- Pressing this option will pop open an outline of your current file.
-l. Adjust Frame Size- These two options will adjust the size of the source pane inside of R Studio.
-m. Syntax Highlighting- This allows you to adjust the syntax highlighting of your active document to match the highlighting of other file types.
-n. "Jump To" Menu- This menu allows you to quickly jump to different sections of your code.
-o. Cursor Position- This displays your current cursor position by row and column.
-p. Row Numbers- The lef-thand side of your document will display the row number for each line of your code.
-q. Back/Forward- These arrows are navigation tools that will allow you to redo/undo the following actions: opening a document (or switching tabs), going to a function definition, jumping to a line, and jumping to a function using the function menu [@paulson22].
-r. Tab- This is a tab in the traditional sense, meaning you are able to have a collection of documents open displayed as tabs. These tabs will have the title of your document and often an icon of some sort to demonstrate the file type.
+l. **Adjust Frame Size**- These two options will adjust the size of the source pane inside of R Studio.
+m. **Syntax Highlighting**- This allows you to adjust the syntax highlighting of your active document to match the highlighting of other file types.
+n. **"Jump To" Menu**- This menu allows you to quickly jump to different sections of your code.
+o. **Cursor Position**- This displays your current cursor position by row and column.
+p. **Row Numbers**- The lef-thand side of your document will display the row number for each line of your code.
+q. **Back/Forward**- These arrows are navigation tools that will allow you to redo/undo the following actions: opening a document (or switching tabs), going to a function definition, jumping to a line, and jumping to a function using the function menu [@paulson22].
+r. **Tab**- This is a tab in the traditional sense, meaning you are able to have a collection of documents open displayed as tabs. These tabs will have the title of your document and often an icon of some sort to demonstrate the file type.
 
 ## Console
 

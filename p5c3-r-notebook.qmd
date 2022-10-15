@@ -1,0 +1,6 @@
+# R Notebook
+
+Some more technical audiences may require reporting which includes your methodology. This is where R Notebooks come in.
+
+- Subset of R Markdown
+- Resource: https://rmarkdown.rstudio.com/lesson-10.html

@@ -1,1 +1,11 @@
 # Part II: Data Acquisition
+
+As you might imagine, you must acquire your data before conducting an analysis. This may be done through the methods such as manual creation of datasets, importing pre-constructed data, or leveraging APIs.
+
+1.2 Structure of the Book
+Part I (Fundamentals) will introduce you to the basics of programming in the context of R.
+Part II (Data Acquisition) will teach you how to create, import, and access data.
+Part III (Data Preparation) will show you how to begin preparing your data for analysis.
+Part IV (Developing Insights) goes through the process of searching for and extracting insights from your data.
+Part V (Reporting) demonstrates how to wrap your analysis up by developing and automating reports.
+Each part will be concluded with practical exercises for you to test your skills.

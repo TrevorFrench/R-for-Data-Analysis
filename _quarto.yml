@@ -5,6 +5,13 @@ book:
   title: "R for Data Analysis"
   author: "Trevor French"
   date: "8/16/2022"
+  repo-url: https://github.com/TrevorFrench/R-for-Data-Analysis
+  repo-actions: [edit]
+  downloads: [pdf, epub]
+  sharing: [twitter, facebook]
+  open-graph: true
+  twitter-card: 
+    site: "@TrvrFrnch"
   chapters:
     - part: index.qmd
       chapters:
@@ -27,6 +34,7 @@ book:
         - p3c1-data-cleaning.qmd
         - p3c2-handling-missing-data.qmd
         - p3c3-outliers.qmd
+        - p3c4-organizing-data.qmd
     - part: p4-developing-insights.qmd
       chapters:
         - p4c1-summary-statistics.qmd
@@ -34,13 +42,16 @@ book:
         - p4c3-plotting.qmd
     - part: p5-reporting.qmd
       chapters: 
-        - p5c1-export-to-spreadsheets.qmd
-        - p5c2-formatting.qmd
-        - p5c3-r-markdown.qmd
+        - p5c1-spreadsheets.qmd
+        - p5c2-r-markdown.qmd
+        - p5c3-r-notebook.qmd
         - p5c4-r-shiny.qmd
     - references.qmd
 
 bibliography: references.bib
+
+comments:
+  hypothesis: true
 
 format:
   html:

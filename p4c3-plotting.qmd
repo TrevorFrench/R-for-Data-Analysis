@@ -1,1 +1,11 @@
 # Plotting
+
+## Base R
+
+### Different types of plots?
+
+## ggplot2
+
+### Different types of plots?
+
+- Resource: https://ggplot2.tidyverse.org/

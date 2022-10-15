@@ -1,1 +1,11 @@
 # Part IV: Developing Insights
+
+Once your data is prepared, you can now begin to make sense of your data and develop insights about it’s meaning.
+
+1.2 Structure of the Book
+Part I (Fundamentals) will introduce you to the basics of programming in the context of R.
+Part II (Data Acquisition) will teach you how to create, import, and access data.
+Part III (Data Preparation) will show you how to begin preparing your data for analysis.
+Part IV (Developing Insights) goes through the process of searching for and extracting insights from your data.
+Part V (Reporting) demonstrates how to wrap your analysis up by developing and automating reports.
+Each part will be concluded with practical exercises for you to test your skills.

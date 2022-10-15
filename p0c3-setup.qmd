@@ -6,7 +6,7 @@ Before you do anything, you'll need to download R. This download will allow your
 
 1. Download R From R: [The R Project for Statistical Computing](https://www.r-project.org/)
 
-2. Select ‘download R’
+2. Select "download R"
 
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
 #| label: install-r-1
@@ -33,7 +33,7 @@ knitr::include_graphics("images/setup/install-r-2.png", dpi = 270)
 knitr::include_graphics("images/setup/install-r-3.png", dpi = 270)
 ```
 
-5. Press ‘Install R for the first time’
+5. Press "Install R for the first time"
 
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
 #| label: install-r-4
@@ -42,7 +42,7 @@ knitr::include_graphics("images/setup/install-r-3.png", dpi = 270)
 knitr::include_graphics("images/setup/install-r-4.png", dpi = 270)
 ```
 
-6. Press ‘download’
+6. Press "download"
 
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
 #| label: install-r-5
@@ -75,7 +75,7 @@ After you install R, you'll need an environment to write and run your code in. M
 
 1. Navigate to the R Studio download site: [Download the RStudio IDE](https://www.rstudio.com/products/rstudio/download/) 
 
-2. Press the ‘download’ button under RStudio Desktop
+2. Press the "download" button under RStudio Desktop
 
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
 #| label: install-rstudio-1

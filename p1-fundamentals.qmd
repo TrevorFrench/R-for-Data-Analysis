@@ -1,1 +1,15 @@
 # Part I: Fundamentals
+
+This section will walk you through the fundamentals of R including:
+
+- **Getting Familiar with R Studio**- learn about the four window panes in the R Studio IDE and what you can do in each of them.
+- **Programming Basics**- pick up a few of the fundamental principals of programming and the syntax that is unique to the R language.
+- **Data Types**- learn about the data types that exist in R.
+- **Data Structures**- learn about the structures in which you can store your data in R.
+1.2 Structure of the Book
+Part I (Fundamentals) will introduce you to the basics of programming in the context of R.
+Part II (Data Acquisition) will teach you how to create, import, and access data.
+Part III (Data Preparation) will show you how to begin preparing your data for analysis.
+Part IV (Developing Insights) goes through the process of searching for and extracting insights from your data.
+Part V (Reporting) demonstrates how to wrap your analysis up by developing and automating reports.
+Each part will be concluded with practical exercises for you to test your skills.

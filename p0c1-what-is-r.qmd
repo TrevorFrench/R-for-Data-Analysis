@@ -2,8 +2,6 @@
 
 > R was a programming language that was designed specifically for the needs of statistics and data analysis. <br><br> -Hadley Wickham [@wickham21]
 
-<!-- (https://www.se-radio.net/2021/03/episode-450-hadley-wickham-on-r-and-tidyverse/) -->
-
 R is a statistical programming language used commonly for data analysis amongst other disciplines. It was built by Ross Ihaka and Robert Gentleman at the University of Auckland and was first released in 1993.
 
 ## History

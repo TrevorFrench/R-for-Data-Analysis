@@ -1,1 +1,8 @@
 # R Shiny
+
+R Shiny is a tool used to develop web applications and is commonly deployed in the use of creating dashboards, hosting static reports, and custom tooling.
+
+- Shiny apps account
+- Quick Start
+
+- Resource: https://shiny.rstudio.com/
