@@ -1,5 +1,7 @@
 # Programming Basics
 
+This chapter will walk you through how to execute code and write scripts in R. You will then build upon that knowledge by learning about comments, variables, operators, functions, loops, conditionals, and libraries. While this chapter is titled "Programming Basics", the knowledge you will have learned by the end of this chapter is enough for you to accomplish a huge variety of tasks.
+
 ## Executing Code
 
 When working in most programming languages, you will generally have the option to execute code one of two ways:
@@ -90,13 +92,7 @@ print(total_cost)
 
 ## Operators
 
-The following image demonstrates the operators that are available to you in R.
-
-***
-
-EXPLAIN ALL OF THE OPERATORS HERE (NOT JUST THE IMAGE AS AN EXPLANATION)
-
-***
+An operator is a symbol that allows you to perform an action or define some sort of logic. The following image demonstrates the operators that are available to you in R.
 
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
 #| label: operators-1
@@ -104,6 +100,22 @@ EXPLAIN ALL OF THE OPERATORS HERE (NOT JUST THE IMAGE AS AN EXPLANATION)
 #| out.width: 500
 knitr::include_graphics("images/programming-basics/operators-1.png", dpi = 270)
 ```
+
+***
+
+EXPLAIN ALL OF THE OPERATORS HERE (NOT JUST THE IMAGE AS AN EXPLANATION)
+
+***
+### Arithmetic Operators
+
+### Comparison Operators
+
+### Logical Operators
+
+### Assignment Operators
+
+### Miscellaneous Operators
+
 
 ## Functions
 
@@ -253,3 +265,7 @@ library(dplyr)
 ```
 
 You are now able to access all of the functions available in the dplyr library!
+
+## Resources
+
+- W3 Schools R Tutorial <https://www.w3schools.com/r/>

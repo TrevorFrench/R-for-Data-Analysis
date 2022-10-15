@@ -1,5 +1,7 @@
 # Getting Familiar with R Studio
 
+To begin, we are going to walkthrough how to customize your version of R Studio to make it the most comfortable environment for you personally. Following this, we are going to walk through the four panes of R Studio. At a glance, R Studio may seem overwhelming; however, by the end of this chapter you will have learned the essentials.
+
 ## Customization
 
 You are able to customize how your version of R Studio looks by following these steps:
@@ -124,14 +126,7 @@ knitr::include_graphics("images/r-studio/files-pane-1.png", dpi = 270)
 
 ## Resources
 
-This is where the difference between sourcing and running is.
-
-https://support.rstudio.com/hc/en-us/articles/200484448-Editing-and-Executing-Code
-
-https://support.rstudio.com/hc/en-us/articles/200484568-Code-Folding-and-Sections-in-the-RStudio-IDE
-
-()[https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE]
-
-Back and forward
-
-https://support.rstudio.com/hc/en-us/articles/200710523-Navigating-Code-in-the-RStudio-IDE
+- "Editing and Executing Code in the RStudio IDE" from the R Studio Support team <https://support.rstudio.com/hc/en-us/articles/200484448-Editing-and-Executing-Code>
+- "Code Folding and Sections in the RStudio IDE" from the R Studio Support team <https://support.rstudio.com/hc/en-us/articles/200484568-Code-Folding-and-Sections-in-the-RStudio-IDE>
+- "Keyboard Shortcuts in the RStudio IDE" from the R Studio Support team <https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE>
+- "Navigating Code in the RStudio IDE" from the R Studio Support team <https://support.rstudio.com/hc/en-us/articles/200710523-Navigating-Code-in-the-RStudio-IDE>

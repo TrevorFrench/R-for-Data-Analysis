@@ -1,11 +1,51 @@
 # Data Cleaning
 
+This chapter will cover the basics of cleaning your data including renaming variables, splitting text, replacing values, dropping columns, and dropping rows. These basic actions will be essential to preparing your data prior to developing insights.
+
 ## Renaming Variables
 
-## Text to Columns
+```{r}
+#| eval: false
+df <- head(iris)
+print(df)
+```
+
+```{r}
+#| echo: false
+df <- head(iris)
+knitr::kable(df, format="markdown")
+```
+
+```{r}
+colnames(df)[1] <- "sepal_length"
+colnames(df)[2] <- "sepal_width"
+colnames(df)[3] <- "petal_length"
+colnames(df)[4] <- "petal_width"
+```
+
+```{r}
+#| echo: false
+knitr::kable(df, format="markdown")
+```
+
+```{r}
+colnames(df)[colnames(df) == "sepal_length"] <- "sepalLength"
+colnames(df)[colnames(df) == "sepal_width"] <- "sepalWidth"
+colnames(df)[colnames(df) == "petal_length"] <- "petalLength"
+colnames(df)[colnames(df) == "petal_width"] <- "petalWidth"
+```
+
+```{r}
+#| echo: false
+knitr::kable(df, format="markdown")
+```
+
+## Splitting Text
 
 ## Replace Values
 
 ## Drop Columns
 
 ## Drop Rows
+
+## Resources

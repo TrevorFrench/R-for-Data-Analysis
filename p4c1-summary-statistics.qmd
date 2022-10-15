@@ -1,1 +1,23 @@
 # Summary Statistics
+
+Descriptive Statistics alternatively
+
+Summary statistics are usually where one starts when beginning to develop insights. You may hear the phrase "Exploratory Data Analysis" (sometimes abbreviated "EDA") throughout your career. This is the point where you try to get a high-level understanding of your data through methods such as summary statistics.
+
+## Quantitative Data
+
+mean, sd, var, min, max, median, range, and quantile
+
+### Measures of Central Tendency
+
+### Scope of Data
+
+## Qualitative Data
+
+### Frequency not necessarily qualitative
+
+### Word Cloud
+
+
+
+## Resources

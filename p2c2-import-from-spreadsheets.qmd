@@ -1,5 +1,7 @@
 # Import from Spreadsheets
 
+Most R users will have to work with spreadsheets at some point in their careers. This chapter will teach you how to import data from spreadsheets whether it's in a .csv or .xlsx file and get the imported data into a format that's easy to work with.
+
 ## Import from .csv Files
 
 ```{r}
@@ -16,3 +18,11 @@ library(readxl)
 input <- "C:/File Location/example.xlsx"
 df <- read_excel(input)
 ```
+
+## Import and Combine Multiple Files
+
+***
+trevoR package?
+***
+
+## Resources

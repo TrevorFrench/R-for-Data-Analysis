@@ -1,9 +1,18 @@
 # Spreadsheets
 
+Spreadsheets are common way to communicate information to stakeholders. This chapter will go over how to export .xlsx and .csv files from R, how to format those spreadsheets, and how to add formulas to them.
+
 ## Export
+
 -csvs and xlsx
+
 ## Formatting
+
 - colors
 - tabs
 - font
 - etc
+
+## Formulas
+
+## Resources

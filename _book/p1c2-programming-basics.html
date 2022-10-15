@@ -122,10 +122,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 <meta property="og:title" content="R for Data Analysis - 5&nbsp; Programming Basics">
-<meta property="og:description" content="When working in most programming languages, you will generally have the option to execute code one of two ways:">
+<meta property="og:description" content="This chapter will walk you through how to execute code and write scripts in R.">
 <meta property="og:site-name" content="R for Data Analysis">
 <meta name="twitter:title" content="R for Data Analysis - 5&nbsp; Programming Basics">
-<meta name="twitter:description" content="When working in most programming languages, you will generally have the option to execute code one of two ways:">
+<meta name="twitter:description" content="This chapter will walk you through how to execute code and write scripts in R.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -242,6 +242,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p1exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
   </div>
 </li>
       </ul>
@@ -377,7 +382,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </ul></li>
   <li><a href="#comments" id="toc-comments" class="nav-link" data-scroll-target="#comments"> <span class="header-section-number">5.2</span> Comments</a></li>
   <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables"> <span class="header-section-number">5.3</span> Variables</a></li>
-  <li><a href="#operators" id="toc-operators" class="nav-link" data-scroll-target="#operators"> <span class="header-section-number">5.4</span> Operators</a></li>
+  <li><a href="#operators" id="toc-operators" class="nav-link" data-scroll-target="#operators"> <span class="header-section-number">5.4</span> Operators</a>
+  <ul class="collapse">
+  <li><a href="#arithmetic-operators" id="toc-arithmetic-operators" class="nav-link" data-scroll-target="#arithmetic-operators"> <span class="header-section-number">5.4.1</span> Arithmetic Operators</a></li>
+  <li><a href="#comparison-operators" id="toc-comparison-operators" class="nav-link" data-scroll-target="#comparison-operators"> <span class="header-section-number">5.4.2</span> Comparison Operators</a></li>
+  <li><a href="#logical-operators" id="toc-logical-operators" class="nav-link" data-scroll-target="#logical-operators"> <span class="header-section-number">5.4.3</span> Logical Operators</a></li>
+  <li><a href="#assignment-operators" id="toc-assignment-operators" class="nav-link" data-scroll-target="#assignment-operators"> <span class="header-section-number">5.4.4</span> Assignment Operators</a></li>
+  <li><a href="#miscellaneous-operators" id="toc-miscellaneous-operators" class="nav-link" data-scroll-target="#miscellaneous-operators"> <span class="header-section-number">5.4.5</span> Miscellaneous Operators</a></li>
+  </ul></li>
   <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"> <span class="header-section-number">5.5</span> Functions</a></li>
   <li><a href="#loops" id="toc-loops" class="nav-link" data-scroll-target="#loops"> <span class="header-section-number">5.6</span> Loops</a>
   <ul class="collapse">
@@ -386,6 +398,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </ul></li>
   <li><a href="#conditionals" id="toc-conditionals" class="nav-link" data-scroll-target="#conditionals"> <span class="header-section-number">5.7</span> Conditionals</a></li>
   <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries"> <span class="header-section-number">5.8</span> Libraries</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"> <span class="header-section-number">5.9</span> Resources</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/TrevorFrench/R-for-Data-Analysis/edit/main/p1c2-programming-basics.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -408,6 +421,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
+<p>This chapter will walk you through how to execute code and write scripts in R. You will then build upon that knowledge by learning about comments, variables, operators, functions, loops, conditionals, and libraries. While this chapter is titled “Programming Basics”, the knowledge you will have learned by the end of this chapter is enough for you to accomplish a huge variety of tasks.</p>
 <section id="executing-code" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="executing-code"><span class="header-section-number">5.1</span> Executing Code</h2>
 <p>When working in most programming languages, you will generally have the option to execute code one of two ways:</p>
@@ -494,15 +508,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="operators" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="operators"><span class="header-section-number">5.4</span> Operators</h2>
-<p>The following image demonstrates the operators that are available to you in R.</p>
-<hr>
-<p>EXPLAIN ALL OF THE OPERATORS HERE (NOT JUST THE IMAGE AS AN EXPLANATION)</p>
-<hr>
+<p>An operator is a symbol that allows you to perform an action or define some sort of logic. The following image demonstrates the operators that are available to you in R.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="images/programming-basics/operators-1.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
 </div>
 </div>
+<hr>
+<p>EXPLAIN ALL OF THE OPERATORS HERE (NOT JUST THE IMAGE AS AN EXPLANATION)</p>
+<hr>
+<section id="arithmetic-operators" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="arithmetic-operators"><span class="header-section-number">5.4.1</span> Arithmetic Operators</h3>
+</section>
+<section id="comparison-operators" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="comparison-operators"><span class="header-section-number">5.4.2</span> Comparison Operators</h3>
+</section>
+<section id="logical-operators" class="level3" data-number="5.4.3">
+<h3 data-number="5.4.3" class="anchored" data-anchor-id="logical-operators"><span class="header-section-number">5.4.3</span> Logical Operators</h3>
+</section>
+<section id="assignment-operators" class="level3" data-number="5.4.4">
+<h3 data-number="5.4.4" class="anchored" data-anchor-id="assignment-operators"><span class="header-section-number">5.4.4</span> Assignment Operators</h3>
+</section>
+<section id="miscellaneous-operators" class="level3" data-number="5.4.5">
+<h3 data-number="5.4.5" class="anchored" data-anchor-id="miscellaneous-operators"><span class="header-section-number">5.4.5</span> Miscellaneous Operators</h3>
+</section>
 </section>
 <section id="functions" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="functions"><span class="header-section-number">5.5</span> Functions</h2>
@@ -680,6 +709,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You are now able to access all of the functions available in the dplyr library!</p>
+</section>
+<section id="resources" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="resources"><span class="header-section-number">5.9</span> Resources</h2>
+<ul>
+<li>W3 Schools R Tutorial <a href="https://www.w3schools.com/r/" class="uri">https://www.w3schools.com/r/</a></li>
+</ul>
 
 
 </section>

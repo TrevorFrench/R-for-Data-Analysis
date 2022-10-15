@@ -1,8 +1,14 @@
 # R Markdown
 
-R Markdown allows you to create documents in a programmatic fashion that lends itself towards reproducibility.
+R Markdown allows you to create documents in a programmatic fashion that lends itself towards reproducibility. This chapter will cover the different formats that are available in R as well as how to create them.
+
+## Format Options (All of the output options)
+
+## Example (maybe pdf? and another section for html/powerpoint/etc.)
 
 ## Including Plots
+
+## Resources
 
 - Formats: https://rmarkdown.rstudio.com/formats.html
 

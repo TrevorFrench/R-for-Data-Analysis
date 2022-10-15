@@ -1,8 +1,11 @@
 # Working with APIs
 
+API stands for Application Programming Interface. These sorts of tools are commonly used to programmatically pull data from a third party resource. This chapter demonstrates how one can begin to leverage these tools in their own workflows.
+
 ## Install Packages
 
-``` r
+```{r}
+#| eval: false
 install.packages(c('httr', 'jsonlite'))
 ```
 
@@ -125,3 +128,5 @@ print(fee)
 ```{md}
 [1] 10112755000
 ```
+
+## Resources

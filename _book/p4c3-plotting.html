@@ -25,7 +25,7 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./p5-reporting.html" rel="next">
+<link href="./p4exercises.html" rel="next">
 <link href="./p4c2-regression.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -59,8 +59,10 @@ ul.task-list{list-style: none;}
 
 
 <meta property="og:title" content="R for Data Analysis - 17&nbsp; Plotting">
+<meta property="og:description" content="This chapter will cover the basics of creating plots in R. It will begin by demonstrating the plotting capabilities available in R “out of the box”.">
 <meta property="og:site-name" content="R for Data Analysis">
 <meta name="twitter:title" content="R for Data Analysis - 17&nbsp; Plotting">
+<meta name="twitter:description" content="This chapter will cover the basics of creating plots in R. It will begin by demonstrating the plotting capabilities available in R “out of the box”.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -179,6 +181,11 @@ ul.task-list{list-style: none;}
   <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structures</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p1exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -202,6 +209,11 @@ ul.task-list{list-style: none;}
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./p2c3-working-with-apis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Working with APIs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p2exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
   </div>
 </li>
       </ul>
@@ -234,6 +246,11 @@ ul.task-list{list-style: none;}
   <a href="./p3c4-organizing-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Organizing Data</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -257,6 +274,11 @@ ul.task-list{list-style: none;}
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./p4c3-plotting.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Plotting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p4exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
   </div>
 </li>
       </ul>
@@ -289,6 +311,11 @@ ul.task-list{list-style: none;}
   <a href="./p5c4-r-shiny.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">R Shiny</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p5exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -313,6 +340,7 @@ ul.task-list{list-style: none;}
   <ul class="collapse">
   <li><a href="#different-types-of-plots-1" id="toc-different-types-of-plots-1" class="nav-link" data-scroll-target="#different-types-of-plots-1"> <span class="header-section-number">17.2.1</span> Different types of plots?</a></li>
   </ul></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"> <span class="header-section-number">17.3</span> Resources</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/TrevorFrench/R-for-Data-Analysis/edit/main/p4c3-plotting.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -335,8 +363,10 @@ ul.task-list{list-style: none;}
 
 </header>
 
+<p>This chapter will cover the basics of creating plots in R. It will begin by demonstrating the plotting capabilities available in R “out of the box”. This will be followed by an introduction to “ggplot2” which is one of the most common plotting libraries in R.</p>
 <section id="base-r" class="level2" data-number="17.1">
 <h2 data-number="17.1" class="anchored" data-anchor-id="base-r"><span class="header-section-number">17.1</span> Base R</h2>
+<p>Address the fact that certain types of plots have already been covered previosuly in the book.</p>
 <section id="different-types-of-plots" class="level3" data-number="17.1.1">
 <h3 data-number="17.1.1" class="anchored" data-anchor-id="different-types-of-plots"><span class="header-section-number">17.1.1</span> Different types of plots?</h3>
 </section>
@@ -345,12 +375,15 @@ ul.task-list{list-style: none;}
 <h2 data-number="17.2" class="anchored" data-anchor-id="ggplot2"><span class="header-section-number">17.2</span> ggplot2</h2>
 <section id="different-types-of-plots-1" class="level3" data-number="17.2.1">
 <h3 data-number="17.2.1" class="anchored" data-anchor-id="different-types-of-plots-1"><span class="header-section-number">17.2.1</span> Different types of plots?</h3>
+</section>
+</section>
+<section id="resources" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="resources"><span class="header-section-number">17.3</span> Resources</h2>
 <ul>
 <li>Resource: https://ggplot2.tidyverse.org/</li>
 </ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -458,8 +491,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./p5-reporting.html" class="pagination-link">
-        <span class="nav-page-text">Part V: Reporting</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./p4exercises.html" class="pagination-link">
+        <span class="nav-page-text">Exercises</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

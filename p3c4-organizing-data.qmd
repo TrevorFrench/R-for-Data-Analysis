@@ -1,7 +1,14 @@
 # Organizing Data
 
+This chapter will focus on sorting, filtering, and grouping your datasets.
+
 ## Sorting
+Student Scores dataset sort highest to lowest, alphabetical, lowest to highest, random sort.
 
 ## Filtering
+Filter by grades higher or lower than a certain number, where name starts with or is equal to a value, do an or/and statement.
 
 ## Grouping
+Add a column that indicates whether each student is male or female and group by gender. Then run stats based off of grouping.
+
+## Resources

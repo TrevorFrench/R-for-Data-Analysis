@@ -15,6 +15,25 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -26,7 +45,7 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./p5c1-spreadsheets.html" rel="next">
-<link href="./p4c3-plotting.html" rel="prev">
+<link href="./p4exercises.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -181,6 +200,11 @@ ul.task-list{list-style: none;}
   <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structures</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p1exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -204,6 +228,11 @@ ul.task-list{list-style: none;}
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./p2c3-working-with-apis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Working with APIs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p2exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
   </div>
 </li>
       </ul>
@@ -236,6 +265,11 @@ ul.task-list{list-style: none;}
   <a href="./p3c4-organizing-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Organizing Data</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -259,6 +293,11 @@ ul.task-list{list-style: none;}
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./p4c3-plotting.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Plotting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p4exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
   </div>
 </li>
       </ul>
@@ -289,6 +328,11 @@ ul.task-list{list-style: none;}
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./p5c4-r-shiny.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">R Shiny</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p5exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
   </div>
 </li>
       </ul>
@@ -324,10 +368,23 @@ ul.task-list{list-style: none;}
 
 </header>
 
+<blockquote class="blockquote">
+<p>“It feels like we’re all suffering from information overload or data glut. And the good news is there might be an easy solution to that, and that’s using our eyes more. So, visualizing information, so that we can see the patterns and connections that matter and then designing that information so it makes more sense, or it tells a story, or allows us to focus only on the information that’s important. Failing that, visualized information can just look really cool.”” <br><br> -David McCandless <span class="citation" data-cites="McCandless2010">(<a href="references.html#ref-McCandless2010" role="doc-biblioref">McCandless 2010</a>)</span></p>
+</blockquote>
 <p>Finally, it’s important to report on your data in such a way that the information is able to be digested by the people who need to see it when they need to see it.</p>
-<p>1.2 Structure of the Book Part I (Fundamentals) will introduce you to the basics of programming in the context of R. Part II (Data Acquisition) will teach you how to create, import, and access data. Part III (Data Preparation) will show you how to begin preparing your data for analysis. Part IV (Developing Insights) goes through the process of searching for and extracting insights from your data. Part V (Reporting) demonstrates how to wrap your analysis up by developing and automating reports. Each part will be concluded with practical exercises for you to test your skills.</p>
+<ul>
+<li><strong>Spreadsheets</strong>- Spreadsheets are common way to communicate information to stakeholders. This chapter will go over how to export .xlsx and .csv files from R, how to format those spreadsheets, and how to add formulas to them.</li>
+<li><strong>R Markdown</strong>- R Markdown allows you to create documents in a programmatic fashion that lends itself towards reproducibility. This chapter will cover the different formats that are available in R as well as how to create them.</li>
+<li><strong>R Notebook</strong>- Some more technical audiences may require reporting which includes your methodology. This is where R Notebooks come in. R Notebooks are a subset of R Markdown documents that allow you to display and execute code directly in your document.</li>
+<li><strong>R Shiny</strong>- R Shiny is a tool used to develop web applications and is commonly deployed in the use of creating dashboards, hosting static reports, and custom tooling.</li>
+</ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-McCandless2010" class="csl-entry" role="doc-biblioentry">
+McCandless, David. 2010. <span>“The Beauty of Data Visualization.”</span> <a href="https://www.ted.com/talks/david_mccandless_the_beauty_of_data_visualization/transcript?language=en">https://www.ted.com/talks/david_mccandless_the_beauty_of_data_visualization/transcript?language=en</a>.
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -429,8 +486,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./p4c3-plotting.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Plotting</span></span>
+      <a href="./p4exercises.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Exercises</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

@@ -88,7 +88,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./p3-data-preparation.html" rel="next">
+<link href="./p2exercises.html" rel="next">
 <link href="./p2c2-import-from-spreadsheets.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -122,10 +122,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 <meta property="og:title" content="R for Data Analysis - 10&nbsp; Working with APIs">
-<meta property="og:description" content="Pass a URL into the ‘GET’ function and store the response in a variable called ‘res’.">
+<meta property="og:description" content="API stands for Application Programming Interface. These sorts of tools are commonly used to programmatically pull data from a third party resource.">
 <meta property="og:site-name" content="R for Data Analysis">
 <meta name="twitter:title" content="R for Data Analysis - 10&nbsp; Working with APIs">
-<meta name="twitter:description" content="Pass a URL into the ‘GET’ function and store the response in a variable called ‘res’.">
+<meta name="twitter:description" content="API stands for Application Programming Interface. These sorts of tools are commonly used to programmatically pull data from a third party resource.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -244,6 +244,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structures</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p1exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -267,6 +272,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./p2c3-working-with-apis.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Working with APIs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p2exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
   </div>
 </li>
       </ul>
@@ -297,6 +307,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./p3c4-organizing-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Organizing Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
   </div>
 </li>
       </ul>
@@ -376,6 +391,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#parse-explore-data" id="toc-parse-explore-data" class="nav-link" data-scroll-target="#parse-explore-data"> <span class="header-section-number">10.4</span> Parse &amp; Explore Data</a></li>
   <li><a href="#adding-parameters-to-requests" id="toc-adding-parameters-to-requests" class="nav-link" data-scroll-target="#adding-parameters-to-requests"> <span class="header-section-number">10.5</span> Adding Parameters to Requests</a></li>
   <li><a href="#adding-headers-to-requests" id="toc-adding-headers-to-requests" class="nav-link" data-scroll-target="#adding-headers-to-requests"> <span class="header-section-number">10.6</span> Adding Headers to Requests</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"> <span class="header-section-number">10.7</span> Resources</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/TrevorFrench/R-for-Data-Analysis/edit/main/p2c3-working-with-apis.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -398,9 +414,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
+<p>API stands for Application Programming Interface. These sorts of tools are commonly used to programmatically pull data from a third party resource. This chapter demonstrates how one can begin to leverage these tools in their own workflows.</p>
 <section id="install-packages" class="level2" data-number="10.1">
 <h2 data-number="10.1" class="anchored" data-anchor-id="install-packages"><span class="header-section-number">10.1</span> Install Packages</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">'httr'</span>, <span class="st">'jsonlite'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">'httr'</span>, <span class="st">'jsonlite'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="require-packages" class="level2" data-number="10.2">
 <h2 data-number="10.2" class="anchored" data-anchor-id="require-packages"><span class="header-section-number">10.2</span> Require Packages</h2>
@@ -497,6 +516,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">1</span><span class="co">]</span> 10112755000</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="resources" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="resources"><span class="header-section-number">10.7</span> Resources</h2>
 
 
 </section>
@@ -606,8 +628,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./p3-data-preparation.html" class="pagination-link">
-        <span class="nav-page-text">Part III: Data Preparation</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./p2exercises.html" class="pagination-link">
+        <span class="nav-page-text">Exercises</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

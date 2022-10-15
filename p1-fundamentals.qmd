@@ -1,15 +1,12 @@
 # Part I: Fundamentals
 
-This section will walk you through the fundamentals of R including:
+This section will introduce you to the basics of programming in the context of R. There are four chapters in this book. Each chapter has a brief description listed below. After you have finished reading through each of them, you will have the opportunity to attempt practical exercises to reinforce your newly-gained knowledge.
 
-- **Getting Familiar with R Studio**- learn about the four window panes in the R Studio IDE and what you can do in each of them.
-- **Programming Basics**- pick up a few of the fundamental principals of programming and the syntax that is unique to the R language.
-- **Data Types**- learn about the data types that exist in R.
-- **Data Structures**- learn about the structures in which you can store your data in R.
-1.2 Structure of the Book
-Part I (Fundamentals) will introduce you to the basics of programming in the context of R.
-Part II (Data Acquisition) will teach you how to create, import, and access data.
-Part III (Data Preparation) will show you how to begin preparing your data for analysis.
-Part IV (Developing Insights) goes through the process of searching for and extracting insights from your data.
-Part V (Reporting) demonstrates how to wrap your analysis up by developing and automating reports.
-Each part will be concluded with practical exercises for you to test your skills.
+::: callout-note
+For users with a moderate amount of experience in R or another programming language feel free to either skip, skim, or leverage this chapter as a reference guide.
+:::
+
+- **Getting Familiar with R Studio**- There are four sections in R Studio. These sections are often referred to as "panes". This chapter will introduce you to the "source" pane, "console" pane, "environment" pane, and "files" pane. Additionally, you will learn about the different ways you can customize your version of R Studio.
+- **Programming Basics**- While the R language certainly has it's unique advantages, it still leverages principles found in many other programming languages such as functions, comments, and loops. Learn how to apply these and other principles in R.
+- **Data Types**- Data is stored differently depending on what it represents when programming. For example, a number is going to be stored as a different data type than a letter is. Learn about the five basic data types in R and how to use them.
+- **Data Structures**- In computer science, a data structure refers to the method which one uses to organize their data. There are six basic data structures which are commonly used in R. Learn about each of them in this chapter.

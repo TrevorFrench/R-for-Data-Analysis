@@ -1,4 +1,7 @@
 # Data Types
+
+Data is stored differently depending on what it represents when programming. For example, a number is going to be stored as a different data type than a letter is.
+
 There are five basic data types in R:
 
 - **Numeric** - This is the default treatment for numbers. This data type includes integers and doubles.
@@ -11,42 +14,47 @@ There are five basic data types in R:
 
 ## Numeric
 ### Double
+Let's explore the "double" data type by assigning a number to a variable and then check it's type by using the "typeof" function. Alternatively, we can use the "is.double" function to check whether or not the variable is a double.
 ```{r}
 x <- 6.2
-class(x)
 typeof(x)
-is.numeric(x)
-is.integer(x)
 is.double(x)
 ```
+
+Next, let's check whether or not the variable is numeric by using the "is.numeric" function.
+```{r}
+is.numeric(x)
+```
+
+This function should return "TRUE" as well, which demonstrates the fact that a double is a subset of the numeric data type.
 ### Integer
+Let's explore the "integer" data type by assigning a whole number followed by the capital letter "L" to a variable and then check it's type by using the "typeof" function. Alternatively, we can use the "is.integer" function to check whether or not the variable is an integer.
 ```{r}
 x <- 6L
-class(x)
+# By using the "typeof" function, we can check the data type of x
 typeof(x)
-is.numeric(x)
 is.integer(x)
-is.double(x)
 ```
+
+Next, let's check whether or not the variable is numeric by using the "is.numeric" function.
+```{r}
+is.numeric(x)
+```
+
+This function should return "TRUE" as well, which demonstrates the fact that an integer is also a subset of the numeric data type.
 ## Complex
 ```{r}
 x <- 6i
-class(x)
 typeof(x)
-is.numeric(x)
-is.integer(x)
-is.double(x)
 ```
 ## Character
 ```{r}
 x <- "Hello!"
-class(x)
 typeof(x)
 ```
 ## Logical
 ```{r}
 x <- TRUE
-class(x)
 typeof(x)
 ```
 
@@ -54,12 +62,13 @@ typeof(x)
 ```{r}
 x <- charToRaw("Hello!")
 print(x)
-class(x)
 typeof(x)
 
 x <- intToBits(6L)
-typeof(x)
 print(x)
-class(x)
 typeof(x)
 ```
+
+## Resources
+
+- W3 Schools <https://www.w3schools.com/r/r_data_types.asp>

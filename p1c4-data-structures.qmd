@@ -1,6 +1,6 @@
 # Data Structures
 
-There are six basic data structures in R
+In computer science, a data structure refers to the method which one uses to organize their data. There are six basic data structures which are commonly used in R:
 
 - **Vectors** - Vectors contain of data which is ordered and of the same type.
 - **Lists** - Lists are a collection of objects.

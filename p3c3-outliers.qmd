@@ -1,5 +1,13 @@
 # Outliers
 
+Outliers are observations that fall outside the expected scope of the dataset. It's important to identify outliers in your data and determine the necessary treatment for them before moving into the next analysis phase.
+
+might be necessary to impute value, remove row or may be necessary to keep the data besides extreme value
 ## Finding Outliers
 
+box and whisker
+scatter plot
+bell curve & standard deviation
 ## Removing Outliers
+
+## Resources

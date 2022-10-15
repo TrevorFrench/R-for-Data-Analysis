@@ -59,8 +59,10 @@ ul.task-list{list-style: none;}
 
 
 <meta property="og:title" content="R for Data Analysis - 15&nbsp; Summary Statistics">
+<meta property="og:description" content="Descriptive Statistics alternatively">
 <meta property="og:site-name" content="R for Data Analysis">
 <meta name="twitter:title" content="R for Data Analysis - 15&nbsp; Summary Statistics">
+<meta name="twitter:description" content="Descriptive Statistics alternatively">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -179,6 +181,11 @@ ul.task-list{list-style: none;}
   <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structures</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p1exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -202,6 +209,11 @@ ul.task-list{list-style: none;}
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./p2c3-working-with-apis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Working with APIs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p2exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
   </div>
 </li>
       </ul>
@@ -234,6 +246,11 @@ ul.task-list{list-style: none;}
   <a href="./p3c4-organizing-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Organizing Data</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -257,6 +274,11 @@ ul.task-list{list-style: none;}
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./p4c3-plotting.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Plotting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p4exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
   </div>
 </li>
       </ul>
@@ -289,6 +311,11 @@ ul.task-list{list-style: none;}
   <a href="./p5c4-r-shiny.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">R Shiny</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p5exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -301,7 +328,23 @@ ul.task-list{list-style: none;}
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#quantitative-data" id="toc-quantitative-data" class="nav-link active" data-scroll-target="#quantitative-data"> <span class="header-section-number">15.1</span> Quantitative Data</a>
+  <ul class="collapse">
+  <li><a href="#measures-of-central-tendency" id="toc-measures-of-central-tendency" class="nav-link" data-scroll-target="#measures-of-central-tendency"> <span class="header-section-number">15.1.1</span> Measures of Central Tendency</a></li>
+  <li><a href="#scope-of-data" id="toc-scope-of-data" class="nav-link" data-scroll-target="#scope-of-data"> <span class="header-section-number">15.1.2</span> Scope of Data</a></li>
+  </ul></li>
+  <li><a href="#qualitative-data" id="toc-qualitative-data" class="nav-link" data-scroll-target="#qualitative-data"> <span class="header-section-number">15.2</span> Qualitative Data</a>
+  <ul class="collapse">
+  <li><a href="#frequency-not-necessarily-qualitative" id="toc-frequency-not-necessarily-qualitative" class="nav-link" data-scroll-target="#frequency-not-necessarily-qualitative"> <span class="header-section-number">15.2.1</span> Frequency not necessarily qualitative</a></li>
+  <li><a href="#word-cloud" id="toc-word-cloud" class="nav-link" data-scroll-target="#word-cloud"> <span class="header-section-number">15.2.2</span> Word Cloud</a></li>
+  </ul></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"> <span class="header-section-number">15.3</span> Resources</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/TrevorFrench/R-for-Data-Analysis/edit/main/p4c1-summary-statistics.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -322,8 +365,32 @@ ul.task-list{list-style: none;}
 
 </header>
 
+<p>Descriptive Statistics alternatively</p>
+<p>Summary statistics are usually where one starts when beginning to develop insights. You may hear the phrase “Exploratory Data Analysis” (sometimes abbreviated “EDA”) throughout your career. This is the point where you try to get a high-level understanding of your data through methods such as summary statistics.</p>
+<section id="quantitative-data" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="quantitative-data"><span class="header-section-number">15.1</span> Quantitative Data</h2>
+<p>mean, sd, var, min, max, median, range, and quantile</p>
+<section id="measures-of-central-tendency" class="level3" data-number="15.1.1">
+<h3 data-number="15.1.1" class="anchored" data-anchor-id="measures-of-central-tendency"><span class="header-section-number">15.1.1</span> Measures of Central Tendency</h3>
+</section>
+<section id="scope-of-data" class="level3" data-number="15.1.2">
+<h3 data-number="15.1.2" class="anchored" data-anchor-id="scope-of-data"><span class="header-section-number">15.1.2</span> Scope of Data</h3>
+</section>
+</section>
+<section id="qualitative-data" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="qualitative-data"><span class="header-section-number">15.2</span> Qualitative Data</h2>
+<section id="frequency-not-necessarily-qualitative" class="level3" data-number="15.2.1">
+<h3 data-number="15.2.1" class="anchored" data-anchor-id="frequency-not-necessarily-qualitative"><span class="header-section-number">15.2.1</span> Frequency not necessarily qualitative</h3>
+</section>
+<section id="word-cloud" class="level3" data-number="15.2.2">
+<h3 data-number="15.2.2" class="anchored" data-anchor-id="word-cloud"><span class="header-section-number">15.2.2</span> Word Cloud</h3>
+</section>
+</section>
+<section id="resources" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="resources"><span class="header-section-number">15.3</span> Resources</h2>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

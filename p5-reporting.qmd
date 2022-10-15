@@ -1,11 +1,12 @@
 # Part V: Reporting
 
+> "It feels like we're all suffering from information overload or data glut. And the good news is there might be an easy solution to that, and that's using our eyes more. So, visualizing information, so that we can see the patterns and connections that matter and then designing that information so it makes more sense, or it tells a story, or allows us to focus only on the information that's important. Failing that, visualized information can just look really cool.""  <br><br> -David McCandless [@McCandless2010]
+
+
+
 Finally, it’s important to report on your data in such a way that the information is able to be digested by the people who need to see it when they need to see it.
 
-1.2 Structure of the Book
-Part I (Fundamentals) will introduce you to the basics of programming in the context of R.
-Part II (Data Acquisition) will teach you how to create, import, and access data.
-Part III (Data Preparation) will show you how to begin preparing your data for analysis.
-Part IV (Developing Insights) goes through the process of searching for and extracting insights from your data.
-Part V (Reporting) demonstrates how to wrap your analysis up by developing and automating reports.
-Each part will be concluded with practical exercises for you to test your skills.
+- **Spreadsheets**- Spreadsheets are common way to communicate information to stakeholders. This chapter will go over how to export .xlsx and .csv files from R, how to format those spreadsheets, and how to add formulas to them.
+- **R Markdown**- R Markdown allows you to create documents in a programmatic fashion that lends itself towards reproducibility. This chapter will cover the different formats that are available in R as well as how to create them.
+- **R Notebook**- Some more technical audiences may require reporting which includes your methodology. This is where R Notebooks come in. R Notebooks are a subset of R Markdown documents that allow you to display and execute code directly in your document.
+- **R Shiny**- R Shiny is a tool used to develop web applications and is commonly deployed in the use of creating dashboards, hosting static reports, and custom tooling.

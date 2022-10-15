@@ -1,10 +1,16 @@
 # Included Datasets
 
-R comes with an assortment of datasets included by default. You can view a complete list of datsets available along with a brief description for each one by typing "data()" into your console.
+R comes with a variety of datasets already built in. This chapter will teach you how to view the catalog of included datasets, preview individual datasets, and begin working with the data.
+
+## View Catalog
+
+You can view a complete list of datsets available along with a brief description for each one by typing "data()" into your console.
 
 ```{r}
 data()
 ```
+
+This will open a new tab in your R Studio instance that looks similar to the following image:
 
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 90%;'"}
 #| label: console-pane-1
@@ -13,7 +19,28 @@ data()
 knitr::include_graphics("images/data-acquisition/data.png", dpi = 270)
 ```
 
+## Working with Included Data
+
+The first step to begin working with your chosen dataset is to attach it to your environment by using the "data" function with the quoted name of your dataset inside the parentheses. In the following example, we'll attach the "iris" dataset to our environment.
 ```{r}
+#| eval: false
 data("iris")
+```
+
+This action will then give us a variable with the same name as our dataset which we can call as we would with any other data structure. Let's preview the "iris" dataset by using the "head" function.
+```{r}
+#| eval: false
 head(iris)
 ```
+
+```{r}
+#| echo: false
+knitr::kable(head(iris), format="markdown")
+```
+***
+MAYBE DEMO A FEW MORE DATASETS HERE
+***
+
+## Resources
+
+- List of datasets available in Base R <https://www.rdocumentation.org/packages/datasets/versions/3.6.2>

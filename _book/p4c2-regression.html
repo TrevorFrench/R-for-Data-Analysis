@@ -59,8 +59,10 @@ ul.task-list{list-style: none;}
 
 
 <meta property="og:title" content="R for Data Analysis - 16&nbsp; Regression">
+<meta property="og:description" content="Regression is a common statistical technique employed by many to make generalizations as well as predictions about data.">
 <meta property="og:site-name" content="R for Data Analysis">
 <meta name="twitter:title" content="R for Data Analysis - 16&nbsp; Regression">
+<meta name="twitter:description" content="Regression is a common statistical technique employed by many to make generalizations as well as predictions about data.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -179,6 +181,11 @@ ul.task-list{list-style: none;}
   <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structures</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p1exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -202,6 +209,11 @@ ul.task-list{list-style: none;}
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./p2c3-working-with-apis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Working with APIs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p2exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
   </div>
 </li>
       </ul>
@@ -234,6 +246,11 @@ ul.task-list{list-style: none;}
   <a href="./p3c4-organizing-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Organizing Data</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -257,6 +274,11 @@ ul.task-list{list-style: none;}
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./p4c3-plotting.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Plotting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p4exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
   </div>
 </li>
       </ul>
@@ -289,6 +311,11 @@ ul.task-list{list-style: none;}
   <a href="./p5c4-r-shiny.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">R Shiny</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p5exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -301,7 +328,16 @@ ul.task-list{list-style: none;}
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#linear-regression" id="toc-linear-regression" class="nav-link active" data-scroll-target="#linear-regression"> <span class="header-section-number">16.1</span> Linear Regression</a></li>
+  <li><a href="#multiple-regression" id="toc-multiple-regression" class="nav-link" data-scroll-target="#multiple-regression"> <span class="header-section-number">16.2</span> Multiple Regression</a></li>
+  <li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link" data-scroll-target="#logistic-regression"> <span class="header-section-number">16.3</span> Logistic Regression</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"> <span class="header-section-number">16.4</span> Resources</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/TrevorFrench/R-for-Data-Analysis/edit/main/p4c2-regression.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -322,8 +358,24 @@ ul.task-list{list-style: none;}
 
 </header>
 
+<p>Regression is a common statistical technique employed by many to make generalizations as well as predictions about data.</p>
+<section id="linear-regression" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="linear-regression"><span class="header-section-number">16.1</span> Linear Regression</h2>
+<p>lm(y~x)</p>
+</section>
+<section id="multiple-regression" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="multiple-regression"><span class="header-section-number">16.2</span> Multiple Regression</h2>
+<p>lm(y ~ x + x, data = input)</p>
+</section>
+<section id="logistic-regression" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="logistic-regression"><span class="header-section-number">16.3</span> Logistic Regression</h2>
+<p>glm(y ~ x, family = binomial, data = mtcars)</p>
+</section>
+<section id="resources" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="resources"><span class="header-section-number">16.4</span> Resources</h2>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

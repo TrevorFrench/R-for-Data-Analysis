@@ -25,7 +25,7 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./p4-developing-insights.html" rel="next">
+<link href="./p3exercises.html" rel="next">
 <link href="./p3c3-outliers.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -59,8 +59,10 @@ ul.task-list{list-style: none;}
 
 
 <meta property="og:title" content="R for Data Analysis - 14&nbsp; Organizing Data">
+<meta property="og:description" content="This chapter will focus on sorting, filtering, and grouping your datasets.">
 <meta property="og:site-name" content="R for Data Analysis">
 <meta name="twitter:title" content="R for Data Analysis - 14&nbsp; Organizing Data">
+<meta name="twitter:description" content="This chapter will focus on sorting, filtering, and grouping your datasets.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -179,6 +181,11 @@ ul.task-list{list-style: none;}
   <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structures</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p1exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -202,6 +209,11 @@ ul.task-list{list-style: none;}
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./p2c3-working-with-apis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Working with APIs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p2exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
   </div>
 </li>
       </ul>
@@ -234,6 +246,11 @@ ul.task-list{list-style: none;}
   <a href="./p3c4-organizing-data.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Organizing Data</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -257,6 +274,11 @@ ul.task-list{list-style: none;}
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./p4c3-plotting.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Plotting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p4exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
   </div>
 </li>
       </ul>
@@ -289,6 +311,11 @@ ul.task-list{list-style: none;}
   <a href="./p5c4-r-shiny.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">R Shiny</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p5exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -308,6 +335,7 @@ ul.task-list{list-style: none;}
   <li><a href="#sorting" id="toc-sorting" class="nav-link active" data-scroll-target="#sorting"> <span class="header-section-number">14.1</span> Sorting</a></li>
   <li><a href="#filtering" id="toc-filtering" class="nav-link" data-scroll-target="#filtering"> <span class="header-section-number">14.2</span> Filtering</a></li>
   <li><a href="#grouping" id="toc-grouping" class="nav-link" data-scroll-target="#grouping"> <span class="header-section-number">14.3</span> Grouping</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"> <span class="header-section-number">14.4</span> Resources</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/TrevorFrench/R-for-Data-Analysis/edit/main/p3c4-organizing-data.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -330,14 +358,21 @@ ul.task-list{list-style: none;}
 
 </header>
 
+<p>This chapter will focus on sorting, filtering, and grouping your datasets.</p>
 <section id="sorting" class="level2" data-number="14.1">
 <h2 data-number="14.1" class="anchored" data-anchor-id="sorting"><span class="header-section-number">14.1</span> Sorting</h2>
+<p>Student Scores dataset sort highest to lowest, alphabetical, lowest to highest, random sort.</p>
 </section>
 <section id="filtering" class="level2" data-number="14.2">
 <h2 data-number="14.2" class="anchored" data-anchor-id="filtering"><span class="header-section-number">14.2</span> Filtering</h2>
+<p>Filter by grades higher or lower than a certain number, where name starts with or is equal to a value, do an or/and statement.</p>
 </section>
 <section id="grouping" class="level2" data-number="14.3">
 <h2 data-number="14.3" class="anchored" data-anchor-id="grouping"><span class="header-section-number">14.3</span> Grouping</h2>
+<p>Add a column that indicates whether each student is male or female and group by gender. Then run stats based off of grouping.</p>
+</section>
+<section id="resources" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="resources"><span class="header-section-number">14.4</span> Resources</h2>
 
 
 </section>
@@ -447,8 +482,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./p4-developing-insights.html" class="pagination-link">
-        <span class="nav-page-text">Part IV: Developing Insights</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./p3exercises.html" class="pagination-link">
+        <span class="nav-page-text">Exercises</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

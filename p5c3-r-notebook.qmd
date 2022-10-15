@@ -1,6 +1,10 @@
 # R Notebook
 
-Some more technical audiences may require reporting which includes your methodology. This is where R Notebooks come in.
+Some more technical audiences may require reporting which includes your methodology. This is where R Notebooks come in. R Notebooks are a subset of R Markdown documents that allow you to display and execute code directly in your document.
+
+## Dig in to different options available
+
+## Resources
 
 - Subset of R Markdown
 - Resource: https://rmarkdown.rstudio.com/lesson-10.html

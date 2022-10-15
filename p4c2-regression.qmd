@@ -1,1 +1,14 @@
 # Regression
+
+Regression is a common statistical technique employed by many to make generalizations as well as predictions about data.
+
+## Linear Regression
+lm(y~x)
+
+## Multiple Regression
+lm(y ~ x + x, data = input)
+
+## Logistic Regression
+glm(y ~ x, family = binomial, data = mtcars)
+
+## Resources
