@@ -5,6 +5,7 @@ book:
   title: "R for Data Analysis"
   author: "Trevor French"
   date: "8/16/2022"
+  cover-image: cover.png
   repo-url: https://github.com/TrevorFrench/R-for-Data-Analysis
   repo-actions: [edit]
   downloads: [pdf, epub]

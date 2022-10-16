@@ -130,7 +130,7 @@
     "href": "p3c1-data-cleaning.html#drop-rows",
     "title": "11  Data Cleaning",
     "section": "11.5 Drop Rows",
-    "text": "11.5 Drop Rows\n\n# myData <- myData[-c(2, 4, 6), ]"
+    "text": "11.5 Drop Rows\n\n# df <- df[-c(7, 8, 9), ]"
   },
   {
     "objectID": "p3c2-handling-missing-data.html#mean-imputation",
