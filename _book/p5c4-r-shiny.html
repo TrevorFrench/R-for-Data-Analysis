@@ -60,10 +60,12 @@ ul.task-list{list-style: none;}
 
 <meta property="og:title" content="R for Data Analysis - 21&nbsp; R Shiny">
 <meta property="og:description" content="R Shiny is a tool used to develop web applications and is commonly deployed in the use of creating dashboards, hosting static reports, and custom tooling.">
+<meta property="og:image" content="images/reporting/preview-app.png">
 <meta property="og:site-name" content="R for Data Analysis">
 <meta name="twitter:title" content="R for Data Analysis - 21&nbsp; R Shiny">
 <meta name="twitter:description" content="R Shiny is a tool used to develop web applications and is commonly deployed in the use of creating dashboards, hosting static reports, and custom tooling.">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="images/reporting/preview-app.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating">
@@ -332,11 +334,16 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#shinyapps.io" id="toc-shinyapps.io" class="nav-link active" data-scroll-target="#shinyapps.io"> <span class="header-section-number">21.1</span> shinyapps.io</a></li>
-  <li><a href="#quickstart" id="toc-quickstart" class="nav-link" data-scroll-target="#quickstart"> <span class="header-section-number">21.2</span> Quickstart</a></li>
-  <li><a href="#deploying-application" id="toc-deploying-application" class="nav-link" data-scroll-target="#deploying-application"> <span class="header-section-number">21.3</span> Deploying Application</a></li>
-  <li><a href="#shinyuieditor" id="toc-shinyuieditor" class="nav-link" data-scroll-target="#shinyuieditor"> <span class="header-section-number">21.4</span> Shinyuieditor?</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"> <span class="header-section-number">21.5</span> Resources</a></li>
+  <li><a href="#quickstart" id="toc-quickstart" class="nav-link active" data-scroll-target="#quickstart"> <span class="header-section-number">21.1</span> Quickstart</a></li>
+  <li><a href="#basic-components-of-a-shiny-application" id="toc-basic-components-of-a-shiny-application" class="nav-link" data-scroll-target="#basic-components-of-a-shiny-application"> <span class="header-section-number">21.2</span> Basic Components of a Shiny Application</a>
+  <ul class="collapse">
+  <li><a href="#server" id="toc-server" class="nav-link" data-scroll-target="#server"> <span class="header-section-number">21.2.1</span> Server</a></li>
+  <li><a href="#ui" id="toc-ui" class="nav-link" data-scroll-target="#ui"> <span class="header-section-number">21.2.2</span> UI</a></li>
+  </ul></li>
+  <li><a href="#shinyapps.io" id="toc-shinyapps.io" class="nav-link" data-scroll-target="#shinyapps.io"> <span class="header-section-number">21.3</span> shinyapps.io</a></li>
+  <li><a href="#deploying-application" id="toc-deploying-application" class="nav-link" data-scroll-target="#deploying-application"> <span class="header-section-number">21.4</span> Deploying Application</a></li>
+  <li><a href="#shinyuieditor" id="toc-shinyuieditor" class="nav-link" data-scroll-target="#shinyuieditor"> <span class="header-section-number">21.5</span> Shinyuieditor?</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"> <span class="header-section-number">21.6</span> Resources</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/TrevorFrench/R-for-Data-Analysis/edit/main/p5c4-r-shiny.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -360,24 +367,64 @@ ul.task-list{list-style: none;}
 </header>
 
 <p>R Shiny is a tool used to develop web applications and is commonly deployed in the use of creating dashboards, hosting static reports, and custom tooling.</p>
-<section id="shinyapps.io" class="level2" data-number="21.1">
-<h2 data-number="21.1" class="anchored" data-anchor-id="shinyapps.io"><span class="header-section-number">21.1</span> shinyapps.io</h2>
+<section id="quickstart" class="level2" data-number="21.1">
+<h2 data-number="21.1" class="anchored" data-anchor-id="quickstart"><span class="header-section-number">21.1</span> Quickstart</h2>
+<p>Explain what a project is</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/new-project.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/new-directory.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/shiny-application.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/name-directory.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/sample-app.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/preview-app.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+</section>
+<section id="basic-components-of-a-shiny-application" class="level2" data-number="21.2">
+<h2 data-number="21.2" class="anchored" data-anchor-id="basic-components-of-a-shiny-application"><span class="header-section-number">21.2</span> Basic Components of a Shiny Application</h2>
+<section id="server" class="level3" data-number="21.2.1">
+<h3 data-number="21.2.1" class="anchored" data-anchor-id="server"><span class="header-section-number">21.2.1</span> Server</h3>
+</section>
+<section id="ui" class="level3" data-number="21.2.2">
+<h3 data-number="21.2.2" class="anchored" data-anchor-id="ui"><span class="header-section-number">21.2.2</span> UI</h3>
+</section>
+</section>
+<section id="shinyapps.io" class="level2" data-number="21.3">
+<h2 data-number="21.3" class="anchored" data-anchor-id="shinyapps.io"><span class="header-section-number">21.3</span> shinyapps.io</h2>
 <ul>
 <li>Shiny apps account</li>
 <li>Quick Start</li>
 </ul>
 </section>
-<section id="quickstart" class="level2" data-number="21.2">
-<h2 data-number="21.2" class="anchored" data-anchor-id="quickstart"><span class="header-section-number">21.2</span> Quickstart</h2>
+<section id="deploying-application" class="level2" data-number="21.4">
+<h2 data-number="21.4" class="anchored" data-anchor-id="deploying-application"><span class="header-section-number">21.4</span> Deploying Application</h2>
 </section>
-<section id="deploying-application" class="level2" data-number="21.3">
-<h2 data-number="21.3" class="anchored" data-anchor-id="deploying-application"><span class="header-section-number">21.3</span> Deploying Application</h2>
+<section id="shinyuieditor" class="level2" data-number="21.5">
+<h2 data-number="21.5" class="anchored" data-anchor-id="shinyuieditor"><span class="header-section-number">21.5</span> Shinyuieditor?</h2>
 </section>
-<section id="shinyuieditor" class="level2" data-number="21.4">
-<h2 data-number="21.4" class="anchored" data-anchor-id="shinyuieditor"><span class="header-section-number">21.4</span> Shinyuieditor?</h2>
-</section>
-<section id="resources" class="level2" data-number="21.5">
-<h2 data-number="21.5" class="anchored" data-anchor-id="resources"><span class="header-section-number">21.5</span> Resources</h2>
+<section id="resources" class="level2" data-number="21.6">
+<h2 data-number="21.6" class="anchored" data-anchor-id="resources"><span class="header-section-number">21.6</span> Resources</h2>
 <ul>
 <li>Resource: https://shiny.rstudio.com/</li>
 </ul>

@@ -5,6 +5,28 @@ Regression is a common statistical technique employed by many to make generaliza
 ## Linear Regression
 lm(y~x)
 
+A data frame with 272 observations on 2 variables.
+ 
+[,1]	eruptions	numeric	Eruption time in mins
+[,2]	waiting	numeric	Waiting time to next eruption (in mins)
+
+```{r}
+#| output: false
+head(faithful)
+```
+
+```{r}
+#| echo: false
+knitr::kable(head(faithful), format="markdown")
+```
+
+```{r}
+lm <- lm(faithful$eruptions ~ faithful$waiting)
+summary(lm)
+```
+
+Maybe plot trendline now similar to what was done in my medium article
+
 ## Multiple Regression
 lm(y ~ x + x, data = input)
 
@@ -12,3 +34,5 @@ lm(y ~ x + x, data = input)
 glm(y ~ x, family = binomial, data = mtcars)
 
 ## Resources
+
+- "Visualizing OLS Linear Regression Assumptions in R" by Trevor French <https://medium.com/trevor-french/visualizing-ols-linear-regression-assumptions-in-r-e762ba7afaff>

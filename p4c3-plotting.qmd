@@ -6,7 +6,37 @@ This chapter will cover the basics of creating plots in R. It will begin by demo
 
 Address the fact that certain types of plots have already been covered previosuly in the book.
 
-### Different types of plots?
+### Scatter Plot
+
+plot()
+
+### Box Plot
+
+boxplot()
+
+### Plot Matrix
+
+pairs()
+
+### Pie Chart
+
+pie()
+
+### Bar Plot
+
+barplot()
+
+### Histogram
+
+hist()
+
+### Density Plot
+
+density()
+
+### Dot Chart
+
+dotchart()
 
 ## ggplot2
 

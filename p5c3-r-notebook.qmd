@@ -2,9 +2,28 @@
 
 Some more technical audiences may require reporting which includes your methodology. This is where R Notebooks come in. R Notebooks are a subset of R Markdown documents that allow you to display and execute code directly in your document.
 
-## Dig in to different options available
+- Subset of R Markdown
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 40%;'"}
+#| label: create-notebook
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/create-notebook.png", dpi = 270)
+```
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: sample-notebook
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/sample-notebook.png", dpi = 270)
+```
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: preview-notebook
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/preview-notebook.png", dpi = 270)
+```
 
 ## Resources
-
-- Subset of R Markdown
 - Resource: https://rmarkdown.rstudio.com/lesson-10.html

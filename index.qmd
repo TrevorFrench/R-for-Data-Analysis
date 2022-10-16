@@ -21,3 +21,7 @@ You will need an environment which you use to run your code. It is recommended t
 Each part will contain several chapters which cover specific ideas realted to the overarching topic. At the end of each of these chapters you will find additional resources for you to use to dive deeper into the ideas.
 
 Each part will be concluded with practical exercises for you to test your skills.
+
+## License
+
+This website is free to use, and is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivs 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) License. If you’d like a **physical copy** of the book, you can order it from []; it was published by [] in []. If you’d like to give back, please consider reporting a typo or leaving a pull request at <https://github.com/TrevorFrench/R-for-Data-Analysis>.

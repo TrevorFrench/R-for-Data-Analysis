@@ -2,6 +2,13 @@
 
 R Markdown allows you to create documents in a programmatic fashion that lends itself towards reproducibility. This chapter will cover the different formats that are available in R as well as how to create them.
 
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 40%;'"}
+#| label: create-markdown
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/create-markdown.png", dpi = 270)
+```
+
 ## Format Options (All of the output options)
 
 ## Example (maybe pdf? and another section for html/powerpoint/etc.)

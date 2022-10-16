@@ -1,5 +1,7 @@
 # Part III: Data Preparation
 
+Should we add a feature engineering chapter to this part?
+
 Most data will not be received in the precise format you need to begin your analysis. The process of data preparation is where you will structure and add features to your data.
 
 - **Data Cleaning**- This chapter will cover the basics of cleaning your data including renaming variables, splitting text, replacing values, dropping columns, and dropping rows. These basic actions will be essential to preparing your data prior to developing insights.

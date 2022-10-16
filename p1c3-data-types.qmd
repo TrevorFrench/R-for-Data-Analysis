@@ -13,7 +13,9 @@ There are five basic data types in R:
 - **Raw** - Used less often, this data type will store data as raw bytes.
 
 ## Numeric
+
 ### Double
+
 Let's explore the "double" data type by assigning a number to a variable and then check it's type by using the "typeof" function. Alternatively, we can use the "is.double" function to check whether or not the variable is a double.
 ```{r}
 x <- 6.2
@@ -27,6 +29,7 @@ is.numeric(x)
 ```
 
 This function should return "TRUE" as well, which demonstrates the fact that a double is a subset of the numeric data type.
+
 ### Integer
 Let's explore the "integer" data type by assigning a whole number followed by the capital letter "L" to a variable and then check it's type by using the "typeof" function. Alternatively, we can use the "is.integer" function to check whether or not the variable is an integer.
 ```{r}
@@ -42,16 +45,22 @@ is.numeric(x)
 ```
 
 This function should return "TRUE" as well, which demonstrates the fact that an integer is also a subset of the numeric data type.
+
 ## Complex
+
+Complex data types make use of the mathematical concept of an imaginary number through the use of the lowercase letter "i". The following example sets "x" equal to six times i and then displays the type of x.
+
 ```{r}
 x <- 6i
 typeof(x)
 ```
+
 ## Character
 ```{r}
 x <- "Hello!"
 typeof(x)
 ```
+
 ## Logical
 ```{r}
 x <- TRUE

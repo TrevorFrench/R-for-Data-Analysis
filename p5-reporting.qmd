@@ -1,8 +1,6 @@
 # Part V: Reporting
 
-> "It feels like we're all suffering from information overload or data glut. And the good news is there might be an easy solution to that, and that's using our eyes more. So, visualizing information, so that we can see the patterns and connections that matter and then designing that information so it makes more sense, or it tells a story, or allows us to focus only on the information that's important. Failing that, visualized information can just look really cool.""  <br><br> -David McCandless [@McCandless2010]
-
-
+> "It feels like we're all suffering from information overload or data glut. And the good news is there might be an easy solution to that, and that's using our eyes more. So, visualizing information, so that we can see the patterns and connections that matter and then designing that information so it makes more sense, or it tells a story, or allows us to focus only on the information that's important. Failing that, visualized information can just look really cool."  <br><br> -David McCandless [@McCandless2010]
 
 Finally, it’s important to report on your data in such a way that the information is able to be digested by the people who need to see it when they need to see it.
 

@@ -7,6 +7,8 @@ Summary statistics are usually where one starts when beginning to develop insigh
 ## Quantitative Data
 
 mean, sd, var, min, max, median, range, and quantile
+dat <- ggplot2::mpg
+summary(dat$hwy)
 
 ### Measures of Central Tendency
 
@@ -17,7 +19,5 @@ mean, sd, var, min, max, median, range, and quantile
 ### Frequency not necessarily qualitative
 
 ### Word Cloud
-
-
 
 ## Resources

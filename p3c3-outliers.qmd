@@ -5,7 +5,12 @@ Outliers are observations that fall outside the expected scope of the dataset. I
 might be necessary to impute value, remove row or may be necessary to keep the data besides extreme value
 ## Finding Outliers
 
-box and whisker
+One common first step many people employ when looking for outliers is visualizing their datasets so that exterme values can be quickly identified. This section will briefly cover several common visualizations used to identify outlier; however, each of these plots will be explored more in-depth later in the book.
+
+### Box and Whisker Plot
+
+boxplot()
+
 scatter plot
 bell curve & standard deviation
 ## Removing Outliers

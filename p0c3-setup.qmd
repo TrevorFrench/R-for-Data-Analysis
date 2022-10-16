@@ -1,5 +1,7 @@
 # Setup
 
+This chapter will walk you through how to download the R programming language as well as R Studio which is a popular tool for interacting with the R ecosystem. Additionally, there are alternatives to R Studio listed at the end of the chapter. However, R Studio is the recommended environment for completing this book.
+
 ## Install R
 
 Before you do anything, you'll need to download R. This download will allow your computer to interpret the R code you write later on.

@@ -266,6 +266,31 @@ library(dplyr)
 
 You are now able to access all of the functions available in the dplyr library!
 
+Sometimes users in the R community create their own packages that aren't distributed through the CRAN network. You can still use these libraries but you'll just have to perform an extra step or two. One of the most common places to host packages is [Github](https://github.com/). The following example will demonstrate how to load a package that I created from Github.
+
+First you'll need to install the "remotes" package. As the name might suggest, this library allows you to access other libraries from *remote* locations.
+
+```{r}
+#| eval: false
+install.packages("remotes")
+```
+
+Next you'll need to install the remote package of your choosing. In our case, we'll execute the following code.
+
+```{r}
+#| eval: false
+remotes::install_github("TrevorFrench/trevoR")
+```
+
+In the previous example, we used the "install_github" function from the "remotes" package and then specified the Github path of the remote repository by typing "TrevorFrench/trevoR". This code is functionally the same as the "install.packages" function. You may have noticed a new piece of syntax though. The "::" in between "remotes" and "install_github" tells R to use the "install_github" function from the "remotes" library without the need to require the library via the "library" function. This syntax can be used with any other function from any other library.
+
+Now that the remote package is installed, we can require it in the same way we would any other package.
+
+```{r}
+#| eval: false
+library(trevoR)
+```
+
 ## Resources
 
 - W3 Schools R Tutorial <https://www.w3schools.com/r/>

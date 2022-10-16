@@ -6,9 +6,7 @@ R is a statistical programming language used commonly for data analysis amongst 
 
 ## History
 
-Robert Gentleman and Ross Ihaka "both had
-an interest in statistical computing and saw a common
-need for a better software environment in [their] Macintosh teaching laboratory. [They] saw no suitable commercial environment and [they] began to experiment to see what might be involved in developing one [them]selves." [@ihaka98]
+Robert Gentleman and Ross Ihaka "both had an interest in statistical computing and saw a common need for a better software environment in [their] Macintosh teaching laboratory. [They] saw no suitable commercial environment and [they] began to experiment to see what might be involved in developing one [them]selves." [@ihaka98]
 
 While R was officially first released in 1993, it wasn't until 1995 that Ross Ihaka and Robert Gentlemann were convinced by  Martin Mächler to release the source code freely [@ihaka98]. 
 

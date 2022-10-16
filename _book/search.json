@@ -53,7 +53,7 @@
     "href": "p1c2-programming-basics.html#libraries",
     "title": "5  Programming Basics",
     "section": "5.8 Libraries",
-    "text": "5.8 Libraries\nLibraries allow you to access functions other people have created to perform common tasks.\nIn this example, we will be installing and loading a common package named “dplyr”.\nYou first need to install it using the following command.\n\ninstall.packages(\"dplyr\")\n\nNext, you will require the package by using this command.\n\nlibrary(dplyr)\n\nYou are now able to access all of the functions available in the dplyr library!"
+    "text": "5.8 Libraries\nLibraries allow you to access functions other people have created to perform common tasks.\nIn this example, we will be installing and loading a common package named “dplyr”.\nYou first need to install it using the following command.\n\ninstall.packages(\"dplyr\")\n\nNext, you will require the package by using this command.\n\nlibrary(dplyr)\n\nYou are now able to access all of the functions available in the dplyr library!\nSometimes users in the R community create their own packages that aren’t distributed through the CRAN network. You can still use these libraries but you’ll just have to perform an extra step or two. One of the most common places to host packages is Github. The following example will demonstrate how to load a package that I created from Github.\nFirst you’ll need to install the “remotes” package. As the name might suggest, this library allows you to access other libraries from remote locations.\n\ninstall.packages(\"remotes\")\n\nNext you’ll need to install the remote package of your choosing. In our case, we’ll execute the following code.\n\nremotes::install_github(\"TrevorFrench/trevoR\")\n\nIn the previous example, we used the “install_github” function from the “remotes” package and then specified the Github path of the remote repository by typing “TrevorFrench/trevoR”. This code is functionally the same as the “install.packages” function. You may have noticed a new piece of syntax though. The “::” in between “remotes” and “install_github” tells R to use the “install_github” function from the “remotes” library without the need to require the library via the “library” function. This syntax can be used with any other function from any other library.\nNow that the remote package is installed, we can require it in the same way we would any other package.\n\nlibrary(trevoR)"
   },
   {
     "objectID": "p2c3-working-with-apis.html",
@@ -102,7 +102,7 @@
     "href": "p3-data-preparation.html",
     "title": "Part III: Data Preparation",
     "section": "",
-    "text": "Data Cleaning- This chapter will cover the basics of cleaning your data including renaming variables, splitting text, replacing values, dropping columns, and dropping rows. These basic actions will be essential to preparing your data prior to developing insights.\nHandling Missing Data- You may encounter situations while analysing data that some of your data are missing. This chapter will cover best practices in regards to handling these situations as well as the technical details on how to remedy the data.\nOutliers- Outliers are observations that fall outside the expected scope of the dataset. It’s important to identify outliers in your data and determine the necessary treatment for them before moving into the next analysis phase.\nOrganizing Data- This chapter will focus on sorting, filtering, and grouping your datasets."
+    "text": "Most data will not be received in the precise format you need to begin your analysis. The process of data preparation is where you will structure and add features to your data.\n\nData Cleaning- This chapter will cover the basics of cleaning your data including renaming variables, splitting text, replacing values, dropping columns, and dropping rows. These basic actions will be essential to preparing your data prior to developing insights.\nHandling Missing Data- You may encounter situations while analysing data that some of your data are missing. This chapter will cover best practices in regards to handling these situations as well as the technical details on how to remedy the data.\nOutliers- Outliers are observations that fall outside the expected scope of the dataset. It’s important to identify outliers in your data and determine the necessary treatment for them before moving into the next analysis phase.\nOrganizing Data- This chapter will focus on sorting, filtering, and grouping your datasets."
   },
   {
     "objectID": "p3c1-data-cleaning.html#text-to-columns",
@@ -172,7 +172,7 @@
     "href": "p4-developing-insights.html",
     "title": "Part IV: Developing Insights",
     "section": "",
-    "text": "Summary Statistics- Summary statistics are usually where one starts when beginning to develop insights. You may hear the phrase “Exploratory Data Analysis” (sometimes abbreviated “EDA”) throughout your career. This is the point where you try to get a high-level understanding of your data through methods such as summary statistics.\nRegression- Regression is a common statistical technique employed by many to make generalizations as well as predictions about data.\nPlotting- This chapter will cover the basics of creating plots in R. It will begin by demonstrating the plotting capabilities available in R “out of the box”. This will be followed by an introduction to “ggplot2” which is one of the most common plotting libraries in R."
+    "text": "Once your data is prepared, you can now begin to make sense of your data and develop insights about it’s meaning. For many, this is where the data analysis process becomes the most fulfilling. This is the point where you get to reap what you’ve sown in the previous phases of the data analysis lifecycle.\n\nSummary Statistics- Summary statistics are usually where one starts when beginning to develop insights. You may hear the phrase “Exploratory Data Analysis” (sometimes abbreviated “EDA”) throughout your career. This is the point where you try to get a high-level understanding of your data through methods such as summary statistics.\nRegression- Regression is a common statistical technique employed by many to make generalizations as well as predictions about data.\nPlotting- This chapter will cover the basics of creating plots in R. It will begin by demonstrating the plotting capabilities available in R “out of the box”. This will be followed by an introduction to “ggplot2” which is one of the most common plotting libraries in R.\n\n\n\n\n\nGarvin, David A. 1993. “Building a Learning Organization.” Harvard Business Review July-August 1993."
   },
   {
     "objectID": "p4c3-plotting.html#ggplot2",
@@ -235,7 +235,7 @@
     "href": "p1-fundamentals.html",
     "title": "Part I: Fundamentals",
     "section": "",
-    "text": "Note\n\n\n\nFor users with a moderate amount of experience in R or another programming language feel free to either skip, skim, or leverage this chapter as a reference guide.\n\n\n\nGetting Familiar with R Studio- There are four sections in R Studio. These sections are often referred to as “panes”. This chapter will introduce you to the “source” pane, “console” pane, “environment” pane, and “files” pane. Additionally, learn about the different ways you can customize your version of R Studio.\nProgramming Basics- While the R language certainly has it’s unique advantages, it still leverages principles found in many other programming languages such as functions, comments, and loops. Learn how to apply these and other principles in R.\nData Types- Data is stored differently depending on what it represents when programming. For example, a number is going to be stored as a different data type than a letter is. Learn about the five basic data types in R and how to use them.\nData Structures- In computer science, a data structure refers to the method which one uses to organize their data. There are six basic data structures which are commonly used in R. Learn about each of them in this chapter."
+    "text": "Note\n\n\n\nFor users with a moderate amount of experience in R or another programming language feel free to either skip, skim, or leverage this chapter as a reference guide.\n\n\n\nGetting Familiar with R Studio- There are four sections in R Studio. These sections are often referred to as “panes”. This chapter will introduce you to the “source” pane, “console” pane, “environment” pane, and “files” pane. Additionally, you will learn about the different ways you can customize your version of R Studio such as changing the color scheme.\nProgramming Basics- While the R language certainly has it’s unique advantages, it still leverages principles found in many other programming languages such as functions, comments, and loops. Learn how to apply these and other principles in R.\nData Types- Data is stored differently depending on what it represents when programming. For example, a number is going to be stored as a different data type than a letter is. Learn about the five basic data types in R and how to use them.\nData Structures- In computer science, a data structure refers to the method which one uses to organize their data. There are six basic data structures which are commonly used in R. Learn about each of them in this chapter."
   },
   {
     "objectID": "p1c1-r-studio.html",
@@ -263,7 +263,7 @@
     "href": "p1c1-r-studio.html#environment",
     "title": "4  Getting Familiar with R Studio",
     "section": "4.4 Environment",
-    "text": "4.4 Environment\nThe environment pane is the top right pane in R Studio. This is where you will manage all things related to your development environment."
+    "text": "4.4 Environment\nThe environment pane is the top right pane in R Studio. This is where you will manage all things related to your development environment. This pane has four tabs: “Environment”, “History”, “Connections”, and “Tutorial”.\n\nThe “Environment” tab\nThe “History” tab\nThe “Connections” tab\nThe “Tutorials” tab"
   },
   {
     "objectID": "p1c1-r-studio.html#files",
@@ -291,35 +291,35 @@
     "href": "p1c3-data-types.html#numeric",
     "title": "6  Data Types",
     "section": "6.1 Numeric",
-    "text": "6.1 Numeric\n\n6.1.1 Double\nLet’s explore the “double” data type by assigning a number to a variable and then check it’s type by using the “typeof” function. Alternatively, we can use the “is.double” function to check whether or not the variable is a double.\n\nx <- 6.2\ntypeof(x)\n\n[1] \"double\"\n\nis.double(x)\n\n[1] TRUE\n\n\nNext, let’s check whether or not the variable is numeric by using the “is.numeric” function.\n\nis.numeric(x)\n\n[1] TRUE\n\n\nThis function should return “TRUE” as well, which demonstrates the fact that a double is a subset of the numeric data type. ### Integer Let’s explore the “integer” data type by assigning a whole number followed by the capital letter “L” to a variable and then check it’s type by using the “typeof” function. Alternatively, we can use the “is.integer” function to check whether or not the variable is an integer.\n\nx <- 6L\n# By using the \"typeof\" function, we can check the data type of x\ntypeof(x)\n\n[1] \"integer\"\n\nis.integer(x)\n\n[1] TRUE\n\n\nNext, let’s check whether or not the variable is numeric by using the “is.numeric” function.\n\nis.numeric(x)\n\n[1] TRUE\n\n\nThis function should return “TRUE” as well, which demonstrates the fact that an integer is also a subset of the numeric data type. ## Complex\n\nx <- 6i\ntypeof(x)\n\n[1] \"complex\""
+    "text": "6.1 Numeric\n\n6.1.1 Double\nLet’s explore the “double” data type by assigning a number to a variable and then check it’s type by using the “typeof” function. Alternatively, we can use the “is.double” function to check whether or not the variable is a double.\n\nx <- 6.2\ntypeof(x)\n\n[1] \"double\"\n\nis.double(x)\n\n[1] TRUE\n\n\nNext, let’s check whether or not the variable is numeric by using the “is.numeric” function.\n\nis.numeric(x)\n\n[1] TRUE\n\n\nThis function should return “TRUE” as well, which demonstrates the fact that a double is a subset of the numeric data type.\n\n\n6.1.2 Integer\nLet’s explore the “integer” data type by assigning a whole number followed by the capital letter “L” to a variable and then check it’s type by using the “typeof” function. Alternatively, we can use the “is.integer” function to check whether or not the variable is an integer.\n\nx <- 6L\n# By using the \"typeof\" function, we can check the data type of x\ntypeof(x)\n\n[1] \"integer\"\n\nis.integer(x)\n\n[1] TRUE\n\n\nNext, let’s check whether or not the variable is numeric by using the “is.numeric” function.\n\nis.numeric(x)\n\n[1] TRUE\n\n\nThis function should return “TRUE” as well, which demonstrates the fact that an integer is also a subset of the numeric data type."
   },
   {
     "objectID": "p1c3-data-types.html#complex",
     "href": "p1c3-data-types.html#complex",
     "title": "6  Data Types",
     "section": "6.2 Complex",
-    "text": "6.2 Complex\n\nx <- 6i\nclass(x)\n\n[1] \"complex\"\n\ntypeof(x)\n\n[1] \"complex\"\n\nis.numeric(x)\n\n[1] FALSE\n\nis.integer(x)\n\n[1] FALSE\n\nis.double(x)\n\n[1] FALSE"
+    "text": "6.2 Complex\nComplex data types make use of the mathematical concept of an imaginary number through the use of the lowercase letter “i”. The following example sets “x” equal to six times i and then displays the type of x.\n\nx <- 6i\ntypeof(x)\n\n[1] \"complex\""
   },
   {
     "objectID": "p1c3-data-types.html#character",
     "href": "p1c3-data-types.html#character",
     "title": "6  Data Types",
-    "section": "6.2 Character",
-    "text": "6.2 Character\n\nx <- \"Hello!\"\ntypeof(x)\n\n[1] \"character\""
+    "section": "6.3 Character",
+    "text": "6.3 Character\n\nx <- \"Hello!\"\ntypeof(x)\n\n[1] \"character\""
   },
   {
     "objectID": "p1c3-data-types.html#logical",
     "href": "p1c3-data-types.html#logical",
     "title": "6  Data Types",
-    "section": "6.3 Logical",
-    "text": "6.3 Logical\n\nx <- TRUE\ntypeof(x)\n\n[1] \"logical\""
+    "section": "6.4 Logical",
+    "text": "6.4 Logical\n\nx <- TRUE\ntypeof(x)\n\n[1] \"logical\""
   },
   {
     "objectID": "p1c3-data-types.html#raw",
     "href": "p1c3-data-types.html#raw",
     "title": "6  Data Types",
-    "section": "6.4 Raw",
-    "text": "6.4 Raw\n\nx <- charToRaw(\"Hello!\")\nprint(x)\n\n[1] 48 65 6c 6c 6f 21\n\ntypeof(x)\n\n[1] \"raw\"\n\nx <- intToBits(6L)\nprint(x)\n\n [1] 00 01 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n[26] 00 00 00 00 00 00 00\n\ntypeof(x)\n\n[1] \"raw\""
+    "section": "6.5 Raw",
+    "text": "6.5 Raw\n\nx <- charToRaw(\"Hello!\")\nprint(x)\n\n[1] 48 65 6c 6c 6f 21\n\ntypeof(x)\n\n[1] \"raw\"\n\nx <- intToBits(6L)\nprint(x)\n\n [1] 00 01 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n[26] 00 00 00 00 00 00 00\n\ntypeof(x)\n\n[1] \"raw\""
   },
   {
     "objectID": "p1c4-data-structures.html",
@@ -333,7 +333,7 @@
     "href": "p1c4-data-structures.html#vectors",
     "title": "7  Data Structures",
     "section": "7.1 Vectors",
-    "text": "7.1 Vectors\n\nx <- c(1, 3, 3, 7)\n\nprint(x)\n\n[1] 1 3 3 7"
+    "text": "7.1 Vectors\nWe can create a vector by using the “c” function to combine multiple values into a single vector. In the following example, we will combine four separate numbers into a single vector and the output the resulting vector to see what it looks like.\n\nx <- c(1, 3, 3, 7)\n\nprint(x)\n\n[1] 1 3 3 7"
   },
   {
     "objectID": "p1c4-data-structures.html#lists",
@@ -375,7 +375,7 @@
     "href": "index.html",
     "title": "R for Data Analysis",
     "section": "",
-    "text": "“There is synthesis when, in combining therein judgments that are made known to us from simpler relations, one deduces judgments from them relative to more complicated relations. There is analysis when from a complicated truth one deduces more simple truths.”  -André-Marie Ampère (Hofmann 1996)\n\nEveryone is a data analyst. The purpose of this book is to inspire and enable anyone who reads it to reconsider the methods they currently employ to analyse data. This is not to suggest that the methodologies outlined will be useful or sufficient for everyone who reads it. Some analyses can be performed quickly without the need for additional computation while others will require advanced analytics techniques not outlined in this book; however, the aspiration is that all will be equipped with novel tools and ideas for approaching data analysis.\n\n\nNo prior knowledge is required to begin this book. The content will start at the very beginning by showing you how to set up your R environment and the basics of programming in R. By the end of the book, you will be able to perform intermediate analytics techniques such as linear regresion and automatic report generation.\nYou will need an environment which you use to run your code. It is recommended that you download R and R Studio locally for this requirement. This book will walk you through how to do that as well as offer alternatives if that is not an option for you.\n\n\n\n\nPart I (Fundamentals) will introduce you to the basics of programming in the context of R.\nPart II (Data Acquisition) will teach you how to create, import, and access data.\nPart III (Data Preparation) will show you how to begin preparing your data for analysis.\nPart IV (Developing Insights) goes through the process of searching for and extracting insights from your data.\nPart V (Reporting) demonstrates how to wrap your analysis up by developing and automating reports.\n\nEach part will contain several chapters which cover specific ideas realted to the overarching topic. At the end of each of these chapters you will find additional resources for you to use to dive deeper into the ideas.\nEach part will be concluded with practical exercises for you to test your skills.\n\n\n\n\nHofmann, J. R. 1996. Enlightenment and Electrodynamics. Cambridge University Press."
+    "text": "“There is synthesis when, in combining therein judgments that are made known to us from simpler relations, one deduces judgments from them relative to more complicated relations. There is analysis when from a complicated truth one deduces more simple truths.”  -André-Marie Ampère (Hofmann 1996)\n\nEveryone is a data analyst. The purpose of this book is to inspire and enable anyone who reads it to reconsider the methods they currently employ to analyse data. This is not to suggest that the methodologies outlined will be useful or sufficient for everyone who reads it. Some analyses can be performed quickly without the need for additional computation while others will require advanced analytics techniques not outlined in this book; however, the aspiration is that all will be equipped with novel tools and ideas for approaching data analysis.\n\n\nNo prior knowledge is required to begin this book. The content will start at the very beginning by showing you how to set up your R environment and the basics of programming in R. By the end of the book, you will be able to perform intermediate analytics techniques such as linear regresion and automatic report generation.\nYou will need an environment which you use to run your code. It is recommended that you download R and R Studio locally for this requirement. This book will walk you through how to do that as well as offer alternatives if that is not an option for you.\n\n\n\n\nPart I (Fundamentals) will introduce you to the basics of programming in the context of R.\nPart II (Data Acquisition) will teach you how to create, import, and access data.\nPart III (Data Preparation) will show you how to begin preparing your data for analysis.\nPart IV (Developing Insights) goes through the process of searching for and extracting insights from your data.\nPart V (Reporting) demonstrates how to wrap your analysis up by developing and automating reports.\n\nEach part will contain several chapters which cover specific ideas realted to the overarching topic. At the end of each of these chapters you will find additional resources for you to use to dive deeper into the ideas.\nEach part will be concluded with practical exercises for you to test your skills.\n\n\n\nThis website is free to use, and is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 4.0 License. If you’d like a physical copy of the book, you can order it from []; it was published by [] in []. If you’d like to give back, please consider reporting a typo or leaving a pull request at https://github.com/TrevorFrench/R-for-Data-Analysis.\n\n\n\n\nHofmann, J. R. 1996. Enlightenment and Electrodynamics. Cambridge University Press."
   },
   {
     "objectID": "p0c1-what-is-r.html",
@@ -410,7 +410,7 @@
     "href": "p0c2-what-is-data-analysis.html#the-process-of-data-analysis",
     "title": "2  What is Data Analysis?",
     "section": "2.1 The Process of Data Analysis",
-    "text": "2.1 The Process of Data Analysis\nThe process of data analysis can be generally described in six steps:\n\nGathering Requirements - Before one embarks on an analysis, it’s important to make sure the requirements are understood. Requirements include the questions which your stakeholders are hoping to answer as well as the technical requirements of how you are going to perform your analysis.\nData Acquisition - As you might imagine, you must acquire your data before conducting an analysis. This may be done through the methods such as manual creation of datasets, importing pre-constructed data, or leveraging APIs.\nData Preparation - Most data will not be received in the precise format you need to begin your analysis. The process of data preparation is where you will structure and add features to your data.\nDeveloping Insights - Once your data is prepared, you can now begin to make sense of your data and develop insights about it’s meaning.\nReporting - Finally, it’s important to report on your data in such a way that the information is able to be digested by the people who need to see it when they need to see it.\n\nOther sources may include additional steps such as “acting on the analysis”. While this is a critical step for organizations to capture the full value of their data, I would argue that it occurs outside of the analysis process.\nThis book will focus on the technical skills required to conduct an analysis. Because of this, we will be covering steps two through five."
+    "text": "2.1 The Process of Data Analysis\nThe process of data analysis can be generally described in six steps:\n\nGathering Requirements - Before one embarks on an analysis, it’s important to make sure the requirements are understood. Requirements include the questions which your stakeholders are hoping to answer as well as the technical requirements of how you are going to perform your analysis.\nData Acquisition - As you might imagine, you must acquire your data before conducting an analysis. This may be done through the methods such as manual creation of datasets, importing pre-constructed data, or leveraging APIs.\nData Preparation - Most data will not be received in the precise format you need to begin your analysis. The process of data preparation is where you will structure and add features to your data.\nDeveloping Insights - Once your data is prepared, you can now begin to make sense of your data and develop insights about it’s meaning.\nReporting - Finally, it’s important to report on your data in such a way that the information is able to be digested by the people who need to see it when they need to see it.\n\nOther sources may include additional steps such as “acting on the analysis”. While this is a critical step for organizations to capture the full value of their data, I would argue that it occurs outside of the analysis process.\nThis book will focus on the technical skills required to conduct an analysis. Because of this, we will be covering steps two through five and omitting step one."
   },
   {
     "objectID": "p0c2-what-is-data-analysis.html#resources",
@@ -424,7 +424,7 @@
     "href": "p0c3-setup.html",
     "title": "3  Setup",
     "section": "",
-    "text": "Before you do anything, you’ll need to download R. This download will allow your computer to interpret the R code you write later on.\n\nDownload R From R: The R Project for Statistical Computing\nSelect “download R”\n\n\n\n\n\n\n\nChoose any link but preferably the one closest to your physical location\n\n\n\n\n\n\n\nChoose your operating system\n\n\n\n\n\n\n\nPress “Install R for the first time”\n\n\n\n\n\n\n\nPress “download”\n\n\n\n\n\n\n\nOpen installer\n\n\n\n\n\n\n\nFollow the prompts and leave all options set as their default values"
+    "text": "This chapter will walk you through how to download the R programming language as well as R Studio which is a popular tool for interacting with the R ecosystem. Additionally, there are alternatives to R Studio listed at the end of the chapter. However, R Studio is the recommended environment for completing this book."
   },
   {
     "objectID": "p0c3-setup.html#install-r-studio",
@@ -472,15 +472,15 @@
     "objectID": "p1c3-data-types.html#resources",
     "href": "p1c3-data-types.html#resources",
     "title": "6  Data Types",
-    "section": "6.5 Resources",
-    "text": "6.5 Resources\n\nW3 Schools https://www.w3schools.com/r/r_data_types.asp"
+    "section": "6.6 Resources",
+    "text": "6.6 Resources\n\nW3 Schools https://www.w3schools.com/r/r_data_types.asp"
   },
   {
     "objectID": "p2-data-acquisition.html",
     "href": "p2-data-acquisition.html",
     "title": "Part II: Data Acquisition",
     "section": "",
-    "text": "Included Datasets- R comes with a variety of datasets already built in. This chapter will teach you how to view the catalog of included datasets, preview individual datasets, and begin working with the data.\nImport from Spreadsheets- Most R users will have to work with spreadsheets at some point in their careers. This chapter will teach you how to import data from spreadsheets whether it’s in a .csv or .xlsx file and get the imported data into a format that’s easy to work with.\nWorking with APIs- API stands for Application Programming Interface. These sorts of tools are commonly used to programmatically pull data from a third party resource. This chapter demonstrates how one can begin to leverage these tools in their own workflows."
+    "text": "Included Datasets- R comes with a variety of datasets already built in. This chapter will teach you how to view the catalog of included datasets, preview individual datasets, and begin working with the data.\nImport from Spreadsheets- Most R users will have to work with spreadsheets at some point in their careers. This chapter will teach you how to import data from spreadsheets whether it’s in a .csv or .xlsx file and get the imported data into a format that’s easy to work with.\nWorking with APIs- API stands for Application Programming Interface. These sorts of tools are commonly used to programmatically pull data from a third party resource. This chapter demonstrates how you can begin to leverage these tools in your own workflows."
   },
   {
     "objectID": "p2c1-included-datasets.html",
@@ -508,7 +508,7 @@
     "href": "p2c1-included-datasets.html#working-with-included-data",
     "title": "8  Included Datasets",
     "section": "8.2 Working with Included Data",
-    "text": "8.2 Working with Included Data\nThe first step to begin working with your chosen dataset is to attach it to your environment by using the “data” function with the quoted name of your dataset inside the parentheses. In the following example, we’ll attach the “iris” dataset to our environment.\n\ndata(\"iris\")\n\nThis action will then give us a variable with the same name as our dataset which we can call as we would with any other data structure. Let’s preview the “iris” dataset by using the “head” function.\n\nhead(iris)\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n5.4\n3.9\n1.7\n0.4\nsetosa\n\n\n\n\n\n\nMAYBE DEMO A FEW MORE DATASETS HERE ***"
+    "text": "8.2 Working with Included Data\nattach(mtcars)? detach(mtcars) DO YOU ACTUALLY NEED TO LOAD DATA PRIOR TO USING? The first step to begin working with your chosen dataset is to attach it to your environment by using the “data” function with the quoted name of your dataset inside the parentheses. In the following example, we’ll attach the “iris” dataset to our environment.\n\ndata(\"iris\")\n\nThis action will then give us a variable with the same name as our dataset which we can call as we would with any other data structure. Let’s preview the “iris” dataset by using the “head” function.\n\nhead(iris)\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n5.4\n3.9\n1.7\n0.4\nsetosa\n\n\n\n\n\n\nMAYBE DEMO A FEW MORE DATASETS HERE ***"
   },
   {
     "objectID": "p2c3-working-with-apis.html#install-packages",
@@ -522,7 +522,7 @@
     "href": "p2c3-working-with-apis.html#resources",
     "title": "10  Working with APIs",
     "section": "10.7 Resources",
-    "text": "10.7 Resources\n\nBlog post by Trevor French https://medium.com/trevor-french/api-calls-in-r-136290ead81d"
+    "text": "10.7 Resources\n\nBlog post by Trevor French https://medium.com/trevor-french/api-calls-in-r-136290ead81d\n\n\n10.7.1 Helpful APIs"
   },
   {
     "objectID": "p3c1-data-cleaning.html",
@@ -536,7 +536,7 @@
     "href": "p3c1-data-cleaning.html#renaming-variables",
     "title": "11  Data Cleaning",
     "section": "11.1 Renaming Variables",
-    "text": "11.1 Renaming Variables\n\ndf <- head(iris)\nprint(df)\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n5.4\n3.9\n1.7\n0.4\nsetosa\n\n\n\n\n\n\ncolnames(df)[1] <- \"sepal_length\"\ncolnames(df)[2] <- \"sepal_width\"\ncolnames(df)[3] <- \"petal_length\"\ncolnames(df)[4] <- \"petal_width\"\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nSpecies\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n5.4\n3.9\n1.7\n0.4\nsetosa\n\n\n\n\n\n\ncolnames(df)[colnames(df) == \"sepal_length\"] <- \"sepalLength\"\ncolnames(df)[colnames(df) == \"sepal_width\"] <- \"sepalWidth\"\ncolnames(df)[colnames(df) == \"petal_length\"] <- \"petalLength\"\ncolnames(df)[colnames(df) == \"petal_width\"] <- \"petalWidth\"\n\n\n\n\n\n\nsepalLength\nsepalWidth\npetalLength\npetalWidth\nSpecies\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n5.4\n3.9\n1.7\n0.4\nsetosa"
+    "text": "11.1 Renaming Variables\n\ndf <- head(iris)\nprint(df)\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n5.4\n3.9\n1.7\n0.4\nsetosa\n\n\n\n\n\n\ncolnames(df)[1] <- \"sepal_length\"\ncolnames(df)[2] <- \"sepal_width\"\ncolnames(df)[3] <- \"petal_length\"\ncolnames(df)[4] <- \"petal_width\"\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nSpecies\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n5.4\n3.9\n1.7\n0.4\nsetosa\n\n\n\n\n\n\ncolnames(df)[colnames(df) == \"sepal_length\"] <- \"sepalLength\"\ncolnames(df)[colnames(df) == \"sepal_width\"] <- \"sepalWidth\"\ncolnames(df)[colnames(df) == \"petal_length\"] <- \"petalLength\"\ncolnames(df)[colnames(df) == \"petal_width\"] <- \"petalWidth\"\n\n\n\n\n\n\nsepalLength\nsepalWidth\npetalLength\npetalWidth\nSpecies\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n5.4\n3.9\n1.7\n0.4\nsetosa\n\n\n\n\n\nAlternatively, you can use the “rename” function from the “dplyr” library.\n\nlibrary(dplyr)\ndf <- rename(df, \"plantSpecies\" = \"Species\")\n\n\n\n\n\n\nsepalLength\nsepalWidth\npetalLength\npetalWidth\nplantSpecies\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n5.4\n3.9\n1.7\n0.4\nsetosa"
   },
   {
     "objectID": "p3c1-data-cleaning.html#splitting-text",
@@ -578,7 +578,7 @@
     "href": "p5c1-spreadsheets.html#export",
     "title": "18  Spreadsheets",
     "section": "18.1 Export",
-    "text": "18.1 Export\n-csvs and xlsx"
+    "text": "18.1 Export\n\n18.1.1 Export .csv Files\nindex false\n\n\n18.1.2 Export .xlsx Files\nExcel files are handled very similarly to CSV files with the exception being that you will need to use the “write_excel” function from the “writexl” library. The following code snippet demonstrates how to export your data to an Excel file.\n\nlibrary(writexl)\noutput <- \"C:/File Location/example.xlsx\"\npeople <- c(\"John\", \"Jane\")\nid <- c(1, 2)\ndf <- data.frame(id = id, person = people)\nwrite_xlsx(df, output)\n\nsaveworkbook -csvs and xlsx"
   },
   {
     "objectID": "p5c1-spreadsheets.html#formatting",
@@ -606,14 +606,14 @@
     "href": "p3c2-handling-missing-data.html#replacing-nullsnas-constant-value",
     "title": "12  Handling Missing Data",
     "section": "12.1 Replacing Nulls/NAs (constant value?)",
-    "text": "12.1 Replacing Nulls/NAs (constant value?)\nGrades makes sense to replace with 0 because student may have skipped class blah blah (constant value imputation)\n\nstudents <- c(\"John\", \"Jane\", \"x\")\nscores <- c(1, 2, NA)\ndf <- data.frame(score = scores, student = students)\n\nprint(df)\n\n  score student\n1     1    John\n2     2    Jane\n3    NA       x"
+    "text": "12.1 Replacing Nulls/NAs (constant value?)\nGrades makes sense to replace with 0 because student may have skipped class blah blah (constant value imputation)\nMany datasets you encounter will likely be missing data. The temptation may be to immediately disregard these observations; however, it’s important to consider what missing data represents in the context of your dataset as well as the context of what your analysis is hoping to achieve. For example, say you are a teacher and you are trying to determine the average test scores of your students. You have a dataset which lists your students names along with their respective test scores. However, you find that one of your students has an “NA” value in place of a test score.\nDepending on the context, it may make sense for you to ignore this observation prior to calculating the average score. It could also make sense for you to assign a value of “0” to this student’s test score.\n\nstudents <- c(\"John\", \"Jane\", \"x\")\nscores <- c(1, 2, NA)\ndf <- data.frame(score = scores, student = students)\n\nprint(df)\n\n  score student\n1     1    John\n2     2    Jane\n3    NA       x"
   },
   {
     "objectID": "p3c3-outliers.html",
     "href": "p3c3-outliers.html",
     "title": "13  Outliers",
     "section": "",
-    "text": "Outliers are observations that fall outside the expected scope of the dataset. It’s important to identify outliers in your data and determine the necessary treatment for them before moving into the next analysis phase.\nmight be necessary to impute value, remove row or may be necessary to keep the data besides extreme value ## Finding Outliers\nbox and whisker scatter plot bell curve & standard deviation ## Removing Outliers"
+    "text": "Outliers are observations that fall outside the expected scope of the dataset. It’s important to identify outliers in your data and determine the necessary treatment for them before moving into the next analysis phase.\nmight be necessary to impute value, remove row or may be necessary to keep the data besides extreme value ## Finding Outliers\nOne common first step many people employ when looking for outliers is visualizing their datasets so that exterme values can be quickly identified. This section will briefly cover several common visualizations used to identify outlier; however, each of these plots will be explored more in-depth later in the book."
   },
   {
     "objectID": "p3c3-outliers.html#resources",
@@ -634,7 +634,7 @@
     "href": "p3c4-organizing-data.html#sorting",
     "title": "14  Organizing Data",
     "section": "14.1 Sorting",
-    "text": "14.1 Sorting\nStudent Scores dataset sort highest to lowest, alphabetical, lowest to highest, random sort."
+    "text": "14.1 Sorting\nStudent Scores dataset sort highest to lowest, alphabetical, lowest to highest, random sort.\nsort() vs order() vs rank()\n\nhead(ChickWeight)\n\n\n\n\n\n\nweight\nTime\nChick\nDiet\n\n\n\n\n42\n0\n1\n1\n\n\n51\n2\n1\n1\n\n\n59\n4\n1\n1\n\n\n64\n6\n1\n1\n\n\n76\n8\n1\n1\n\n\n93\n10\n1\n1\n\n\n\n\n\n\ndf <- ChickWeight\ndf <- df[order(df$weight),]\n\n\n\n\n\n\n\nweight\nTime\nChick\nDiet\n\n\n\n\n196\n35\n2\n18\n1\n\n\n26\n39\n2\n3\n1\n\n\n195\n39\n0\n18\n1\n\n\n293\n39\n0\n27\n2\n\n\n305\n39\n0\n28\n2\n\n\n317\n39\n0\n29\n2\n\n\n\n\n\n\ndf <- ChickWeight\ndf <- df[order(-df$weight),]\n\n\n\n\n\n\n\nweight\nTime\nChick\nDiet\n\n\n\n\n400\n373\n21\n35\n3\n\n\n399\n361\n20\n35\n3\n\n\n388\n341\n21\n34\n3\n\n\n398\n332\n18\n35\n3\n\n\n232\n331\n21\n21\n2\n\n\n387\n327\n20\n34\n3"
   },
   {
     "objectID": "p3c4-organizing-data.html#resources",
@@ -655,7 +655,7 @@
     "href": "p4c1-summary-statistics.html#quantitative-data",
     "title": "15  Summary Statistics",
     "section": "15.1 Quantitative Data",
-    "text": "15.1 Quantitative Data\nmean, sd, var, min, max, median, range, and quantile\n\n15.1.1 Measures of Central Tendency\n\n\n15.1.2 Scope of Data"
+    "text": "15.1 Quantitative Data\nmean, sd, var, min, max, median, range, and quantile dat <- ggplot2::mpg summary(dat$hwy)\n\n15.1.1 Measures of Central Tendency\n\n\n15.1.2 Scope of Data"
   },
   {
     "objectID": "p4c1-summary-statistics.html#qualitative-data",
@@ -683,7 +683,7 @@
     "href": "p4c2-regression.html#linear-regression",
     "title": "16  Regression",
     "section": "16.1 Linear Regression",
-    "text": "16.1 Linear Regression\nlm(y~x)"
+    "text": "16.1 Linear Regression\nlm(y~x)\nA data frame with 272 observations on 2 variables.\n[,1] eruptions numeric Eruption time in mins [,2] waiting numeric Waiting time to next eruption (in mins)\n\nhead(faithful)\n\n\n\n\n\n\neruptions\nwaiting\n\n\n\n\n3.600\n79\n\n\n1.800\n54\n\n\n3.333\n74\n\n\n2.283\n62\n\n\n4.533\n85\n\n\n2.883\n55\n\n\n\n\n\n\nlm <- lm(faithful$eruptions ~ faithful$waiting)\nsummary(lm)\n\n\nCall:\nlm(formula = faithful$eruptions ~ faithful$waiting)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-1.29917 -0.37689  0.03508  0.34909  1.19329 \n\nCoefficients:\n                  Estimate Std. Error t value Pr(>|t|)    \n(Intercept)      -1.874016   0.160143  -11.70   <2e-16 ***\nfaithful$waiting  0.075628   0.002219   34.09   <2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.4965 on 270 degrees of freedom\nMultiple R-squared:  0.8115,    Adjusted R-squared:  0.8108 \nF-statistic:  1162 on 1 and 270 DF,  p-value: < 2.2e-16\n\n\nMaybe plot trendline now similar to what was done in my medium article"
   },
   {
     "objectID": "p4c2-regression.html#multiple-regression",
@@ -704,7 +704,7 @@
     "href": "p4c2-regression.html#resources",
     "title": "16  Regression",
     "section": "16.4 Resources",
-    "text": "16.4 Resources"
+    "text": "16.4 Resources\n\n“Visualizing OLS Linear Regression Assumptions in R” by Trevor French https://medium.com/trevor-french/visualizing-ols-linear-regression-assumptions-in-r-e762ba7afaff"
   },
   {
     "objectID": "p4c3-plotting.html",
@@ -718,7 +718,7 @@
     "href": "p4c3-plotting.html#base-r",
     "title": "17  Plotting",
     "section": "17.1 Base R",
-    "text": "17.1 Base R\nAddress the fact that certain types of plots have already been covered previosuly in the book.\n\n17.1.1 Different types of plots?"
+    "text": "17.1 Base R\nAddress the fact that certain types of plots have already been covered previosuly in the book.\n\n17.1.1 Scatter Plot\nplot()\n\n\n17.1.2 Box Plot\nboxplot()\n\n\n17.1.3 Plot Matrix\npairs()\n\n\n17.1.4 Pie Chart\npie()\n\n\n17.1.5 Bar Plot\nbarplot()\n\n\n17.1.6 Histogram\nhist()\n\n\n17.1.7 Density Plot\ndensity()\n\n\n17.1.8 Dot Chart\ndotchart()"
   },
   {
     "objectID": "p4c3-plotting.html#resources",
@@ -759,43 +759,43 @@
     "objectID": "p5c3-r-notebook.html#resources",
     "href": "p5c3-r-notebook.html#resources",
     "title": "20  R Notebook",
-    "section": "20.2 Resources",
-    "text": "20.2 Resources\n\nSubset of R Markdown\nResource: https://rmarkdown.rstudio.com/lesson-10.html"
+    "section": "20.1 Resources",
+    "text": "20.1 Resources\n\nResource: https://rmarkdown.rstudio.com/lesson-10.html"
   },
   {
     "objectID": "p5c4-r-shiny.html#shinyapps.io",
     "href": "p5c4-r-shiny.html#shinyapps.io",
     "title": "21  R Shiny",
-    "section": "21.1 shinyapps.io",
-    "text": "21.1 shinyapps.io\n\nShiny apps account\nQuick Start"
+    "section": "21.3 shinyapps.io",
+    "text": "21.3 shinyapps.io\n\nShiny apps account\nQuick Start"
   },
   {
     "objectID": "p5c4-r-shiny.html#quickstart",
     "href": "p5c4-r-shiny.html#quickstart",
     "title": "21  R Shiny",
-    "section": "21.2 Quickstart",
-    "text": "21.2 Quickstart"
+    "section": "21.1 Quickstart",
+    "text": "21.1 Quickstart\nExplain what a project is"
   },
   {
     "objectID": "p5c4-r-shiny.html#deploying-application",
     "href": "p5c4-r-shiny.html#deploying-application",
     "title": "21  R Shiny",
-    "section": "21.3 Deploying Application",
-    "text": "21.3 Deploying Application"
+    "section": "21.4 Deploying Application",
+    "text": "21.4 Deploying Application"
   },
   {
     "objectID": "p5c4-r-shiny.html#shinyuieditor",
     "href": "p5c4-r-shiny.html#shinyuieditor",
     "title": "21  R Shiny",
-    "section": "21.4 Shinyuieditor?",
-    "text": "21.4 Shinyuieditor?"
+    "section": "21.5 Shinyuieditor?",
+    "text": "21.5 Shinyuieditor?"
   },
   {
     "objectID": "p5c4-r-shiny.html#resources",
     "href": "p5c4-r-shiny.html#resources",
     "title": "21  R Shiny",
-    "section": "21.5 Resources",
-    "text": "21.5 Resources\n\nResource: https://shiny.rstudio.com/"
+    "section": "21.6 Resources",
+    "text": "21.6 Resources\n\nResource: https://shiny.rstudio.com/"
   },
   {
     "objectID": "p2c2-import-from-spreadsheets.html",
@@ -823,7 +823,7 @@
     "href": "p2c2-import-from-spreadsheets.html#import-and-combine-multiple-files",
     "title": "9  Import from Spreadsheets",
     "section": "9.3 Import and Combine Multiple Files",
-    "text": "9.3 Import and Combine Multiple Files\nYou may come across a situation where you have multiple CSV files in a folder which you need combined into a single data frame. The following function from a package I personally created will do just that.\nThis package exists only on github (rather than being distributed through CRAN) so you’ll have to perform an extra step to load the library.\n\ninstall.packages(\"remotes\")\nremotes::install_github(\"TrevorFrench/trevoR\")\n\nNow that you have the package loaded, you can specify the folder that contains your files and use the “combineFiles” function.\n\nwd <- \"C:/YOURWORKINGDIRECTORY\"\ncombineFiles(wd)\n\nTo take this one step further, you can immediately assign the output of the function to a variable name as follows.\n\ndf <- combineFiles(wd)\n\n\n\n\n\n\n\nNote\n\n\n\nAll of the headers must match in your CSV files must match exactly for this function to work as expected."
+    "text": "9.3 Import and Combine Multiple Files\nYou may come across a situation where you have multiple CSV files in a folder which you need combined into a single data frame. The following function from a package I personally created will do just that.\nThis package exists only on github (rather than being distributed through CRAN) so you’ll have to perform an extra step to load the library.\n\ninstall.packages(\"remotes\")\nremotes::install_github(\"TrevorFrench/trevoR\")\n\nNow that you have the package loaded, you can specify the folder that contains your files and use the “combineFiles” function.\n\nwd <- \"C:/YOURWORKINGDIRECTORY\"\ncombineFiles(wd)\n\nTo take this one step further, you can immediately assign the output of the function to a variable name as follows.\n\ndf <- combineFiles(wd)\n\nYou now have a dataframe titled “df” which contains all of the data from your .csv files combined!\n\n\n\n\n\n\nNote\n\n\n\nAll of the headers must match in your CSV files must match exactly for this function to work as expected."
   },
   {
     "objectID": "p2c2-import-from-spreadsheets.html#resources",
@@ -831,5 +831,103 @@
     "title": "9  Import from Spreadsheets",
     "section": "9.4 Resources",
     "text": "9.4 Resources\n\ntrevoR package documentation https://github.com/TrevorFrench/trevoR"
+  },
+  {
+    "objectID": "p5c1-spreadsheets.html#export-.csv-files",
+    "href": "p5c1-spreadsheets.html#export-.csv-files",
+    "title": "18  Spreadsheets",
+    "section": "18.1 Export .csv Files",
+    "text": "18.1 Export .csv Files\nindex false"
+  },
+  {
+    "objectID": "p5c1-spreadsheets.html#export-.xlsx-files",
+    "href": "p5c1-spreadsheets.html#export-.xlsx-files",
+    "title": "18  Spreadsheets",
+    "section": "18.2 Export .xlsx Files",
+    "text": "18.2 Export .xlsx Files\nExcel files are handled very similarly to CSV files with the exception being that you will need to use the “write_excel” function from the “writexl” library. The following code snippet demonstrates how to export your data to an Excel file.\n\nlibrary(writexl)\noutput <- \"C:/File Location/example.xlsx\"\npeople <- c(\"John\", \"Jane\")\nid <- c(1, 2)\ndf <- data.frame(id = id, person = people)\nwrite_xlsx(df, output)\n\n-csvs and xlsx"
+  },
+  {
+    "objectID": "p5c4-r-shiny.html#basic-components-of-a-shiny-application",
+    "href": "p5c4-r-shiny.html#basic-components-of-a-shiny-application",
+    "title": "21  R Shiny",
+    "section": "21.2 Basic Components of a Shiny Application",
+    "text": "21.2 Basic Components of a Shiny Application\n\n21.2.1 Server\n\n\n21.2.2 UI"
+  },
+  {
+    "objectID": "p5exercises.html",
+    "href": "p5exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "Exercise: 21-A\n\n\n\ntext\nx"
+  },
+  {
+    "objectID": "p5exercises.html#answers",
+    "href": "p5exercises.html#answers",
+    "title": "Exercises",
+    "section": "Answers",
+    "text": "Answers\n\n\n\n\n\n\nAnswer: 21-A\n\n\n\ntext\nx"
+  },
+  {
+    "objectID": "p0c3-setup.html#install-r",
+    "href": "p0c3-setup.html#install-r",
+    "title": "3  Setup",
+    "section": "3.1 Install R",
+    "text": "3.1 Install R\nBefore you do anything, you’ll need to download R. This download will allow your computer to interpret the R code you write later on.\n\nDownload R From R: The R Project for Statistical Computing\nSelect “download R”\n\n\n\n\n\n\n\nChoose any link but preferably the one closest to your physical location\n\n\n\n\n\n\n\nChoose your operating system\n\n\n\n\n\n\n\nPress “Install R for the first time”\n\n\n\n\n\n\n\nPress “download”\n\n\n\n\n\n\n\nOpen installer\n\n\n\n\n\n\n\nFollow the prompts and leave all options set as their default values"
+  },
+  {
+    "objectID": "p1exercises.html",
+    "href": "p1exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "Exercise: 21-A\n\n\n\ntext\nx"
+  },
+  {
+    "objectID": "p1exercises.html#answers",
+    "href": "p1exercises.html#answers",
+    "title": "Exercises",
+    "section": "Answers",
+    "text": "Answers\n\n\n\n\n\n\nAnswer: 21-A\n\n\n\ntext\nx"
+  },
+  {
+    "objectID": "p2exercises.html",
+    "href": "p2exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "Exercise: 21-A\n\n\n\ntext\nx"
+  },
+  {
+    "objectID": "p2exercises.html#answers",
+    "href": "p2exercises.html#answers",
+    "title": "Exercises",
+    "section": "Answers",
+    "text": "Answers\n\n\n\n\n\n\nAnswer: 21-A\n\n\n\ntext\nx"
+  },
+  {
+    "objectID": "p3exercises.html",
+    "href": "p3exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "Exercise: 21-A\n\n\n\ntext\nx"
+  },
+  {
+    "objectID": "p3exercises.html#answers",
+    "href": "p3exercises.html#answers",
+    "title": "Exercises",
+    "section": "Answers",
+    "text": "Answers\n\n\n\n\n\n\nAnswer: 21-A\n\n\n\ntext\nx"
+  },
+  {
+    "objectID": "p4exercises.html",
+    "href": "p4exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "Exercise: 21-A\n\n\n\ntext\nx"
+  },
+  {
+    "objectID": "p4exercises.html#answers",
+    "href": "p4exercises.html#answers",
+    "title": "Exercises",
+    "section": "Answers",
+    "text": "Answers\n\n\n\n\n\n\nAnswer: 21-A\n\n\n\ntext\nx"
   }
 ]

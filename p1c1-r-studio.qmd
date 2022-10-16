@@ -104,7 +104,15 @@ knitr::include_graphics("images/r-studio/console-pane-1.png", dpi = 270)
 
 ## Environment
 
-The environment pane is the top right pane in R Studio. This is where you will manage all things related to your development environment.
+The environment pane is the top right pane in R Studio. This is where you will manage all things related to your development environment. This pane has four tabs: "Environment", "History", "Connections", and "Tutorial".
+
+- The "Environment" tab
+
+- The "History" tab
+
+- The "Connections" tab
+
+- The "Tutorials" tab
 
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
 #| label: env-pane-1

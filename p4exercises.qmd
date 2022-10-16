@@ -1,1 +1,25 @@
 # Exercises {.unnumbered}
+
+## Questions
+
+::: callout
+## Exercise: 21-A
+
+text
+
+``` r
+x 
+```
+:::
+
+## Answers
+
+::: callout
+## Answer: 21-A
+
+text
+
+``` r
+x 
+```
+:::

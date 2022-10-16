@@ -10,6 +10,9 @@ In computer science, a data structure refers to the method which one uses to org
 - **Arrays** - Arrays are objects which have more than two dimensions (n-dimensional).
 
 ## Vectors
+
+We can create a vector by using the "c" function to combine multiple values into a single vector. In the following example, we will combine four separate numbers into a single vector and the output the resulting vector to see what it looks like.
+
 ```{r}
 x <- c(1, 3, 3, 7)
 

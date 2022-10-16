@@ -65,6 +65,8 @@ To take this one step further, you can immediately assign the output of the func
 df <- combineFiles(wd)
 ```
 
+You now have a dataframe titled "df" which contains all of the data from your .csv files combined!
+
 ::: callout-note
 All of the headers must match in your CSV files must match exactly for this function to work as expected.
 :::

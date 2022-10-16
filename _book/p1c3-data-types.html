@@ -180,6 +180,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           Facebook
           </a>
         </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+            <i class="bi bi-bi-linkedin pe-1"></i>
+          LinkedIn
+          </a>
+        </li>
     </ul>
 </div>
     </div>
@@ -398,11 +404,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#numeric" id="toc-numeric" class="nav-link active" data-scroll-target="#numeric"> <span class="header-section-number">6.1</span> Numeric</a>
   <ul class="collapse">
   <li><a href="#double" id="toc-double" class="nav-link" data-scroll-target="#double"> <span class="header-section-number">6.1.1</span> Double</a></li>
+  <li><a href="#integer" id="toc-integer" class="nav-link" data-scroll-target="#integer"> <span class="header-section-number">6.1.2</span> Integer</a></li>
   </ul></li>
-  <li><a href="#character" id="toc-character" class="nav-link" data-scroll-target="#character"> <span class="header-section-number">6.2</span> Character</a></li>
-  <li><a href="#logical" id="toc-logical" class="nav-link" data-scroll-target="#logical"> <span class="header-section-number">6.3</span> Logical</a></li>
-  <li><a href="#raw" id="toc-raw" class="nav-link" data-scroll-target="#raw"> <span class="header-section-number">6.4</span> Raw</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"> <span class="header-section-number">6.5</span> Resources</a></li>
+  <li><a href="#complex" id="toc-complex" class="nav-link" data-scroll-target="#complex"> <span class="header-section-number">6.2</span> Complex</a></li>
+  <li><a href="#character" id="toc-character" class="nav-link" data-scroll-target="#character"> <span class="header-section-number">6.3</span> Character</a></li>
+  <li><a href="#logical" id="toc-logical" class="nav-link" data-scroll-target="#logical"> <span class="header-section-number">6.4</span> Logical</a></li>
+  <li><a href="#raw" id="toc-raw" class="nav-link" data-scroll-target="#raw"> <span class="header-section-number">6.5</span> Raw</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"> <span class="header-section-number">6.6</span> Resources</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/TrevorFrench/R-for-Data-Analysis/edit/main/p1c3-data-types.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -461,7 +469,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>[1] TRUE</code></pre>
 </div>
 </div>
-<p>This function should return “TRUE” as well, which demonstrates the fact that a double is a subset of the numeric data type. ### Integer Let’s explore the “integer” data type by assigning a whole number followed by the capital letter “L” to a variable and then check it’s type by using the “typeof” function. Alternatively, we can use the “is.integer” function to check whether or not the variable is an integer.</p>
+<p>This function should return “TRUE” as well, which demonstrates the fact that a double is a subset of the numeric data type.</p>
+</section>
+<section id="integer" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="integer"><span class="header-section-number">6.1.2</span> Integer</h3>
+<p>Let’s explore the “integer” data type by assigning a whole number followed by the capital letter “L” to a variable and then check it’s type by using the “typeof” function. Alternatively, we can use the “is.integer” function to check whether or not the variable is an integer.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> 6L</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># By using the "typeof" function, we can check the data type of x</span></span>
@@ -481,7 +493,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>[1] TRUE</code></pre>
 </div>
 </div>
-<p>This function should return “TRUE” as well, which demonstrates the fact that an integer is also a subset of the numeric data type. ## Complex</p>
+<p>This function should return “TRUE” as well, which demonstrates the fact that an integer is also a subset of the numeric data type.</p>
+</section>
+</section>
+<section id="complex" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="complex"><span class="header-section-number">6.2</span> Complex</h2>
+<p>Complex data types make use of the mathematical concept of an imaginary number through the use of the lowercase letter “i”. The following example sets “x” equal to six times i and then displays the type of x.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> 6i</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -490,9 +507,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-</section>
-<section id="character" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="character"><span class="header-section-number">6.2</span> Character</h2>
+<section id="character" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="character"><span class="header-section-number">6.3</span> Character</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">"Hello!"</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -501,8 +517,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="logical" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="logical"><span class="header-section-number">6.3</span> Logical</h2>
+<section id="logical" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="logical"><span class="header-section-number">6.4</span> Logical</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -511,8 +527,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="raw" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="raw"><span class="header-section-number">6.4</span> Raw</h2>
+<section id="raw" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="raw"><span class="header-section-number">6.5</span> Raw</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">charToRaw</span>(<span class="st">"Hello!"</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -535,8 +551,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="resources" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="resources"><span class="header-section-number">6.5</span> Resources</h2>
+<section id="resources" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="resources"><span class="header-section-number">6.6</span> Resources</h2>
 <ul>
 <li>W3 Schools <a href="https://www.w3schools.com/r/r_data_types.asp" class="uri">https://www.w3schools.com/r/r_data_types.asp</a></li>
 </ul>

@@ -40,6 +40,19 @@ colnames(df)[colnames(df) == "petal_width"] <- "petalWidth"
 knitr::kable(df, format="markdown")
 ```
 
+Alternatively, you can use the "rename" function from the "dplyr" library.
+
+```{r}
+#| output: false
+library(dplyr)
+df <- rename(df, "plantSpecies" = "Species")
+```
+
+```{r}
+#| echo: false
+knitr::kable(df, format="markdown")
+```
+
 ## Splitting Text
 
 If you've worked in a spreadsheet application before, you're likely familiar with the "text-to-columns" tool. This tool allows you to split one column of data into multiple columns based on a delimiter. This same functionality is also achievable in R through functions such as the "separate" function from the "tidyr" library.

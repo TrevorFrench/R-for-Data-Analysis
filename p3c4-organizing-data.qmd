@@ -5,6 +5,38 @@ This chapter will focus on sorting, filtering, and grouping your datasets.
 ## Sorting
 Student Scores dataset sort highest to lowest, alphabetical, lowest to highest, random sort.
 
+sort() vs order() vs rank()
+
+```{r}
+#| output: false
+head(ChickWeight)
+```
+
+```{r}
+#| echo: false
+knitr::kable(head(ChickWeight), format="markdown")
+```
+
+```{r}
+df <- ChickWeight
+df <- df[order(df$weight),]
+```
+
+```{r}
+#| echo: false
+knitr::kable(head(df), format="markdown")
+```
+
+```{r}
+df <- ChickWeight
+df <- df[order(-df$weight),]
+```
+
+```{r}
+#| echo: false
+knitr::kable(head(df), format="markdown")
+```
+
 ## Filtering
 Filter by grades higher or lower than a certain number, where name starts with or is equal to a value, do an or/and statement.
 

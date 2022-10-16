@@ -2,11 +2,61 @@
 
 R Shiny is a tool used to develop web applications and is commonly deployed in the use of creating dashboards, hosting static reports, and custom tooling.
 
+## Quickstart
+
+Explain what a project is
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: new-project
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/new-project.png", dpi = 270)
+```
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: new-directory
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/new-directory.png", dpi = 270)
+```
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: shiny-application
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/shiny-application.png", dpi = 270)
+```
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: name-directory
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/name-directory.png", dpi = 270)
+```
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: sample-app
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/sample-app.png", dpi = 270)
+```
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: preview-app
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/preview-app.png", dpi = 270)
+```
+
+## Basic Components of a Shiny Application
+
+### Server
+
+### UI
+
 ## shinyapps.io
 - Shiny apps account
 - Quick Start
-
-## Quickstart
 
 ## Deploying Application
 

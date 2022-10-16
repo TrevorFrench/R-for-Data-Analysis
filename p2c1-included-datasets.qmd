@@ -20,8 +20,9 @@ knitr::include_graphics("images/data-acquisition/data.png", dpi = 270)
 ```
 
 ## Working with Included Data
-
-The first step to begin working with your chosen dataset is to attach it to your environment by using the "data" function with the quoted name of your dataset inside the parentheses. In the following example, we'll attach the "iris" dataset to our environment.
+attach(mtcars)?
+detach(mtcars)
+**DO YOU ACTUALLY NEED TO LOAD DATA PRIOR TO USING?** The first step to begin working with your chosen dataset is to attach it to your environment by using the "data" function with the quoted name of your dataset inside the parentheses. In the following example, we'll attach the "iris" dataset to our environment.
 ```{r}
 #| eval: false
 data("iris")

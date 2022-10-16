@@ -1,14 +1,6 @@
 # What is Data Analysis?
 
-> I mean my definition is data science is like data
-analysis by programming. Which of course begs the
-question of what data analysis is, and so I think of
-data analysis as really any activity where the input is
-data and the output is understanding or knowledge or
-insights. So I think of that pretty broadly. And then to
-do data science you're not doing it by pointing and
-clicking. You're doing it by writing some code in a
-programming language. <br><br> -Hadley Wickham [@wickham20]
+> I mean my definition is data science is like data analysis by programming. Which of course begs the question of what data analysis is, and so I think of data analysis as really any activity where the input is data and the output is understanding or knowledge or insights. So I think of that pretty broadly. And then to do data science you're not doing it by pointing and clicking. You're doing it by writing some code in a programming language. <br><br> -Hadley Wickham [@wickham20]
 
 Data analysis at it's most simple form is the process of searching for meaning in data with the ultimate goal being to draw insight from that meaning.
 
@@ -28,7 +20,7 @@ The process of data analysis can be generally described in six steps:
 
 Other sources may include additional steps such as "acting on the analysis". While this is a critical step for organizations to capture the full value of their data, I would argue that it occurs outside of the *analysis* process.
 
-This book will focus on the technical skills required to conduct an analysis. Because of this, we will be covering steps two through five.
+This book will focus on the technical skills required to conduct an analysis. Because of this, we will be covering steps two through five and omitting step one.
 
 ## Resources
 

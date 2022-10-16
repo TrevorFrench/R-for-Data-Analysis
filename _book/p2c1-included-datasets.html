@@ -180,6 +180,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           Facebook
           </a>
         </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+            <i class="bi bi-bi-linkedin pe-1"></i>
+          LinkedIn
+          </a>
+        </li>
     </ul>
 </div>
     </div>
@@ -436,7 +442,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="working-with-included-data" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="working-with-included-data"><span class="header-section-number">8.2</span> Working with Included Data</h2>
-<p>The first step to begin working with your chosen dataset is to attach it to your environment by using the “data” function with the quoted name of your dataset inside the parentheses. In the following example, we’ll attach the “iris” dataset to our environment.</p>
+<p>attach(mtcars)? detach(mtcars) <strong>DO YOU ACTUALLY NEED TO LOAD DATA PRIOR TO USING?</strong> The first step to begin working with your chosen dataset is to attach it to your environment by using the “data” function with the quoted name of your dataset inside the parentheses. In the following example, we’ll attach the “iris” dataset to our environment.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"iris"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>

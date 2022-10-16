@@ -4,6 +4,25 @@ Spreadsheets are common way to communicate information to stakeholders. This cha
 
 ## Export
 
+### Export .csv Files
+
+index false
+
+### Export .xlsx Files
+
+Excel files are handled very similarly to CSV files with the exception being that you will need to use the "write_excel" function from the "writexl" library. The following code snippet demonstrates how to export your data to an Excel file.
+
+```{r}
+#| eval: false
+library(writexl)
+output <- "C:/File Location/example.xlsx"
+people <- c("John", "Jane")
+id <- c(1, 2)
+df <- data.frame(id = id, person = people)
+write_xlsx(df, output)
+```
+
+saveworkbook
 -csvs and xlsx
 
 ## Formatting
