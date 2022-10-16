@@ -42,10 +42,73 @@ knitr::kable(df, format="markdown")
 
 ## Splitting Text
 
+If you've worked in a spreadsheet application before, you're likely familiar with the "text-to-columns" tool. This tool allows you to split one column of data into multiple columns based on a delimiter. This same functionality is also achievable in R through functions such as the "separate" function from the "tidyr" library.
+
+To test this function out, let's first require the "tidyr" library and then create a test dataframe for us to use.
+
+```{r}
+library(tidyr)
+df <- data.frame(person = c("John_Doe", "Jane_Doe"))
+```
+
+```{r}
+#| echo: false
+knitr::kable(df, format="markdown")
+```
+
+We now have a dataframe with one column which contains a first name and a last name combined by an underscore. Let's now split the two names into their own separate columns.
+
+```{r}
+df <- df %>% separate(person, c("first_name", "last_name"), "_")
+```
+
+```{r}
+#| echo: false
+knitr::kable(df, format="markdown")
+```
+
+Let's break down what just happened. We first declared that "df" was going to be equal to the output of the function that followed by typing "df <-". Next we told the separate function that it would be altering the existing dataframe called "df" by typing "df %>%". We then gave the separate function three arguments. The first argument was the column we were going to be editing, "person". The second argument was the names of our two new columns. Finally, the third argument was our desired delimiter.
+
 ## Replace Values
+
+```{r}
+students <- c("John", "Jane", "Joe", "Janet")
+grades <- c(83, 97, 74, 27)
+df <- data.frame(student = students, grade = grades)
+```
+
+```{r}
+#| echo: false
+knitr::kable(df, format="markdown")
+```
+
+```{r}
+df[which(df$"grade" < 60), "grade"] <- 60
+```
+
+```{r}
+#| echo: false
+knitr::kable(df, format="markdown")
+```
 
 ## Drop Columns
 
+```{r}
+df <- subset(df, select = c("grade"))
+# df = subset(df, select = -c(x,z) )
+# drop column based on index
+```
+
+```{r}
+#| echo: false
+knitr::kable(df, format="markdown")
+```
 ## Drop Rows
 
+```{r}
+# df <- df[-c(7, 8, 9), ]
+```
+
 ## Resources
+
+- Separate function documentation <https://tidyr.tidyverse.org/reference/separate.html>

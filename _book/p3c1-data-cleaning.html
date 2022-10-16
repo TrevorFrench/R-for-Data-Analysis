@@ -339,6 +339,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <a href="./p4c3-plotting.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Plotting</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p4exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -367,6 +372,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./p5c4-r-shiny.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">R Shiny</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p5exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
   </div>
 </li>
       </ul>
@@ -612,18 +622,174 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="splitting-text" class="level2" data-number="11.2">
 <h2 data-number="11.2" class="anchored" data-anchor-id="splitting-text"><span class="header-section-number">11.2</span> Splitting Text</h2>
+<p>If you’ve worked in a spreadsheet application before, you’re likely familiar with the “text-to-columns” tool. This tool allows you to split one column of data into multiple columns based on a delimiter. This same functionality is also achievable in R through functions such as the “separate” function from the “tidyr” library.</p>
+<p>To test this function out, let’s first require the “tidyr” library and then create a test dataframe for us to use.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">person =</span> <span class="fu">c</span>(<span class="st">"John_Doe"</span>, <span class="st">"Jane_Doe"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">person</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">John_Doe</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Jane_Doe</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>We now have a dataframe with one column which contains a first name and a last name combined by an underscore. Let’s now split the two names into their own separate columns.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">separate</span>(person, <span class="fu">c</span>(<span class="st">"first_name"</span>, <span class="st">"last_name"</span>), <span class="st">"_"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">first_name</th>
+<th style="text-align: left;">last_name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">John</td>
+<td style="text-align: left;">Doe</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Jane</td>
+<td style="text-align: left;">Doe</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Let’s break down what just happened. We first declared that “df” was going to be equal to the output of the function that followed by typing “df &lt;-”. Next we told the separate function that it would be altering the existing dataframe called “df” by typing “df %&gt;%”. We then gave the separate function three arguments. The first argument was the column we were going to be editing, “person”. The second argument was the names of our two new columns. Finally, the third argument was our desired delimiter.</p>
 </section>
 <section id="replace-values" class="level2" data-number="11.3">
 <h2 data-number="11.3" class="anchored" data-anchor-id="replace-values"><span class="header-section-number">11.3</span> Replace Values</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>students <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"John"</span>, <span class="st">"Jane"</span>, <span class="st">"Joe"</span>, <span class="st">"Janet"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>grades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">83</span>, <span class="dv">97</span>, <span class="dv">74</span>, <span class="dv">27</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">student =</span> students, <span class="at">grade =</span> grades)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">student</th>
+<th style="text-align: right;">grade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">John</td>
+<td style="text-align: right;">83</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Jane</td>
+<td style="text-align: right;">97</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Joe</td>
+<td style="text-align: right;">74</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Janet</td>
+<td style="text-align: right;">27</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df[<span class="fu">which</span>(df<span class="sc">$</span><span class="st">"grade"</span> <span class="sc">&lt;</span> <span class="dv">60</span>), <span class="st">"grade"</span>] <span class="ot">&lt;-</span> <span class="dv">60</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">student</th>
+<th style="text-align: right;">grade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">John</td>
+<td style="text-align: right;">83</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Jane</td>
+<td style="text-align: right;">97</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Joe</td>
+<td style="text-align: right;">74</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Janet</td>
+<td style="text-align: right;">60</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </section>
 <section id="drop-columns" class="level2" data-number="11.4">
 <h2 data-number="11.4" class="anchored" data-anchor-id="drop-columns"><span class="header-section-number">11.4</span> Drop Columns</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">subset</span>(df, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"grade"</span>))</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># df = subset(df, select = -c(x,z) )</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># drop column based on index</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: right;">grade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">83</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">97</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">74</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">60</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </section>
 <section id="drop-rows" class="level2" data-number="11.5">
 <h2 data-number="11.5" class="anchored" data-anchor-id="drop-rows"><span class="header-section-number">11.5</span> Drop Rows</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># myData &lt;- myData[-c(2, 4, 6), ]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="resources" class="level2" data-number="11.6">
 <h2 data-number="11.6" class="anchored" data-anchor-id="resources"><span class="header-section-number">11.6</span> Resources</h2>
+<ul>
+<li>Separate function documentation <a href="https://tidyr.tidyverse.org/reference/separate.html" class="uri">https://tidyr.tidyverse.org/reference/separate.html</a></li>
+</ul>
 
 
 </section>

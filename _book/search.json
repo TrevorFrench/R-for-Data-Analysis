@@ -116,21 +116,21 @@
     "href": "p3c1-data-cleaning.html#replace-values",
     "title": "11  Data Cleaning",
     "section": "11.3 Replace Values",
-    "text": "11.3 Replace Values"
+    "text": "11.3 Replace Values\n\nstudents <- c(\"John\", \"Jane\", \"Joe\", \"Janet\")\ngrades <- c(83, 97, 74, 27)\ndf <- data.frame(student = students, grade = grades)\n\n\n\n\n\n\nstudent\ngrade\n\n\n\n\nJohn\n83\n\n\nJane\n97\n\n\nJoe\n74\n\n\nJanet\n27\n\n\n\n\n\n\ndf[which(df$\"grade\" < 60), \"grade\"] <- 60\n\n\n\n\n\n\nstudent\ngrade\n\n\n\n\nJohn\n83\n\n\nJane\n97\n\n\nJoe\n74\n\n\nJanet\n60"
   },
   {
     "objectID": "p3c1-data-cleaning.html#drop-columns",
     "href": "p3c1-data-cleaning.html#drop-columns",
     "title": "11  Data Cleaning",
     "section": "11.4 Drop Columns",
-    "text": "11.4 Drop Columns"
+    "text": "11.4 Drop Columns\n\ndf <- subset(df, select = c(\"grade\"))\n# df = subset(df, select = -c(x,z) )\n# drop column based on index\n\n\n\n\n\n\ngrade\n\n\n\n\n83\n\n\n97\n\n\n74\n\n\n60"
   },
   {
     "objectID": "p3c1-data-cleaning.html#drop-rows",
     "href": "p3c1-data-cleaning.html#drop-rows",
     "title": "11  Data Cleaning",
     "section": "11.5 Drop Rows",
-    "text": "11.5 Drop Rows"
+    "text": "11.5 Drop Rows\n\n# myData <- myData[-c(2, 4, 6), ]"
   },
   {
     "objectID": "p3c2-handling-missing-data.html#mean-imputation",
@@ -522,7 +522,7 @@
     "href": "p2c3-working-with-apis.html#resources",
     "title": "10  Working with APIs",
     "section": "10.7 Resources",
-    "text": "10.7 Resources"
+    "text": "10.7 Resources\n\nBlog post by Trevor French https://medium.com/trevor-french/api-calls-in-r-136290ead81d"
   },
   {
     "objectID": "p3c1-data-cleaning.html",
@@ -543,14 +543,14 @@
     "href": "p3c1-data-cleaning.html#splitting-text",
     "title": "11  Data Cleaning",
     "section": "11.2 Splitting Text",
-    "text": "11.2 Splitting Text"
+    "text": "11.2 Splitting Text\nIf you’ve worked in a spreadsheet application before, you’re likely familiar with the “text-to-columns” tool. This tool allows you to split one column of data into multiple columns based on a delimiter. This same functionality is also achievable in R through functions such as the “separate” function from the “tidyr” library.\nTo test this function out, let’s first require the “tidyr” library and then create a test dataframe for us to use.\n\nlibrary(tidyr)\ndf <- data.frame(person = c(\"John_Doe\", \"Jane_Doe\"))\n\n\n\n\n\n\nperson\n\n\n\n\nJohn_Doe\n\n\nJane_Doe\n\n\n\n\n\nWe now have a dataframe with one column which contains a first name and a last name combined by an underscore. Let’s now split the two names into their own separate columns.\n\ndf <- df %>% separate(person, c(\"first_name\", \"last_name\"), \"_\")\n\n\n\n\n\n\nfirst_name\nlast_name\n\n\n\n\nJohn\nDoe\n\n\nJane\nDoe\n\n\n\n\n\nLet’s break down what just happened. We first declared that “df” was going to be equal to the output of the function that followed by typing “df <-”. Next we told the separate function that it would be altering the existing dataframe called “df” by typing “df %>%”. We then gave the separate function three arguments. The first argument was the column we were going to be editing, “person”. The second argument was the names of our two new columns. Finally, the third argument was our desired delimiter."
   },
   {
     "objectID": "p3c1-data-cleaning.html#resources",
     "href": "p3c1-data-cleaning.html#resources",
     "title": "11  Data Cleaning",
     "section": "11.6 Resources",
-    "text": "11.6 Resources"
+    "text": "11.6 Resources\n\nSeparate function documentation https://tidyr.tidyverse.org/reference/separate.html"
   },
   {
     "objectID": "p3c2-handling-missing-data.html",
@@ -796,5 +796,40 @@
     "title": "21  R Shiny",
     "section": "21.5 Resources",
     "text": "21.5 Resources\n\nResource: https://shiny.rstudio.com/"
+  },
+  {
+    "objectID": "p2c2-import-from-spreadsheets.html",
+    "href": "p2c2-import-from-spreadsheets.html",
+    "title": "9  Import from Spreadsheets",
+    "section": "",
+    "text": "Most R users will have to work with spreadsheets at some point in their careers. This chapter will teach you how to import data from spreadsheets whether it’s in a .csv or .xlsx file and get the imported data into a format that’s easy to work with. Additionally, this chapter will demonstrate how to import multiple files at once and combine them all into a single dataframe."
+  },
+  {
+    "objectID": "p2c2-import-from-spreadsheets.html#import-from-.csv-files",
+    "href": "p2c2-import-from-spreadsheets.html#import-from-.csv-files",
+    "title": "9  Import from Spreadsheets",
+    "section": "9.1 Import from .csv Files",
+    "text": "9.1 Import from .csv Files\nR has a function called “read.csv” which allows you to read a csv file directly to a dataframe. The following code snippet is a simple example of how to execute this function.\n\n\n\n\n\n\nNote\n\n\n\nIt’s worth noting that it isn’t necessary to store the file path as a variable before calling the function; however, this habit may save you time down the road.\n\n\n\ninput <- \"C:/File Location/example.csv\"\ndf <- read.csv(input)\n\nAlternatively, if you have multiple files from the same directory that need to be imported, you could do something more like the following code snippet.\n\ndirectory <- \"C:/File Location/\"\nfirst_file <- paste(directory, \"first_file.csv\", sep=\"\")\nsecond_file <- paste(directory, \"second_file.csv\", sep=\"\")\nfirst_df <- read.csv(first_file)\nsecond_df <- read.csv(second_file)"
+  },
+  {
+    "objectID": "p2c2-import-from-spreadsheets.html#import-from-.xlsx-files",
+    "href": "p2c2-import-from-spreadsheets.html#import-from-.xlsx-files",
+    "title": "9  Import from Spreadsheets",
+    "section": "9.2 Import from .xlsx Files",
+    "text": "9.2 Import from .xlsx Files\nExcel files are handled very similarly to CSV files with the exception being that you will need to use the “read_excel” function from the “readxl” library. The following code snippet demonstrates how to import an Excel file into R.\n\nlibrary(readxl)\ninput <- \"C:/File Location/example.xlsx\"\ndf <- read_excel(input)"
+  },
+  {
+    "objectID": "p2c2-import-from-spreadsheets.html#import-and-combine-multiple-files",
+    "href": "p2c2-import-from-spreadsheets.html#import-and-combine-multiple-files",
+    "title": "9  Import from Spreadsheets",
+    "section": "9.3 Import and Combine Multiple Files",
+    "text": "9.3 Import and Combine Multiple Files\nYou may come across a situation where you have multiple CSV files in a folder which you need combined into a single data frame. The following function from a package I personally created will do just that.\nThis package exists only on github (rather than being distributed through CRAN) so you’ll have to perform an extra step to load the library.\n\ninstall.packages(\"remotes\")\nremotes::install_github(\"TrevorFrench/trevoR\")\n\nNow that you have the package loaded, you can specify the folder that contains your files and use the “combineFiles” function.\n\nwd <- \"C:/YOURWORKINGDIRECTORY\"\ncombineFiles(wd)\n\nTo take this one step further, you can immediately assign the output of the function to a variable name as follows.\n\ndf <- combineFiles(wd)\n\n\n\n\n\n\n\nNote\n\n\n\nAll of the headers must match in your CSV files must match exactly for this function to work as expected."
+  },
+  {
+    "objectID": "p2c2-import-from-spreadsheets.html#resources",
+    "href": "p2c2-import-from-spreadsheets.html#resources",
+    "title": "9  Import from Spreadsheets",
+    "section": "9.4 Resources",
+    "text": "9.4 Resources\n\ntrevoR package documentation https://github.com/TrevorFrench/trevoR"
   }
 ]

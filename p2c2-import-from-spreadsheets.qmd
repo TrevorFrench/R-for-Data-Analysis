@@ -1,8 +1,14 @@
 # Import from Spreadsheets
 
-Most R users will have to work with spreadsheets at some point in their careers. This chapter will teach you how to import data from spreadsheets whether it's in a .csv or .xlsx file and get the imported data into a format that's easy to work with.
+Most R users will have to work with spreadsheets at some point in their careers. This chapter will teach you how to import data from spreadsheets whether it's in a .csv or .xlsx file and get the imported data into a format that's easy to work with. Additionally, this chapter will demonstrate how to import multiple files at once and combine them all into a single dataframe.
 
 ## Import from .csv Files
+
+R has a function called "read.csv" which allows you to read a csv file directly to a dataframe. The following code snippet is a simple example of how to execute this function.
+
+::: callout-note
+It's worth noting that it isn't necessary to store the file path as a variable before calling the function; however, this habit may save you time down the road.
+:::
 
 ```{r}
 #| eval: false
@@ -10,7 +16,20 @@ input <- "C:/File Location/example.csv"
 df <- read.csv(input)
 ```
 
+Alternatively, if you have multiple files from the same directory that need to be imported, you could do something more like the following code snippet. 
+
+```{r}
+#| eval: false
+directory <- "C:/File Location/"
+first_file <- paste(directory, "first_file.csv", sep="")
+second_file <- paste(directory, "second_file.csv", sep="")
+first_df <- read.csv(first_file)
+second_df <- read.csv(second_file)
+```
+
 ## Import from .xlsx Files
+
+Excel files are handled very similarly to CSV files with the exception being that you will need to use the "read_excel" function from the "readxl" library. The following code snippet demonstrates how to import an Excel file into R.
 
 ```{r}
 #| eval: false
@@ -21,8 +40,35 @@ df <- read_excel(input)
 
 ## Import and Combine Multiple Files
 
-***
-trevoR package?
-***
+You may come across a situation where you have multiple CSV files in a folder which you need combined into a single data frame. The following function from a package I personally created will do just that.
+
+This package exists only on github (rather than being distributed through CRAN) so you'll have to perform an extra step to load the library.
+
+```{r}
+#| eval: false
+install.packages("remotes")
+remotes::install_github("TrevorFrench/trevoR")
+```
+
+Now that you have the package loaded, you can specify the folder that contains your files and use the "combineFiles" function.
+
+```{r}
+#| eval: false
+wd <- "C:/YOURWORKINGDIRECTORY"
+combineFiles(wd)
+```
+
+To take this one step further, you can immediately assign the output of the function to a variable name as follows.
+
+```{r}
+#| eval: false
+df <- combineFiles(wd)
+```
+
+::: callout-note
+All of the headers must match in your CSV files must match exactly for this function to work as expected.
+:::
 
 ## Resources
+
+- trevoR package documentation <https://github.com/TrevorFrench/trevoR>
