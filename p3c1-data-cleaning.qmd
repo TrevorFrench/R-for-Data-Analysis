@@ -80,7 +80,9 @@ df <- df %>% separate(person, c("first_name", "last_name"), "_")
 knitr::kable(df, format="markdown")
 ```
 
-Let's break down what just happened. We first declared that "df" was going to be equal to the output of the function that followed by typing "df <-". Next we told the separate function that it would be altering the existing dataframe called "df" by typing "df %>%". We then gave the separate function three arguments. The first argument was the column we were going to be editing, "person". The second argument was the names of our two new columns. Finally, the third argument was our desired delimiter.
+Let's break down what just happened. We first declared that "df" was going to be equal to the output of the function that followed by typing "df <-". Next we told the separate function that it would be altering the existing dataframe called "df" by typing "df %>%".
+
+We then gave the separate function three arguments. The first argument was the column we were going to be editing, "person". The second argument was the names of our two new columns, "first_name" and "last_name". Finally, the third argument was our desired delimiter, "_".
 
 ## Replace Values
 

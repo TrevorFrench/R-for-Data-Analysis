@@ -3,6 +3,7 @@
 You may encounter situations while analysing data that some of your data are missing. This chapter will cover best practices in regards to handling these situations as well as the technical details on how to remedy the data. mena imput constant val whow to determine the right way to impute/drop columns
 
 ## Replacing Nulls/NAs (constant value?)
+Explain what Null and NA mean
 Grades makes sense to replace with 0 because student may have skipped class blah blah (constant value imputation)
 
 Many datasets you encounter will likely be missing data. The temptation may be to immediately disregard these observations; however, it's important to consider what missing data represents in the context of your dataset as well as the context of what your analysis is hoping to achieve. For example, say you are a teacher and you are trying to determine the average test scores of your students. You have a dataset which lists your students names along with their respective test scores. However, you find that one of your students has an "NA" value in place of a test score.
