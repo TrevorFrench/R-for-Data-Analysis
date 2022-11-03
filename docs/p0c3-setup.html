@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>R for Data Analysis - 3&nbsp; Setup</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./p1-fundamentals.html" rel="next">
+<link href="./p0c2-what-is-data-analysis.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+
+
+<meta property="og:title" content="R for Data Analysis - 3&nbsp; Setup">
+<meta property="og:description" content="This chapter will walk you through how to download the R programming language as well as R Studio which is a popular tool for interacting with the R ecosystem.">
+<meta property="og:site-name" content="R for Data Analysis">
+<meta name="twitter:title" content="R for Data Analysis - 3&nbsp; Setup">
+<meta name="twitter:description" content="This chapter will walk you through how to download the R programming language as well as R Studio which is a popular tool for interacting with the R ecosystem.">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Setup</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">R for Data Analysis</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/TrevorFrench/R-for-Data-Analysis" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="./R-for-Data-Analysis.pdf">
+            <i class="bi bi-bi-file-pdf pe-1"></i>
+          Download PDF
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="./R-for-Data-Analysis.epub">
+            <i class="bi bi-bi-journal pe-1"></i>
+          Download ePub
+          </a>
+        </li>
+    </ul>
+    <a href="" title="Share" id="sidebar-tool-dropdown-1" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-1">
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+            <i class="bi bi-bi-twitter pe-1"></i>
+          Twitter
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+            <i class="bi bi-bi-facebook pe-1"></i>
+          Facebook
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+            <i class="bi bi-bi-linkedin pe-1"></i>
+          LinkedIn
+          </a>
+        </li>
+    </ul>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p0c1-what-is-r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is R?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p0c2-what-is-data-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is Data Analysis?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p0c3-setup.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Setup</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./p1-fundamentals.html" class="sidebar-item-text sidebar-link">Part I: Fundamentals</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p1c1-r-studio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Familiar with R Studio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p1c2-programming-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Programming Basics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p1c3-data-types.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p1exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./p2-data-acquisition.html" class="sidebar-item-text sidebar-link">Part II: Data Acquisition</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p2c1-included-datasets.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Included Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p2c2-import-from-spreadsheets.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Import from Spreadsheets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p2c3-working-with-apis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Working with APIs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p2exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./p3-data-preparation.html" class="sidebar-item-text sidebar-link">Part III: Data Preparation</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3c1-data-cleaning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Data Cleaning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3c2-handling-missing-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Handling Missing Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3c3-outliers.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Outliers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3c4-organizing-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Organizing Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./p4-developing-insights.html" class="sidebar-item-text sidebar-link">Part IV: Developing Insights</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p4c1-summary-statistics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summary Statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p4c2-regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p4c3-plotting.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Plotting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p4exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./p5-reporting.html" class="sidebar-item-text sidebar-link">Part V: Reporting</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p5c1-spreadsheets.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Spreadsheets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p5c2-r-markdown.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">R Markdown</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p5c3-r-notebook.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">R Notebook</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p5c4-r-shiny.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">R Shiny</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p5exercises.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#install-r" id="toc-install-r" class="nav-link active" data-scroll-target="#install-r"> <span class="header-section-number">3.1</span> Install R</a></li>
+  <li><a href="#install-r-studio" id="toc-install-r-studio" class="nav-link" data-scroll-target="#install-r-studio"> <span class="header-section-number">3.2</span> Install R Studio</a></li>
+  <li><a href="#alternatives" id="toc-alternatives" class="nav-link" data-scroll-target="#alternatives"> <span class="header-section-number">3.3</span> Alternatives</a>
+  <ul class="collapse">
+  <li><a href="#r-studio-cloud" id="toc-r-studio-cloud" class="nav-link" data-scroll-target="#r-studio-cloud"> <span class="header-section-number">3.3.1</span> R Studio Cloud</a></li>
+  <li><a href="#replit" id="toc-replit" class="nav-link" data-scroll-target="#replit"> <span class="header-section-number">3.3.2</span> Replit</a></li>
+  <li><a href="#kaggle" id="toc-kaggle" class="nav-link" data-scroll-target="#kaggle"> <span class="header-section-number">3.3.3</span> Kaggle</a></li>
+  </ul></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"> <span class="header-section-number">3.4</span> Resources</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/TrevorFrench/R-for-Data-Analysis/edit/main/p0c3-setup.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Setup</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>This chapter will walk you through how to download the R programming language as well as R Studio which is a popular tool for interacting with the R ecosystem. Additionally, there are alternatives to R Studio listed at the end of the chapter. However, R Studio is the recommended environment for completing this book.</p>
+<section id="install-r" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="install-r"><span class="header-section-number">3.1</span> Install R</h2>
+<p>Before you do anything, you’ll need to download R. This download will allow your computer to interpret the R code you write later on.</p>
+<ol type="1">
+<li><p>Download R From R: <a href="https://www.r-project.org/">The R Project for Statistical Computing</a></p></li>
+<li><p>Select “download R”</p></li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/setup/install-r-1.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Choose any link but preferably the one closest to your physical location</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/setup/install-r-2.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Choose your operating system</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/setup/install-r-3.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<ol start="5" type="1">
+<li>Press “Install R for the first time”</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/setup/install-r-4.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<ol start="6" type="1">
+<li>Press “download”</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/setup/install-r-5.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<ol start="7" type="1">
+<li>Open installer</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/setup/install-r-6.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<ol start="8" type="1">
+<li>Follow the prompts and leave all options set as their default values</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/setup/install-r-7.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+</section>
+<section id="install-r-studio" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="install-r-studio"><span class="header-section-number">3.2</span> Install R Studio</h2>
+<p>After you install R, you’ll need an environment to write and run your code in. Most people use a program called “R Studio” for this. To download R Studio follow the steps listed below:</p>
+<ol type="1">
+<li><p>Navigate to the R Studio download site: <a href="https://www.rstudio.com/products/rstudio/download/">Download the RStudio IDE</a></p></li>
+<li><p>Press the “download” button under RStudio Desktop</p></li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/setup/install-rstudio-1.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Choose the download option for your operating system</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/setup/install-rstudio-2.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Open the installer and accept all defaults</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/setup/install-rstudio-3.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+</section>
+<section id="alternatives" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="alternatives"><span class="header-section-number">3.3</span> Alternatives</h2>
+<section id="r-studio-cloud" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="r-studio-cloud"><span class="header-section-number">3.3.1</span> R Studio Cloud</h3>
+<p>R Studio Cloud offers users a way to replicate the full R Studio experience without having to download or set anything up on your personal computer. You can sign up for a free account here: <a href="https://rstudio.cloud/"></a></p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/setup/r-studio-cloud-1.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+</section>
+<section id="replit" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="replit"><span class="header-section-number">3.3.2</span> Replit</h3>
+<p>Replit allows users to code in 50+ languages in the browser. While you won’t be able to follow along with the R Studio specific examples, you will be able to run R code. You can sign up for a free account here: <a href="https://replit.com/"></a></p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/setup/replit-1.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+</section>
+<section id="kaggle" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="kaggle"><span class="header-section-number">3.3.3</span> Kaggle</h3>
+<p>Kaggle is one of the most popular sites for data analysts to compete in data competitions, find data, and discuss data topics. They also have a feature that allows you to write and run R (and Python) code. You can sign up for a free account here: <a href="https://www.kaggle.com/"></a></p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/setup/kaggle-1.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="resources" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="resources"><span class="header-section-number">3.4</span> Resources</h2>
+<ul>
+<li>“R Installation and Administration” by the R Core Team <a href="https://cran.r-project.org/doc/manuals/r-release/R-admin.html" class="uri">https://cran.r-project.org/doc/manuals/r-release/R-admin.html</a></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./p0c2-what-is-data-analysis.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is Data Analysis?</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./p1-fundamentals.html" class="pagination-link">
+        <span class="nav-page-text">Part I: Fundamentals</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
