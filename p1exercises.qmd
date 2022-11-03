@@ -3,12 +3,14 @@
 ## Questions
 
 ::: callout
-## Exercise: 21-A
+## Exercise: 5-A
 
-text
+Write a function called "multiply" that will accept two numbers as arguments and will output the product of those two numbers when called as is demonstrated below.
 
 ``` r
-x 
+multiply(3, 3)
+
+# [1] 9
 ```
 :::
 
@@ -17,9 +19,11 @@ x
 ::: callout
 ## Answer: 21-A
 
-text
+One way you could accomplish this task is demonstrated in the following solution.
 
 ``` r
-x 
+multiply <- function(x, y) {
+  return (x * y)
+}
 ```
 :::

@@ -340,14 +340,14 @@
     "href": "p1exercises.html",
     "title": "Exercises",
     "section": "",
-    "text": "Exercise: 21-A\n\n\n\ntext\nx"
+    "text": "Exercise: 5-A\n\n\n\nWrite a function called “multiply” that will accept two numbers as arguments and will output the product of those two numbers when called as is demonstrated below.\nmultiply(3, 3)\n\n# [1] 9"
   },
   {
     "objectID": "p1exercises.html#answers",
     "href": "p1exercises.html#answers",
     "title": "Exercises",
     "section": "Answers",
-    "text": "Answers\n\n\n\n\n\n\nAnswer: 21-A\n\n\n\ntext\nx"
+    "text": "Answers\n\n\n\n\n\n\nAnswer: 21-A\n\n\n\nOne way you could accomplish this task is demonstrated in the following solution.\nmultiply <- function(x, y) {\n  return (x * y)\n}"
   },
   {
     "objectID": "p2-data-acquisition.html",
