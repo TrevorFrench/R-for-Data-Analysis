@@ -1,38 +1,24 @@
 [
   {
-    "objectID": "p2c2-import-from-spreadsheets.html",
-    "href": "p2c2-import-from-spreadsheets.html",
-    "title": "9  Import from Spreadsheets",
+    "objectID": "p0c2-what-is-data-analysis.html",
+    "href": "p0c2-what-is-data-analysis.html",
+    "title": "2  What is Data Analysis?",
     "section": "",
-    "text": "Most R users will have to work with spreadsheets at some point in their careers. This chapter will teach you how to import data from spreadsheets whether it’s in a .csv or .xlsx file and get the imported data into a format that’s easy to work with. Additionally, this chapter will demonstrate how to import multiple files at once and combine them all into a single dataframe."
+    "text": "I mean my definition is data science is like data analysis by programming. Which of course begs the question of what data analysis is, and so I think of data analysis as really any activity where the input is data and the output is understanding or knowledge or insights. So I think of that pretty broadly. And then to do data science you’re not doing it by pointing and clicking. You’re doing it by writing some code in a programming language.  -Hadley Wickham (Eremenko 2020)\nData analysis at it’s most simple form is the process of searching for meaning in data with the ultimate goal being to draw insight from that meaning."
   },
   {
-    "objectID": "p2c2-import-from-spreadsheets.html#import-from-.csv-files",
-    "href": "p2c2-import-from-spreadsheets.html#import-from-.csv-files",
-    "title": "9  Import from Spreadsheets",
-    "section": "9.1 Import from .csv Files",
-    "text": "9.1 Import from .csv Files\nR has a function called “read.csv” which allows you to read a csv file directly to a dataframe. The following code snippet is a simple example of how to execute this function.\n\n\n\n\n\n\nNote\n\n\n\nIt’s worth noting that it isn’t necessary to store the file path as a variable before calling the function; however, this habit may save you time down the road.\n\n\n\ninput <- \"C:/File Location/example.csv\"\ndf <- read.csv(input)\n\nAlternatively, if you have multiple files from the same directory that need to be imported, you could do something more like the following code snippet.\n\ndirectory <- \"C:/File Location/\"\nfirst_file <- paste(directory, \"first_file.csv\", sep=\"\")\nsecond_file <- paste(directory, \"second_file.csv\", sep=\"\")\nfirst_df <- read.csv(first_file)\nsecond_df <- read.csv(second_file)"
+    "objectID": "p0c2-what-is-data-analysis.html#the-process-of-data-analysis",
+    "href": "p0c2-what-is-data-analysis.html#the-process-of-data-analysis",
+    "title": "2  What is Data Analysis?",
+    "section": "2.1 The Process of Data Analysis",
+    "text": "2.1 The Process of Data Analysis\nThe process of data analysis can be generally described in six steps:\n\nGathering Requirements - Before one embarks on an analysis, it’s important to make sure the requirements are understood. Requirements include the questions which your stakeholders are hoping to answer as well as the technical requirements of how you are going to perform your analysis.\nData Acquisition - As you might imagine, you must acquire your data before conducting an analysis. This may be done through the methods such as manual creation of datasets, importing pre-constructed data, or leveraging APIs.\nData Preparation - Most data will not be received in the precise format you need to begin your analysis. The process of data preparation is where you will structure and add features to your data.\nDeveloping Insights - Once your data is prepared, you can now begin to make sense of your data and develop insights about it’s meaning.\nReporting - Finally, it’s important to report on your data in such a way that the information is able to be digested by the people who need to see it when they need to see it.\n\nOther sources may include additional steps such as “acting on the analysis”. While this is a critical step for organizations to capture the full value of their data, I would argue that it occurs outside of the analysis process.\nThis book will focus on the technical skills required to conduct an analysis. Because of this, we will be covering steps two through five and omitting step one."
   },
   {
-    "objectID": "p2c2-import-from-spreadsheets.html#import-from-.xlsx-files",
-    "href": "p2c2-import-from-spreadsheets.html#import-from-.xlsx-files",
-    "title": "9  Import from Spreadsheets",
-    "section": "9.2 Import from .xlsx Files",
-    "text": "9.2 Import from .xlsx Files\nExcel files are handled very similarly to CSV files with the exception being that you will need to use the “read_excel” function from the “readxl” library. The following code snippet demonstrates how to import an Excel file into R.\n\nlibrary(readxl)\ninput <- \"C:/File Location/example.xlsx\"\ndf <- read_excel(input)"
-  },
-  {
-    "objectID": "p2c2-import-from-spreadsheets.html#import-and-combine-multiple-files",
-    "href": "p2c2-import-from-spreadsheets.html#import-and-combine-multiple-files",
-    "title": "9  Import from Spreadsheets",
-    "section": "9.3 Import and Combine Multiple Files",
-    "text": "9.3 Import and Combine Multiple Files\nYou may come across a situation where you have multiple CSV files in a folder which you need combined into a single data frame. The following function from a package I personally created will do just that.\nThis package exists only on github (rather than being distributed through CRAN) so you’ll have to perform an extra step to load the library.\n\ninstall.packages(\"remotes\")\nremotes::install_github(\"TrevorFrench/trevoR\")\n\nNow that you have the package loaded, you can specify the folder that contains your files and use the “combineFiles” function.\n\nwd <- \"C:/YOURWORKINGDIRECTORY\"\ncombineFiles(wd)\n\nTo take this one step further, you can immediately assign the output of the function to a variable name as follows.\n\ndf <- combineFiles(wd)\n\nYou now have a dataframe titled “df” which contains all of the data from your .csv files combined!\n\n\n\n\n\n\nNote\n\n\n\nAll of the headers must match in your CSV files must match exactly for this function to work as expected."
-  },
-  {
-    "objectID": "p2c2-import-from-spreadsheets.html#resources",
-    "href": "p2c2-import-from-spreadsheets.html#resources",
-    "title": "9  Import from Spreadsheets",
-    "section": "9.4 Resources",
-    "text": "9.4 Resources\n\ntrevoR package documentation https://github.com/TrevorFrench/trevoR"
+    "objectID": "p0c2-what-is-data-analysis.html#resources",
+    "href": "p0c2-what-is-data-analysis.html#resources",
+    "title": "2  What is Data Analysis?",
+    "section": "2.2 Resources",
+    "text": "2.2 Resources\n\nData Science & Big Data Analytics: Discovering, Analyzing, Visualizing and Presenting Data https://onlinelibrary.wiley.com/doi/book/10.1002/9781119183686\nManaging the Analytics Life Cycle for Decisions at Scale https://www.sas.com/content/dam/SAS/en_us/doc/whitepaper1/manage-analytical-life-cycle-continuous-innovation-106179.pdf\n\n\n\n\n\nEremenko, Kirill. 2020. “Hadley Wickham Talks Integration and Future of r and Python [Audio Podcast].” SuperDataScience. https://www.superdatascience.com/podcast/hadley-wickham-talks-integration-and-future-of-python-and-r."
   },
   {
     "objectID": "p0c1-what-is-r.html",
@@ -54,27 +40,6 @@
     "title": "1  What is R?",
     "section": "1.2 Resources",
     "text": "1.2 Resources\n\nYou can learn more about R at https://www.r-project.org/\nRead Ross Ihaka’s account of R’s origination here https://www.stat.auckland.ac.nz/~ihaka/downloads/Interface98.pdf\n“What is R?”” by Microsoft https://mran.microsoft.com/documents/what-is-r\nR manuals by the R Development Core Team https://cran.r-project.org/manuals.html\nR-bloggers https://www.r-bloggers.com/\nR User Groups https://www.meetup.com/pro/r-user-groups/\nR Studio Community https://community.rstudio.com/\nThe R Journal https://journal.r-project.org/\nMicrosoft R Application Network https://mran.microsoft.com/\n\n\n\n\n\nHermans, Felienne. 2021. “Hadley Wickham on r and Tidyverse [Audio Podcast].” Software Engineering Radio. https://www.se-radio.net/2021/03/episode-450-hadley-wickham-on-r-and-tidyverse/.\n\n\nIhaka, Ross. 1998. “R : Past and Future History.” https://www.stat.auckland.ac.nz/~ihaka/downloads/Interface98.pdf."
-  },
-  {
-    "objectID": "p0c2-what-is-data-analysis.html",
-    "href": "p0c2-what-is-data-analysis.html",
-    "title": "2  What is Data Analysis?",
-    "section": "",
-    "text": "I mean my definition is data science is like data analysis by programming. Which of course begs the question of what data analysis is, and so I think of data analysis as really any activity where the input is data and the output is understanding or knowledge or insights. So I think of that pretty broadly. And then to do data science you’re not doing it by pointing and clicking. You’re doing it by writing some code in a programming language.  -Hadley Wickham (Eremenko 2020)\nData analysis at it’s most simple form is the process of searching for meaning in data with the ultimate goal being to draw insight from that meaning."
-  },
-  {
-    "objectID": "p0c2-what-is-data-analysis.html#the-process-of-data-analysis",
-    "href": "p0c2-what-is-data-analysis.html#the-process-of-data-analysis",
-    "title": "2  What is Data Analysis?",
-    "section": "2.1 The Process of Data Analysis",
-    "text": "2.1 The Process of Data Analysis\nThe process of data analysis can be generally described in six steps:\n\nGathering Requirements - Before one embarks on an analysis, it’s important to make sure the requirements are understood. Requirements include the questions which your stakeholders are hoping to answer as well as the technical requirements of how you are going to perform your analysis.\nData Acquisition - As you might imagine, you must acquire your data before conducting an analysis. This may be done through the methods such as manual creation of datasets, importing pre-constructed data, or leveraging APIs.\nData Preparation - Most data will not be received in the precise format you need to begin your analysis. The process of data preparation is where you will structure and add features to your data.\nDeveloping Insights - Once your data is prepared, you can now begin to make sense of your data and develop insights about it’s meaning.\nReporting - Finally, it’s important to report on your data in such a way that the information is able to be digested by the people who need to see it when they need to see it.\n\nOther sources may include additional steps such as “acting on the analysis”. While this is a critical step for organizations to capture the full value of their data, I would argue that it occurs outside of the analysis process.\nThis book will focus on the technical skills required to conduct an analysis. Because of this, we will be covering steps two through five and omitting step one."
-  },
-  {
-    "objectID": "p0c2-what-is-data-analysis.html#resources",
-    "href": "p0c2-what-is-data-analysis.html#resources",
-    "title": "2  What is Data Analysis?",
-    "section": "2.2 Resources",
-    "text": "2.2 Resources\n\nData Science & Big Data Analytics: Discovering, Analyzing, Visualizing and Presenting Data https://onlinelibrary.wiley.com/doi/book/10.1002/9781119183686\nManaging the Analytics Life Cycle for Decisions at Scale https://www.sas.com/content/dam/SAS/en_us/doc/whitepaper1/manage-analytical-life-cycle-continuous-innovation-106179.pdf\n\n\n\n\n\nEremenko, Kirill. 2020. “Hadley Wickham Talks Integration and Future of r and Python [Audio Podcast].” SuperDataScience. https://www.superdatascience.com/podcast/hadley-wickham-talks-integration-and-future-of-python-and-r."
   },
   {
     "objectID": "p0c3-setup.html",
@@ -383,6 +348,41 @@
     "title": "8  Included Datasets",
     "section": "8.3 Resources",
     "text": "8.3 Resources\n\nList of datasets available in Base R https://www.rdocumentation.org/packages/datasets/versions/3.6.2"
+  },
+  {
+    "objectID": "p2c2-import-from-spreadsheets.html",
+    "href": "p2c2-import-from-spreadsheets.html",
+    "title": "9  Import from Spreadsheets",
+    "section": "",
+    "text": "Most R users will have to work with spreadsheets at some point in their careers. This chapter will teach you how to import data from spreadsheets whether it’s in a .csv or .xlsx file and get the imported data into a format that’s easy to work with. Additionally, this chapter will demonstrate how to import multiple files at once and combine them all into a single dataframe."
+  },
+  {
+    "objectID": "p2c2-import-from-spreadsheets.html#import-from-.csv-files",
+    "href": "p2c2-import-from-spreadsheets.html#import-from-.csv-files",
+    "title": "9  Import from Spreadsheets",
+    "section": "9.1 Import from .csv Files",
+    "text": "9.1 Import from .csv Files\nR has a function called “read.csv” which allows you to read a csv file directly to a dataframe. The following code snippet is a simple example of how to execute this function.\n\n\n\n\n\n\nNote\n\n\n\nIt’s worth noting that it isn’t necessary to store the file path as a variable before calling the function; however, this habit may save you time down the road.\n\n\n\ninput <- \"C:/File Location/example.csv\"\ndf <- read.csv(input)\n\nAlternatively, if you have multiple files from the same directory that need to be imported, you could do something more like the following code snippet.\n\ndirectory <- \"C:/File Location/\"\nfirst_file <- paste(directory, \"first_file.csv\", sep=\"\")\nsecond_file <- paste(directory, \"second_file.csv\", sep=\"\")\nfirst_df <- read.csv(first_file)\nsecond_df <- read.csv(second_file)"
+  },
+  {
+    "objectID": "p2c2-import-from-spreadsheets.html#import-from-.xlsx-files",
+    "href": "p2c2-import-from-spreadsheets.html#import-from-.xlsx-files",
+    "title": "9  Import from Spreadsheets",
+    "section": "9.2 Import from .xlsx Files",
+    "text": "9.2 Import from .xlsx Files\nExcel files are handled very similarly to CSV files with the exception being that you will need to use the “read_excel” function from the “readxl” library. The following code snippet demonstrates how to import an Excel file into R.\n\nlibrary(readxl)\ninput <- \"C:/File Location/example.xlsx\"\ndf <- read_excel(input)"
+  },
+  {
+    "objectID": "p2c2-import-from-spreadsheets.html#import-and-combine-multiple-files",
+    "href": "p2c2-import-from-spreadsheets.html#import-and-combine-multiple-files",
+    "title": "9  Import from Spreadsheets",
+    "section": "9.3 Import and Combine Multiple Files",
+    "text": "9.3 Import and Combine Multiple Files\nYou may come across a situation where you have multiple CSV files in a folder which you need combined into a single data frame. The following function from a package I personally created will do just that.\nThis package exists only on github (rather than being distributed through CRAN) so you’ll have to perform an extra step to load the library.\n\ninstall.packages(\"remotes\")\nremotes::install_github(\"TrevorFrench/trevoR\")\n\nNow that you have the package loaded, you can specify the folder that contains your files and use the “combineFiles” function.\n\nwd <- \"C:/YOURWORKINGDIRECTORY\"\ncombineFiles(wd)\n\nTo take this one step further, you can immediately assign the output of the function to a variable name as follows.\n\ndf <- combineFiles(wd)\n\nYou now have a dataframe titled “df” which contains all of the data from your .csv files combined!\n\n\n\n\n\n\nNote\n\n\n\nAll of the headers must match in your CSV files must match exactly for this function to work as expected."
+  },
+  {
+    "objectID": "p2c2-import-from-spreadsheets.html#resources",
+    "href": "p2c2-import-from-spreadsheets.html#resources",
+    "title": "9  Import from Spreadsheets",
+    "section": "9.4 Resources",
+    "text": "9.4 Resources\n\ntrevoR package documentation https://github.com/TrevorFrench/trevoR"
   },
   {
     "objectID": "p2c3-working-with-apis.html",
@@ -880,12 +880,5 @@
     "title": "References",
     "section": "",
     "text": "Eremenko, Kirill. 2020. “Hadley Wickham Talks Integration and\nFuture of r and Python [Audio Podcast].” SuperDataScience. https://www.superdatascience.com/podcast/hadley-wickham-talks-integration-and-future-of-python-and-r.\n\n\nGarvin, David A. 1993. “Building a Learning Organization.”\nHarvard Business Review July-August 1993.\n\n\nHermans, Felienne. 2021. “Hadley Wickham on r and Tidyverse [Audio\nPodcast].” Software Engineering Radio. https://www.se-radio.net/2021/03/episode-450-hadley-wickham-on-r-and-tidyverse/.\n\n\nIhaka, Ross. 1998. “R : Past and Future History.” https://www.stat.auckland.ac.nz/~ihaka/downloads/Interface98.pdf.\n\n\nMcCandless, David. 2010. “The Beauty of Data\nVisualization.” https://www.ted.com/talks/david_mccandless_the_beauty_of_data_visualization/transcript?language=en.\n\n\nPaulson, Josh. 2022. Navigating Code in the RStudio IDE. https://support.rstudio.com/hc/en-us/articles/200710523-Navigating-Code-in-the-RStudio-IDE."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "R for Data Analysis",
-    "section": "",
-    "text": "“There is synthesis when, in combining therein judgments that are made known to us from simpler relations, one deduces judgments from them relative to more complicated relations. There is analysis when from a complicated truth one deduces more simple truths.”  -André-Marie Ampère (Hofmann 1996)\n\nEveryone is a data analyst. The purpose of this book is to inspire and enable anyone who reads it to reconsider the methods they currently employ to analyse data. This is not to suggest that the methodologies outlined will be useful or sufficient for everyone who reads it. Some analyses can be performed quickly without the need for additional computation while others will require advanced analytics techniques not outlined in this book; however, the aspiration is that all will be equipped with novel tools and ideas for approaching data analysis.\n\n\nNo prior knowledge is required to begin this book. The content will start at the very beginning by showing you how to set up your R environment and the basics of programming in R. By the end of the book, you will be able to perform intermediate analytics techniques such as linear regresion and automatic report generation.\nYou will need an environment which you use to run your code. It is recommended that you download R and R Studio locally for this requirement. This book will walk you through how to do that as well as offer alternatives if that is not an option for you.\n\n\n\n\nPart I (Fundamentals) will introduce you to the basics of programming in the context of R.\nPart II (Data Acquisition) will teach you how to create, import, and access data.\nPart III (Data Preparation) will show you how to begin preparing your data for analysis.\nPart IV (Developing Insights) goes through the process of searching for and extracting insights from your data.\nPart V (Reporting) demonstrates how to wrap your analysis up by developing and automating reports.\n\nEach part will contain several chapters which cover specific ideas realted to the overarching topic. At the end of each of these chapters you will find additional resources for you to use to dive deeper into the ideas.\nEach part will be concluded with practical exercises for you to test your skills.\n\n\n\nThis website is free to use, and is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 4.0 License. Physical copies of this book are not currently available; however, you can download a pdf in the top left corner of this site. Feel free to contribute by reporting a type pr leavinga pull request at https://github.com/TrevorFrench/R-for-Data-Analysis.\n\n\n\n\nHofmann, J. R. 1996. Enlightenment and Electrodynamics. Cambridge University Press."
   }
 ]
