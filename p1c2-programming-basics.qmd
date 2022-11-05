@@ -101,21 +101,137 @@ An operator is a symbol that allows you to perform an action or define some sort
 knitr::include_graphics("images/programming-basics/operators-1.png", dpi = 270)
 ```
 
-***
-
-EXPLAIN ALL OF THE OPERATORS HERE (NOT JUST THE IMAGE AS AN EXPLANATION)
-
-***
 ### Arithmetic Operators
+
+Arithmetic operators allow users to perform basic mathematic functions. The examples below demonstrate how these operators might be used. For those not familiar, the modulus operator will return the remainder of a division operation while integer (or Euclidean) division returns the result of a division operation without the fractional component.
+
+```{r}
+3 + 3
+3 - 3
+3 * 3
+3 ^ 3
+10 / 7
+10 %% 7
+10 %/% 7
+```
 
 ### Comparison Operators
 
+Comparison operators allow users to compare values. The examples below demonstrate how these operators might be used.
+
+```{r}
+3 == 3
+3 != 3
+3 > 3
+3 < 3
+3 >= 3
+3 <= 3
+```
+
 ### Logical Operators
+
+Logical operators allow users to say "AND", "OR", and "NOT". The following examples demonstrate how these operators might be used in conjunction with comparison operators as well as the difference between standard logical operators and "vectorized" logical operators.
+
+In this example, we will evaluate two vectors of the same length from left to right. Each vector has seven observations (-3, -2, -1, 0, 1, 2, 3). Rather than simply returning a single "TRUE" or "FALSE", this will return seven "TRUE" or "FALSE" values. In this case, the first element of each vector ("-3" and "-3") will be evaluated against their respective conditions and return "TRUE" only if both conditions are met. This will then be repeated for each of the remaining elements.
+```{r}
+# Vectorized "AND" operator
+((-3:3) >= 0) & ((-3:3) <= 0)
+```
+
+This example will return a single "TRUE" only if both conditions are met, otherwise "FALSE" will be returned.
+```{r}
+# Standard "AND" operator
+(3 >= 0) && (-3 <= 0)
+```
+
+This example is the same as the previous one with the exception that we have negated the second condition with a "NOT" operator.
+```{r}
+# Standard "AND" operator with "NOT" operator
+(3 >= 0) && !(-3 <= 0)
+```
+
+The following two examples are essentially the same as the first two except that we are using "OR" operators rather than "AND" operators
+```{r}
+# Vectorized "OR" operator
+((-3:3) >= 0) | ((-3:3) <= 0)
+
+# Standard "OR" operator
+(3 >= 0) || (-3 <= 0)
+```
 
 ### Assignment Operators
 
+Assignment operators allow users to assign values to something. For most users, only "<-" or "->" will ever be used. These are called local assignment operators. However, there is another type of operator called a global assignment operator which is denoted by "<<-" or "->>".
+
+Understanding the difference between local and global assignment operators in R can be tricky to get your head around. Here’s an example which should clear things up.
+
+First, let’s create two variables named “global_var” and “local_var” and give them the values “global” and “local”, respectively. Notice we are using the standard assignment operator “<-” for both variables.
+
+```{r}
+global_var <- 'global'
+local_var <- 'local'
+
+global_var
+local_var
+```
+
+Next, let’s create a function to test out the global assignment operator (“<<-”). Inside this function, we will assign a new value to both of the variables we just created; however, we will use the “<-” operator for the local_var and the “<<-” operator for the global_var so that we can observe the difference in behavior.
+
+::: callout-note
+Functions are covered directly after this section. If the concept of functions is unfamiliar to you, feel free to jump ahead and come back later.
+:::
+
+```{r}
+my_function <- function() {
+   global_var <<- 'na'
+   local_var <- 'na'
+   print(global_var)
+   print(local_var)
+}
+
+my_function()
+```
+
+This function performs how you would expect it to intuitively, right? The interesting part comes next when we print out the values of these variables again.
+
+```{r}
+global_var
+local_var
+```
+
+From this result, we can see the difference in behavior caused by the differing assignment operators. When using the “<-” operator inside the function, it’s scope is limited to just the function that it lives in. On the other hand, the “<<-” operator has the ability to edit the value of the variable outside of the function as well.
+
+You may now be wondering why both the local and the global assignment operators have two separate denotations. The following example demonstrates the difference between the two.
+
+```{r}
+x <- 3
+3 -> y
+
+x
+y
+```
+
+There is also a third assignment operator that can be used: "=". However, it is generally considered best practice to just use the local assignment operator. You can find more information about these three operators in the resources section.
+
 ### Miscellaneous Operators
 
+The ":" operator allows users to create a series of numbers in a sequence. This was demonstrated in the logical operator section. The %in% operator checks if an element exists in a vector. Both of these operators are demonstrated in the following example.
+
+```{r}
+3 %in% 1:3
+```
+
+Finally, the "%*%" operator allows users to perform matrix multiplication as is demonstrated below. First, let's create a 2x2 matrix and then let's multiply it by itself.
+
+```{r}
+x <- matrix(
+  c(1,3,3,7)
+  , nrow = 2
+  , ncol = 2
+  , byrow = TRUE)
+
+x %*% x
+```
 
 ## Functions
 
@@ -244,6 +360,7 @@ if (x < 20) {
     print("x is equal to 20")
 }
 ```
+
 ## Libraries
 
 Libraries allow you to access functions other people have created to perform common tasks.
@@ -294,3 +411,4 @@ library(trevoR)
 ## Resources
 
 - W3 Schools R Tutorial <https://www.w3schools.com/r/>
+- Assignment Operators: <https://stat.ethz.ch/R-manual/R-devel/library/base/html/assignOps.html>

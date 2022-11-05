@@ -2,9 +2,11 @@
 
 > R was a programming language that was designed specifically for the needs of statistics and data analysis. <br><br> -Hadley Wickham [@wickham21]
 
-R is a statistical programming language used commonly for data analysis amongst other disciplines. It was built by Ross Ihaka and Robert Gentleman at the University of Auckland and was first released in 1993.
+R is a statistical programming language used commonly for data analysis across a wide array of disciplines and industries. It's often preferred over similar languages for it's robust support of statistical analysis, the ease in which one is able to create beautiful graphics, and it's open source nature amongst other reasons.
 
 ## History
+
+R was built by Ross Ihaka and Robert Gentleman at the University of Auckland and was first released in 1993.
 
 Robert Gentleman and Ross Ihaka "both had an interest in statistical computing and saw a common need for a better software environment in [their] Macintosh teaching laboratory. [They] saw no suitable commercial environment and [they] began to experiment to see what might be involved in developing one [them]selves." [@ihaka98]
 

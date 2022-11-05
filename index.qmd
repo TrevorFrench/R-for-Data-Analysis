@@ -24,4 +24,4 @@ Each part will be concluded with practical exercises for you to test your skills
 
 ## License
 
-This website is free to use, and is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivs 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) License. Physical copies of this book are not currently available; however, you can download a pdf in the top left corner of this site. Feel free to contribute by reporting a type pr leavinga pull request at <https://github.com/TrevorFrench/R-for-Data-Analysis>.
+This website is free to use, and is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivs 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) License. Physical copies of this book are not currently available; however, you can download a pdf in the top left corner of this site. Feel free to contribute by reporting a typo or leaving a pull request at <https://github.com/TrevorFrench/R-for-Data-Analysis>.
