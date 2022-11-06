@@ -4,6 +4,8 @@ This chapter will cover the basics of cleaning your data including renaming vari
 
 ## Renaming Variables
 
+Let's begin by creating a dataset we can use to work through some examples. In our case, we'll take the first few rows from the "iris" dataset and create a new dataframe called "df".
+
 ```{r}
 #| eval: false
 df <- head(iris)
@@ -16,17 +18,22 @@ df <- head(iris)
 knitr::kable(df, format="markdown")
 ```
 
+Now, let's adjust our column names (otherwise known as variables) to be "snake case" (a method to name variables in which all words are lowercase and separated by underscores). We'll do this through the use of the "colnames" function. In the following example, we are renaming each column individually by specifying what number column to adjust.
+
 ```{r}
 colnames(df)[1] <- "sepal_length"
 colnames(df)[2] <- "sepal_width"
 colnames(df)[3] <- "petal_length"
 colnames(df)[4] <- "petal_width"
+colnames(df)[5] <- "species"
 ```
 
 ```{r}
 #| echo: false
 knitr::kable(df, format="markdown")
 ```
+
+Let's adjust our column names again but to be "camel case" this time. Camel casing requires the first word in a name to be lowercase with all subsequent words having the first letter capitalized. Instead of using the column number though, this time we'll use the actual name of the column we want to adjust.
 
 ```{r}
 colnames(df)[colnames(df) == "sepal_length"] <- "sepalLength"
@@ -45,7 +52,7 @@ Alternatively, you can use the "rename" function from the "dplyr" library.
 ```{r}
 #| output: false
 library(dplyr)
-df <- rename(df, "plantSpecies" = "Species")
+df <- rename(df, "plantSpecies" = "species")
 ```
 
 ```{r}
@@ -86,6 +93,8 @@ We then gave the separate function three arguments. The first argument was the c
 
 ## Replace Values
 
+We'll next go over how you can replace specific values in a dataset. Let's begin by creating a dataset to work with. The following example will create a dataframe which contains student names and their respective grades on a test.
+
 ```{r}
 students <- c("John", "Jane", "Joe", "Janet")
 grades <- c(83, 97, 74, 27)
@@ -96,6 +105,8 @@ df <- data.frame(student = students, grade = grades)
 #| echo: false
 knitr::kable(df, format="markdown")
 ```
+
+Now that our dataset is assembled, let's decide that we're going to institute a minimum grade of 60. To do this we're going to need to replace any grade lower than 60 with 60. The following example demonstrates one way you could accomplish that.
 
 ```{r}
 df[which(df$"grade" < 60), "grade"] <- 60
@@ -108,20 +119,66 @@ knitr::kable(df, format="markdown")
 
 ## Drop Columns
 
+Let's use the "mtcars" dataset to demonstrate how to drop columns
+
 ```{r}
-df <- subset(df, select = c("grade"))
-# df = subset(df, select = -c(x,z) )
-# drop column based on index
+#| eval: false
+df <- head(mtcars)
+print(df)
+```
+
+```{r}
+#| echo: false
+df <- head(mtcars)
+knitr::kable(df, format="markdown")
+```
+
+Next, we can either drop columns by specifying the columns we want to keep or by specifying the ones we want to drop. The following example will get rid of the "carb" column by specifying that we want to keep every other column.
+
+```{r}
+df <- subset(df, select = c(mpg, cyl, disp, hp, drat, wt, qsec, vs, am, gear))
 ```
 
 ```{r}
 #| echo: false
 knitr::kable(df, format="markdown")
 ```
-## Drop Rows
+
+Alternatively, let's try gettig rid of the "gear" column directly. We can do this by putting a "-" in front of the "c" function.
 
 ```{r}
-# df <- df[-c(7, 8, 9), ]
+df <- subset(df, select = -c(gear))
+```
+
+```{r}
+#| echo: false
+knitr::kable(df, format="markdown")
+```
+
+One other way you could drop columns if you wanted to use index numbers rather than column names is demonstrated below.
+
+```{r}
+df <- df[,-c(1,3:7)]
+```
+
+```{r}
+#| echo: false
+knitr::kable(df, format="markdown")
+```
+
+As you can see, we used the square brackets to select a subset of our dataframe and then pasted our values after the comma to declare that we were choosing columns rather than rows. After that we used the "-" symbol to say that we were choosing columns to drop rather than columns to keep. Finally, we chose to drop columns 1 as well as columns 3 through 7. 
+
+## Drop Rows
+
+We are also able to drop rows with the same method we just used to drop columns with the difference being that we would place our values in front of the comma rather than after the comma. For example, if we wanted to drop the first two rows (otherwise known as observations) from our previous dataframe, we could do the following.
+
+```{r}
+df <- df[-c(1:2),]
+```
+
+```{r}
+#| echo: false
+knitr::kable(df, format="markdown")
 ```
 
 ## Resources

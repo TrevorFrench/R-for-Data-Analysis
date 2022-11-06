@@ -17,7 +17,7 @@ multiply(3, 3)
 ## Answers
 
 ::: callout
-## Answer: 21-A
+## Answer: 5-A
 
 One way you could accomplish this task is demonstrated in the following solution.
 

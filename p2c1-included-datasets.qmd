@@ -20,9 +20,12 @@ knitr::include_graphics("images/data-acquisition/data.png", dpi = 270)
 ```
 
 ## Working with Included Data
-attach(mtcars)?
-detach(mtcars)
-**DO YOU ACTUALLY NEED TO LOAD DATA PRIOR TO USING?** The first step to begin working with your chosen dataset is to attach it to your environment by using the "data" function with the quoted name of your dataset inside the parentheses. In the following example, we'll attach the "iris" dataset to our environment.
+The first step to begin working with your chosen dataset is to load it into your environment by using the "data" function with the quoted name of your dataset inside the parentheses. In the following example, we'll attach the "iris" dataset to our environment.
+
+::: callout-note
+It may not be necessary for you to load your dataset via the "data" function prior to using it. Additionally, some datasets may require you to add them to your search path by using using the "attach" function (conversely, you can remove datasets from your search path by using the "detach" function).
+:::
+
 ```{r}
 #| eval: false
 data("iris")
@@ -38,9 +41,6 @@ head(iris)
 #| echo: false
 knitr::kable(head(iris), format="markdown")
 ```
-***
-MAYBE DEMO A FEW MORE DATASETS HERE
-***
 
 ## Resources
 
