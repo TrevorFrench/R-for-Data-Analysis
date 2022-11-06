@@ -1,0 +1,891 @@
+[
+  {
+    "objectID": "p3c1-data-cleaning.html",
+    "href": "p3c1-data-cleaning.html",
+    "title": "11  Data Cleaning",
+    "section": "",
+    "text": "This chapter will cover the basics of cleaning your data including renaming variables, splitting text, replacing values, dropping columns, and dropping rows. These basic actions will be essential to preparing your data prior to developing insights."
+  },
+  {
+    "objectID": "p3c1-data-cleaning.html#renaming-variables",
+    "href": "p3c1-data-cleaning.html#renaming-variables",
+    "title": "11  Data Cleaning",
+    "section": "11.1 Renaming Variables",
+    "text": "11.1 Renaming Variables\nLet’s begin by creating a dataset we can use to work through some examples. In our case, we’ll take the first few rows from the “iris” dataset and create a new dataframe called “df”.\n\ndf <- head(iris)\nprint(df)\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n5.4\n3.9\n1.7\n0.4\nsetosa\n\n\n\n\n\nNow, let’s adjust our column names (otherwise known as variables) to be “snake case” (a method to name variables in which all words are lowercase and separated by underscores). We’ll do this through the use of the “colnames” function. In the following example, we are renaming each column individually by specifying what number column to adjust.\n\ncolnames(df)[1] <- \"sepal_length\"\ncolnames(df)[2] <- \"sepal_width\"\ncolnames(df)[3] <- \"petal_length\"\ncolnames(df)[4] <- \"petal_width\"\ncolnames(df)[5] <- \"species\"\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n5.4\n3.9\n1.7\n0.4\nsetosa\n\n\n\n\n\nLet’s adjust our column names again but to be “camel case” this time. Camel casing requires the first word in a name to be lowercase with all subsequent words having the first letter capitalized. Instead of using the column number though, this time we’ll use the actual name of the column we want to adjust.\n\ncolnames(df)[colnames(df) == \"sepal_length\"] <- \"sepalLength\"\ncolnames(df)[colnames(df) == \"sepal_width\"] <- \"sepalWidth\"\ncolnames(df)[colnames(df) == \"petal_length\"] <- \"petalLength\"\ncolnames(df)[colnames(df) == \"petal_width\"] <- \"petalWidth\"\n\n\n\n\n\n\nsepalLength\nsepalWidth\npetalLength\npetalWidth\nspecies\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n5.4\n3.9\n1.7\n0.4\nsetosa\n\n\n\n\n\nAlternatively, you can use the “rename” function from the “dplyr” library.\n\nlibrary(dplyr)\ndf <- rename(df, \"plantSpecies\" = \"species\")\n\n\n\n\n\n\nsepalLength\nsepalWidth\npetalLength\npetalWidth\nplantSpecies\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n5.4\n3.9\n1.7\n0.4\nsetosa"
+  },
+  {
+    "objectID": "p3c1-data-cleaning.html#splitting-text",
+    "href": "p3c1-data-cleaning.html#splitting-text",
+    "title": "11  Data Cleaning",
+    "section": "11.2 Splitting Text",
+    "text": "11.2 Splitting Text\nIf you’ve worked in a spreadsheet application before, you’re likely familiar with the “text-to-columns” tool. This tool allows you to split one column of data into multiple columns based on a delimiter. This same functionality is also achievable in R through functions such as the “separate” function from the “tidyr” library.\nTo test this function out, let’s first require the “tidyr” library and then create a test dataframe for us to use.\n\nlibrary(tidyr)\ndf <- data.frame(person = c(\"John_Doe\", \"Jane_Doe\"))\n\n\n\n\n\n\nperson\n\n\n\n\nJohn_Doe\n\n\nJane_Doe\n\n\n\n\n\nWe now have a dataframe with one column which contains a first name and a last name combined by an underscore. Let’s now split the two names into their own separate columns.\n\ndf <- df %>% separate(person, c(\"first_name\", \"last_name\"), \"_\")\n\n\n\n\n\n\nfirst_name\nlast_name\n\n\n\n\nJohn\nDoe\n\n\nJane\nDoe\n\n\n\n\n\nLet’s break down what just happened. We first declared that “df” was going to be equal to the output of the function that followed by typing “df <-”. Next we told the separate function that it would be altering the existing dataframe called “df” by typing “df %>%”.\nWe then gave the separate function three arguments. The first argument was the column we were going to be editing, “person”. The second argument was the names of our two new columns, “first_name” and “last_name”. Finally, the third argument was our desired delimiter, “_“."
+  },
+  {
+    "objectID": "p3c1-data-cleaning.html#replace-values",
+    "href": "p3c1-data-cleaning.html#replace-values",
+    "title": "11  Data Cleaning",
+    "section": "11.3 Replace Values",
+    "text": "11.3 Replace Values\nWe’ll next go over how you can replace specific values in a dataset. Let’s begin by creating a dataset to work with. The following example will create a dataframe which contains student names and their respective grades on a test.\n\nstudents <- c(\"John\", \"Jane\", \"Joe\", \"Janet\")\ngrades <- c(83, 97, 74, 27)\ndf <- data.frame(student = students, grade = grades)\n\n\n\n\n\n\nstudent\ngrade\n\n\n\n\nJohn\n83\n\n\nJane\n97\n\n\nJoe\n74\n\n\nJanet\n27\n\n\n\n\n\nNow that our dataset is assembled, let’s decide that we’re going to institute a minimum grade of 60. To do this we’re going to need to replace any grade lower than 60 with 60. The following example demonstrates one way you could accomplish that.\n\ndf[which(df$\"grade\" < 60), \"grade\"] <- 60\n\n\n\n\n\n\nstudent\ngrade\n\n\n\n\nJohn\n83\n\n\nJane\n97\n\n\nJoe\n74\n\n\nJanet\n60"
+  },
+  {
+    "objectID": "p3c1-data-cleaning.html#drop-columns",
+    "href": "p3c1-data-cleaning.html#drop-columns",
+    "title": "11  Data Cleaning",
+    "section": "11.4 Drop Columns",
+    "text": "11.4 Drop Columns\nLet’s use the “mtcars” dataset to demonstrate how to drop columns\n\ndf <- head(mtcars)\nprint(df)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n1\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n1\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n2\n\n\nValiant\n18.1\n6\n225\n105\n2.76\n3.460\n20.22\n1\n0\n3\n1\n\n\n\n\n\nNext, we can either drop columns by specifying the columns we want to keep or by specifying the ones we want to drop. The following example will get rid of the “carb” column by specifying that we want to keep every other column.\n\ndf <- subset(df, select = c(mpg, cyl, disp, hp, drat, wt, qsec, vs, am, gear))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n\n\nValiant\n18.1\n6\n225\n105\n2.76\n3.460\n20.22\n1\n0\n3\n\n\n\n\n\nAlternatively, let’s try gettig rid of the “gear” column directly. We can do this by putting a “-” in front of the “c” function.\n\ndf <- subset(df, select = -c(gear))\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n\n\nValiant\n18.1\n6\n225\n105\n2.76\n3.460\n20.22\n1\n0\n\n\n\n\n\nOne other way you could drop columns if you wanted to use index numbers rather than column names is demonstrated below.\n\ndf <- df[,-c(1,3:7)]\n\n\n\n\n\n\n\ncyl\nvs\nam\n\n\n\n\nMazda RX4\n6\n0\n1\n\n\nMazda RX4 Wag\n6\n0\n1\n\n\nDatsun 710\n4\n1\n1\n\n\nHornet 4 Drive\n6\n1\n0\n\n\nHornet Sportabout\n8\n0\n0\n\n\nValiant\n6\n1\n0\n\n\n\n\n\nAs you can see, we used the square brackets to select a subset of our dataframe and then pasted our values after the comma to declare that we were choosing columns rather than rows. After that we used the “-” symbol to say that we were choosing columns to drop rather than columns to keep. Finally, we chose to drop columns 1 as well as columns 3 through 7."
+  },
+  {
+    "objectID": "p3c1-data-cleaning.html#drop-rows",
+    "href": "p3c1-data-cleaning.html#drop-rows",
+    "title": "11  Data Cleaning",
+    "section": "11.5 Drop Rows",
+    "text": "11.5 Drop Rows\nWe are also able to drop rows with the same method we just used to drop columns with the difference being that we would place our values in front of the comma rather than after the comma. For example, if we wanted to drop the first two rows (otherwise known as observations) from our previous dataframe, we could do the following.\n\ndf <- df[-c(1:2),]\n\n\n\n\n\n\n\ncyl\nvs\nam\n\n\n\n\nDatsun 710\n4\n1\n1\n\n\nHornet 4 Drive\n6\n1\n0\n\n\nHornet Sportabout\n8\n0\n0\n\n\nValiant\n6\n1\n0"
+  },
+  {
+    "objectID": "p3c1-data-cleaning.html#resources",
+    "href": "p3c1-data-cleaning.html#resources",
+    "title": "11  Data Cleaning",
+    "section": "11.6 Resources",
+    "text": "11.6 Resources\n\nSeparate function documentation https://tidyr.tidyverse.org/reference/separate.html"
+  },
+  {
+    "objectID": "p0c1-what-is-r.html",
+    "href": "p0c1-what-is-r.html",
+    "title": "1  What is R?",
+    "section": "",
+    "text": "R was a programming language that was designed specifically for the needs of statistics and data analysis.  -Hadley Wickham (Hermans 2021)\nR is a statistical programming language used commonly for data analysis across a wide array of disciplines and industries. It’s often preferred over similar languages for it’s robust support of statistical analysis, the ease in which one is able to create beautiful graphics, and it’s open source nature amongst other reasons."
+  },
+  {
+    "objectID": "p0c1-what-is-r.html#history",
+    "href": "p0c1-what-is-r.html#history",
+    "title": "1  What is R?",
+    "section": "1.1 History",
+    "text": "1.1 History\nR was built by Ross Ihaka and Robert Gentleman at the University of Auckland and was first released in 1993.\nRobert Gentleman and Ross Ihaka “both had an interest in statistical computing and saw a common need for a better software environment in [their] Macintosh teaching laboratory. [They] saw no suitable commercial environment and [they] began to experiment to see what might be involved in developing one [them]selves.” (Ihaka 1998)\nWhile R was officially first released in 1993, it wasn’t until 1995 that Ross Ihaka and Robert Gentlemann were convinced by Martin Mächler to release the source code freely (Ihaka 1998)."
+  },
+  {
+    "objectID": "p0c1-what-is-r.html#resources",
+    "href": "p0c1-what-is-r.html#resources",
+    "title": "1  What is R?",
+    "section": "1.2 Resources",
+    "text": "1.2 Resources\n\nYou can learn more about R at https://www.r-project.org/\nRead Ross Ihaka’s account of R’s origination here https://www.stat.auckland.ac.nz/~ihaka/downloads/Interface98.pdf\n“What is R?”” by Microsoft https://mran.microsoft.com/documents/what-is-r\nR manuals by the R Development Core Team https://cran.r-project.org/manuals.html\nR-bloggers https://www.r-bloggers.com/\nR User Groups https://www.meetup.com/pro/r-user-groups/\nR Studio Community https://community.rstudio.com/\nThe R Journal https://journal.r-project.org/\nMicrosoft R Application Network https://mran.microsoft.com/\n\n\n\n\n\nHermans, Felienne. 2021. “Hadley Wickham on r and Tidyverse [Audio Podcast].” Software Engineering Radio. https://www.se-radio.net/2021/03/episode-450-hadley-wickham-on-r-and-tidyverse/.\n\n\nIhaka, Ross. 1998. “R : Past and Future History.” https://www.stat.auckland.ac.nz/~ihaka/downloads/Interface98.pdf."
+  },
+  {
+    "objectID": "p0c2-what-is-data-analysis.html",
+    "href": "p0c2-what-is-data-analysis.html",
+    "title": "2  What is Data Analysis?",
+    "section": "",
+    "text": "I mean my definition is data science is like data analysis by programming. Which of course begs the question of what data analysis is, and so I think of data analysis as really any activity where the input is data and the output is understanding or knowledge or insights. So I think of that pretty broadly. And then to do data science you’re not doing it by pointing and clicking. You’re doing it by writing some code in a programming language.  -Hadley Wickham (Eremenko 2020)\nData analysis at it’s most simple form is the process of searching for meaning in data with the ultimate goal being to draw insight from that meaning."
+  },
+  {
+    "objectID": "p0c2-what-is-data-analysis.html#the-process-of-data-analysis",
+    "href": "p0c2-what-is-data-analysis.html#the-process-of-data-analysis",
+    "title": "2  What is Data Analysis?",
+    "section": "2.1 The Process of Data Analysis",
+    "text": "2.1 The Process of Data Analysis\nThe process of data analysis can be generally described in six steps:\n\nGathering Requirements - Before one embarks on an analysis, it’s important to make sure the requirements are understood. Requirements include the questions which your stakeholders are hoping to answer as well as the technical requirements of how you are going to perform your analysis.\nData Acquisition - As you might imagine, you must acquire your data before conducting an analysis. This may be done through the methods such as manual creation of datasets, importing pre-constructed data, or leveraging APIs.\nData Preparation - Most data will not be received in the precise format you need to begin your analysis. The process of data preparation is where you will structure and add features to your data.\nDeveloping Insights - Once your data is prepared, you can now begin to make sense of your data and develop insights about it’s meaning.\nReporting - Finally, it’s important to report on your data in such a way that the information is able to be digested by the people who need to see it when they need to see it.\n\nOther sources may include additional steps such as “acting on the analysis”. While this is a critical step for organizations to capture the full value of their data, I would argue that it occurs outside of the analysis process.\nThis book will focus on the technical skills required to conduct an analysis. Because of this, we will be covering steps two through five and omitting step one."
+  },
+  {
+    "objectID": "p0c2-what-is-data-analysis.html#resources",
+    "href": "p0c2-what-is-data-analysis.html#resources",
+    "title": "2  What is Data Analysis?",
+    "section": "2.2 Resources",
+    "text": "2.2 Resources\n\nData Science & Big Data Analytics: Discovering, Analyzing, Visualizing and Presenting Data https://onlinelibrary.wiley.com/doi/book/10.1002/9781119183686\nManaging the Analytics Life Cycle for Decisions at Scale https://www.sas.com/content/dam/SAS/en_us/doc/whitepaper1/manage-analytical-life-cycle-continuous-innovation-106179.pdf\n\n\n\n\n\nEremenko, Kirill. 2020. “Hadley Wickham Talks Integration and Future of r and Python [Audio Podcast].” SuperDataScience. https://www.superdatascience.com/podcast/hadley-wickham-talks-integration-and-future-of-python-and-r."
+  },
+  {
+    "objectID": "p0c3-setup.html",
+    "href": "p0c3-setup.html",
+    "title": "3  Setup",
+    "section": "",
+    "text": "This chapter will walk you through how to download the R programming language as well as R Studio which is a popular tool for interacting with the R ecosystem. Additionally, there are alternatives to R Studio listed at the end of the chapter. However, R Studio is the recommended environment for completing this book."
+  },
+  {
+    "objectID": "p0c3-setup.html#install-r",
+    "href": "p0c3-setup.html#install-r",
+    "title": "3  Setup",
+    "section": "3.1 Install R",
+    "text": "3.1 Install R\nBefore you do anything, you’ll need to download R. This download will allow your computer to interpret the R code you write later on.\n\nDownload R From R: The R Project for Statistical Computing\nSelect “download R”\n\n\n\n\n\n\n\nChoose any link but preferably the one closest to your physical location\n\n\n\n\n\n\n\nChoose your operating system\n\n\n\n\n\n\n\nPress “Install R for the first time”\n\n\n\n\n\n\n\nPress “download”\n\n\n\n\n\n\n\nOpen installer\n\n\n\n\n\n\n\nFollow the prompts and leave all options set as their default values"
+  },
+  {
+    "objectID": "p0c3-setup.html#install-r-studio",
+    "href": "p0c3-setup.html#install-r-studio",
+    "title": "3  Setup",
+    "section": "3.2 Install R Studio",
+    "text": "3.2 Install R Studio\nAfter you install R, you’ll need an environment to write and run your code in. Most people use a program called “R Studio” for this. To download R Studio follow the steps listed below:\n\nNavigate to the R Studio download site: Download the RStudio IDE\nPress the “download” button under RStudio Desktop\n\n\n\n\n\n\n\nChoose the download option for your operating system\n\n\n\n\n\n\n\nOpen the installer and accept all defaults"
+  },
+  {
+    "objectID": "p0c3-setup.html#alternatives",
+    "href": "p0c3-setup.html#alternatives",
+    "title": "3  Setup",
+    "section": "3.3 Alternatives",
+    "text": "3.3 Alternatives\n\n3.3.1 R Studio Cloud\nR Studio Cloud offers users a way to replicate the full R Studio experience without having to download or set anything up on your personal computer. You can sign up for a free account here: \n\n\n\n\n\n\n\n3.3.2 Replit\nReplit allows users to code in 50+ languages in the browser. While you won’t be able to follow along with the R Studio specific examples, you will be able to run R code. You can sign up for a free account here: \n\n\n\n\n\n\n\n3.3.3 Kaggle\nKaggle is one of the most popular sites for data analysts to compete in data competitions, find data, and discuss data topics. They also have a feature that allows you to write and run R (and Python) code. You can sign up for a free account here:"
+  },
+  {
+    "objectID": "p0c3-setup.html#resources",
+    "href": "p0c3-setup.html#resources",
+    "title": "3  Setup",
+    "section": "3.4 Resources",
+    "text": "3.4 Resources\n\n“R Installation and Administration” by the R Core Team https://cran.r-project.org/doc/manuals/r-release/R-admin.html"
+  },
+  {
+    "objectID": "p1-fundamentals.html",
+    "href": "p1-fundamentals.html",
+    "title": "Part I: Fundamentals",
+    "section": "",
+    "text": "Note\n\n\n\nFor users with a moderate amount of experience in R or another programming language feel free to either skip, skim, or leverage this chapter as a reference guide.\n\n\n\nGetting Familiar with R Studio- There are four sections in R Studio. These sections are often referred to as “panes”. This chapter will introduce you to the “source” pane, “console” pane, “environment” pane, and “files” pane. Additionally, you will learn about the different ways you can customize your version of R Studio such as changing the color scheme.\nProgramming Basics- While the R language certainly has it’s unique advantages, it still leverages principles found in many other programming languages such as functions, comments, and loops. Learn how to apply these and other principles in R.\nData Types- Data is stored differently depending on what it represents when programming. For example, a number is going to be stored as a different data type than a letter is. Learn about the five basic data types in R and how to use them.\nData Structures- In computer science, a data structure refers to the method which one uses to organize their data. There are six basic data structures which are commonly used in R. Learn about each of them in this chapter."
+  },
+  {
+    "objectID": "p1c1-r-studio.html",
+    "href": "p1c1-r-studio.html",
+    "title": "4  Getting Familiar with R Studio",
+    "section": "",
+    "text": "To begin, we are going to walkthrough how to customize your version of R Studio to make it the most comfortable environment for you personally. Following this, we are going to walk through the four panes of R Studio. At a glance, R Studio may seem overwhelming; however, by the end of this chapter you will have learned the essentials needed to embark on your data analysis journey."
+  },
+  {
+    "objectID": "p1c1-r-studio.html#customization",
+    "href": "p1c1-r-studio.html#customization",
+    "title": "4  Getting Familiar with R Studio",
+    "section": "4.1 Customization",
+    "text": "4.1 Customization\nYou are able to customize how your version of R Studio looks by following these steps:\n\nOpen R Studio and choose ‘tools’ from the toolbar\n\n\n\n\n\n\n\nChoose ‘Global Options’\n\n\n\n\n\n\n\nChoose ‘Appearance’ and select your favorite theme from the ‘Editor Theme’ section\n\n\n\n\n\n\n\nPress ‘Apply’\n\nThere are other customization options avaialable as well. Feel free to explore the “Global Options” section to make your version of R Studio your own."
+  },
+  {
+    "objectID": "p1c1-r-studio.html#source-pane",
+    "href": "p1c1-r-studio.html#source-pane",
+    "title": "4  Getting Familiar with R Studio",
+    "section": "4.2 Source Pane",
+    "text": "4.2 Source Pane\nThe source pane is the top left pane in R Studio. This is where you will write and edit your code.\n\n\n\n\n\nIf you don’t see the source pane, you may need to create a new R Script by pressing “Ctrl + Shift + N” (“Cmd + Shift + N” on Mac) or by selecting “R Script” from the “New File” dropdown in the top left corner.\n\n\n\n\n\nEach element of the source pane is outlined below.\n\n\n\n\n\n\nShow in New Window- This allows you to pop the source pane into a new window by itself.\nSave Current Document- This saves the file contained in the tab you currently have active.\nSource on Save- Automatically sources your file every time you hit save. “Sourcing” is similar to “Running” in the sense that both will execute your code; however, sourcing will execute your saved file rather than sticking lines of code into the console.\nFind/Replace- this feature allows you to find and replace specified text, similar to find and replace features in other tools such as Excel.\nCode Tools- This brings up a menu of options which help you to code more efficiently. Some of these tools include formatting your code and help with function definitions.\nCompile Report- This allows you to compile a report directly from an R script without needing to use additional frameworks such as R Markdown.\nRun Current Selection- This allows you to highlight a portion of your code and run only that portion.\nRe-run Previous Code Region- This option will execute the last section of code that you ran.\nGo to Previous/Next Section/Chunk- These up and down arrows allow you to navigate through sections of your code without needing to scroll.\nSource Contents- This option will save your active document if it isn’t already saved and then source the file.\nOutline- Pressing this option will pop open an outline of your current file.\nAdjust Frame Size- These two options will adjust the size of the source pane inside of R Studio.\nSyntax Highlighting- This allows you to adjust the syntax highlighting of your active document to match the highlighting of other file types.\n“Jump To” Menu- This menu allows you to quickly jump to different sections of your code.\nCursor Position- This displays your current cursor position by row and column.\nRow Numbers- The lef-thand side of your document will display the row number for each line of your code.\nBack/Forward- These arrows are navigation tools that will allow you to redo/undo the following actions: opening a document (or switching tabs), going to a function definition, jumping to a line, and jumping to a function using the function menu (Paulson 2022).\nTab- This is a tab in the traditional sense, meaning you are able to have a collection of documents open displayed as tabs. These tabs will have the title of your document and often an icon of some sort to demonstrate the file type."
+  },
+  {
+    "objectID": "p1c1-r-studio.html#console",
+    "href": "p1c1-r-studio.html#console",
+    "title": "4  Getting Familiar with R Studio",
+    "section": "4.3 Console",
+    "text": "4.3 Console\nThe console pane is the bottom left pane in R Studio. This pane has three tabs: “Console”, “Terminal”, and “Background Jobs”.\n\nThe “Console” tab is where you will be able to run R code directly without writing a script (this will be covered in the next chapter).\nThe “Terminal” tab is the same terminal you have on your computer. This can be adjusted in the global options.\nThe “Background Jobs” tab is where you can start and manage processes that need to run behind the scenes."
+  },
+  {
+    "objectID": "p1c1-r-studio.html#environment",
+    "href": "p1c1-r-studio.html#environment",
+    "title": "4  Getting Familiar with R Studio",
+    "section": "4.4 Environment",
+    "text": "4.4 Environment\nThe environment pane is the top right pane in R Studio. This is where you will manage all things related to your development environment. This pane has four tabs: “Environment”, “History”, “Connections”, and “Tutorial”.\n\nThe “Environment” tab will display all information relevant to your current environment. This includes data, variables, and function. This is also the place where you can view and manage your memory usage as well as your workspace.\nThe “History” tab allows you to view the history of your executed code. You can search through these commands and even select and re-execute them.\nThe “Connections” tab is where you can create and manage connections to databases.\nThe “Tutorial” tab delivers tutorials powered by the “learnr” package."
+  },
+  {
+    "objectID": "p1c1-r-studio.html#files",
+    "href": "p1c1-r-studio.html#files",
+    "title": "4  Getting Familiar with R Studio",
+    "section": "4.5 Files",
+    "text": "4.5 Files\nThe files pane is the bottom right pane in R Studio. This pane has six tabs: “Files”, “Plots”, “Packages”, “Help”, “Viewer”, and “Presentation”.\n\nThe “Files” tab is a file explorer of sorts. You can view the contents of a directory, navigate to new directories, and manage files here.\nThe “Plots” tab is where the output of your generated plots will show up. You can also export your plots from this tab.\nThe “Packages” tab allows you to view all available packages within your environment. From this tab, you can read more about each package as well as update and require packages.\nThe “Help” tab allows you to search for information about functions to include examples, descriptions, and available parameters.\nThe “Viewer” tab is where certain types of content such as quarto documents will be displayed when rendered.\nThe “Presentation” tab is similar to the “Viewer” tab except the content type will be presentations."
+  },
+  {
+    "objectID": "p1c1-r-studio.html#resources",
+    "href": "p1c1-r-studio.html#resources",
+    "title": "4  Getting Familiar with R Studio",
+    "section": "4.6 Resources",
+    "text": "4.6 Resources\n\n“Editing and Executing Code in the RStudio IDE” from the R Studio Support team https://support.rstudio.com/hc/en-us/articles/200484448-Editing-and-Executing-Code\n“Code Folding and Sections in the RStudio IDE” from the R Studio Support team https://support.rstudio.com/hc/en-us/articles/200484568-Code-Folding-and-Sections-in-the-RStudio-IDE\n“Keyboard Shortcuts in the RStudio IDE” from the R Studio Support team https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE\n“Navigating Code in the RStudio IDE” from the R Studio Support team https://support.rstudio.com/hc/en-us/articles/200710523-Navigating-Code-in-the-RStudio-IDE\n\n\n\n\n\nPaulson, Josh. 2022. Navigating Code in the RStudio IDE. https://support.rstudio.com/hc/en-us/articles/200710523-Navigating-Code-in-the-RStudio-IDE."
+  },
+  {
+    "objectID": "p1c2-programming-basics.html",
+    "href": "p1c2-programming-basics.html",
+    "title": "5  Programming Basics",
+    "section": "",
+    "text": "This chapter will walk you through how to execute code and write scripts in R. You will then build upon that knowledge by learning about comments, variables, operators, functions, loops, conditionals, and libraries. While this chapter is titled “Programming Basics”, the knowledge you will have learned by the end of this chapter is enough for you to accomplish a huge variety of tasks."
+  },
+  {
+    "objectID": "p1c2-programming-basics.html#executing-code",
+    "href": "p1c2-programming-basics.html#executing-code",
+    "title": "5  Programming Basics",
+    "section": "5.1 Executing Code",
+    "text": "5.1 Executing Code\nWhen working in most programming languages, you will generally have the option to execute code one of two ways:\n\nin the console\nin a script\n\n\n5.1.1 Console\nThe first way to run code is directly in the console. If you’re working in R Studio, you will access the console through the “console” pane.\nAlternatively, if you downloaded R to your personal computer, you will likely be able to search your machine for an app named “RGui” and access the console this way as well.\n\n\n\n\n\nIn the following example, the text “print(3+2)”” is typed into the console. The user then presses enter and sees the result: “[1] 5”.\n\nprint(3+2)\n\n[1] 5\n\n\nYou may be wondering what “[1]” represents. This is simply a line number in the console and can be ignored for most practical purposes. Additionally, most of the examples in this book will be structured in this way: formatted code immediately followed by the code output.\n\n\n5.1.2 Script\nYou likely will be using scripts most of the time when working in R. A script is just a file that allows you to type out longer sequences of code and execute them all at once.\nFor those of you following along in R Studio, you can create a script by pressing “Ctrl + Shift + N” on Windows or by selecting “R Script” from the “New File” dropdown in the top left corner.\n\n\n\n\n\nFrom here you can type the same command from before into the source pane. Next, you’ll want to save your file by pressing “Ctrl + S” on Windows or by selecting “Save” from the “File” dropdown in the top left corner. Now just give your file a name and your file will automatically be saved as a “.R” file.\nFinally, run your newly created R script by pressing the “source” button."
+  },
+  {
+    "objectID": "p1c2-programming-basics.html#comments",
+    "href": "p1c2-programming-basics.html#comments",
+    "title": "5  Programming Basics",
+    "section": "5.2 Comments",
+    "text": "5.2 Comments\nComments are present in most (if not all) programming languages. They allow the user to write text in their code that isn’t executed or read by computers. Comments can serve many purposes such as notes, instructions, or formatting.\nComments are created in R by using the “#” symbol. Here’s an example:\n\n# This is a comment\nprint(3+2)\n\n[1] 5\n\n\nSome programming languages allow you a “bulk-comment” feature which allows you to quickly comment out multiple consecutive lines of text. However, in R, there is no such option. Each line must begin with a “#” symbol, as such:\n\n# This is the first line of a comment\n# This is the second line of a comment\nprint(3+2)\n\n[1] 5\n\n\nComments don’t have to start at the beginning of a line. You are able to start comments anywhere on a line like in this example:\n\nprint(3+2) # This comment starts mid-line\n\n[1] 5"
+  },
+  {
+    "objectID": "p1c2-programming-basics.html#variables",
+    "href": "p1c2-programming-basics.html#variables",
+    "title": "5  Programming Basics",
+    "section": "5.3 Variables",
+    "text": "5.3 Variables\nVariables are used in programming to give values to a symbol. In the following example we have a variable named “rate” which is equal to 15, a variable named “hours” which is equal to 4, and a variable named “total_cost” which is equal to rate * hours.\n\nrate <- 15\nhours <- 4\ntotal_cost <- rate * hours\nprint(total_cost)\n\n[1] 60"
+  },
+  {
+    "objectID": "p1c2-programming-basics.html#operators",
+    "href": "p1c2-programming-basics.html#operators",
+    "title": "5  Programming Basics",
+    "section": "5.4 Operators",
+    "text": "5.4 Operators\nAn operator is a symbol that allows you to perform an action or define some sort of logic. The following image demonstrates the operators that are available to you in R.\n\n\n\n\n\n\n5.4.1 Arithmetic Operators\nArithmetic operators allow users to perform basic mathematic functions. The examples below demonstrate how these operators might be used. For those not familiar, the modulus operator will return the remainder of a division operation while integer (or Euclidean) division returns the result of a division operation without the fractional component.\n\n3 + 3\n\n[1] 6\n\n3 - 3\n\n[1] 0\n\n3 * 3\n\n[1] 9\n\n3 ^ 3\n\n[1] 27\n\n10 / 7\n\n[1] 1.428571\n\n10 %% 7\n\n[1] 3\n\n10 %/% 7\n\n[1] 1\n\n\n\n\n5.4.2 Comparison Operators\nComparison operators allow users to compare values. The examples below demonstrate how these operators might be used.\n\n3 == 3\n\n[1] TRUE\n\n3 != 3\n\n[1] FALSE\n\n3 > 3\n\n[1] FALSE\n\n3 < 3\n\n[1] FALSE\n\n3 >= 3\n\n[1] TRUE\n\n3 <= 3\n\n[1] TRUE\n\n\n\n\n5.4.3 Logical Operators\nLogical operators allow users to say “AND”, “OR”, and “NOT”. The following examples demonstrate how these operators might be used in conjunction with comparison operators as well as the difference between standard logical operators and “vectorized” logical operators.\nIn this example, we will evaluate two vectors of the same length from left to right. Each vector has seven observations (-3, -2, -1, 0, 1, 2, 3). Rather than simply returning a single “TRUE” or “FALSE”, this will return seven “TRUE” or “FALSE” values. In this case, the first element of each vector (“-3” and “-3”) will be evaluated against their respective conditions and return “TRUE” only if both conditions are met. This will then be repeated for each of the remaining elements.\n\n# Vectorized \"AND\" operator\n((-3:3) >= 0) & ((-3:3) <= 0)\n\n[1] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE\n\n\nThis example will return a single “TRUE” only if both conditions are met, otherwise “FALSE” will be returned.\n\n# Standard \"AND\" operator\n(3 >= 0) && (-3 <= 0)\n\n[1] TRUE\n\n\nThis example is the same as the previous one with the exception that we have negated the second condition with a “NOT” operator.\n\n# Standard \"AND\" operator with \"NOT\" operator\n(3 >= 0) && !(-3 <= 0)\n\n[1] FALSE\n\n\nThe following two examples are essentially the same as the first two except that we are using “OR” operators rather than “AND” operators\n\n# Vectorized \"OR\" operator\n((-3:3) >= 0) | ((-3:3) <= 0)\n\n[1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE\n\n# Standard \"OR\" operator\n(3 >= 0) || (-3 <= 0)\n\n[1] TRUE\n\n\n\n\n5.4.4 Assignment Operators\nAssignment operators allow users to assign values to something. For most users, only “<-” or “->” will ever be used. These are called local assignment operators. However, there is another type of operator called a global assignment operator which is denoted by “<<-” or “->>”.\nUnderstanding the difference between local and global assignment operators in R can be tricky to get your head around. Here’s an example which should clear things up.\nFirst, let’s create two variables named “global_var” and “local_var” and give them the values “global” and “local”, respectively. Notice we are using the standard assignment operator “<-” for both variables.\n\nglobal_var <- 'global'\nlocal_var <- 'local'\n\nglobal_var\n\n[1] \"global\"\n\nlocal_var\n\n[1] \"local\"\n\n\nNext, let’s create a function to test out the global assignment operator (“<<-”). Inside this function, we will assign a new value to both of the variables we just created; however, we will use the “<-” operator for the local_var and the “<<-” operator for the global_var so that we can observe the difference in behavior.\n\n\n\n\n\n\nNote\n\n\n\nFunctions are covered directly after this section. If the concept of functions is unfamiliar to you, feel free to jump ahead and come back later.\n\n\n\nmy_function <- function() {\n   global_var <<- 'na'\n   local_var <- 'na'\n   print(global_var)\n   print(local_var)\n}\n\nmy_function()\n\n[1] \"na\"\n[1] \"na\"\n\n\nThis function performs how you would expect it to intuitively, right? The interesting part comes next when we print out the values of these variables again.\n\nglobal_var\n\n[1] \"na\"\n\nlocal_var\n\n[1] \"local\"\n\n\nFrom this result, we can see the difference in behavior caused by the differing assignment operators. When using the “<-” operator inside the function, it’s scope is limited to just the function that it lives in. On the other hand, the “<<-” operator has the ability to edit the value of the variable outside of the function as well.\nYou may now be wondering why both the local and the global assignment operators have two separate denotations. The following example demonstrates the difference between the two.\n\nx <- 3\n3 -> y\n\nx\n\n[1] 3\n\ny\n\n[1] 3\n\n\nThere is also a third assignment operator that can be used: “=”. However, it is generally considered best practice to just use the local assignment operator. You can find more information about these three operators in the resources section.\n\n\n5.4.5 Miscellaneous Operators\nThe “:” operator allows users to create a series of numbers in a sequence. This was demonstrated in the logical operator section. The %in% operator checks if an element exists in a vector. Both of these operators are demonstrated in the following example.\n\n3 %in% 1:3\n\n[1] TRUE\n\n\nFinally, the “%*%” operator allows users to perform matrix multiplication as is demonstrated below. First, let’s create a 2x2 matrix and then let’s multiply it by itself.\n\nx <- matrix(\n  c(1,3,3,7)\n  , nrow = 2\n  , ncol = 2\n  , byrow = TRUE)\n\nx %*% x\n\n     [,1] [,2]\n[1,]   10   24\n[2,]   24   58"
+  },
+  {
+    "objectID": "p1c2-programming-basics.html#functions",
+    "href": "p1c2-programming-basics.html#functions",
+    "title": "5  Programming Basics",
+    "section": "5.5 Functions",
+    "text": "5.5 Functions\nFunctions allow you to execute a predefined set of commands with just one command. The syntax of functions in R is as follows.\n\n# Create a function called function_name\nfunction_name <- function() {\n  print(\"Hello World!\")\n}\n\n# Call your newly created function\nfunction_name()\n\n[1] \"Hello World!\"\n\n\nTo go one step further, you can also add “arguments” to a function. Arguments allow you to pass information into the function when it is called. Here’s an example:\n\n# Create a function called add_numbers which will add \n# two specified numbers together and print the result\nadd_numbers <- function(x, y) {\n    print(x + y)\n}\n\n# Call your newly created function twice with different inputs\nadd_numbers(2, 3)\n\n[1] 5\n\nadd_numbers(50, 50)\n\n[1] 100\n\n\nFinally, you can return a value from a function as such:\n\n# Create a function called calculate_raise which multiplies \n# base_salary and annual_adjustment and returns the result\ncalculate_raise <- function(base_salary, annual_adjustment) {\n    raise <- base_salary * annual_adjustment\n    return(raise)\n}\n\n# Calculate John's raise\njohns_raise <- calculate_raise(90000, .05)\n\n#Calculate Jane's raise\njanes_raise <- calculate_raise(100000, .045)\n\nprint(\"John's Raise:\")\n\n[1] \"John's Raise:\"\n\nprint(johns_raise)\n\n[1] 4500\n\nprint(\"Jane's Raise:\")\n\n[1] \"Jane's Raise:\"\n\nprint(janes_raise)\n\n[1] 4500"
+  },
+  {
+    "objectID": "p1c2-programming-basics.html#loops",
+    "href": "p1c2-programming-basics.html#loops",
+    "title": "5  Programming Basics",
+    "section": "5.6 Loops",
+    "text": "5.6 Loops\nThere are two types of loops in R: while loops and for loops.\n\n5.6.1 While Loops\nWhile loops are executed as follows:\n\n# Set i equal to 1\ni <- 1\n\n# While i is less than or equal to three, print i\n# The loop will increment the value of i after each print\nwhile (i <= 3) {\n  print(i)\n  i <- i + 1\n}\n\n[1] 1\n[1] 2\n[1] 3\n\n\nAdditionally, you can add ‘break’ statements to while loops to stop the loop early.\n\ni <- 1\n\nwhile (i <= 10) {\n    print(i)\n    if (i == 5) {\n        print(\"Stopping halfway\")\n        break\n    }\n    i <- i + 1\n}\n\n[1] 1\n[1] 2\n[1] 3\n[1] 4\n[1] 5\n[1] \"Stopping halfway\"\n\n\n\n\n5.6.2 For Loops\nFor loops are executed as follows:\n\nemployees <- list(\"jane\", \"john\")\n\nfor (employee in employees) {\n  print(employee)\n}\n\n[1] \"jane\"\n[1] \"john\""
+  },
+  {
+    "objectID": "p1c2-programming-basics.html#conditionals",
+    "href": "p1c2-programming-basics.html#conditionals",
+    "title": "5  Programming Basics",
+    "section": "5.7 Conditionals",
+    "text": "5.7 Conditionals\nYou are also able to execute a command if a condition is met by using “if” statements.\n\nif (2 > 0) {\n    print(\"true\")\n}\n\n[1] \"true\"\n\n\nYou can add more conditions by adding “else if” statements.\n\nif (2 > 3) {\n    print(\"two is greater than three\")\n} else if (2 < 3) {\n    print(\"two is not greater than three\")\n}\n\n[1] \"two is not greater than three\"\n\n\nFinally, you can catch anything that doesn’t meet any of your conditions by adding an “else” statement at the end.\n\nx <- 20\nif (x < 20) {\n    print(\"x is less than 20\")\n} else if (x > 20) {\n    print(\"x is greater than 20\")\n} else {\n    print(\"x is equal to 20\")\n}\n\n[1] \"x is equal to 20\""
+  },
+  {
+    "objectID": "p1c2-programming-basics.html#libraries",
+    "href": "p1c2-programming-basics.html#libraries",
+    "title": "5  Programming Basics",
+    "section": "5.8 Libraries",
+    "text": "5.8 Libraries\nLibraries allow you to access functions other people have created to perform common tasks.\nIn this example, we will be installing and loading a common package named “dplyr”.\nYou first need to install it using the following command.\n\ninstall.packages(\"dplyr\")\n\nNext, you will require the package by using this command.\n\nlibrary(dplyr)\n\nYou are now able to access all of the functions available in the dplyr library!\nSometimes users in the R community create their own packages that aren’t distributed through the CRAN network. You can still use these libraries but you’ll just have to perform an extra step or two. One of the most common places to host packages is Github. The following example will demonstrate how to load a package that I created from Github.\nFirst you’ll need to install the “remotes” package. As the name might suggest, this library allows you to access other libraries from remote locations.\n\ninstall.packages(\"remotes\")\n\nNext you’ll need to install the remote package of your choosing. In our case, we’ll execute the following code.\n\nremotes::install_github(\"TrevorFrench/trevoR\")\n\nIn the previous example, we used the “install_github” function from the “remotes” package and then specified the Github path of the remote repository by typing “TrevorFrench/trevoR”. This code is functionally the same as the “install.packages” function. You may have noticed a new piece of syntax though. The “::” in between “remotes” and “install_github” tells R to use the “install_github” function from the “remotes” library without the need to require the library via the “library” function. This syntax can be used with any other function from any other library.\nNow that the remote package is installed, we can require it in the same way we would any other package.\n\nlibrary(trevoR)"
+  },
+  {
+    "objectID": "p1c2-programming-basics.html#resources",
+    "href": "p1c2-programming-basics.html#resources",
+    "title": "5  Programming Basics",
+    "section": "5.9 Resources",
+    "text": "5.9 Resources\n\nW3 Schools R Tutorial https://www.w3schools.com/r/\nAssignment Operators: https://stat.ethz.ch/R-manual/R-devel/library/base/html/assignOps.html"
+  },
+  {
+    "objectID": "p1c3-data-types.html",
+    "href": "p1c3-data-types.html",
+    "title": "6  Data Types",
+    "section": "",
+    "text": "Data is stored differently depending on what it represents when programming. For example, a number is going to be stored as a different data type than a letter is.\nThere are five basic data types in R:"
+  },
+  {
+    "objectID": "p1c3-data-types.html#numeric",
+    "href": "p1c3-data-types.html#numeric",
+    "title": "6  Data Types",
+    "section": "6.1 Numeric",
+    "text": "6.1 Numeric\n\n6.1.1 Double\nLet’s explore the “double” data type by assigning a number to a variable and then check it’s type by using the “typeof” function. Alternatively, we can use the “is.double” function to check whether or not the variable is a double.\n\nx <- 6.2\ntypeof(x)\n\n[1] \"double\"\n\nis.double(x)\n\n[1] TRUE\n\n\nNext, let’s check whether or not the variable is numeric by using the “is.numeric” function.\n\nis.numeric(x)\n\n[1] TRUE\n\n\nThis function should return “TRUE” as well, which demonstrates the fact that a double is a subset of the numeric data type.\n\n\n6.1.2 Integer\nLet’s explore the “integer” data type by assigning a whole number followed by the capital letter “L” to a variable and then check it’s type by using the “typeof” function. Alternatively, we can use the “is.integer” function to check whether or not the variable is an integer.\n\nx <- 6L\n# By using the \"typeof\" function, we can check the data type of x\ntypeof(x)\n\n[1] \"integer\"\n\nis.integer(x)\n\n[1] TRUE\n\n\nNext, let’s check whether or not the variable is numeric by using the “is.numeric” function.\n\nis.numeric(x)\n\n[1] TRUE\n\n\nThis function should return “TRUE” as well, which demonstrates the fact that an integer is also a subset of the numeric data type."
+  },
+  {
+    "objectID": "p1c3-data-types.html#complex",
+    "href": "p1c3-data-types.html#complex",
+    "title": "6  Data Types",
+    "section": "6.2 Complex",
+    "text": "6.2 Complex\nComplex data types make use of the mathematical concept of an imaginary number through the use of the lowercase letter “i”. The following example sets “x” equal to six times i and then displays the type of x.\n\nx <- 6i\ntypeof(x)\n\n[1] \"complex\""
+  },
+  {
+    "objectID": "p1c3-data-types.html#character",
+    "href": "p1c3-data-types.html#character",
+    "title": "6  Data Types",
+    "section": "6.3 Character",
+    "text": "6.3 Character\n\nx <- \"Hello!\"\ntypeof(x)\n\n[1] \"character\""
+  },
+  {
+    "objectID": "p1c3-data-types.html#logical",
+    "href": "p1c3-data-types.html#logical",
+    "title": "6  Data Types",
+    "section": "6.4 Logical",
+    "text": "6.4 Logical\n\nx <- TRUE\ntypeof(x)\n\n[1] \"logical\""
+  },
+  {
+    "objectID": "p1c3-data-types.html#raw",
+    "href": "p1c3-data-types.html#raw",
+    "title": "6  Data Types",
+    "section": "6.5 Raw",
+    "text": "6.5 Raw\n\nx <- charToRaw(\"Hello!\")\nprint(x)\n\n[1] 48 65 6c 6c 6f 21\n\ntypeof(x)\n\n[1] \"raw\"\n\nx <- intToBits(6L)\nprint(x)\n\n [1] 00 01 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n[26] 00 00 00 00 00 00 00\n\ntypeof(x)\n\n[1] \"raw\""
+  },
+  {
+    "objectID": "p1c3-data-types.html#resources",
+    "href": "p1c3-data-types.html#resources",
+    "title": "6  Data Types",
+    "section": "6.6 Resources",
+    "text": "6.6 Resources\n\nW3 Schools https://www.w3schools.com/r/r_data_types.asp"
+  },
+  {
+    "objectID": "p1c4-data-structures.html",
+    "href": "p1c4-data-structures.html",
+    "title": "7  Data Structures",
+    "section": "",
+    "text": "In computer science, a data structure refers to the method which one uses to organize their data. There are six basic data structures which are commonly used in R:"
+  },
+  {
+    "objectID": "p1c4-data-structures.html#vectors",
+    "href": "p1c4-data-structures.html#vectors",
+    "title": "7  Data Structures",
+    "section": "7.1 Vectors",
+    "text": "7.1 Vectors\nWe can create a vector by using the “c” function to combine multiple values into a single vector. In the following example, we will combine four separate numbers into a single vector and the output the resulting vector to see what it looks like.\n\nx <- c(1, 3, 3, 7)\n\nprint(x)\n\n[1] 1 3 3 7"
+  },
+  {
+    "objectID": "p1c4-data-structures.html#lists",
+    "href": "p1c4-data-structures.html#lists",
+    "title": "7  Data Structures",
+    "section": "7.2 Lists",
+    "text": "7.2 Lists\n\nfirst_name <- \"John\"\nlast_name <- \"Smith\"\nfavorite_numbers <- c(1, 3, 3, 7)\n\nperson <- list(first_name, last_name, favorite_numbers)\n\nprint(person)\n\n[[1]]\n[1] \"John\"\n\n[[2]]\n[1] \"Smith\"\n\n[[3]]\n[1] 1 3 3 7"
+  },
+  {
+    "objectID": "p1c4-data-structures.html#matrices",
+    "href": "p1c4-data-structures.html#matrices",
+    "title": "7  Data Structures",
+    "section": "7.3 Matrices",
+    "text": "7.3 Matrices\n\nx <- matrix(\n        c(1,3,3,7,1,3,3,7,1,3,3,7)\n        , nrow = 3\n        , ncol = 4\n        , byrow = TRUE)\n\nprint(x)\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    3    3    7\n[2,]    1    3    3    7\n[3,]    1    3    3    7"
+  },
+  {
+    "objectID": "p1c4-data-structures.html#factors",
+    "href": "p1c4-data-structures.html#factors",
+    "title": "7  Data Structures",
+    "section": "7.4 Factors",
+    "text": "7.4 Factors\n\nx <- c(\"Red\", \"Blue\", \"Red\", \"Yellow\", \"Yellow\")\n\ncolors <- factor(x)\n\nprint(colors)\n\n[1] Red    Blue   Red    Yellow Yellow\nLevels: Blue Red Yellow"
+  },
+  {
+    "objectID": "p1c4-data-structures.html#data-frames",
+    "href": "p1c4-data-structures.html#data-frames",
+    "title": "7  Data Structures",
+    "section": "7.5 Data Frames",
+    "text": "7.5 Data Frames\n\npeople <- c(\"John\", \"Jane\")\nid <- c(1, 2)\ndf <- data.frame(id = id, person = people)\n\nprint(df)\n\n  id person\n1  1   John\n2  2   Jane"
+  },
+  {
+    "objectID": "p1c4-data-structures.html#arrays",
+    "href": "p1c4-data-structures.html#arrays",
+    "title": "7  Data Structures",
+    "section": "7.6 Arrays",
+    "text": "7.6 Arrays\n\nx <- array(\n        c(1,3,3,7,1,3,3,7,1,3,3,7)\n        , dim = c(1,4,3))\n\nprint(x)\n\n, , 1\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    3    3    7\n\n, , 2\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    3    3    7\n\n, , 3\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    3    3    7"
+  },
+  {
+    "objectID": "p1exercises.html",
+    "href": "p1exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "Exercise: 5-A\n\n\n\nWrite a function called “multiply” that will accept two numbers as arguments and will output the product of those two numbers when called as is demonstrated below.\nmultiply(3, 3)\n\n# [1] 9"
+  },
+  {
+    "objectID": "p1exercises.html#answers",
+    "href": "p1exercises.html#answers",
+    "title": "Exercises",
+    "section": "Answers",
+    "text": "Answers\n\n\n\n\n\n\nAnswer: 5-A\n\n\n\nOne way you could accomplish this task is demonstrated in the following solution.\nmultiply <- function(x, y) {\n  return (x * y)\n}"
+  },
+  {
+    "objectID": "p2-data-acquisition.html",
+    "href": "p2-data-acquisition.html",
+    "title": "Part II: Data Acquisition",
+    "section": "",
+    "text": "Included Datasets- R comes with a variety of datasets already built in. This chapter will teach you how to view the catalog of included datasets, preview individual datasets, and begin working with the data.\nImport from Spreadsheets- Most R users will have to work with spreadsheets at some point in their careers. This chapter will teach you how to import data from spreadsheets whether it’s in a .csv or .xlsx file and get the imported data into a format that’s easy to work with.\nWorking with APIs- API stands for Application Programming Interface. These sorts of tools are commonly used to programmatically pull data from a third party resource. This chapter demonstrates how you can begin to leverage these tools in your own workflows."
+  },
+  {
+    "objectID": "p2c1-included-datasets.html",
+    "href": "p2c1-included-datasets.html",
+    "title": "8  Included Datasets",
+    "section": "",
+    "text": "R comes with a variety of datasets already built in. This chapter will teach you how to view the catalog of included datasets, preview individual datasets, and begin working with the data."
+  },
+  {
+    "objectID": "p2c1-included-datasets.html#view-catalog",
+    "href": "p2c1-included-datasets.html#view-catalog",
+    "title": "8  Included Datasets",
+    "section": "8.1 View Catalog",
+    "text": "8.1 View Catalog\nYou can view a complete list of datsets available along with a brief description for each one by typing “data()” into your console.\n\ndata()\n\nThis will open a new tab in your R Studio instance that looks similar to the following image:"
+  },
+  {
+    "objectID": "p2c1-included-datasets.html#working-with-included-data",
+    "href": "p2c1-included-datasets.html#working-with-included-data",
+    "title": "8  Included Datasets",
+    "section": "8.2 Working with Included Data",
+    "text": "8.2 Working with Included Data\nThe first step to begin working with your chosen dataset is to load it into your environment by using the “data” function with the quoted name of your dataset inside the parentheses. In the following example, we’ll attach the “iris” dataset to our environment.\n\n\n\n\n\n\nNote\n\n\n\nIt may not be necessary for you to load your dataset via the “data” function prior to using it. Additionally, some datasets may require you to add them to your search path by using using the “attach” function (conversely, you can remove datasets from your search path by using the “detach” function).\n\n\n\ndata(\"iris\")\n\nThis action will then give us a variable with the same name as our dataset which we can call as we would with any other data structure. Let’s preview the “iris” dataset by using the “head” function.\n\nhead(iris)\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n5.4\n3.9\n1.7\n0.4\nsetosa"
+  },
+  {
+    "objectID": "p2c1-included-datasets.html#resources",
+    "href": "p2c1-included-datasets.html#resources",
+    "title": "8  Included Datasets",
+    "section": "8.3 Resources",
+    "text": "8.3 Resources\n\nList of datasets available in Base R https://www.rdocumentation.org/packages/datasets/versions/3.6.2"
+  },
+  {
+    "objectID": "p2c2-import-from-spreadsheets.html",
+    "href": "p2c2-import-from-spreadsheets.html",
+    "title": "9  Import from Spreadsheets",
+    "section": "",
+    "text": "Most R users will have to work with spreadsheets at some point in their careers. This chapter will teach you how to import data from spreadsheets whether it’s in a .csv or .xlsx file and get the imported data into a format that’s easy to work with. Additionally, this chapter will demonstrate how to import multiple files at once and combine them all into a single dataframe."
+  },
+  {
+    "objectID": "p2c2-import-from-spreadsheets.html#import-from-.csv-files",
+    "href": "p2c2-import-from-spreadsheets.html#import-from-.csv-files",
+    "title": "9  Import from Spreadsheets",
+    "section": "9.1 Import from .csv Files",
+    "text": "9.1 Import from .csv Files\nR has a function called “read.csv” which allows you to read a csv file directly to a dataframe. The following code snippet is a simple example of how to execute this function.\n\n\n\n\n\n\nNote\n\n\n\nIt’s worth noting that it isn’t necessary to store the file path as a variable before calling the function; however, this habit may save you time down the road.\n\n\n\ninput <- \"C:/File Location/example.csv\"\ndf <- read.csv(input)\n\nAlternatively, if you have multiple files from the same directory that need to be imported, you could do something more like the following code snippet.\n\ndirectory <- \"C:/File Location/\"\nfirst_file <- paste(directory, \"first_file.csv\", sep=\"\")\nsecond_file <- paste(directory, \"second_file.csv\", sep=\"\")\nfirst_df <- read.csv(first_file)\nsecond_df <- read.csv(second_file)"
+  },
+  {
+    "objectID": "p2c2-import-from-spreadsheets.html#import-from-.xlsx-files",
+    "href": "p2c2-import-from-spreadsheets.html#import-from-.xlsx-files",
+    "title": "9  Import from Spreadsheets",
+    "section": "9.2 Import from .xlsx Files",
+    "text": "9.2 Import from .xlsx Files\nExcel files are handled very similarly to CSV files with the exception being that you will need to use the “read_excel” function from the “readxl” library. The following code snippet demonstrates how to import an Excel file into R.\n\nlibrary(readxl)\ninput <- \"C:/File Location/example.xlsx\"\ndf <- read_excel(input)"
+  },
+  {
+    "objectID": "p2c2-import-from-spreadsheets.html#import-and-combine-multiple-files",
+    "href": "p2c2-import-from-spreadsheets.html#import-and-combine-multiple-files",
+    "title": "9  Import from Spreadsheets",
+    "section": "9.3 Import and Combine Multiple Files",
+    "text": "9.3 Import and Combine Multiple Files\nYou may come across a situation where you have multiple CSV files in a folder which you need combined into a single data frame. The following function from a package I personally created will do just that.\nThis package exists only on github (rather than being distributed through CRAN) so you’ll have to perform an extra step to load the library.\n\ninstall.packages(\"remotes\")\nremotes::install_github(\"TrevorFrench/trevoR\")\n\nNow that you have the package loaded, you can specify the folder that contains your files and use the “combineFiles” function.\n\nwd <- \"C:/YOURWORKINGDIRECTORY\"\ncombineFiles(wd)\n\nTo take this one step further, you can immediately assign the output of the function to a variable name as follows.\n\ndf <- combineFiles(wd)\n\nYou now have a dataframe titled “df” which contains all of the data from your .csv files combined!\n\n\n\n\n\n\nNote\n\n\n\nAll of the headers must match in your CSV files must match exactly for this function to work as expected."
+  },
+  {
+    "objectID": "p2c2-import-from-spreadsheets.html#resources",
+    "href": "p2c2-import-from-spreadsheets.html#resources",
+    "title": "9  Import from Spreadsheets",
+    "section": "9.4 Resources",
+    "text": "9.4 Resources\n\ntrevoR package documentation https://github.com/TrevorFrench/trevoR"
+  },
+  {
+    "objectID": "p2c3-working-with-apis.html",
+    "href": "p2c3-working-with-apis.html",
+    "title": "10  Working with APIs",
+    "section": "",
+    "text": "API stands for Application Programming Interface. These sorts of tools are commonly used to programmatically pull data from a third party resource. This chapter demonstrates how one can begin to leverage these tools in their own workflows."
+  },
+  {
+    "objectID": "p2c3-working-with-apis.html#install-packages",
+    "href": "p2c3-working-with-apis.html#install-packages",
+    "title": "10  Working with APIs",
+    "section": "10.1 Install Packages",
+    "text": "10.1 Install Packages\n\ninstall.packages(c('httr', 'jsonlite'))"
+  },
+  {
+    "objectID": "p2c3-working-with-apis.html#require-packages",
+    "href": "p2c3-working-with-apis.html#require-packages",
+    "title": "10  Working with APIs",
+    "section": "10.2 Require Packages",
+    "text": "10.2 Require Packages\n\nlibrary('httr')\nlibrary('jsonlite')"
+  },
+  {
+    "objectID": "p2c3-working-with-apis.html#make-request",
+    "href": "p2c3-working-with-apis.html#make-request",
+    "title": "10  Working with APIs",
+    "section": "10.3 Make Request",
+    "text": "10.3 Make Request\nPass a URL into the ‘GET’ function and store the response in a variable called ‘res’.\n\nres = GET(\"https://api.helium.io/v1/stats\")\nprint(res)\n\n\nResponse [https://api.helium.io/v1/stats]\n  Date: 2022-08-04 01:25\n  Status: 200\n  Content-Type: application/json; charset=utf-8\n  Size: 922 B"
+  },
+  {
+    "objectID": "p2c3-working-with-apis.html#parse-explore-data",
+    "href": "p2c3-working-with-apis.html#parse-explore-data",
+    "title": "10  Working with APIs",
+    "section": "10.4 Parse & Explore Data",
+    "text": "10.4 Parse & Explore Data\nUse the ‘fromJSON’ function from the ‘jsonlite’ package to parse the response data and then print out the names in the resulting data set.\n\ndata = fromJSON(rawToChar(res$content))\n\nnames(data)\n\n\n[1] \"data\"\n\nGo one level deeper into the data set and print out the names again.\n\ndata = data$data\n\nnames(data)\n\n\n[1] \"token_supply\"     \"election_times\"   \"counts\"           \"challenge_counts\" \"block_times\"\n\nAlternatively, you can loop through the names as follows.\n\nfor (name in names(data)){print(name)}\n\n\n[1] \"token_supply\"\n[1] \"election_times\"\n[1] \"counts\"\n[1] \"challenge_counts\"\n[1] \"block_times\"\n\nGet the ‘token_supply’ field from the data.\n\ntoken_supply = data$token_supply\n\nprint(token_supply)\n\n\n[1] 124675821"
+  },
+  {
+    "objectID": "p2c3-working-with-apis.html#adding-parameters-to-requests",
+    "href": "p2c3-working-with-apis.html#adding-parameters-to-requests",
+    "title": "10  Working with APIs",
+    "section": "10.5 Adding Parameters to Requests",
+    "text": "10.5 Adding Parameters to Requests\nAdd ‘min_time’ and ‘max_time’ as parameters on a different endpoint and print the resulting ‘fee’ data.\n\nres = GET(\"https://api.helium.io/v1/dc_burns/sum\",\n    query = list(min_time = \"2020-07-27T00:00:00Z\"\n                 , max_time = \"2021-07-27T00:00:00Z\"))\n\ndata = fromJSON(rawToChar(res$content))\nfee = data$data$fee\nprint(fee)\n\n\n[1] 10112755000"
+  },
+  {
+    "objectID": "p2c3-working-with-apis.html#adding-headers-to-requests",
+    "href": "p2c3-working-with-apis.html#adding-headers-to-requests",
+    "title": "10  Working with APIs",
+    "section": "10.6 Adding Headers to Requests",
+    "text": "10.6 Adding Headers to Requests\nExecute the same query as above except this time specify headers. This will likely be necessary when working with an API which requires an API Key.\n\nres = GET(\"https://api.helium.io/v1/dc_burns/sum\",\n    query = list(min_time = \"2020-07-27T00:00:00Z\"\n                 , max_time = \"2021-07-27T00:00:00Z\"),\n    add_headers(`Accept`='application/json', `Connection`='keep-live'))\n\ndata = fromJSON(rawToChar(res$content))\nfee = data$data$fee\nprint(fee)\n\n\n[1] 10112755000"
+  },
+  {
+    "objectID": "p2c3-working-with-apis.html#resources",
+    "href": "p2c3-working-with-apis.html#resources",
+    "title": "10  Working with APIs",
+    "section": "10.7 Resources",
+    "text": "10.7 Resources\n\nBlog post by Trevor French https://medium.com/trevor-french/api-calls-in-r-136290ead81d\n\n\n10.7.1 Helpful APIs"
+  },
+  {
+    "objectID": "p2exercises.html",
+    "href": "p2exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "Exercise: 21-A\n\n\n\ntext\nx"
+  },
+  {
+    "objectID": "p2exercises.html#answers",
+    "href": "p2exercises.html#answers",
+    "title": "Exercises",
+    "section": "Answers",
+    "text": "Answers\n\n\n\n\n\n\nAnswer: 21-A\n\n\n\ntext\nx"
+  },
+  {
+    "objectID": "p3-data-preparation.html",
+    "href": "p3-data-preparation.html",
+    "title": "Part III: Data Preparation",
+    "section": "",
+    "text": "Most data will not be received in the precise format you need to begin your analysis. The process of data preparation is where you will structure and add features to your data.\n\nData Cleaning- This chapter will cover the basics of cleaning your data including renaming variables, splitting text, replacing values, dropping columns, and dropping rows. These basic actions will be essential to preparing your data prior to developing insights.\nHandling Missing Data- You may encounter situations while analysing data that some of your data are missing. This chapter will cover best practices in regards to handling these situations as well as the technical details on how to remedy the data.\nOutliers- Outliers are observations that fall outside the expected scope of the dataset. It’s important to identify outliers in your data and determine the necessary treatment for them before moving into the next analysis phase.\nOrganizing Data- This chapter will focus on sorting, filtering, and grouping your datasets."
+  },
+  {
+    "objectID": "p3c2-handling-missing-data.html",
+    "href": "p3c2-handling-missing-data.html",
+    "title": "12  Handling Missing Data",
+    "section": "",
+    "text": "You may encounter situations while analysing data that some of your data are missing. This chapter will cover best practices in regards to handling these situations as well as the technical details on how to remedy the data. mena imput constant val whow to determine the right way to impute/drop columns"
+  },
+  {
+    "objectID": "p3c2-handling-missing-data.html#replacing-nullsnas-constant-value",
+    "href": "p3c2-handling-missing-data.html#replacing-nullsnas-constant-value",
+    "title": "12  Handling Missing Data",
+    "section": "12.1 Replacing Nulls/NAs (constant value?)",
+    "text": "12.1 Replacing Nulls/NAs (constant value?)\nExplain what Null and NA mean Grades makes sense to replace with 0 because student may have skipped class blah blah (constant value imputation)\nMany datasets you encounter will likely be missing data. The temptation may be to immediately disregard these observations; however, it’s important to consider what missing data represents in the context of your dataset as well as the context of what your analysis is hoping to achieve. For example, say you are a teacher and you are trying to determine the average test scores of your students. You have a dataset which lists your students names along with their respective test scores. However, you find that one of your students has an “NA” value in place of a test score.\nDepending on the context, it may make sense for you to ignore this observation prior to calculating the average score. It could also make sense for you to assign a value of “0” to this student’s test score.\n\nstudents <- c(\"John\", \"Jane\", \"x\")\nscores <- c(1, 2, NA)\ndf <- data.frame(score = scores, student = students)\n\nprint(df)\n\n  score student\n1     1    John\n2     2    Jane\n3    NA       x"
+  },
+  {
+    "objectID": "p3c2-handling-missing-data.html#mean-imputation",
+    "href": "p3c2-handling-missing-data.html#mean-imputation",
+    "title": "12  Handling Missing Data",
+    "section": "12.2 Mean Imputation",
+    "text": "12.2 Mean Imputation\nCome up with a data example where it makes sense to fill in blanks with an average (business logic where you claim or revert to average) Alternatively perform median imputation (measure of central tendency)"
+  },
+  {
+    "objectID": "p3c2-handling-missing-data.html#multiple-imputation",
+    "href": "p3c2-handling-missing-data.html#multiple-imputation",
+    "title": "12  Handling Missing Data",
+    "section": "12.3 Multiple Imputation?",
+    "text": "12.3 Multiple Imputation?"
+  },
+  {
+    "objectID": "p3c2-handling-missing-data.html#resources",
+    "href": "p3c2-handling-missing-data.html#resources",
+    "title": "12  Handling Missing Data",
+    "section": "12.4 Resources",
+    "text": "12.4 Resources"
+  },
+  {
+    "objectID": "p3c3-outliers.html",
+    "href": "p3c3-outliers.html",
+    "title": "13  Outliers",
+    "section": "",
+    "text": "Outliers are observations that fall outside the expected scope of the dataset. It’s important to identify outliers in your data and determine the necessary treatment for them before moving into the next analysis phase.\nmight be necessary to impute value, remove row or may be necessary to keep the data besides extreme value ## Finding Outliers\nOne common first step many people employ when looking for outliers is visualizing their datasets so that exterme values can be quickly identified. This section will briefly cover several common visualizations used to identify outlier; however, each of these plots will be explored more in-depth later in the book."
+  },
+  {
+    "objectID": "p3c3-outliers.html#resources",
+    "href": "p3c3-outliers.html#resources",
+    "title": "13  Outliers",
+    "section": "13.1 Resources",
+    "text": "13.1 Resources"
+  },
+  {
+    "objectID": "p3c4-organizing-data.html",
+    "href": "p3c4-organizing-data.html",
+    "title": "14  Organizing Data",
+    "section": "",
+    "text": "This chapter will focus on sorting, filtering, and grouping your datasets."
+  },
+  {
+    "objectID": "p3c4-organizing-data.html#sorting",
+    "href": "p3c4-organizing-data.html#sorting",
+    "title": "14  Organizing Data",
+    "section": "14.1 Sorting",
+    "text": "14.1 Sorting\nStudent Scores dataset sort highest to lowest, alphabetical, lowest to highest, random sort.\nsort() vs order() vs rank()\n\nhead(ChickWeight)\n\n\n\n\n\n\nweight\nTime\nChick\nDiet\n\n\n\n\n42\n0\n1\n1\n\n\n51\n2\n1\n1\n\n\n59\n4\n1\n1\n\n\n64\n6\n1\n1\n\n\n76\n8\n1\n1\n\n\n93\n10\n1\n1\n\n\n\n\n\n\ndf <- ChickWeight\ndf <- df[order(df$weight),]\n\n\n\n\n\n\n\nweight\nTime\nChick\nDiet\n\n\n\n\n196\n35\n2\n18\n1\n\n\n26\n39\n2\n3\n1\n\n\n195\n39\n0\n18\n1\n\n\n293\n39\n0\n27\n2\n\n\n305\n39\n0\n28\n2\n\n\n317\n39\n0\n29\n2\n\n\n\n\n\n\ndf <- ChickWeight\ndf <- df[order(-df$weight),]\n\n\n\n\n\n\n\nweight\nTime\nChick\nDiet\n\n\n\n\n400\n373\n21\n35\n3\n\n\n399\n361\n20\n35\n3\n\n\n388\n341\n21\n34\n3\n\n\n398\n332\n18\n35\n3\n\n\n232\n331\n21\n21\n2\n\n\n387\n327\n20\n34\n3"
+  },
+  {
+    "objectID": "p3c4-organizing-data.html#filtering",
+    "href": "p3c4-organizing-data.html#filtering",
+    "title": "14  Organizing Data",
+    "section": "14.2 Filtering",
+    "text": "14.2 Filtering\nFilter by grades higher or lower than a certain number, where name starts with or is equal to a value, do an or/and statement."
+  },
+  {
+    "objectID": "p3c4-organizing-data.html#grouping",
+    "href": "p3c4-organizing-data.html#grouping",
+    "title": "14  Organizing Data",
+    "section": "14.3 Grouping",
+    "text": "14.3 Grouping\nAdd a column that indicates whether each student is male or female and group by gender. Then run stats based off of grouping."
+  },
+  {
+    "objectID": "p3c4-organizing-data.html#resources",
+    "href": "p3c4-organizing-data.html#resources",
+    "title": "14  Organizing Data",
+    "section": "14.4 Resources",
+    "text": "14.4 Resources"
+  },
+  {
+    "objectID": "p3exercises.html",
+    "href": "p3exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "Exercise: 21-A\n\n\n\ntext\nx"
+  },
+  {
+    "objectID": "p3exercises.html#answers",
+    "href": "p3exercises.html#answers",
+    "title": "Exercises",
+    "section": "Answers",
+    "text": "Answers\n\n\n\n\n\n\nAnswer: 21-A\n\n\n\ntext\nx"
+  },
+  {
+    "objectID": "p4-developing-insights.html",
+    "href": "p4-developing-insights.html",
+    "title": "Part IV: Developing Insights",
+    "section": "",
+    "text": "Once your data is prepared, you can now begin to make sense of your data and develop insights about it’s meaning. For many, this is where the data analysis process becomes the most fulfilling. This is the point where you get to reap what you’ve sown in the previous phases of the data analysis lifecycle.\n\nSummary Statistics- Summary statistics are usually where one starts when beginning to develop insights. You may hear the phrase “Exploratory Data Analysis” (sometimes abbreviated “EDA”) throughout your career. This is the point where you try to get a high-level understanding of your data through methods such as summary statistics.\nRegression- Regression is a common statistical technique employed by many to make generalizations as well as predictions about data.\nPlotting- This chapter will cover the basics of creating plots in R. It will begin by demonstrating the plotting capabilities available in R “out of the box”. This will be followed by an introduction to “ggplot2” which is one of the most common plotting libraries in R.\n\n\n\n\n\nGarvin, David A. 1993. “Building a Learning Organization.” Harvard Business Review July-August 1993."
+  },
+  {
+    "objectID": "p4c1-summary-statistics.html",
+    "href": "p4c1-summary-statistics.html",
+    "title": "15  Summary Statistics",
+    "section": "",
+    "text": "Descriptive Statistics alternatively\nSummary statistics are usually where one starts when beginning to develop insights. You may hear the phrase “Exploratory Data Analysis” (sometimes abbreviated “EDA”) throughout your career. This is the point where you try to get a high-level understanding of your data through methods such as summary statistics."
+  },
+  {
+    "objectID": "p4c1-summary-statistics.html#quantitative-data",
+    "href": "p4c1-summary-statistics.html#quantitative-data",
+    "title": "15  Summary Statistics",
+    "section": "15.1 Quantitative Data",
+    "text": "15.1 Quantitative Data\nmean, sd, var, min, max, median, range, and quantile dat <- ggplot2::mpg summary(dat$hwy)\n\n15.1.1 Measures of Central Tendency\n\n\n15.1.2 Scope of Data"
+  },
+  {
+    "objectID": "p4c1-summary-statistics.html#qualitative-data",
+    "href": "p4c1-summary-statistics.html#qualitative-data",
+    "title": "15  Summary Statistics",
+    "section": "15.2 Qualitative Data",
+    "text": "15.2 Qualitative Data\n\n15.2.1 Frequency not necessarily qualitative\n\n\n15.2.2 Word Cloud"
+  },
+  {
+    "objectID": "p4c1-summary-statistics.html#resources",
+    "href": "p4c1-summary-statistics.html#resources",
+    "title": "15  Summary Statistics",
+    "section": "15.3 Resources",
+    "text": "15.3 Resources"
+  },
+  {
+    "objectID": "p4c2-regression.html",
+    "href": "p4c2-regression.html",
+    "title": "16  Regression",
+    "section": "",
+    "text": "Regression is a common statistical technique employed by many to make generalizations as well as predictions about data."
+  },
+  {
+    "objectID": "p4c2-regression.html#linear-regression",
+    "href": "p4c2-regression.html#linear-regression",
+    "title": "16  Regression",
+    "section": "16.1 Linear Regression",
+    "text": "16.1 Linear Regression\nlm(y~x)\nA data frame with 272 observations on 2 variables.\n[,1] eruptions numeric Eruption time in mins [,2] waiting numeric Waiting time to next eruption (in mins)\n\nhead(faithful)\n\n\n\n\n\n\neruptions\nwaiting\n\n\n\n\n3.600\n79\n\n\n1.800\n54\n\n\n3.333\n74\n\n\n2.283\n62\n\n\n4.533\n85\n\n\n2.883\n55\n\n\n\n\n\n\nlm <- lm(faithful$eruptions ~ faithful$waiting)\nsummary(lm)\n\n\nCall:\nlm(formula = faithful$eruptions ~ faithful$waiting)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-1.29917 -0.37689  0.03508  0.34909  1.19329 \n\nCoefficients:\n                  Estimate Std. Error t value Pr(>|t|)    \n(Intercept)      -1.874016   0.160143  -11.70   <2e-16 ***\nfaithful$waiting  0.075628   0.002219   34.09   <2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.4965 on 270 degrees of freedom\nMultiple R-squared:  0.8115,    Adjusted R-squared:  0.8108 \nF-statistic:  1162 on 1 and 270 DF,  p-value: < 2.2e-16\n\n\nMaybe plot trendline now similar to what was done in my medium article"
+  },
+  {
+    "objectID": "p4c2-regression.html#multiple-regression",
+    "href": "p4c2-regression.html#multiple-regression",
+    "title": "16  Regression",
+    "section": "16.2 Multiple Regression",
+    "text": "16.2 Multiple Regression\nlm(y ~ x + x, data = input)"
+  },
+  {
+    "objectID": "p4c2-regression.html#logistic-regression",
+    "href": "p4c2-regression.html#logistic-regression",
+    "title": "16  Regression",
+    "section": "16.3 Logistic Regression",
+    "text": "16.3 Logistic Regression\nglm(y ~ x, family = binomial, data = mtcars)"
+  },
+  {
+    "objectID": "p4c2-regression.html#resources",
+    "href": "p4c2-regression.html#resources",
+    "title": "16  Regression",
+    "section": "16.4 Resources",
+    "text": "16.4 Resources\n\n“Visualizing OLS Linear Regression Assumptions in R” by Trevor French https://medium.com/trevor-french/visualizing-ols-linear-regression-assumptions-in-r-e762ba7afaff"
+  },
+  {
+    "objectID": "p4c3-plotting.html",
+    "href": "p4c3-plotting.html",
+    "title": "17  Plotting",
+    "section": "",
+    "text": "This chapter will cover the basics of creating plots in R. It will begin by demonstrating the plotting capabilities available in R “out of the box”. This will be followed by an introduction to “ggplot2” which is one of the most common plotting libraries in R."
+  },
+  {
+    "objectID": "p4c3-plotting.html#base-r",
+    "href": "p4c3-plotting.html#base-r",
+    "title": "17  Plotting",
+    "section": "17.1 Base R",
+    "text": "17.1 Base R\nAddress the fact that certain types of plots have already been covered previosuly in the book.\n\n17.1.1 Scatter Plot\nplot()\n\n\n17.1.2 Box Plot\nboxplot()\n\n\n17.1.3 Plot Matrix\npairs()\n\n\n17.1.4 Pie Chart\npie()\n\n\n17.1.5 Bar Plot\nbarplot()\n\n\n17.1.6 Histogram\nhist()\n\n\n17.1.7 Density Plot\ndensity()\n\n\n17.1.8 Dot Chart\ndotchart()"
+  },
+  {
+    "objectID": "p4c3-plotting.html#ggplot2",
+    "href": "p4c3-plotting.html#ggplot2",
+    "title": "17  Plotting",
+    "section": "17.2 ggplot2",
+    "text": "17.2 ggplot2\n\n17.2.1 Different types of plots?"
+  },
+  {
+    "objectID": "p4c3-plotting.html#resources",
+    "href": "p4c3-plotting.html#resources",
+    "title": "17  Plotting",
+    "section": "17.3 Resources",
+    "text": "17.3 Resources\n\nResource: https://ggplot2.tidyverse.org/"
+  },
+  {
+    "objectID": "p4exercises.html",
+    "href": "p4exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "Exercise: 21-A\n\n\n\ntext\nx"
+  },
+  {
+    "objectID": "p4exercises.html#answers",
+    "href": "p4exercises.html#answers",
+    "title": "Exercises",
+    "section": "Answers",
+    "text": "Answers\n\n\n\n\n\n\nAnswer: 21-A\n\n\n\ntext\nx"
+  },
+  {
+    "objectID": "p5-reporting.html",
+    "href": "p5-reporting.html",
+    "title": "Part V: Reporting",
+    "section": "",
+    "text": "Finally, it’s important to report on your data in such a way that the information is able to be digested by the people who need to see it when they need to see it.\n\nSpreadsheets- Spreadsheets are common way to communicate information to stakeholders. This chapter will go over how to export .xlsx and .csv files from R, how to format those spreadsheets, and how to add formulas to them.\nR Markdown- R Markdown allows you to create documents in a programmatic fashion that lends itself towards reproducibility. This chapter will cover the different formats that are available in R as well as how to create them.\nR Notebook- Some more technical audiences may require reporting which includes your methodology. This is where R Notebooks come in. R Notebooks are a subset of R Markdown documents that allow you to display and execute code directly in your document.\nR Shiny- R Shiny is a tool used to develop web applications and is commonly deployed in the use of creating dashboards, hosting static reports, and custom tooling.\n\n\n\n\n\nMcCandless, David. 2010. “The Beauty of Data Visualization.” https://www.ted.com/talks/david_mccandless_the_beauty_of_data_visualization/transcript?language=en."
+  },
+  {
+    "objectID": "p5c1-spreadsheets.html",
+    "href": "p5c1-spreadsheets.html",
+    "title": "18  Spreadsheets",
+    "section": "",
+    "text": "Spreadsheets are common way to communicate information to stakeholders. This chapter will go over how to export .xlsx and .csv files from R, how to format those spreadsheets, and how to add formulas to them."
+  },
+  {
+    "objectID": "p5c1-spreadsheets.html#export",
+    "href": "p5c1-spreadsheets.html#export",
+    "title": "18  Spreadsheets",
+    "section": "18.1 Export",
+    "text": "18.1 Export\n\n18.1.1 Export .csv Files\nIn order to export a dataframe to a CSV file, you can use the “write.csv” function. This function will accept a dataframe followed by the desired output location of your file. Let’s start by creating a sample dataframe to work with.\n\npeople <- c(\"John\", \"Jane\", NA)\nid <- c(12, 27, 23)\ndf <- data.frame(id = id, person = people)\n\n\n\n\n\n\nid\nperson\n\n\n\n\n12\nJohn\n\n\n27\nJane\n\n\n23\nNA\n\n\n\n\n\nNow, let’s specify the location we want to store the CSV file at and execute the “write.csv” function.\n\noutput <- \"C:/File Location/example.csv\"\nwrite.csv(df, output)\n\nThis will give you a file that looks like the following image.\n\n\n\n\n\nYou’ll notice that the first column contains the row numbers of the dataframe. This can be remedied by setting “row.names” to “FALSE” as follows.\n\nwrite.csv(df, output, row.names = FALSE)\n\nThis will yield the following result.\n\n\n\n\n\nFinally, you’ll notice that one of the names is an “NA” value. You can tell R how to handle these values at the time of exporting your file with the “na” argument. This argument will replace any “NA” values with the value of your chooseing. Let’s try replacing the “NA” value with “Unspecified”.\n\nwrite.csv(df, output, row.names = FALSE, na = \"Unspecified\")\n\nThis results in the following output:\n\n\n\n\n\n\n\n18.1.2 Export .xlsx Files\nExcel files are handled very similarly to CSV files with the exception being that you will need to use the “write_excel” function from the “writexl” library. The following code snippet demonstrates how to export your data to an Excel file.\n\nlibrary(writexl)\noutput <- \"C:/File Location/example.xlsx\"\nwrite_xlsx(df, output)\n\nsaveworkbook -csvs and xlsx"
+  },
+  {
+    "objectID": "p5c1-spreadsheets.html#formatting",
+    "href": "p5c1-spreadsheets.html#formatting",
+    "title": "18  Spreadsheets",
+    "section": "18.2 Formatting",
+    "text": "18.2 Formatting\n\ncolors\ntabs\nfont\netc"
+  },
+  {
+    "objectID": "p5c1-spreadsheets.html#formulas",
+    "href": "p5c1-spreadsheets.html#formulas",
+    "title": "18  Spreadsheets",
+    "section": "18.3 Formulas",
+    "text": "18.3 Formulas"
+  },
+  {
+    "objectID": "p5c1-spreadsheets.html#resources",
+    "href": "p5c1-spreadsheets.html#resources",
+    "title": "18  Spreadsheets",
+    "section": "18.4 Resources",
+    "text": "18.4 Resources"
+  },
+  {
+    "objectID": "p5c2-r-markdown.html",
+    "href": "p5c2-r-markdown.html",
+    "title": "19  R Markdown",
+    "section": "",
+    "text": "R Markdown allows you to create documents in a programmatic fashion that lends itself towards reproducibility. This chapter will cover the different formats that are available in R as well as how to create them."
+  },
+  {
+    "objectID": "p5c2-r-markdown.html#format-options-all-of-the-output-options",
+    "href": "p5c2-r-markdown.html#format-options-all-of-the-output-options",
+    "title": "19  R Markdown",
+    "section": "19.1 Format Options (All of the output options)",
+    "text": "19.1 Format Options (All of the output options)"
+  },
+  {
+    "objectID": "p5c2-r-markdown.html#example-maybe-pdf-and-another-section-for-htmlpowerpointetc.",
+    "href": "p5c2-r-markdown.html#example-maybe-pdf-and-another-section-for-htmlpowerpointetc.",
+    "title": "19  R Markdown",
+    "section": "19.2 Example (maybe pdf? and another section for html/powerpoint/etc.)",
+    "text": "19.2 Example (maybe pdf? and another section for html/powerpoint/etc.)"
+  },
+  {
+    "objectID": "p5c2-r-markdown.html#including-plots",
+    "href": "p5c2-r-markdown.html#including-plots",
+    "title": "19  R Markdown",
+    "section": "19.3 Including Plots",
+    "text": "19.3 Including Plots"
+  },
+  {
+    "objectID": "p5c2-r-markdown.html#resources",
+    "href": "p5c2-r-markdown.html#resources",
+    "title": "19  R Markdown",
+    "section": "19.4 Resources",
+    "text": "19.4 Resources\n\nFormats: https://rmarkdown.rstudio.com/formats.html\nResource: https://rmarkdown.rstudio.com/"
+  },
+  {
+    "objectID": "p5c3-r-notebook.html",
+    "href": "p5c3-r-notebook.html",
+    "title": "20  R Notebook",
+    "section": "",
+    "text": "Some more technical audiences may require reporting which includes your methodology. This is where R Notebooks come in. R Notebooks are a subset of R Markdown documents that allow you to display and execute code directly in your document."
+  },
+  {
+    "objectID": "p5c3-r-notebook.html#resources",
+    "href": "p5c3-r-notebook.html#resources",
+    "title": "20  R Notebook",
+    "section": "20.1 Resources",
+    "text": "20.1 Resources\n\nResource: https://rmarkdown.rstudio.com/lesson-10.html"
+  },
+  {
+    "objectID": "p5c4-r-shiny.html",
+    "href": "p5c4-r-shiny.html",
+    "title": "21  R Shiny",
+    "section": "",
+    "text": "R Shiny is a tool used to develop web applications and is commonly deployed in the use of creating dashboards, hosting static reports, and custom tooling."
+  },
+  {
+    "objectID": "p5c4-r-shiny.html#quickstart",
+    "href": "p5c4-r-shiny.html#quickstart",
+    "title": "21  R Shiny",
+    "section": "21.1 Quickstart",
+    "text": "21.1 Quickstart\nExplain what a project is"
+  },
+  {
+    "objectID": "p5c4-r-shiny.html#basic-components-of-a-shiny-application",
+    "href": "p5c4-r-shiny.html#basic-components-of-a-shiny-application",
+    "title": "21  R Shiny",
+    "section": "21.2 Basic Components of a Shiny Application",
+    "text": "21.2 Basic Components of a Shiny Application\n\n21.2.1 Server\n\n\n21.2.2 UI"
+  },
+  {
+    "objectID": "p5c4-r-shiny.html#shinyapps.io",
+    "href": "p5c4-r-shiny.html#shinyapps.io",
+    "title": "21  R Shiny",
+    "section": "21.3 shinyapps.io",
+    "text": "21.3 shinyapps.io\n\nShiny apps account\nQuick Start"
+  },
+  {
+    "objectID": "p5c4-r-shiny.html#deploying-application",
+    "href": "p5c4-r-shiny.html#deploying-application",
+    "title": "21  R Shiny",
+    "section": "21.4 Deploying Application",
+    "text": "21.4 Deploying Application"
+  },
+  {
+    "objectID": "p5c4-r-shiny.html#shinyuieditor",
+    "href": "p5c4-r-shiny.html#shinyuieditor",
+    "title": "21  R Shiny",
+    "section": "21.5 Shinyuieditor?",
+    "text": "21.5 Shinyuieditor?"
+  },
+  {
+    "objectID": "p5c4-r-shiny.html#resources",
+    "href": "p5c4-r-shiny.html#resources",
+    "title": "21  R Shiny",
+    "section": "21.6 Resources",
+    "text": "21.6 Resources\n\nResource: https://shiny.rstudio.com/"
+  },
+  {
+    "objectID": "p5exercises.html",
+    "href": "p5exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "Exercise: 21-A\n\n\n\ntext\nx"
+  },
+  {
+    "objectID": "p5exercises.html#answers",
+    "href": "p5exercises.html#answers",
+    "title": "Exercises",
+    "section": "Answers",
+    "text": "Answers\n\n\n\n\n\n\nAnswer: 21-A\n\n\n\ntext\nx"
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Eremenko, Kirill. 2020. “Hadley Wickham Talks Integration and\nFuture of r and Python [Audio Podcast].” SuperDataScience. https://www.superdatascience.com/podcast/hadley-wickham-talks-integration-and-future-of-python-and-r.\n\n\nGarvin, David A. 1993. “Building a Learning Organization.”\nHarvard Business Review July-August 1993.\n\n\nHermans, Felienne. 2021. “Hadley Wickham on r and Tidyverse [Audio\nPodcast].” Software Engineering Radio. https://www.se-radio.net/2021/03/episode-450-hadley-wickham-on-r-and-tidyverse/.\n\n\nIhaka, Ross. 1998. “R : Past and Future History.” https://www.stat.auckland.ac.nz/~ihaka/downloads/Interface98.pdf.\n\n\nMcCandless, David. 2010. “The Beauty of Data\nVisualization.” https://www.ted.com/talks/david_mccandless_the_beauty_of_data_visualization/transcript?language=en.\n\n\nPaulson, Josh. 2022. Navigating Code in the RStudio IDE. https://support.rstudio.com/hc/en-us/articles/200710523-Navigating-Code-in-the-RStudio-IDE."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "R for Data Analysis",
+    "section": "",
+    "text": "“There is synthesis when, in combining therein judgments that are made known to us from simpler relations, one deduces judgments from them relative to more complicated relations. There is analysis when from a complicated truth one deduces more simple truths.”  -André-Marie Ampère (Hofmann 1996)\n\nEveryone is a data analyst. The purpose of this book is to inspire and enable anyone who reads it to reconsider the methods they currently employ to analyse data. This is not to suggest that the methodologies outlined will be useful or sufficient for everyone who reads it. Some analyses can be performed quickly without the need for additional computation while others will require advanced analytics techniques not outlined in this book; however, the aspiration is that all will be equipped with novel tools and ideas for approaching data analysis.\n\n\nNo prior knowledge is required to begin this book. The content will start at the very beginning by showing you how to set up your R environment and the basics of programming in R. By the end of the book, you will be able to perform intermediate analytics techniques such as linear regresion and automatic report generation.\nYou will need an environment which you use to run your code. It is recommended that you download R and R Studio locally for this requirement. This book will walk you through how to do that as well as offer alternatives if that is not an option for you.\n\n\n\n\nPart I (Fundamentals) will introduce you to the basics of programming in the context of R.\nPart II (Data Acquisition) will teach you how to create, import, and access data.\nPart III (Data Preparation) will show you how to begin preparing your data for analysis.\nPart IV (Developing Insights) goes through the process of searching for and extracting insights from your data.\nPart V (Reporting) demonstrates how to wrap your analysis up by developing and automating reports.\n\nEach part will contain several chapters which cover specific ideas realted to the overarching topic. At the end of each of these chapters you will find additional resources for you to use to dive deeper into the ideas.\nEach part will be concluded with practical exercises for you to test your skills.\n\n\n\nThis website is free to use, and is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 4.0 License. Physical copies of this book are not currently available; however, you can download a pdf in the top left corner of this site. Feel free to contribute by reporting a typo or leaving a pull request at https://github.com/TrevorFrench/R-for-Data-Analysis.\n\n\n\n\nHofmann, J. R. 1996. Enlightenment and Electrodynamics. Cambridge University Press."
+  }
+]
