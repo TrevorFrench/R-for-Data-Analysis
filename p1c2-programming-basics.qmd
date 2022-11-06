@@ -211,7 +211,7 @@ x
 y
 ```
 
-There is also a third assignment operator that can be used: "=". However, it is generally considered best practice to just use the local assignment operator. You can find more information about these three operators in the resources section.
+There is also a third assignment operator that can be used: "=". You will generally use the local assignment operator; however, you may notice that the "=" operator is used within certain functions as you progress. You can find more information about these three operators in the resources section.
 
 ### Miscellaneous Operators
 

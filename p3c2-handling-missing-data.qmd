@@ -1,27 +1,145 @@
 # Handling Missing Data
 
-You may encounter situations while analysing data that some of your data are missing. This chapter will cover best practices in regards to handling these situations as well as the technical details on how to remedy the data. mena imput constant val whow to determine the right way to impute/drop columns
+You may encounter situations while analysing data that some of your data are missing. This chapter will cover best practices in regards to handling these situations as well as the technical details on how to remedy the data.
 
-## Replacing Nulls/NAs (constant value?)
-Explain what Null and NA mean
-Grades makes sense to replace with 0 because student may have skipped class blah blah (constant value imputation)
+Missing data will often be represented by either "NA" or "" in R. Sometimes you will be able to manage by just ignoring this data; however, other times you will need to "impute" the missing data. This just means you end up coming up with a value that makes sense to use in place of the missing data. The three imputation methods we are going to cover in this chapter are constant vaue imputation, central tendency imputation, and multiple imputation.
+
+## Handling NA/Blank Values
+
+This section will cover common methods and formulas for identifying and isolating missing data. Let's start by creating a a vector with one "" value and a vector with one "NA" value.
+
+```{r}
+blanks <- c("John", "Jane", "")
+nas <- c(NA, "Jane", "Joe")
+```
+
+```{r}
+print(blanks)
+print(nas)
+```
+
+We can use the "is.na" function to identify data with "NA" values. The following example demonstrates how the function works. The output ends up being a "TRUE" or "FALSE" to designate whether each observation is an "NA" value.
+
+```{r}
+is.na(nas)
+```
+
+We can then take this one step further and use the function to filter for "NA" values.
+
+```{r}
+only_nas <- nas[is.na(nas)]
+print(only_nas)
+```
+
+This works great; however, it's more likely that you would want to see the values which aren't equal to "NA". This can be accomplished by using the "NOT" operator "!".
+
+```{r}
+no_nas <- nas[!is.na(nas)]
+print(no_nas)
+```
+
+If your missing data is just an empty string ("") rather than an "NA" value, you can use simple comparison operators to accomplish the same thing.
+
+```{r}
+blanks == ""
+
+only_blanks <- blanks[blanks == ""]
+print(only_blanks)
+
+no_blanks <- blanks[blanks != ""]
+print(no_blanks)
+```
+
+## Constant Value Imputation
 
 Many datasets you encounter will likely be missing data. The temptation may be to immediately disregard these observations; however, it's important to consider what missing data represents in the context of your dataset as well as the context of what your analysis is hoping to achieve. For example, say you are a teacher and you are trying to determine the average test scores of your students. You have a dataset which lists your students names along with their respective test scores. However, you find that one of your students has an "NA" value in place of a test score.
 
-Depending on the context, it may make sense for you to ignore this observation prior to calculating the average score. It could also make sense for you to assign a value of "0" to this student's test score.
-
 ```{r}
-students <- c("John", "Jane", "x")
-scores <- c(1, 2, NA)
-df <- data.frame(score = scores, student = students)
+students <- c("John", "Jane", "Joe")
+scores <- c(100, 80, NA)
+df <- data.frame(student = students, score = scores)
 
 print(df)
 ```
 
-## Mean Imputation
-Come up with a data example where it makes sense to fill in blanks with an average (business logic where you claim or revert to average)
-Alternatively perform median imputation (measure of central tendency)
+Depending on the context, it may make sense for you to ignore this observation prior to calculating the average score. It could also make sense for you to assign a value of "0" to this student's test score.
 
-## Multiple Imputation?
+Let's demonstrate how you would replace "NA" values with a constant value of "0".
+
+```{r}
+df[is.na(df)] <- 0
+print(df)
+```
+
+## Central Tendency Imputation
+
+Two of the most common measures of central tendency are "mean" and "median". Suppose you have a dataset that tracks the time employees spend performing a certain task. After review, you realize that several employees have not historically tracked their time. Instead of just ignoring these entries, you decide to try imputing these values.
+
+```{r}
+employees <- c("John", "Jane", "Joe", "Janet")
+hours_spent <- c(12, 14, NA, 9)
+df <- data.frame(employee = employees, hours_spent = hours_spent)
+
+print(df)
+```
+
+The following example demonstrates how you can replace missing values with an average of the rest of the employees' time spent.
+
+```{r}
+mean_value <- mean(df$hours_spent[!is.na(df$hours_spent)])
+print(mean_value)
+
+df$hours_spent[is.na(df$hours_spent)] <- mean_value
+print(df)
+```
+
+Alternatively, we can reset our dataframe and replace "NA" values with the median value by doing the following.
+
+```{r}
+# RESET DATAFRAME
+df$hours_spent <- hours_spent
+
+# SET MISSING VALUES TO MEDIAN
+median_value <- median(df$hours_spent[!is.na(df$hours_spent)])
+print(median_value)
+df$hours_spent[is.na(df$hours_spent)] <- median_value
+print(df)
+```
+
+## Multiple Imputation
+
+The two previous examples are types of "single value imputaion" as both examples took one value and applied it to every missing value in the dataset. At a very basic level, multiple imputation requires users to come up with some sort of model to fill in missing values. In the following example we are going to demonstrate how you might use a simple linear regression model to perform multiple imputation.
+
+::: callout-note
+Linear regression is covered more in-depth later in this book. Don't worry if this example feels completely unfamiliar at this point.
+:::
+
+We'll begin by creating a dataframe with both an "x" and a "y" variable.
+
+```{r}
+y <- c(10, 8, NA, 9, 4, NA)
+x <- c(8, 6, 9, 7, 2, 12)
+df <- data.frame(y = y, x = x)
+
+print(df)
+```
+
+Next, let's use the "lm" function to create a linear model and then print out a summary of that model.
+
+```{r}
+model <- lm(y ~ x)
+summary(model)
+```
+
+
+From the model summary, we can see that we have a model with a high level of statistical significance. Let's now use the model coefficients to impute our missing values.
+```{r}
+x_coefficient <- model$coefficients["x"]
+intercept <- model$coefficients["(Intercept)"]
+x_var <- df$x[is.na(df$y)]
+
+df$y[is.na(df$y)] <- x_var * x_coefficient + intercept
+print(df)
+```
 
 ## Resources
