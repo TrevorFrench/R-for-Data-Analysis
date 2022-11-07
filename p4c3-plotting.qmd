@@ -2,6 +2,8 @@
 
 This chapter will cover the basics of creating plots in R. It will begin by demonstrating the plotting capabilities available in R "out of the box". This will be followed by an introduction to "ggplot2" which is one of the most common plotting libraries in R.
 
+word cloud
+
 ## Base R
 
 Address the fact that certain types of plots have already been covered previosuly in the book.

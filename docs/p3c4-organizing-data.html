@@ -597,7 +597,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>grouped_species <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Now if we print out our resulting dataset you’ll notice that the group_by operation we just performed doesn’t change how the data looks by itself.</p>
+<p>Now if we print out our resulting dataset you’ll notice that the “group_by” operation we just performed doesn’t change how the data looks by itself.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(grouped_species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -660,7 +660,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 </div>
 </div>
-<p>In order to change the structure of our dataset we’ll need to specify how our groups should be displayed by combining the “group_by” function with another dplyr “verb” such as “summarise”.</p>
+<p>In order to change the structure of our dataset we’ll need to specify how our groups should be treated by combining the “group_by” function with another dplyr “verb” such as “summarise”.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>grouped_species <span class="ot">&lt;-</span> grouped_species <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">sepal_length =</span> <span class="fu">mean</span>(Sepal.Length),</span>
@@ -710,6 +710,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 </div>
 </div>
+<p>Now each of the three species in the iris dataset have their average sepal length, sepal width, petal length, and petal width displayed.</p>
 <p>You can find more information about the “group_by” function and other dplyr “verbs” in the resources section below.</p>
 </section>
 <section id="resources" class="level2" data-number="14.4">

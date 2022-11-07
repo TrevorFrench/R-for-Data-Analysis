@@ -585,7 +585,7 @@
     "href": "p3c4-organizing-data.html#grouping",
     "title": "14  Organizing Data",
     "section": "14.3 Grouping",
-    "text": "14.3 Grouping\nOne final resource for you to leverage as you organize your data is the “group_by” function from the “dplyr” library.\nIf we wanted to group the iris dataset by species we might do something similar to the following example.\n\nlibrary(dplyr)\ngrouped_species <- iris %>% group_by(Species)\n\nNow if we print out our resulting dataset you’ll notice that the group_by operation we just performed doesn’t change how the data looks by itself.\n\nhead(grouped_species)\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n5.4\n3.9\n1.7\n0.4\nsetosa\n\n\n\n\n\nIn order to change the structure of our dataset we’ll need to specify how our groups should be displayed by combining the “group_by” function with another dplyr “verb” such as “summarise”.\n\ngrouped_species <- grouped_species %>% summarise(\n    sepal_length = mean(Sepal.Length),\n    sepal_width = mean(Sepal.Width),\n    petal_length = mean(Petal.Length),\n    petal_width = mean(Petal.Width)\n)\n\n\nhead(grouped_species)\n\n\n\n\n\n\nSpecies\nsepal_length\nsepal_width\npetal_length\npetal_width\n\n\n\n\nsetosa\n5.006\n3.428\n1.462\n0.246\n\n\nversicolor\n5.936\n2.770\n4.260\n1.326\n\n\nvirginica\n6.588\n2.974\n5.552\n2.026\n\n\n\n\n\nYou can find more information about the “group_by” function and other dplyr “verbs” in the resources section below."
+    "text": "14.3 Grouping\nOne final resource for you to leverage as you organize your data is the “group_by” function from the “dplyr” library.\nIf we wanted to group the iris dataset by species we might do something similar to the following example.\n\nlibrary(dplyr)\ngrouped_species <- iris %>% group_by(Species)\n\nNow if we print out our resulting dataset you’ll notice that the “group_by” operation we just performed doesn’t change how the data looks by itself.\n\nhead(grouped_species)\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n5.4\n3.9\n1.7\n0.4\nsetosa\n\n\n\n\n\nIn order to change the structure of our dataset we’ll need to specify how our groups should be treated by combining the “group_by” function with another dplyr “verb” such as “summarise”.\n\ngrouped_species <- grouped_species %>% summarise(\n    sepal_length = mean(Sepal.Length),\n    sepal_width = mean(Sepal.Width),\n    petal_length = mean(Petal.Length),\n    petal_width = mean(Petal.Width)\n)\n\n\nhead(grouped_species)\n\n\n\n\n\n\nSpecies\nsepal_length\nsepal_width\npetal_length\npetal_width\n\n\n\n\nsetosa\n5.006\n3.428\n1.462\n0.246\n\n\nversicolor\n5.936\n2.770\n4.260\n1.326\n\n\nvirginica\n6.588\n2.974\n5.552\n2.026\n\n\n\n\n\nNow each of the three species in the iris dataset have their average sepal length, sepal width, petal length, and petal width displayed.\nYou can find more information about the “group_by” function and other dplyr “verbs” in the resources section below."
   },
   {
     "objectID": "p3c4-organizing-data.html#resources",
@@ -620,21 +620,21 @@
     "href": "p4c1-summary-statistics.html",
     "title": "15  Summary Statistics",
     "section": "",
-    "text": "Descriptive Statistics alternatively\nSummary statistics are usually where one starts when beginning to develop insights. You may hear the phrase “Exploratory Data Analysis” (sometimes abbreviated “EDA”) throughout your career. This is the point where you try to get a high-level understanding of your data through methods such as summary statistics."
+    "text": "Summary statistics (otherwise known as descriptive statistics) are usually where one starts when beginning to develop insights. You may hear the phrase “Exploratory Data Analysis” (sometimes abbreviated “EDA”) throughout your career. This is the point where you try to get a high-level understanding of your data through methods such as summary statistics."
   },
   {
     "objectID": "p4c1-summary-statistics.html#quantitative-data",
     "href": "p4c1-summary-statistics.html#quantitative-data",
     "title": "15  Summary Statistics",
     "section": "15.1 Quantitative Data",
-    "text": "15.1 Quantitative Data\nmean, sd, var, min, max, median, range, and quantile dat <- ggplot2::mpg summary(dat$hwy)\n\n15.1.1 Measures of Central Tendency\n\n\n15.1.2 Scope of Data"
+    "text": "15.1 Quantitative Data\nWhen dealing with quantitative data, one of the quickest way to get a high level view of your data is by using the “summary” function. This function will return your extreme (minimum and maximum) values, your median, mean, 1st quantile, and 3rd quantile.\n\nsummary(mtcars$mpg)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  10.40   15.43   19.20   20.09   22.80   33.90 \n\n\nAlternatively, you can use the following eight functions to retrieve specific information about your data.\n\n# Returns the average\nmean(mtcars$mpg)\n\n[1] 20.09062\n\n# Returns the median\nmedian(mtcars$mpg)\n\n[1] 19.2\n\n# Returns the standard deviation\nsd(mtcars$mpg)\n\n[1] 6.026948\n\n# Returns the sample variance\nvar(mtcars$mpg)\n\n[1] 36.3241\n\n# Returns the minimum value\nmin(mtcars$mpg)\n\n[1] 10.4\n\n# Returns the maximum value\nmax(mtcars$mpg)\n\n[1] 33.9\n\n# Returns the minimum and maximum value\nrange(mtcars$mpg)\n\n[1] 10.4 33.9\n\n# Returns quantile data\nquantile(mtcars$mpg)\n\n    0%    25%    50%    75%   100% \n10.400 15.425 19.200 22.800 33.900"
   },
   {
     "objectID": "p4c1-summary-statistics.html#qualitative-data",
     "href": "p4c1-summary-statistics.html#qualitative-data",
     "title": "15  Summary Statistics",
     "section": "15.2 Qualitative Data",
-    "text": "15.2 Qualitative Data\n\n15.2.1 Frequency not necessarily qualitative\n\n\n15.2.2 Word Cloud"
+    "text": "15.2 Qualitative Data\nIf you’re working with data that is categorical in nature, you can view all categories by using the “levels” function.\n\nlevels(iris$Species)\n\n[1] \"setosa\"     \"versicolor\" \"virginica\" \n\n\nHowever, if you want to count the number of occurrences for each level, you can use the “table” function.\n\ntable(iris$Species)\n\n\n    setosa versicolor  virginica \n        50         50         50"
   },
   {
     "objectID": "p4c1-summary-statistics.html#resources",

@@ -1,23 +1,50 @@
 # Summary Statistics
 
-Descriptive Statistics alternatively
-
-Summary statistics are usually where one starts when beginning to develop insights. You may hear the phrase "Exploratory Data Analysis" (sometimes abbreviated "EDA") throughout your career. This is the point where you try to get a high-level understanding of your data through methods such as summary statistics.
+Summary statistics (otherwise known as descriptive statistics) are usually where one starts when beginning to develop insights. You may hear the phrase "Exploratory Data Analysis" (sometimes abbreviated "EDA") throughout your career. This is the point where you try to get a high-level understanding of your data through methods such as summary statistics.
 
 ## Quantitative Data
 
-mean, sd, var, min, max, median, range, and quantile
-dat <- ggplot2::mpg
-summary(dat$hwy)
+When dealing with quantitative data, one of the quickest way to get a high level view of your data is by using the "summary" function. This function will return your extreme (minimum and maximum) values, your median, mean, 1st quantile, and 3rd quantile.
 
-### Measures of Central Tendency
+```{r}
+summary(mtcars$mpg)
+```
 
-### Scope of Data
+Alternatively, you can use the following eight functions to retrieve specific information about your data.
+
+```{r}
+# Returns the average
+mean(mtcars$mpg)
+# Returns the median
+median(mtcars$mpg)
+# Returns the standard deviation
+sd(mtcars$mpg)
+# Returns the sample variance
+var(mtcars$mpg)
+# Returns the minimum value
+min(mtcars$mpg)
+# Returns the maximum value
+max(mtcars$mpg)
+# Returns the minimum and maximum value
+range(mtcars$mpg)
+# Returns quantile data
+quantile(mtcars$mpg)
+```
 
 ## Qualitative Data
 
-### Frequency not necessarily qualitative
+If you're working with data that is categorical in nature, you can view all categories by using the "levels" function.
 
-### Word Cloud
+```{r}
+levels(iris$Species)
+```
+
+However, if you want to count the number of occurrences for each level, you can use the "table" function.
+
+```{r}
+table(iris$Species)
+```
+
+If you need to keep digging for insights, you can represent your categories however you'd like to using the "group_by" function covered in the last chapter.
 
 ## Resources
