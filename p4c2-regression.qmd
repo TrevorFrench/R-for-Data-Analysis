@@ -3,12 +3,16 @@
 Regression is a common statistical technique employed by many to make generalizations as well as predictions about data.
 
 ## Linear Regression
-lm(y~x)
 
-A data frame with 272 observations on 2 variables.
- 
-[,1]	eruptions	numeric	Eruption time in mins
-[,2]	waiting	numeric	Waiting time to next eruption (in mins)
+The first kind of regression we'll cover is linear regression. Linear regression will use your data to come up with a linear model that describes the general trend of your data. Generally speaking, a linear model will consist of a dependent variable (y), at least one independent variable (x), coefficients to go along with each independent variable, and an intercept. Here's one common linear model you may remember:
+
+$$
+y = mx + b
+$$
+
+This is a simple linear model many people begin with where x and y are the independent and dependent variables, respectively, m is the slope (or coefficient of x), and b is the intercept.
+
+To perform linear regression in R, you'll use the "lm" function. Let's try it out on the "faithful" dataset.
 
 ```{r}
 #| output: false
@@ -20,19 +24,109 @@ head(faithful)
 knitr::kable(head(faithful), format="markdown")
 ```
 
+The "lm" function will accept at least two parameters which represent "y" and "x" in this format:
+
+```{r}
+#| eval: false
+lm(y ~ x)
+```
+
+Let's try this out by setting the y variable to eruptions and the x variable to waiting. We can then view the output of our linear model by using the "summary" function.
+
 ```{r}
 lm <- lm(faithful$eruptions ~ faithful$waiting)
 summary(lm)
 ```
 
-Maybe plot trendline now similar to what was done in my medium article
+This summary will show us the statistical significance of our model along with all relevant statistics to correctly interpret the significance. Additionally, we now have our model coefficients. From this summary we can assume that our model looks something like this:
+
+$$
+eruptions = waiting * 0.075628 - 1.874016
+$$
 
 ## Multiple Regression
-lm(y ~ x + x, data = input)
+
+If you had more x variables you wanted to add to your linear model, you could add them just like you would in any other math equation. Here's an example:
+
+```{r}
+#| eval: false
+lm(data$y ~ data$x1 + data$x2 - data$x3 * data$x4)
+```
+
+Additionally, you can use the "data" parameter rather than putting the name of the dataset before every variable.
+
+```{r}
+#| eval: false
+lm(y ~ x1 + x2 - x3 * x4, data = data)
+```
+
+Let's try a real example with the mtcars dataset.
+
+```{r}
+#| output: false
+head(mtcars)
+```
+
+```{r}
+#| echo: false
+knitr::kable(head(mtcars), format="markdown")
+```
+
+Now, let's try to predict mpg and use every other column as a variable then see what the results look like.
+
+```{r}
+lm <- lm(mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb, data = mtcars)
+summary(lm)
+```
+
+From here, you would likely tweak your model further based on the significance statistics we see here; however, that's outside the scope of what we're doing in this book. Take a look in the resources section at the end of this chapter to dive deeper into developing regression models.
 
 ## Logistic Regression
-glm(y ~ x, family = binomial, data = mtcars)
+
+Logistic regression is commonly used when your dependent variable (y) binomial (0 or 1). Instead of using the "lm" function though, you will use the "glm" function. Let's try this out on the mtcars dataset again but this time with "am" as the dependent variable.
+
+```{r}
+glm <- glm(am ~ cyl + hp + wt, family = binomial, data = mtcars)
+summary(glm)
+```
+
+## Plotting your Model
+
+Now, let's try plotting a linear model with the cars dataset. We'll begin by just creating a scatter plot of the raw data.
+
+```{r}
+plot(cars$speed, cars$dist)
+```
+
+Additionally, you can alter the appearance of your points by using the “pch”, “cex”, and “col” options. PCH stands for Plot Character and will adjust the symbol used for your points. The available point shapes are listed in the image below.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| warning: false
+ggpubr::show_point_shapes()
+```
+
+The “cex” option allows you to adjust the symbol size. The default value is 1. If you were to change the value to .75, for example, the plot symbol would be scaled down the 3/4 of the default size. The “col” option allows you to adjust the color of your plot symbols.
+
+```{r}
+plot(cars$speed, cars$dist, col=rgb(0.4,0.4,0.8,0.6), pch=16, cex=1.2)
+```
+
+You can adjust the axes with the “xlab”, “ylab”, “xaxt”, and “yaxt” options (amongst other available options). In the following example we will remove the axes altogether.
+
+```{r}
+plot(cars$speed, cars$dist, col=rgb(0.4,0.4,0.8,0.6), pch=16, cex=1.2, xlab="", ylab="", xaxt="n", yaxt="n")
+```
+
+Finally, you can add a trend line by creating a model and adding the fitted values to the graph. We’ll also adjust the line width and color with the “lwd” and “col” parameters, respectively.
+
+```{r}
+plot(cars$speed, cars$dist, col=rgb(0.4,0.4,0.8,0.6), pch=16, cex=1.2, xlab="", ylab="", xaxt="n", yaxt="n")
+model <- lm(cars$dist ~ cars$speed)
+lines(model$fitted.values, col=2, lwd=2)
+```
 
 ## Resources
+
+- Need to add more complete regression resources here
 
 - "Visualizing OLS Linear Regression Assumptions in R" by Trevor French <https://medium.com/trevor-french/visualizing-ols-linear-regression-assumptions-in-r-e762ba7afaff>
