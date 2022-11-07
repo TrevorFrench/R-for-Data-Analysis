@@ -550,14 +550,14 @@
     "href": "p3c3-outliers.html",
     "title": "13  Outliers",
     "section": "",
-    "text": "Outliers are observations that fall outside the expected scope of the dataset. It’s important to identify outliers in your data and determine the necessary treatment for them before moving into the next analysis phase.\nmight be necessary to impute value, remove row or may be necessary to keep the data besides extreme value ## Finding Outliers\nOne common first step many people employ when looking for outliers is visualizing their datasets so that exterme values can be quickly identified. This section will briefly cover several common visualizations used to identify outlier; however, each of these plots will be explored more in-depth later in the book."
+    "text": "Outliers are observations that fall outside the expected scope of the dataset. It’s important to identify outliers in your data and determine the necessary treatment for them before moving into the next analysis phase.\nmight be necessary to impute value, remove row or may be necessary to keep the data besides extreme value"
   },
   {
     "objectID": "p3c3-outliers.html#resources",
     "href": "p3c3-outliers.html#resources",
     "title": "13  Outliers",
-    "section": "13.1 Resources",
-    "text": "13.1 Resources"
+    "section": "13.4 Resources",
+    "text": "13.4 Resources"
   },
   {
     "objectID": "p3c4-organizing-data.html",
@@ -915,5 +915,33 @@
     "title": "12  Handling Missing Data",
     "section": "12.3 Central Tendency Imputation",
     "text": "12.3 Central Tendency Imputation\nTwo of the most common measures of central tendency are “mean” and “median”. Suppose you have a dataset that tracks the time employees spend performing a certain task. After review, you realize that several employees have not historically tracked their time. Instead of just ignoring these entries, you decide to try imputing these values.\n\nemployees <- c(\"John\", \"Jane\", \"Joe\", \"Janet\")\nhours_spent <- c(12, 14, NA, 9)\ndf <- data.frame(employee = employees, hours_spent = hours_spent)\n\nprint(df)\n\n  employee hours_spent\n1     John          12\n2     Jane          14\n3      Joe          NA\n4    Janet           9\n\n\nThe following example demonstrates how you can replace missing values with an average of the rest of the employees’ time spent.\n\nmean_value <- mean(df$hours_spent[!is.na(df$hours_spent)])\nprint(mean_value)\n\n[1] 11.66667\n\ndf$hours_spent[is.na(df$hours_spent)] <- mean_value\nprint(df)\n\n  employee hours_spent\n1     John    12.00000\n2     Jane    14.00000\n3      Joe    11.66667\n4    Janet     9.00000\n\n\nAlternatively, we can reset our dataframe and replace “NA” values with the median value by doing the following.\n\n# RESET DATAFRAME\ndf$hours_spent <- hours_spent\n\n# SET MISSING VALUES TO MEDIAN\nmedian_value <- median(df$hours_spent[!is.na(df$hours_spent)])\nprint(median_value)\n\n[1] 12\n\ndf$hours_spent[is.na(df$hours_spent)] <- median_value\nprint(df)\n\n  employee hours_spent\n1     John          12\n2     Jane          14\n3      Joe          12\n4    Janet           9"
+  },
+  {
+    "objectID": "p3c3-outliers.html#finding-outliers",
+    "href": "p3c3-outliers.html#finding-outliers",
+    "title": "13  Outliers",
+    "section": "13.1 Finding Outliers",
+    "text": "13.1 Finding Outliers\nOne common first step many people employ when looking for outliers is visualizing their datasets so that exterme values can be quickly identified. This section will briefly cover several common visualizations used to identify outlier; however, each of these plots will be explored more in-depth later in the book.\n\n13.1.1 Scatter Plot\nThis is probably the first plot you’ll reach for when trying to visualize outliers in your data. The scatter plot is a great tool to quickly visualize your data at a high level and see if anything major stands out.\n\nplot(mtcars$mpg)\n\n\n\n\nHere’s how a scatter plot with an extreme outlier might look.\n\ndata <- c(1,4,7,9,2,6,3,99,4,2,7,8)\nplot(data)\n\n\n\n\n\n\n13.1.2 Box Plot\nAnother way to quickly visualize outliers is to use the “boxplot” function. This plot will allow you to evaluate outliers in a more systematic way.\n\nboxplot(mtcars$mpg)\n\n\n\n\nThe solid black line represents the median value of your dataset. The top and bottom “whiskers” represent your extreme values (minimum and maximum). The top and bottom of the “box” represent the first and third quartile.\nHere’s an example of a box plot with an extreme outlier.\n\nboxplot(data)\n\n\n\n\n\n\n13.1.3 Histogram\n\nhist(mtcars$mpg)\n\n\n\n\n\nhist(data)\n\n\n\n\n\n\n13.1.4 Density Plot\n\nplot(density(mtcars$mpg))\n\n\n\n\n\nplot(density(data))\n\n\n\n\nbell curve & standard deviation"
+  },
+  {
+    "objectID": "p3c3-outliers.html#removing-outliers",
+    "href": "p3c3-outliers.html#removing-outliers",
+    "title": "13  Outliers",
+    "section": "13.3 Removing Outliers",
+    "text": "13.3 Removing Outliers\nAfter identifying your outliers you have several options to remove them.\nYour first option would be to manually remove a specific outlier.\n\nmanually_cleaned <- data[data != 99]\nprint(manually_cleaned)\n\n [1] 1 4 7 9 2 6 3 4 2 7 8\n\n\nA more robust option would be to rely on your previously performed calculations to remove any observations which are located too far away from the mean.\n\nstatistically_cleaned <- data[extremity < 3]\nprint(statistically_cleaned)\n\n [1] 1 4 7 9 2 6 3 4 2 7 8"
+  },
+  {
+    "objectID": "p3c3-outliers.html#finding-outliers-visually",
+    "href": "p3c3-outliers.html#finding-outliers-visually",
+    "title": "13  Outliers",
+    "section": "13.1 Finding Outliers Visually",
+    "text": "13.1 Finding Outliers Visually\nOne common first step many people employ when looking for outliers is visualizing their datasets so that exterme values can be quickly identified. This section will briefly cover several common visualizations used to identify outlier; however, each of these plots will be explored more in-depth later in the book.\n\n13.1.1 Scatter Plot\nThis is probably the first plot you’ll reach for when trying to visualize outliers in your data. The scatter plot is a great tool to quickly visualize your data at a high level and see if anything major stands out.\n\nplot(mtcars$mpg)\n\n\n\n\nHere’s how a scatter plot with an extreme outlier might look.\n\ndata <- c(1,4,7,9,2,6,3,99,4,2,7,8)\nplot(data)\n\n\n\n\n\n\n13.1.2 Box Plot\nAnother way to quickly visualize outliers is to use the “boxplot” function. This plot will allow you to evaluate outliers in a more systematic way.\n\nboxplot(mtcars$mpg)\n\n\n\n\nThe solid black line represents the median value of your dataset. The top and bottom “whiskers” represent your extreme values (minimum and maximum). The top and bottom of the “box” represent the first and third quartile.\nHere’s an example of a box plot with an extreme outlier.\n\nboxplot(data)\n\n\n\n\n\n\n13.1.3 Histogram\nHistograms will allow you to see how often values occur within certain buckets.\n\nhist(mtcars$mpg)\n\n\n\n\nHere’s a histogram with data that contains an outlier.\n\nhist(data)\n\n\n\n\n\n\n13.1.4 Density Plot\nDensity plots allow you to see the distribution of your data in a more continuous manner than you might be able to achieve with a histogram.\n\nplot(density(mtcars$mpg))\n\n\n\n\nHere’s an example of a density plot with data that contains an outlier.\n\nplot(density(data))"
+  },
+  {
+    "objectID": "p3c3-outliers.html#finding-outliers-statistically",
+    "href": "p3c3-outliers.html#finding-outliers-statistically",
+    "title": "13  Outliers",
+    "section": "13.2 Finding Outliers Statistically",
+    "text": "13.2 Finding Outliers Statistically\nWhile examining your data visually may be a convenient and sufficient way to detect outliers in your data, sometimes you may require a more rigorous approach to outlier detection.\n\n13.2.1 Standard Deviation\nOne simple way to check the extremity of your observation is to calculate how many standard deviations it falls from the mean.\nLet’s start by calculating the standard deviation of our dataset by using the “sd” function.\n\nsd <- sd(data)\nprint(sd)\n\n[1] 27.31078\n\n\nNext, let’s calculate the mean of our dataset.\n\nmean <- mean(data)\nprint(mean)\n\n[1] 12.66667\n\n\nFinally, for each record in our vector, let’s calculate how many standard deviations it falls from the mean.\n\nextremity <- abs(data - mean) / sd\nprint(extremity)\n\n [1] 0.4271817 0.3173350 0.2074883 0.1342571 0.3905661 0.2441038 0.3539506\n [8] 3.1611447 0.3173350 0.3905661 0.2074883 0.1708727"
   }
 ]

@@ -3,16 +3,115 @@
 Outliers are observations that fall outside the expected scope of the dataset. It's important to identify outliers in your data and determine the necessary treatment for them before moving into the next analysis phase.
 
 might be necessary to impute value, remove row or may be necessary to keep the data besides extreme value
-## Finding Outliers
+
+## Finding Outliers Visually
 
 One common first step many people employ when looking for outliers is visualizing their datasets so that exterme values can be quickly identified. This section will briefly cover several common visualizations used to identify outlier; however, each of these plots will be explored more in-depth later in the book.
 
-### Box and Whisker Plot
+### Scatter Plot
 
-boxplot()
+This is probably the first plot you'll reach for when trying to visualize outliers in your data. The scatter plot is a great tool to quickly visualize your data at a high level and see if anything major stands out.
 
-scatter plot
-bell curve & standard deviation
+```{r}
+plot(mtcars$mpg)
+```
+
+Here's how a scatter plot with an extreme outlier might look.
+
+```{r}
+data <- c(1,4,7,9,2,6,3,99,4,2,7,8)
+plot(data)
+```
+
+### Box Plot
+
+Another way to quickly visualize outliers is to use the "boxplot" function. This plot will allow you to evaluate outliers in a more systematic way.
+
+```{r}
+boxplot(mtcars$mpg)
+```
+
+The solid black line represents the median value of your dataset. The top and bottom "whiskers" represent your extreme values (minimum and maximum). The top and bottom of the "box" represent the first and third quartile.
+
+Here's an example of a box plot with an extreme outlier.
+
+```{r}
+boxplot(data)
+```
+
+### Histogram
+
+Histograms will allow you to see how often values occur within certain buckets.
+
+```{r}
+hist(mtcars$mpg)
+```
+
+Here's a histogram with data that contains an outlier.
+
+```{r}
+hist(data)
+```
+
+### Density Plot
+
+Density plots allow you to see the distribution of your data in a more continuous manner than you might be able to achieve with a histogram.
+
+```{r}
+plot(density(mtcars$mpg))
+```
+
+Here's an example of a density plot with data that contains an outlier.
+
+```{r}
+plot(density(data))
+```
+
+## Finding Outliers Statistically
+
+While examining your data visually may be a convenient and sufficient way to detect outliers in your data, sometimes you may require a more rigorous approach to outlier detection.
+
+### Standard Deviation
+
+One simple way to check the extremity of your observation is to calculate how many standard deviations it falls from the mean.
+
+Let's start by calculating the standard deviation of our dataset by using the "sd" function.
+
+```{r}
+sd <- sd(data)
+print(sd)
+```
+
+Next, let's calculate the mean of our dataset.
+
+```{r}
+mean <- mean(data)
+print(mean)
+```
+
+Finally, for each record in our vector, let's calculate how many standard deviations it falls from the mean.
+
+```{r}
+extremity <- abs(data - mean) / sd
+print(extremity)
+```
+
 ## Removing Outliers
+
+After identifying your outliers you have several options to remove them.
+
+Your first option would be to manually remove a specific outlier.
+
+```{r}
+manually_cleaned <- data[data != 99]
+print(manually_cleaned)
+```
+
+A more robust option would be to rely on your previously performed calculations to remove any observations which are located too far away from the mean.
+
+```{r}
+statistically_cleaned <- data[extremity < 3]
+print(statistically_cleaned)
+```
 
 ## Resources
