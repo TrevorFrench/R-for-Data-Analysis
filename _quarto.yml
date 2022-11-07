@@ -9,7 +9,7 @@ book:
   cover-image: cover.png
   repo-url: https://github.com/TrevorFrench/R-for-Data-Analysis
   repo-actions: [edit]
-  downloads: [pdf, epub]
+  downloads: [pdf]
   sharing: [twitter, facebook, linkedin]
   open-graph: true
   twitter-card: 
@@ -58,7 +58,7 @@ book:
 bibliography: references.bib
 
 comments:
-  hypothesis: true
+  hypothesis: false
 
 format:
   html:

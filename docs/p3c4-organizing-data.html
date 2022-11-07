@@ -118,7 +118,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script async="" src="https://hypothes.is/embed.js"></script>
 
 
 <meta property="og:title" content="R for Data Analysis - 14&nbsp; Organizing Data">
@@ -151,23 +150,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <a href="./">R for Data Analysis</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/TrevorFrench/R-for-Data-Analysis" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
-    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
+    <a href="./R-for-Data-Analysis.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
+    <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="./R-for-Data-Analysis.pdf">
-            <i class="bi bi-bi-file-pdf pe-1"></i>
-          Download PDF
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="./R-for-Data-Analysis.epub">
-            <i class="bi bi-bi-journal pe-1"></i>
-          Download ePub
-          </a>
-        </li>
-    </ul>
-    <a href="" title="Share" id="sidebar-tool-dropdown-1" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
-    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-1">
         <li>
           <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
             <i class="bi bi-bi-twitter pe-1"></i>
@@ -401,7 +386,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sorting" id="toc-sorting" class="nav-link active" data-scroll-target="#sorting"> <span class="header-section-number">14.1</span> Sorting</a></li>
+  <li><a href="#sort-order-and-rank" id="toc-sort-order-and-rank" class="nav-link active" data-scroll-target="#sort-order-and-rank"> <span class="header-section-number">14.1</span> Sort, Order, and Rank</a></li>
   <li><a href="#filtering" id="toc-filtering" class="nav-link" data-scroll-target="#filtering"> <span class="header-section-number">14.2</span> Filtering</a></li>
   <li><a href="#grouping" id="toc-grouping" class="nav-link" data-scroll-target="#grouping"> <span class="header-section-number">14.3</span> Grouping</a></li>
   <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"> <span class="header-section-number">14.4</span> Resources</a></li>
@@ -428,202 +413,311 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <p>This chapter will focus on sorting, filtering, and grouping your datasets.</p>
-<section id="sorting" class="level2" data-number="14.1">
-<h2 data-number="14.1" class="anchored" data-anchor-id="sorting"><span class="header-section-number">14.1</span> Sorting</h2>
-<p>Student Scores dataset sort highest to lowest, alphabetical, lowest to highest, random sort.</p>
-<p>sort() vs order() vs rank()</p>
+<section id="sort-order-and-rank" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="sort-order-and-rank"><span class="header-section-number">14.1</span> Sort, Order, and Rank</h2>
+<p>Three functions you may use to organize your data are “sort”, “order”, and “rank”. The following examples will go through each one and show you how to use them.</p>
+<p>Let’s start by creating a vector to work with.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ChickWeight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>completed_tasks <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">9</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">7</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(completed_tasks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5 9 3 2 7</code></pre>
 </div>
+</div>
+<p>Next we’ll sort our data by using the “sort” function. This function will return your original data but sorted in ascending order.</p>
 <div class="cell">
-<div class="cell-output-display">
-<table class="table table-sm table-striped">
-<thead>
-<tr class="header">
-<th style="text-align: right;">weight</th>
-<th style="text-align: right;">Time</th>
-<th style="text-align: left;">Chick</th>
-<th style="text-align: left;">Diet</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">51</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">59</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">64</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">76</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">93</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">1</td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(completed_tasks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2 3 5 7 9</code></pre>
 </div>
 </div>
+<p>Alternatively, you can set the “decreasing” parameter to “TRUE” to sort your data in descending order.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> ChickWeight</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df[<span class="fu">order</span>(df<span class="sc">$</span>weight),]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(completed_tasks, <span class="at">decreasing =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 9 7 5 3 2</code></pre>
 </div>
+</div>
+<p>The “order” function will return the index of each item in your vector in sorted order. This function also has a “decreasing” parameter which can be set to “TRUE”.</p>
 <div class="cell">
-<div class="cell-output-display">
-<table class="table table-sm table-striped">
-<thead>
-<tr class="header">
-<th style="text-align: left;"></th>
-<th style="text-align: right;">weight</th>
-<th style="text-align: right;">Time</th>
-<th style="text-align: left;">Chick</th>
-<th style="text-align: left;">Diet</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">196</td>
-<td style="text-align: right;">35</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">18</td>
-<td style="text-align: left;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">26</td>
-<td style="text-align: right;">39</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">195</td>
-<td style="text-align: right;">39</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: left;">18</td>
-<td style="text-align: left;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">293</td>
-<td style="text-align: right;">39</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: left;">27</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">305</td>
-<td style="text-align: right;">39</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: left;">28</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">317</td>
-<td style="text-align: right;">39</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: left;">29</td>
-<td style="text-align: left;">2</td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">order</span>(completed_tasks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4 3 1 5 2</code></pre>
 </div>
 </div>
+<p>Finally, the “rank” function will return the rank of each item in your vector in ascending order.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> ChickWeight</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df[<span class="fu">order</span>(<span class="sc">-</span>df<span class="sc">$</span>weight),]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<table class="table table-sm table-striped">
-<thead>
-<tr class="header">
-<th style="text-align: left;"></th>
-<th style="text-align: right;">weight</th>
-<th style="text-align: right;">Time</th>
-<th style="text-align: left;">Chick</th>
-<th style="text-align: left;">Diet</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">400</td>
-<td style="text-align: right;">373</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: left;">35</td>
-<td style="text-align: left;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">399</td>
-<td style="text-align: right;">361</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: left;">35</td>
-<td style="text-align: left;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">388</td>
-<td style="text-align: right;">341</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: left;">34</td>
-<td style="text-align: left;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">398</td>
-<td style="text-align: right;">332</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: left;">35</td>
-<td style="text-align: left;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">232</td>
-<td style="text-align: right;">331</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: left;">21</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">387</td>
-<td style="text-align: right;">327</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: left;">34</td>
-<td style="text-align: left;">3</td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rank</span>(completed_tasks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3 5 2 1 4</code></pre>
 </div>
 </div>
 </section>
 <section id="filtering" class="level2" data-number="14.2">
 <h2 data-number="14.2" class="anchored" data-anchor-id="filtering"><span class="header-section-number">14.2</span> Filtering</h2>
-<p>Filter by grades higher or lower than a certain number, where name starts with or is equal to a value, do an or/and statement.</p>
+<p>You may have noticed in previous chapters that we’ve used comparison operators to filter our data. Let’s review by filtering out completed tasks greater than or equal to 7.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>completed_tasks[completed_tasks <span class="sc">&lt;</span> <span class="dv">7</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5 3 2</code></pre>
+</div>
+</div>
+<p>Alternatively, you can use the “filter” function from the “dplyr” library. Let’s use this function with the “iris” dataset to filter out any species which isn’t virginica.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Sepal.Length</th>
+<th style="text-align: right;">Sepal.Width</th>
+<th style="text-align: right;">Petal.Length</th>
+<th style="text-align: right;">Petal.Width</th>
+<th style="text-align: left;">Species</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">1.7</td>
+<td style="text-align: right;">0.4</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>virginica <span class="ot">&lt;-</span> <span class="fu">filter</span>(iris, Species <span class="sc">==</span> <span class="st">"virginica"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Sepal.Length</th>
+<th style="text-align: right;">Sepal.Width</th>
+<th style="text-align: right;">Petal.Length</th>
+<th style="text-align: right;">Petal.Width</th>
+<th style="text-align: left;">Species</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">6.3</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">6.0</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.8</td>
+<td style="text-align: right;">2.7</td>
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">1.9</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7.1</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">5.9</td>
+<td style="text-align: right;">2.1</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.3</td>
+<td style="text-align: right;">2.9</td>
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">1.8</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.5</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">5.8</td>
+<td style="text-align: right;">2.2</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7.6</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">6.6</td>
+<td style="text-align: right;">2.1</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </section>
 <section id="grouping" class="level2" data-number="14.3">
 <h2 data-number="14.3" class="anchored" data-anchor-id="grouping"><span class="header-section-number">14.3</span> Grouping</h2>
-<p>Add a column that indicates whether each student is male or female and group by gender. Then run stats based off of grouping.</p>
+<p>One final resource for you to leverage as you organize your data is the “group_by” function from the “dplyr” library.</p>
+<p>If we wanted to group the iris dataset by species we might do something similar to the following example.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>grouped_species <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now if we print out our resulting dataset you’ll notice that the group_by operation we just performed doesn’t change how the data looks by itself.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(grouped_species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Sepal.Length</th>
+<th style="text-align: right;">Sepal.Width</th>
+<th style="text-align: right;">Petal.Length</th>
+<th style="text-align: right;">Petal.Width</th>
+<th style="text-align: left;">Species</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">1.7</td>
+<td style="text-align: right;">0.4</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>In order to change the structure of our dataset we’ll need to specify how our groups should be displayed by combining the “group_by” function with another dplyr “verb” such as “summarise”.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>grouped_species <span class="ot">&lt;-</span> grouped_species <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">sepal_length =</span> <span class="fu">mean</span>(Sepal.Length),</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">sepal_width =</span> <span class="fu">mean</span>(Sepal.Width),</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">petal_length =</span> <span class="fu">mean</span>(Petal.Length),</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">petal_width =</span> <span class="fu">mean</span>(Petal.Width)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(grouped_species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Species</th>
+<th style="text-align: right;">sepal_length</th>
+<th style="text-align: right;">sepal_width</th>
+<th style="text-align: right;">petal_length</th>
+<th style="text-align: right;">petal_width</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">5.006</td>
+<td style="text-align: right;">3.428</td>
+<td style="text-align: right;">1.462</td>
+<td style="text-align: right;">0.246</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">versicolor</td>
+<td style="text-align: right;">5.936</td>
+<td style="text-align: right;">2.770</td>
+<td style="text-align: right;">4.260</td>
+<td style="text-align: right;">1.326</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">virginica</td>
+<td style="text-align: right;">6.588</td>
+<td style="text-align: right;">2.974</td>
+<td style="text-align: right;">5.552</td>
+<td style="text-align: right;">2.026</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>You can find more information about the “group_by” function and other dplyr “verbs” in the resources section below.</p>
 </section>
 <section id="resources" class="level2" data-number="14.4">
 <h2 data-number="14.4" class="anchored" data-anchor-id="resources"><span class="header-section-number">14.4</span> Resources</h2>
+<ul>
+<li>dplyr “filter” function documentation <a href="https://dplyr.tidyverse.org/reference/filter.html" class="uri">https://dplyr.tidyverse.org/reference/filter.html</a></li>
+<li>dplyr “group_by” function documentation <a href="https://dplyr.tidyverse.org/reference/group_by.html" class="uri">https://dplyr.tidyverse.org/reference/group_by.html</a></li>
+</ul>
 
 
 </section>

@@ -578,21 +578,21 @@
     "href": "p3c4-organizing-data.html#filtering",
     "title": "14  Organizing Data",
     "section": "14.2 Filtering",
-    "text": "14.2 Filtering\nFilter by grades higher or lower than a certain number, where name starts with or is equal to a value, do an or/and statement."
+    "text": "14.2 Filtering\nYou may have noticed in previous chapters that we’ve used comparison operators to filter our data. Let’s review by filtering out completed tasks greater than or equal to 7.\n\ncompleted_tasks[completed_tasks < 7]\n\n[1] 5 3 2\n\n\nAlternatively, you can use the “filter” function from the “dplyr” library. Let’s use this function with the “iris” dataset to filter out any species which isn’t virginica.\n\nhead(iris)\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n5.4\n3.9\n1.7\n0.4\nsetosa\n\n\n\n\n\n\nlibrary(dplyr)\nvirginica <- filter(iris, Species == \"virginica\")\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\n\n\n\n\n6.3\n3.3\n6.0\n2.5\nvirginica\n\n\n5.8\n2.7\n5.1\n1.9\nvirginica\n\n\n7.1\n3.0\n5.9\n2.1\nvirginica\n\n\n6.3\n2.9\n5.6\n1.8\nvirginica\n\n\n6.5\n3.0\n5.8\n2.2\nvirginica\n\n\n7.6\n3.0\n6.6\n2.1\nvirginica"
   },
   {
     "objectID": "p3c4-organizing-data.html#grouping",
     "href": "p3c4-organizing-data.html#grouping",
     "title": "14  Organizing Data",
     "section": "14.3 Grouping",
-    "text": "14.3 Grouping\nAdd a column that indicates whether each student is male or female and group by gender. Then run stats based off of grouping."
+    "text": "14.3 Grouping\nOne final resource for you to leverage as you organize your data is the “group_by” function from the “dplyr” library.\nIf we wanted to group the iris dataset by species we might do something similar to the following example.\n\nlibrary(dplyr)\ngrouped_species <- iris %>% group_by(Species)\n\nNow if we print out our resulting dataset you’ll notice that the group_by operation we just performed doesn’t change how the data looks by itself.\n\nhead(grouped_species)\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n5.4\n3.9\n1.7\n0.4\nsetosa\n\n\n\n\n\nIn order to change the structure of our dataset we’ll need to specify how our groups should be displayed by combining the “group_by” function with another dplyr “verb” such as “summarise”.\n\ngrouped_species <- grouped_species %>% summarise(\n    sepal_length = mean(Sepal.Length),\n    sepal_width = mean(Sepal.Width),\n    petal_length = mean(Petal.Length),\n    petal_width = mean(Petal.Width)\n)\n\n\nhead(grouped_species)\n\n\n\n\n\n\nSpecies\nsepal_length\nsepal_width\npetal_length\npetal_width\n\n\n\n\nsetosa\n5.006\n3.428\n1.462\n0.246\n\n\nversicolor\n5.936\n2.770\n4.260\n1.326\n\n\nvirginica\n6.588\n2.974\n5.552\n2.026\n\n\n\n\n\nYou can find more information about the “group_by” function and other dplyr “verbs” in the resources section below."
   },
   {
     "objectID": "p3c4-organizing-data.html#resources",
     "href": "p3c4-organizing-data.html#resources",
     "title": "14  Organizing Data",
     "section": "14.4 Resources",
-    "text": "14.4 Resources"
+    "text": "14.4 Resources\n\ndplyr “filter” function documentation https://dplyr.tidyverse.org/reference/filter.html\ndplyr “group_by” function documentation https://dplyr.tidyverse.org/reference/group_by.html"
   },
   {
     "objectID": "p3exercises.html",
@@ -943,5 +943,12 @@
     "title": "13  Outliers",
     "section": "13.2 Finding Outliers Statistically",
     "text": "13.2 Finding Outliers Statistically\nWhile examining your data visually may be a convenient and sufficient way to detect outliers in your data, sometimes you may require a more rigorous approach to outlier detection.\n\n13.2.1 Standard Deviation\nOne simple way to check the extremity of your observation is to calculate how many standard deviations it falls from the mean.\nLet’s start by calculating the standard deviation of our dataset by using the “sd” function.\n\nsd <- sd(data)\nprint(sd)\n\n[1] 27.31078\n\n\nNext, let’s calculate the mean of our dataset.\n\nmean <- mean(data)\nprint(mean)\n\n[1] 12.66667\n\n\nFinally, for each record in our vector, let’s calculate how many standard deviations it falls from the mean.\n\nextremity <- abs(data - mean) / sd\nprint(extremity)\n\n [1] 0.4271817 0.3173350 0.2074883 0.1342571 0.3905661 0.2441038 0.3539506\n [8] 3.1611447 0.3173350 0.3905661 0.2074883 0.1708727"
+  },
+  {
+    "objectID": "p3c4-organizing-data.html#sort-order-and-rank",
+    "href": "p3c4-organizing-data.html#sort-order-and-rank",
+    "title": "14  Organizing Data",
+    "section": "14.1 Sort, Order, and Rank",
+    "text": "14.1 Sort, Order, and Rank\nThree functions you may use to organize your data are “sort”, “order”, and “rank”. The following examples will go through each one and show you how to use them.\nLet’s start by creating a vector to work with.\n\ncompleted_tasks <- c(5, 9, 3, 2, 7)\nprint(completed_tasks)\n\n[1] 5 9 3 2 7\n\n\nNext we’ll sort our data by using the “sort” function. This function will return your original data but sorted in ascending order.\n\nsort(completed_tasks)\n\n[1] 2 3 5 7 9\n\n\nAlternatively, you can set the “decreasing” parameter to “TRUE” to sort your data in descending order.\n\nsort(completed_tasks, decreasing = TRUE)\n\n[1] 9 7 5 3 2\n\n\nThe “order” function will return the index of each item in your vector in sorted order. This function also has a “decreasing” parameter which can be set to “TRUE”.\n\norder(completed_tasks)\n\n[1] 4 3 1 5 2\n\n\nFinally, the “rank” function will return the rank of each item in your vector in ascending order.\n\nrank(completed_tasks)\n\n[1] 3 5 2 1 4"
   }
 ]

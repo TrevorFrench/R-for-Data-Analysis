@@ -2,45 +2,122 @@
 
 This chapter will focus on sorting, filtering, and grouping your datasets.
 
-## Sorting
-Student Scores dataset sort highest to lowest, alphabetical, lowest to highest, random sort.
+## Sort, Order, and Rank
 
-sort() vs order() vs rank()
+Three functions you may use to organize your data are "sort", "order", and "rank". The following examples will go through each one and show you how to use them.
+
+Let's start by creating a vector to work with.
 
 ```{r}
-#| output: false
-head(ChickWeight)
+completed_tasks <- c(5, 9, 3, 2, 7)
+print(completed_tasks)
 ```
 
-```{r}
-#| echo: false
-knitr::kable(head(ChickWeight), format="markdown")
-```
+Next we'll sort our data by using the "sort" function. This function will return your original data but sorted in ascending order.
 
 ```{r}
-df <- ChickWeight
-df <- df[order(df$weight),]
+sort(completed_tasks)
 ```
 
-```{r}
-#| echo: false
-knitr::kable(head(df), format="markdown")
-```
+Alternatively, you can set the "decreasing" parameter to "TRUE" to sort your data in descending order.
 
 ```{r}
-df <- ChickWeight
-df <- df[order(-df$weight),]
+sort(completed_tasks, decreasing = TRUE)
 ```
 
+The "order" function will return the index of each item in your vector in sorted order. This function also has a "decreasing" parameter which can be set to "TRUE".
+
 ```{r}
-#| echo: false
-knitr::kable(head(df), format="markdown")
+order(completed_tasks)
+```
+
+Finally, the "rank" function will return the rank of each item in your vector in ascending order.
+
+```{r}
+rank(completed_tasks)
 ```
 
 ## Filtering
-Filter by grades higher or lower than a certain number, where name starts with or is equal to a value, do an or/and statement.
+
+You may have noticed in previous chapters that we've used comparison operators to filter our data. Let's review by filtering out completed tasks greater than or equal to 7.
+
+```{r}
+completed_tasks[completed_tasks < 7]
+```
+
+Alternatively, you can use the "filter" function from the "dplyr" library. Let's use this function with the "iris" dataset to filter out any species which isn't virginica.
+
+```{r}
+#| eval: false
+head(iris)
+```
+
+```{r}
+#| echo: false
+knitr::kable(head(iris), format="markdown")
+```
+
+```{r}
+#| output: false
+library(dplyr)
+virginica <- filter(iris, Species == "virginica")
+```
+
+```{r}
+#| echo: false
+knitr::kable(head(virginica), format="markdown")
+```
 
 ## Grouping
-Add a column that indicates whether each student is male or female and group by gender. Then run stats based off of grouping.
+
+One final resource for you to leverage as you organize your data is the "group_by" function from the "dplyr" library.
+
+If we wanted to group the iris dataset by species we might do something similar to the following example.
+
+```{r}
+#| output: false
+library(dplyr)
+grouped_species <- iris %>% group_by(Species)
+```
+
+Now if we print out our resulting dataset you'll notice that the "group_by" operation we just performed doesn't change how the data looks by itself.
+
+```{r}
+#| eval: false
+head(grouped_species)
+```
+
+```{r}
+#| echo: false
+knitr::kable(head(grouped_species), format="markdown")
+```
+
+In order to change the structure of our dataset we'll need to specify how our groups should be treated by combining the "group_by" function with another dplyr "verb" such as "summarise".
+
+```{r}
+grouped_species <- grouped_species %>% summarise(
+    sepal_length = mean(Sepal.Length),
+    sepal_width = mean(Sepal.Width),
+    petal_length = mean(Petal.Length),
+    petal_width = mean(Petal.Width)
+)
+```
+
+```{r}
+#| eval: false
+head(grouped_species)
+```
+
+```{r}
+#| echo: false
+knitr::kable(head(grouped_species), format="markdown")
+```
+
+Now each of the three species in the iris dataset have their average sepal length, sepal width, petal length, and petal width displayed.
+
+You can find more information about the "group_by" function and other dplyr "verbs" in the resources section below.
 
 ## Resources
+
+- dplyr "filter" function documentation <https://dplyr.tidyverse.org/reference/filter.html>
+- dplyr "group_by" function documentation <https://dplyr.tidyverse.org/reference/group_by.html>
