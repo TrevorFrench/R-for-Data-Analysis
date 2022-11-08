@@ -497,6 +497,20 @@ F-statistic:  1162 on 1 and 270 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p><span class="math display">\[
 eruptions = waiting * 0.075628 - 1.874016
 \]</span></p>
+<p>Let’s break down everything that the model summary returns.</p>
+<ul>
+<li>The “Call” section calls the model that you created</li>
+<li>The “Residuals” section gives you a summary of all of your model residuals. Simply put, a residual denotes how far away any given point falls from the predicted value.</li>
+<li>The “Coefficients” section gives us our model coefficients, our intercept, and statistical values to determine their significance.
+<ul>
+<li>For each coefficient, we are given the respective standard error. The standard error is used to meaure the preciseness in which the coefficient was estimated. Standard errors which are smaller are considered to be more precise.</li>
+<li>Next, we have a t value for each coefficient. The t value is calculate by dividing the coefficient by the standard error.</li>
+<li>Finally, you have the p value accompanied by symbols to denote the corresponding significance level.</li>
+</ul></li>
+<li>The residual standard error gives you a way to measure the standard deviation of the residuals and is calculated by dividing residual sum of squares by the residual degrees of freedom and taking the square root of that where the residual degrees of freedom is equal to total observations - total model parameters - 1.</li>
+<li>R-squared</li>
+<li>F Statistic</li>
+</ul>
 </section>
 <section id="multiple-regression" class="level2" data-number="16.2">
 <h2 data-number="16.2" class="anchored" data-anchor-id="multiple-regression"><span class="header-section-number">16.2</span> Multiple Regression</h2>
@@ -737,13 +751,27 @@ Number of Fisher Scoring iterations: 8</code></pre>
 </div>
 <p>Finally, you can add a trend line by creating a model and adding the fitted values to the graph. We’ll also adjust the line width and color with the “lwd” and “col” parameters, respectively.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars<span class="sc">$</span>speed, cars<span class="sc">$</span>dist, <span class="at">col=</span><span class="fu">rgb</span>(<span class="fl">0.4</span>,<span class="fl">0.4</span>,<span class="fl">0.8</span>,<span class="fl">0.6</span>), <span class="at">pch=</span><span class="dv">16</span>, <span class="at">cex=</span><span class="fl">1.2</span>, <span class="at">xlab=</span><span class="st">""</span>, <span class="at">ylab=</span><span class="st">""</span>, <span class="at">xaxt=</span><span class="st">"n"</span>, <span class="at">yaxt=</span><span class="st">"n"</span>)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(cars<span class="sc">$</span>dist <span class="sc">~</span> cars<span class="sc">$</span>speed)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(model<span class="sc">$</span>fitted.values, <span class="at">col=</span><span class="dv">2</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars<span class="sc">$</span>speed</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    , cars<span class="sc">$</span>dist</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    , <span class="at">col=</span><span class="fu">rgb</span>(<span class="fl">0.4</span>,<span class="fl">0.4</span>,<span class="fl">0.8</span>,<span class="fl">0.6</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    , <span class="at">pch=</span><span class="dv">16</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    , <span class="at">cex=</span><span class="fl">1.2</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    , <span class="at">xlab=</span><span class="st">""</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    , <span class="at">ylab=</span><span class="st">""</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    , <span class="at">xaxt=</span><span class="st">"n"</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    , <span class="at">yaxt=</span><span class="st">"n"</span>)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(cars<span class="sc">$</span>dist <span class="sc">~</span> cars<span class="sc">$</span>speed)</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(model<span class="sc">$</span>fitted.values, <span class="at">col=</span><span class="dv">2</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="p4c2-regression_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<ul>
+<li>Need to find a better dataset</li>
+<li>add second method for trendline</li>
+<li>add resources for learning more about regression</li>
+</ul>
 </section>
 <section id="resources" class="level2" data-number="16.5">
 <h2 data-number="16.5" class="anchored" data-anchor-id="resources"><span class="header-section-number">16.5</span> Resources</h2>

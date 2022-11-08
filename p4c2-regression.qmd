@@ -44,6 +44,18 @@ $$
 eruptions = waiting * 0.075628 - 1.874016
 $$
 
+Let's break down everything that the model summary returns.
+
+- The "Call" section calls the model that you created
+- The "Residuals" section gives you a summary of all of your model residuals. Simply put, a residual denotes how far away any given point falls from the predicted value.
+- The "Coefficients" section gives us our model coefficients, our intercept, and statistical values to determine their significance.
+    - For each coefficient, we are given the respective standard error. The standard error is used to meaure the preciseness in which the coefficient was estimated. Standard errors which are smaller are considered to be more precise.
+    - Next, we have a t value for each coefficient. The t value is calculate by dividing the coefficient by the standard error.
+    - Finally, you have the p value accompanied by symbols to denote the corresponding significance level.
+- The residual standard error gives you a way to measure the standard deviation of the residuals and is calculated by dividing residual sum of squares by the residual degrees of freedom and taking the square root of that where the residual degrees of freedom is equal to total observations - total model parameters - 1.
+- R-squared
+- F Statistic
+
 ## Multiple Regression
 
 If you had more x variables you wanted to add to your linear model, you could add them just like you would in any other math equation. Here's an example:
@@ -120,10 +132,23 @@ plot(cars$speed, cars$dist, col=rgb(0.4,0.4,0.8,0.6), pch=16, cex=1.2, xlab="", 
 Finally, you can add a trend line by creating a model and adding the fitted values to the graph. We’ll also adjust the line width and color with the “lwd” and “col” parameters, respectively.
 
 ```{r}
-plot(cars$speed, cars$dist, col=rgb(0.4,0.4,0.8,0.6), pch=16, cex=1.2, xlab="", ylab="", xaxt="n", yaxt="n")
+plot(cars$speed
+    , cars$dist
+    , col=rgb(0.4,0.4,0.8,0.6)
+    , pch=16
+    , cex=1.2
+    , xlab=""
+    , ylab=""
+    , xaxt="n"
+    , yaxt="n")
+    
 model <- lm(cars$dist ~ cars$speed)
 lines(model$fitted.values, col=2, lwd=2)
 ```
+
+- Need to find a better dataset
+- add second method for trendline
+- add resources for learning more about regression
 
 ## Resources
 
