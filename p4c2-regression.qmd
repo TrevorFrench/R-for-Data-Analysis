@@ -53,8 +53,8 @@ Let's break down everything that the model summary returns.
     - Next, we have a t value for each coefficient. The t value is calculate by dividing the coefficient by the standard error.
     - Finally, you have the p value accompanied by symbols to denote the corresponding significance level.
 - The residual standard error gives you a way to measure the standard deviation of the residuals and is calculated by dividing residual sum of squares by the residual degrees of freedom and taking the square root of that where the residual degrees of freedom is equal to total observations - total model parameters - 1.
-- R-squared
-- F Statistic
+- R-squared gives you the proportion of variance that can be explained by your model. Your adjusted R-squared statistic will tell you the same thing but will adjust for the amount of variables you've included in your model.
+- Your F-statistic will help you to understand the probability that all of your model parameters are actually equal to zero.
 
 ## Multiple Regression
 
@@ -102,56 +102,10 @@ glm <- glm(am ~ cyl + hp + wt, family = binomial, data = mtcars)
 summary(glm)
 ```
 
-## Plotting your Model
-
-Now, let's try plotting a linear model with the cars dataset. We'll begin by just creating a scatter plot of the raw data.
-
-```{r}
-plot(cars$speed, cars$dist)
-```
-
-Additionally, you can alter the appearance of your points by using the “pch”, “cex”, and “col” options. PCH stands for Plot Character and will adjust the symbol used for your points. The available point shapes are listed in the image below.
-
-```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
-#| warning: false
-ggpubr::show_point_shapes()
-```
-
-The “cex” option allows you to adjust the symbol size. The default value is 1. If you were to change the value to .75, for example, the plot symbol would be scaled down the 3/4 of the default size. The “col” option allows you to adjust the color of your plot symbols.
-
-```{r}
-plot(cars$speed, cars$dist, col=rgb(0.4,0.4,0.8,0.6), pch=16, cex=1.2)
-```
-
-You can adjust the axes with the “xlab”, “ylab”, “xaxt”, and “yaxt” options (amongst other available options). In the following example we will remove the axes altogether.
-
-```{r}
-plot(cars$speed, cars$dist, col=rgb(0.4,0.4,0.8,0.6), pch=16, cex=1.2, xlab="", ylab="", xaxt="n", yaxt="n")
-```
-
-Finally, you can add a trend line by creating a model and adding the fitted values to the graph. We’ll also adjust the line width and color with the “lwd” and “col” parameters, respectively.
-
-```{r}
-plot(cars$speed
-    , cars$dist
-    , col=rgb(0.4,0.4,0.8,0.6)
-    , pch=16
-    , cex=1.2
-    , xlab=""
-    , ylab=""
-    , xaxt="n"
-    , yaxt="n")
-    
-model <- lm(cars$dist ~ cars$speed)
-lines(model$fitted.values, col=2, lwd=2)
-```
-
-- Need to find a better dataset
-- add second method for trendline
-- add resources for learning more about regression
-
 ## Resources
 
 - Need to add more complete regression resources here
+
+- Need to explain summary of logistic regression output
 
 - "Visualizing OLS Linear Regression Assumptions in R" by Trevor French <https://medium.com/trevor-french/visualizing-ols-linear-regression-assumptions-in-r-e762ba7afaff>

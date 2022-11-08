@@ -390,8 +390,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#linear-regression" id="toc-linear-regression" class="nav-link active" data-scroll-target="#linear-regression"> <span class="header-section-number">16.1</span> Linear Regression</a></li>
   <li><a href="#multiple-regression" id="toc-multiple-regression" class="nav-link" data-scroll-target="#multiple-regression"> <span class="header-section-number">16.2</span> Multiple Regression</a></li>
   <li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link" data-scroll-target="#logistic-regression"> <span class="header-section-number">16.3</span> Logistic Regression</a></li>
-  <li><a href="#plotting-your-model" id="toc-plotting-your-model" class="nav-link" data-scroll-target="#plotting-your-model"> <span class="header-section-number">16.4</span> Plotting your Model</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"> <span class="header-section-number">16.5</span> Resources</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"> <span class="header-section-number">16.4</span> Resources</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/TrevorFrench/R-for-Data-Analysis/edit/main/p4c2-regression.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -508,8 +507,8 @@ eruptions = waiting * 0.075628 - 1.874016
 <li>Finally, you have the p value accompanied by symbols to denote the corresponding significance level.</li>
 </ul></li>
 <li>The residual standard error gives you a way to measure the standard deviation of the residuals and is calculated by dividing residual sum of squares by the residual degrees of freedom and taking the square root of that where the residual degrees of freedom is equal to total observations - total model parameters - 1.</li>
-<li>R-squared</li>
-<li>F Statistic</li>
+<li>R-squared gives you the proportion of variance that can be explained by your model. Your adjusted R-squared statistic will tell you the same thing but will adjust for the amount of variables you’ve included in your model.</li>
+<li>Your F-statistic will help you to understand the probability that all of your model parameters are actually equal to zero.</li>
 </ul>
 </section>
 <section id="multiple-regression" class="level2" data-number="16.2">
@@ -719,64 +718,11 @@ Number of Fisher Scoring iterations: 8</code></pre>
 </div>
 </div>
 </section>
-<section id="plotting-your-model" class="level2" data-number="16.4">
-<h2 data-number="16.4" class="anchored" data-anchor-id="plotting-your-model"><span class="header-section-number">16.4</span> Plotting your Model</h2>
-<p>Now, let’s try plotting a linear model with the cars dataset. We’ll begin by just creating a scatter plot of the raw data.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars<span class="sc">$</span>speed, cars<span class="sc">$</span>dist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="p4c2-regression_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<p>Additionally, you can alter the appearance of your points by using the “pch”, “cex”, and “col” options. PCH stands for Plot Character and will adjust the symbol used for your points. The available point shapes are listed in the image below.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>ggpubr<span class="sc">::</span><span class="fu">show_point_shapes</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="p4c2-regression_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="672"></p>
-</div>
-</div>
-<p>The “cex” option allows you to adjust the symbol size. The default value is 1. If you were to change the value to .75, for example, the plot symbol would be scaled down the 3/4 of the default size. The “col” option allows you to adjust the color of your plot symbols.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars<span class="sc">$</span>speed, cars<span class="sc">$</span>dist, <span class="at">col=</span><span class="fu">rgb</span>(<span class="fl">0.4</span>,<span class="fl">0.4</span>,<span class="fl">0.8</span>,<span class="fl">0.6</span>), <span class="at">pch=</span><span class="dv">16</span>, <span class="at">cex=</span><span class="fl">1.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="p4c2-regression_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<p>You can adjust the axes with the “xlab”, “ylab”, “xaxt”, and “yaxt” options (amongst other available options). In the following example we will remove the axes altogether.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars<span class="sc">$</span>speed, cars<span class="sc">$</span>dist, <span class="at">col=</span><span class="fu">rgb</span>(<span class="fl">0.4</span>,<span class="fl">0.4</span>,<span class="fl">0.8</span>,<span class="fl">0.6</span>), <span class="at">pch=</span><span class="dv">16</span>, <span class="at">cex=</span><span class="fl">1.2</span>, <span class="at">xlab=</span><span class="st">""</span>, <span class="at">ylab=</span><span class="st">""</span>, <span class="at">xaxt=</span><span class="st">"n"</span>, <span class="at">yaxt=</span><span class="st">"n"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="p4c2-regression_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<p>Finally, you can add a trend line by creating a model and adding the fitted values to the graph. We’ll also adjust the line width and color with the “lwd” and “col” parameters, respectively.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars<span class="sc">$</span>speed</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    , cars<span class="sc">$</span>dist</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    , <span class="at">col=</span><span class="fu">rgb</span>(<span class="fl">0.4</span>,<span class="fl">0.4</span>,<span class="fl">0.8</span>,<span class="fl">0.6</span>)</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    , <span class="at">pch=</span><span class="dv">16</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    , <span class="at">cex=</span><span class="fl">1.2</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    , <span class="at">xlab=</span><span class="st">""</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    , <span class="at">ylab=</span><span class="st">""</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    , <span class="at">xaxt=</span><span class="st">"n"</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    , <span class="at">yaxt=</span><span class="st">"n"</span>)</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(cars<span class="sc">$</span>dist <span class="sc">~</span> cars<span class="sc">$</span>speed)</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(model<span class="sc">$</span>fitted.values, <span class="at">col=</span><span class="dv">2</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="p4c2-regression_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<ul>
-<li>Need to find a better dataset</li>
-<li>add second method for trendline</li>
-<li>add resources for learning more about regression</li>
-</ul>
-</section>
-<section id="resources" class="level2" data-number="16.5">
-<h2 data-number="16.5" class="anchored" data-anchor-id="resources"><span class="header-section-number">16.5</span> Resources</h2>
+<section id="resources" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="resources"><span class="header-section-number">16.4</span> Resources</h2>
 <ul>
 <li><p>Need to add more complete regression resources here</p></li>
+<li><p>Need to explain summary of logistic regression output</p></li>
 <li><p>“Visualizing OLS Linear Regression Assumptions in R” by Trevor French <a href="https://medium.com/trevor-french/visualizing-ols-linear-regression-assumptions-in-r-e762ba7afaff" class="uri">https://medium.com/trevor-french/visualizing-ols-linear-regression-assumptions-in-r-e762ba7afaff</a></p></li>
 </ul>
 

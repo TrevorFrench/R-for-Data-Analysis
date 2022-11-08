@@ -1,16 +1,123 @@
 # Plotting
 
-This chapter will cover the basics of creating plots in R. It will begin by demonstrating the plotting capabilities available in R "out of the box". This will be followed by an introduction to "ggplot2" which is one of the most common plotting libraries in R.
+This chapter will cover the basics of creating plots in R. It will begin by demonstrating the plotting capabilities available in R out of the box. These capabilities are often referred to as "Base R". This will be followed by an introduction to "ggplot2" which is one of the most common plotting libraries in R.
 
 word cloud
 
-## Base R
+## Plotting your Regression Model
+
+Now that you've learned how create a linear regression model, let's look at how you might go about representing it visually.
+
+Here's a preview of the dataset we'll be using:
+
+```{r}
+#| echo: false
+#| output: false
+x <- c(1:100)
+y <- c(-4.400327034,5.428396028,1.401835325,8.347444696,4.653595058,1.768965792,2.301670121,2.906690807,
+16.86055207,12.79819406,19.43688567,9.535898321,11.44692921,12.85126784,6.102193819,14.9299838,14.10825511,
+9.061679003,15.02212052,18.6447931,17.02989089,18.93455371,31.15646579,21.87836403,19.74845288,26.59660838,
+36.50126821,31.89097261,22.11512438,29.18472781,38.72830304,40.13431252,27.21738666,39.88887474,36.23490911,
+32.17006556,30.10621489,37.92219413,33.15571816,33.7647255,33.7444351,34.12172411,37.19967163,45.34378315,
+35.98530015,53.90675935,50.52742803,46.06208273,57.82271516,55.3300409,42.16904545,52.68638053,54.81650327,
+52.07962127,54.82388858,52.96289171,66.86594353,55.91500631,53.46845318,69.93363692,63.77966506,56.9824017,
+57.10158014,57.0690513,62.38929311,74.9465375,62.0905341,73.7790738,59.19482129,60.94042919,70.84003803,
+75.95901236,81.58801567,74.87006685,78.72743515,83.59639222,80.82508933,76.42767133,71.59042346,83.83529445,
+89.09992891,79.91862252,74.4198755,75.99386989,91.45464708,89.15434974,77.38263974,91.69502627,83.96595701,
+80.07178088,87.70105337,82.82445978,91.9984167,95.93813464,93.32235278,100.9042819,87.4809175,102.1559695,
+106.5412224,94.53627918
+)
+df <- data.frame(y = y, x = x)
+```
+
+```{r}
+#| echo: false
+knitr::kable(head(df), format="markdown")
+```
+
+We'll begin by just creating a scatter plot of the raw data.
+
+```{r}
+plot(df$x, df$y)
+```
+
+Additionally, you can alter the appearance of your points by using the “pch”, “cex”, and “col” options. PCH stands for Plot Character and will adjust the symbol used for your points. The available point shapes are listed in the image below.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| warning: false
+ggpubr::show_point_shapes()
+```
+
+The “cex” option allows you to adjust the symbol size. The default value is 1. If you were to change the value to .75, for example, the plot symbol would be scaled down the 3/4 of the default size. The “col” option allows you to adjust the color of your plot symbols.
+
+```{r}
+plot(df$x, df$y, col=rgb(0.4,0.4,0.8,0.6), pch=16, cex=1.2)
+```
+
+You can adjust the axes with the “xlab”, “ylab”, “xaxt”, and “yaxt” options (amongst other available options). In the following example we will remove the axes altogether.
+
+```{r}
+plot(df$x, df$y, col=rgb(0.4,0.4,0.8,0.6), pch=16, cex=1.2, xlab="", ylab="", xaxt="n", yaxt="n")
+```
+
+Finally, you can add a trend line by creating a model and adding the fitted values to the graph. We’ll also adjust the line width and color with the “lwd” and “col” parameters, respectively.
+
+```{r}
+plot(df$x
+    , df$y
+    , col=rgb(0.4,0.4,0.8,0.6)
+    , pch=16
+    , cex=1.2
+    , xlab=""
+    , ylab=""
+    , xaxt="n"
+    , yaxt="n")
+
+model <- lm(df$y ~ df$x)
+lines(model$fitted.values, col=2, lwd=2)
+```
+
+Alternatively, you can enrich your data with limits by using the "predict" function paired with the "polygon" function as shown below.
+
+```{r}
+#| warning: false
+# Declare your variables
+x <- df$x
+y <- df$y
+
+# Create your model
+model <- lm(y ~ x)
+
+# Predict your model
+predict_model <- predict(model, interval="predict")
+
+# Plot your raw data
+plot(x, y, col=rgb(0.4,0.4,0.8,0.6), pch=16, cex=1.2, xlab="", ylab="", xaxt="n", yaxt="n")
+
+# Get the index of your data
+ix <- sort(x, index.return=T)$ix
+
+# Add your trendline
+lines(x[ix], predict_model[ix, 1], col=2, lwd=2)
+
+# add a shape to represent your upper and lower limits
+polygon(c(rev(x[ix]), x[ix]), c(rev(predict_model[ix, 3]), predict_model[ix, 2]), col = rgb(0.7,0.7,0.7,0.4), border = NA)
+
+```
+
+## Plots Available in Base R
 
 Address the fact that certain types of plots have already been covered previosuly in the book.
 
 ### Scatter Plot
 
-plot()
+As you've seen in previous chapters, you can create a scatter plot by using the "plot" function. Here's a basic scatter plot of the mpg variable from the mtcars dataset.
+
+```{r}
+plot(mtcars$mpg)
+```
+
+In the previo
 
 ### Box Plot
 
