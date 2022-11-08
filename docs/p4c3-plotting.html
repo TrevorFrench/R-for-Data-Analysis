@@ -78,6 +78,25 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -389,14 +408,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#plotting-your-regression-model" id="toc-plotting-your-regression-model" class="nav-link active" data-scroll-target="#plotting-your-regression-model"> <span class="header-section-number">17.1</span> Plotting your Regression Model</a></li>
   <li><a href="#plots-available-in-base-r" id="toc-plots-available-in-base-r" class="nav-link" data-scroll-target="#plots-available-in-base-r"> <span class="header-section-number">17.2</span> Plots Available in Base R</a>
   <ul class="collapse">
-  <li><a href="#scatter-plot" id="toc-scatter-plot" class="nav-link" data-scroll-target="#scatter-plot"> <span class="header-section-number">17.2.1</span> Scatter Plot</a></li>
-  <li><a href="#box-plot" id="toc-box-plot" class="nav-link" data-scroll-target="#box-plot"> <span class="header-section-number">17.2.2</span> Box Plot</a></li>
-  <li><a href="#plot-matrix" id="toc-plot-matrix" class="nav-link" data-scroll-target="#plot-matrix"> <span class="header-section-number">17.2.3</span> Plot Matrix</a></li>
-  <li><a href="#pie-chart" id="toc-pie-chart" class="nav-link" data-scroll-target="#pie-chart"> <span class="header-section-number">17.2.4</span> Pie Chart</a></li>
-  <li><a href="#bar-plot" id="toc-bar-plot" class="nav-link" data-scroll-target="#bar-plot"> <span class="header-section-number">17.2.5</span> Bar Plot</a></li>
-  <li><a href="#histogram" id="toc-histogram" class="nav-link" data-scroll-target="#histogram"> <span class="header-section-number">17.2.6</span> Histogram</a></li>
-  <li><a href="#density-plot" id="toc-density-plot" class="nav-link" data-scroll-target="#density-plot"> <span class="header-section-number">17.2.7</span> Density Plot</a></li>
-  <li><a href="#dot-chart" id="toc-dot-chart" class="nav-link" data-scroll-target="#dot-chart"> <span class="header-section-number">17.2.8</span> Dot Chart</a></li>
+  <li><a href="#box-plot" id="toc-box-plot" class="nav-link" data-scroll-target="#box-plot"> <span class="header-section-number">17.2.1</span> Box Plot</a></li>
+  <li><a href="#plot-matrix" id="toc-plot-matrix" class="nav-link" data-scroll-target="#plot-matrix"> <span class="header-section-number">17.2.2</span> Plot Matrix</a></li>
+  <li><a href="#pie-chart" id="toc-pie-chart" class="nav-link" data-scroll-target="#pie-chart"> <span class="header-section-number">17.2.3</span> Pie Chart</a></li>
+  <li><a href="#bar-plot" id="toc-bar-plot" class="nav-link" data-scroll-target="#bar-plot"> <span class="header-section-number">17.2.4</span> Bar Plot</a></li>
+  <li><a href="#histogram" id="toc-histogram" class="nav-link" data-scroll-target="#histogram"> <span class="header-section-number">17.2.5</span> Histogram</a></li>
+  <li><a href="#density-plot" id="toc-density-plot" class="nav-link" data-scroll-target="#density-plot"> <span class="header-section-number">17.2.6</span> Density Plot</a></li>
+  <li><a href="#dot-chart" id="toc-dot-chart" class="nav-link" data-scroll-target="#dot-chart"> <span class="header-section-number">17.2.7</span> Dot Chart</a></li>
   </ul></li>
   <li><a href="#ggplot2" id="toc-ggplot2" class="nav-link" data-scroll-target="#ggplot2"> <span class="header-section-number">17.3</span> ggplot2</a>
   <ul class="collapse">
@@ -539,7 +557,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Add your trendline</span></span>
 <span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x[ix], predict_model[ix, <span class="dv">1</span>], <span class="at">col=</span><span class="dv">2</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span>
 <span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co"># add a shape to represent your upper and lower limits</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a shape to represent your upper and lower limits</span></span>
 <span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(<span class="fu">c</span>(<span class="fu">rev</span>(x[ix]), x[ix]), <span class="fu">c</span>(<span class="fu">rev</span>(predict_model[ix, <span class="dv">3</span>]), predict_model[ix, <span class="dv">2</span>]), <span class="at">col =</span> <span class="fu">rgb</span>(<span class="fl">0.7</span>,<span class="fl">0.7</span>,<span class="fl">0.7</span>,<span class="fl">0.4</span>), <span class="at">border =</span> <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
@@ -548,45 +566,143 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="plots-available-in-base-r" class="level2" data-number="17.2">
 <h2 data-number="17.2" class="anchored" data-anchor-id="plots-available-in-base-r"><span class="header-section-number">17.2</span> Plots Available in Base R</h2>
-<p>Address the fact that certain types of plots have already been covered previosuly in the book.</p>
-<section id="scatter-plot" class="level3" data-number="17.2.1">
-<h3 data-number="17.2.1" class="anchored" data-anchor-id="scatter-plot"><span class="header-section-number">17.2.1</span> Scatter Plot</h3>
-<p>As you’ve seen in previous chapters, you can create a scatter plot by using the “plot” function. Here’s a basic scatter plot of the mpg variable from the mtcars dataset.</p>
+<p>Now that you’ve seen how to build a scatterplot in R, let’s take a look at other plots available in Base R.</p>
+<section id="box-plot" class="level3" data-number="17.2.1">
+<h3 data-number="17.2.1" class="anchored" data-anchor-id="box-plot"><span class="header-section-number">17.2.1</span> Box Plot</h3>
+<p>One plot you’ve already seen in the outliers chapter is the box plot. These plots can be created via the “boxplot” function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mtcars<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(mtcars<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>In the previo</p>
+<p>We can build on this plot by specifying the dataset with the “data” parameter, removing the “mtcars$” prefix from our variable, adding a plot title with the “main” parameter, and adding axis labels with the “xlab” and “ylab” parameters. Additionally, we are going to add an additional variable for our data to be categorized by.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(mpg <span class="sc">~</span> gear</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>            , <span class="at">data =</span> mtcars</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>            , <span class="at">main =</span> <span class="st">"Car Mileage by Gear"</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>            , <span class="at">xlab =</span> <span class="st">"Number of Forward Gears"</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>            , <span class="at">ylab =</span> <span class="st">"Miles Per Gallon"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Finally, we can set the box colors with the “col” parameter and set “notch” equal to “TRUE” to give our boxes notches. If the notches of two plots do not overlap this is ‘strong evidence’ that the two medians differ <span class="citation" data-cites="Chambers83">Chambers and Tukey (<a href="references.html#ref-Chambers83" role="doc-biblioref">1983</a>)</span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(mpg <span class="sc">~</span> am</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>            , <span class="at">data =</span> mtcars</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>            , <span class="at">notch =</span> <span class="cn">TRUE</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>            , <span class="at">col =</span> (<span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"grey"</span>))</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>            , <span class="at">main =</span> <span class="st">"Car Mileage by Engine"</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>            , <span class="at">xlab =</span> <span class="st">"Automatic?"</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>            , <span class="at">ylab =</span> <span class="st">"Miles Per Gallon"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 </section>
-<section id="box-plot" class="level3" data-number="17.2.2">
-<h3 data-number="17.2.2" class="anchored" data-anchor-id="box-plot"><span class="header-section-number">17.2.2</span> Box Plot</h3>
-<p>boxplot()</p>
+<section id="plot-matrix" class="level3" data-number="17.2.2">
+<h3 data-number="17.2.2" class="anchored" data-anchor-id="plot-matrix"><span class="header-section-number">17.2.2</span> Plot Matrix</h3>
+<p>You can use the “pairs” function to create a plot matrix. Let’s use the iris dataset to demonstrate this.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>This plot gives us the ability to see how each variable interacts with one another.</p>
 </section>
-<section id="plot-matrix" class="level3" data-number="17.2.3">
-<h3 data-number="17.2.3" class="anchored" data-anchor-id="plot-matrix"><span class="header-section-number">17.2.3</span> Plot Matrix</h3>
-<p>pairs()</p>
+<section id="pie-chart" class="level3" data-number="17.2.3">
+<h3 data-number="17.2.3" class="anchored" data-anchor-id="pie-chart"><span class="header-section-number">17.2.3</span> Pie Chart</h3>
+<p>Let’s try plotting a pie chart of species in the iris dataset via the “pie” function. This function accepts numerical values so we’ll need to use the “table” function on our column as well.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(<span class="fu">table</span>(iris<span class="sc">$</span>Species))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>You can view the full list of available parameters for this and other functions through the help tab in the files pane in R Studio.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/plotting-1.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
 </section>
-<section id="pie-chart" class="level3" data-number="17.2.4">
-<h3 data-number="17.2.4" class="anchored" data-anchor-id="pie-chart"><span class="header-section-number">17.2.4</span> Pie Chart</h3>
-<p>pie()</p>
+<section id="bar-plot" class="level3" data-number="17.2.4">
+<h3 data-number="17.2.4" class="anchored" data-anchor-id="bar-plot"><span class="header-section-number">17.2.4</span> Bar Plot</h3>
+<p>Let’s try a bar plot on the same dataset with the “barplot” function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(iris<span class="sc">$</span>Species))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 </section>
-<section id="bar-plot" class="level3" data-number="17.2.5">
-<h3 data-number="17.2.5" class="anchored" data-anchor-id="bar-plot"><span class="header-section-number">17.2.5</span> Bar Plot</h3>
-<p>barplot()</p>
+<section id="histogram" class="level3" data-number="17.2.5">
+<h3 data-number="17.2.5" class="anchored" data-anchor-id="histogram"><span class="header-section-number">17.2.5</span> Histogram</h3>
+<p>You may recall that we also used histigrams in the outliers chapter to try to visually identify extreme values. Here’s a quick recap:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(mtcars<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>We can take this one step further by adding a title and a shape to the plot.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="ot">&lt;-</span> <span class="fu">density</span>(mtcars<span class="sc">$</span>mpg)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mpg, <span class="at">main=</span><span class="st">"MPG Distribution"</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(mpg, <span class="at">col=</span><span class="st">"lightblue"</span>, <span class="at">border=</span><span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 </section>
-<section id="histogram" class="level3" data-number="17.2.6">
-<h3 data-number="17.2.6" class="anchored" data-anchor-id="histogram"><span class="header-section-number">17.2.6</span> Histogram</h3>
-<p>hist()</p>
+<section id="density-plot" class="level3" data-number="17.2.6">
+<h3 data-number="17.2.6" class="anchored" data-anchor-id="density-plot"><span class="header-section-number">17.2.6</span> Density Plot</h3>
+<p>We also used the following example in the outliers chapter to create a density plot:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(mtcars<span class="sc">$</span>mpg))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 </section>
-<section id="density-plot" class="level3" data-number="17.2.7">
-<h3 data-number="17.2.7" class="anchored" data-anchor-id="density-plot"><span class="header-section-number">17.2.7</span> Density Plot</h3>
-<p>density()</p>
-</section>
-<section id="dot-chart" class="level3" data-number="17.2.8">
-<h3 data-number="17.2.8" class="anchored" data-anchor-id="dot-chart"><span class="header-section-number">17.2.8</span> Dot Chart</h3>
-<p>dotchart()</p>
+<section id="dot-chart" class="level3" data-number="17.2.7">
+<h3 data-number="17.2.7" class="anchored" data-anchor-id="dot-chart"><span class="header-section-number">17.2.7</span> Dot Chart</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>salesperson <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Susan"</span>, <span class="st">"Taylor"</span>, <span class="st">"Steven"</span>, <span class="st">"Michael"</span>, <span class="st">"Reagan"</span>, <span class="st">"Michael"</span>, <span class="st">"Alaka"</span>, <span class="st">"Trevor"</span>, <span class="st">"Isaac"</span>, <span class="st">"Jordan"</span>, <span class="st">"Aaron"</span>, <span class="st">"Miles"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>product <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Professional Services"</span>, <span class="st">"Professional Services"</span>, <span class="st">"Professional Services"</span>, <span class="st">"Professional Services"</span>, <span class="st">"Software"</span>,  <span class="st">"Software"</span>,  <span class="st">"Software"</span>,  <span class="st">"Software"</span>, <span class="st">"Hardware"</span>, <span class="st">"Hardware"</span>, <span class="st">"Hardware"</span>, <span class="st">"Hardware"</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>sales <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">7</span>, <span class="dv">13</span>, <span class="dv">18</span>, <span class="dv">12</span>, <span class="dv">19</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">21</span>, <span class="dv">9</span>, <span class="dv">17</span>, <span class="dv">19</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">salesperson =</span> salesperson, <span class="at">product =</span> product, <span class="at">sales =</span> sales)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dotchart</span>(df<span class="sc">$</span>sales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dotchart</span>(df<span class="sc">$</span>sales, <span class="at">labels =</span> df<span class="sc">$</span>salesperson)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-19-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>groups <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(df<span class="sc">$</span>product)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dotchart</span>(df<span class="sc">$</span>sales, <span class="at">labels =</span> df<span class="sc">$</span>salesperson, <span class="at">groups =</span> groups)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-19-3.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>group_colors <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"darkred"</span>, <span class="st">"darkgreen"</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dotchart</span>(df<span class="sc">$</span>sales, <span class="at">labels =</span> df<span class="sc">$</span>salesperson, <span class="at">groups =</span> groups, <span class="at">gcolor =</span> group_colors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-19-4.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dotchart</span>(df<span class="sc">$</span>sales</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>            , <span class="at">labels =</span> df<span class="sc">$</span>salesperson</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>            , <span class="at">groups =</span> groups</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>            , <span class="at">gcolor =</span> group_colors</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>            , <span class="at">color =</span> group_colors[groups]</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>            , <span class="at">pch =</span> <span class="dv">16</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-19-5.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 </section>
 </section>
 <section id="ggplot2" class="level2" data-number="17.3">
@@ -602,6 +718,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-Chambers83" class="csl-entry" role="doc-biblioentry">
+Chambers, Cleveland, J. M., and P. A. Tukey. 1983. <em>Graphical Methods for Data Analysis</em>. Wadsworth &amp; Brooks/Cole.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

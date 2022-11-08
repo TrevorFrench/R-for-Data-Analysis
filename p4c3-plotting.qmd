@@ -100,52 +100,126 @@ ix <- sort(x, index.return=T)$ix
 # Add your trendline
 lines(x[ix], predict_model[ix, 1], col=2, lwd=2)
 
-# add a shape to represent your upper and lower limits
+# Add a shape to represent your upper and lower limits
 polygon(c(rev(x[ix]), x[ix]), c(rev(predict_model[ix, 3]), predict_model[ix, 2]), col = rgb(0.7,0.7,0.7,0.4), border = NA)
 
 ```
 
 ## Plots Available in Base R
 
-Address the fact that certain types of plots have already been covered previosuly in the book.
-
-### Scatter Plot
-
-As you've seen in previous chapters, you can create a scatter plot by using the "plot" function. Here's a basic scatter plot of the mpg variable from the mtcars dataset.
-
-```{r}
-plot(mtcars$mpg)
-```
-
-In the previo
+Now that you've seen how to build a scatterplot in R, let's take a look at other plots available in Base R.
 
 ### Box Plot
 
-boxplot()
+One plot you've already seen in the outliers chapter is the box plot. These plots can be created via the "boxplot" function.
+
+```{r}
+boxplot(mtcars$mpg)
+```
+
+We can build on this plot by specifying the dataset with the "data" parameter, removing the "mtcars$" prefix from our variable, adding a plot title with the "main" parameter, and adding axis labels with the "xlab" and "ylab" parameters. Additionally, we are going to add an additional variable for our data to be categorized by.
+
+```{r}
+boxplot(mpg ~ gear
+            , data = mtcars
+            , main = "Car Mileage by Gear"
+            , xlab = "Number of Forward Gears"
+            , ylab = "Miles Per Gallon")
+```
+
+Finally, we can set the box colors with the "col" parameter and set "notch" equal to "TRUE" to give our boxes notches. If the notches of two plots do not overlap this is ‘strong evidence’ that the two medians differ @Chambers83.
+
+```{r}
+#| warning: false
+boxplot(mpg ~ am
+            , data = mtcars
+            , notch = TRUE
+            , col = (c("blue", "grey"))
+            , main = "Car Mileage by Engine"
+            , xlab = "Automatic?"
+            , ylab = "Miles Per Gallon")
+```
 
 ### Plot Matrix
 
-pairs()
+You can use the "pairs" function to create a plot matrix. Let's use the iris dataset to demonstrate this.
+
+```{r}
+pairs(iris)
+```
+
+This plot gives us the ability to see how each variable interacts with one another.
 
 ### Pie Chart
 
-pie()
+Let's try plotting a pie chart of species in the iris dataset via the "pie" function. This function accepts numerical values so we'll need to use the "table" function on our column as well.
+
+```{r}
+pie(table(iris$Species))
+```
+
+You can view the full list of available parameters for this and other functions through the help tab in the files pane in R Studio.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: plotting-1
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/plotting-1.png", dpi = 270)
+```
 
 ### Bar Plot
 
-barplot()
+Let's try a bar plot on the same dataset with the "barplot" function.
+
+```{r}
+barplot(table(iris$Species))
+```
 
 ### Histogram
 
-hist()
+You may recall that we also used histigrams in the outliers chapter to try to visually identify extreme values. Here's a quick recap:
+
+```{r}
+hist(mtcars$mpg)
+```
+
+We can take this one step further by adding a title and a shape to the plot.
+
+```{r}
+mpg <- density(mtcars$mpg)
+plot(mpg, main="MPG Distribution")
+polygon(mpg, col="lightblue", border="black")
+```
 
 ### Density Plot
 
-density()
+We also used the following example in the outliers chapter to create a density plot:
+
+```{r}
+plot(density(mtcars$mpg))
+```
 
 ### Dot Chart
 
-dotchart()
+```{r}
+salesperson <- c("Susan", "Taylor", "Steven", "Michael", "Reagan", "Michael", "Alaka", "Trevor", "Isaac", "Jordan", "Aaron", "Miles")
+product <- c("Professional Services", "Professional Services", "Professional Services", "Professional Services", "Software",  "Software",  "Software",  "Software", "Hardware", "Hardware", "Hardware", "Hardware")
+sales <- c(10, 7, 13, 18, 12, 19, 14, 16, 21, 9, 17, 19)
+df <- data.frame(salesperson = salesperson, product = product, sales = sales)
+
+dotchart(df$sales)
+dotchart(df$sales, labels = df$salesperson)
+groups <- as.factor(df$product)
+dotchart(df$sales, labels = df$salesperson, groups = groups)
+group_colors <-  c("blue", "darkred", "darkgreen")
+dotchart(df$sales, labels = df$salesperson, groups = groups, gcolor = group_colors)
+dotchart(df$sales
+            , labels = df$salesperson
+            , groups = groups
+            , gcolor = group_colors
+            , color = group_colors[groups]
+            , pch = 16)
+```
 
 ## ggplot2
 
