@@ -183,20 +183,20 @@ You may recall that we also used histigrams in the outliers chapter to try to vi
 hist(mtcars$mpg)
 ```
 
-We can take this one step further by adding a title and a shape to the plot.
-
-```{r}
-mpg <- density(mtcars$mpg)
-plot(mpg, main="MPG Distribution")
-polygon(mpg, col="lightblue", border="black")
-```
-
 ### Density Plot
 
 We also used the following example in the outliers chapter to create a density plot:
 
 ```{r}
 plot(density(mtcars$mpg))
+```
+
+We can take this one step further by adding a title and a shape to the plot.
+
+```{r}
+mpg <- density(mtcars$mpg)
+plot(mpg, main="MPG Distribution")
+polygon(mpg, col="lightblue", border="black")
 ```
 
 ### Dot Chart
@@ -223,8 +223,13 @@ dotchart(df$sales
 
 ## ggplot2
 
+One of the most widely used methods for plotting in R is the ggplot2 package.
+
 ### Different types of plots?
 
 
 ## Resources
-- Resource: https://ggplot2.tidyverse.org/
+- ggplot2 documentation: <https://ggplot2.tidyverse.org/>
+- ggplot2 cheat sheet: <https://github.com/rstudio/cheatsheets/blob/main/data-visualization.pdf>
+- ggplot2 extension gallery: <https://exts.ggplot2.tidyverse.org/gallery/>
+- R colors: <http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf>

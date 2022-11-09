@@ -697,14 +697,14 @@
     "href": "p4c3-plotting.html#ggplot2",
     "title": "17  Plotting",
     "section": "17.3 ggplot2",
-    "text": "17.3 ggplot2\n\n17.3.1 Different types of plots?"
+    "text": "17.3 ggplot2\nOne of the most widely used methods for plotting in R is the ggplot2 package.\n\n17.3.1 Different types of plots?"
   },
   {
     "objectID": "p4c3-plotting.html#resources",
     "href": "p4c3-plotting.html#resources",
     "title": "17  Plotting",
     "section": "17.4 Resources",
-    "text": "17.4 Resources\n\nResource: https://ggplot2.tidyverse.org/\n\n\n\n\n\nChambers, Cleveland, J. M., and P. A. Tukey. 1983. Graphical Methods for Data Analysis. Wadsworth & Brooks/Cole."
+    "text": "17.4 Resources\n\nggplot2 documentation: https://ggplot2.tidyverse.org/\nggplot2 cheat sheet: https://github.com/rstudio/cheatsheets/blob/main/data-visualization.pdf\nggplot2 extension gallery: https://exts.ggplot2.tidyverse.org/gallery/\nR colors: http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf\n\n\n\n\n\nChambers, Cleveland, J. M., and P. A. Tukey. 1983. Graphical Methods for Data Analysis. Wadsworth & Brooks/Cole."
   },
   {
     "objectID": "p4exercises.html",
@@ -794,8 +794,8 @@
     "objectID": "p5c2-r-markdown.html#resources",
     "href": "p5c2-r-markdown.html#resources",
     "title": "19  R Markdown",
-    "section": "19.4 Resources",
-    "text": "19.4 Resources\n\nFormats: https://rmarkdown.rstudio.com/formats.html\nResource: https://rmarkdown.rstudio.com/"
+    "section": "19.5 Resources",
+    "text": "19.5 Resources\n\nFormats: https://rmarkdown.rstudio.com/formats.html\nResource: https://rmarkdown.rstudio.com/\nResource: https://rmarkdown.rstudio.com/lesson-10.html"
   },
   {
     "objectID": "p5c3-r-notebook.html",
@@ -970,6 +970,62 @@
     "href": "p4c3-plotting.html#plots-available-in-base-r",
     "title": "17  Plotting",
     "section": "17.2 Plots Available in Base R",
-    "text": "17.2 Plots Available in Base R\nNow that you’ve seen how to build a scatterplot in R, let’s take a look at other plots available in Base R.\n\n17.2.1 Box Plot\nOne plot you’ve already seen in the outliers chapter is the box plot. These plots can be created via the “boxplot” function.\n\nboxplot(mtcars$mpg)\n\n\n\n\nWe can build on this plot by specifying the dataset with the “data” parameter, removing the “mtcars$” prefix from our variable, adding a plot title with the “main” parameter, and adding axis labels with the “xlab” and “ylab” parameters. Additionally, we are going to add an additional variable for our data to be categorized by.\n\nboxplot(mpg ~ gear\n            , data = mtcars\n            , main = \"Car Mileage by Gear\"\n            , xlab = \"Number of Forward Gears\"\n            , ylab = \"Miles Per Gallon\")\n\n\n\n\nFinally, we can set the box colors with the “col” parameter and set “notch” equal to “TRUE” to give our boxes notches. If the notches of two plots do not overlap this is ‘strong evidence’ that the two medians differ Chambers and Tukey (1983).\n\nboxplot(mpg ~ am\n            , data = mtcars\n            , notch = TRUE\n            , col = (c(\"blue\", \"grey\"))\n            , main = \"Car Mileage by Engine\"\n            , xlab = \"Automatic?\"\n            , ylab = \"Miles Per Gallon\")\n\n\n\n\n\n\n17.2.2 Plot Matrix\nYou can use the “pairs” function to create a plot matrix. Let’s use the iris dataset to demonstrate this.\n\npairs(iris)\n\n\n\n\nThis plot gives us the ability to see how each variable interacts with one another.\n\n\n17.2.3 Pie Chart\nLet’s try plotting a pie chart of species in the iris dataset via the “pie” function. This function accepts numerical values so we’ll need to use the “table” function on our column as well.\n\npie(table(iris$Species))\n\n\n\n\nYou can view the full list of available parameters for this and other functions through the help tab in the files pane in R Studio.\n\n\n\n\n\n\n\n17.2.4 Bar Plot\nLet’s try a bar plot on the same dataset with the “barplot” function.\n\nbarplot(table(iris$Species))\n\n\n\n\n\n\n17.2.5 Histogram\nYou may recall that we also used histigrams in the outliers chapter to try to visually identify extreme values. Here’s a quick recap:\n\nhist(mtcars$mpg)\n\n\n\n\nWe can take this one step further by adding a title and a shape to the plot.\n\nmpg <- density(mtcars$mpg)\nplot(mpg, main=\"MPG Distribution\")\npolygon(mpg, col=\"lightblue\", border=\"black\")\n\n\n\n\n\n\n17.2.6 Density Plot\nWe also used the following example in the outliers chapter to create a density plot:\n\nplot(density(mtcars$mpg))\n\n\n\n\n\n\n17.2.7 Dot Chart\n\nsalesperson <- c(\"Susan\", \"Taylor\", \"Steven\", \"Michael\", \"Reagan\", \"Michael\", \"Alaka\", \"Trevor\", \"Isaac\", \"Jordan\", \"Aaron\", \"Miles\")\nproduct <- c(\"Professional Services\", \"Professional Services\", \"Professional Services\", \"Professional Services\", \"Software\",  \"Software\",  \"Software\",  \"Software\", \"Hardware\", \"Hardware\", \"Hardware\", \"Hardware\")\nsales <- c(10, 7, 13, 18, 12, 19, 14, 16, 21, 9, 17, 19)\ndf <- data.frame(salesperson = salesperson, product = product, sales = sales)\n\ndotchart(df$sales)\n\n\n\ndotchart(df$sales, labels = df$salesperson)\n\n\n\ngroups <- as.factor(df$product)\ndotchart(df$sales, labels = df$salesperson, groups = groups)\n\n\n\ngroup_colors <-  c(\"blue\", \"darkred\", \"darkgreen\")\ndotchart(df$sales, labels = df$salesperson, groups = groups, gcolor = group_colors)\n\n\n\ndotchart(df$sales\n            , labels = df$salesperson\n            , groups = groups\n            , gcolor = group_colors\n            , color = group_colors[groups]\n            , pch = 16)"
+    "text": "17.2 Plots Available in Base R\nNow that you’ve seen how to build a scatterplot in R, let’s take a look at other plots available in Base R.\n\n17.2.1 Box Plot\nOne plot you’ve already seen in the outliers chapter is the box plot. These plots can be created via the “boxplot” function.\n\nboxplot(mtcars$mpg)\n\n\n\n\nWe can build on this plot by specifying the dataset with the “data” parameter, removing the “mtcars$” prefix from our variable, adding a plot title with the “main” parameter, and adding axis labels with the “xlab” and “ylab” parameters. Additionally, we are going to add an additional variable for our data to be categorized by.\n\nboxplot(mpg ~ gear\n            , data = mtcars\n            , main = \"Car Mileage by Gear\"\n            , xlab = \"Number of Forward Gears\"\n            , ylab = \"Miles Per Gallon\")\n\n\n\n\nFinally, we can set the box colors with the “col” parameter and set “notch” equal to “TRUE” to give our boxes notches. If the notches of two plots do not overlap this is ‘strong evidence’ that the two medians differ Chambers and Tukey (1983).\n\nboxplot(mpg ~ am\n            , data = mtcars\n            , notch = TRUE\n            , col = (c(\"blue\", \"grey\"))\n            , main = \"Car Mileage by Engine\"\n            , xlab = \"Automatic?\"\n            , ylab = \"Miles Per Gallon\")\n\n\n\n\n\n\n17.2.2 Plot Matrix\nYou can use the “pairs” function to create a plot matrix. Let’s use the iris dataset to demonstrate this.\n\npairs(iris)\n\n\n\n\nThis plot gives us the ability to see how each variable interacts with one another.\n\n\n17.2.3 Pie Chart\nLet’s try plotting a pie chart of species in the iris dataset via the “pie” function. This function accepts numerical values so we’ll need to use the “table” function on our column as well.\n\npie(table(iris$Species))\n\n\n\n\nYou can view the full list of available parameters for this and other functions through the help tab in the files pane in R Studio.\n\n\n\n\n\n\n\n17.2.4 Bar Plot\nLet’s try a bar plot on the same dataset with the “barplot” function.\n\nbarplot(table(iris$Species))\n\n\n\n\n\n\n17.2.5 Histogram\nYou may recall that we also used histigrams in the outliers chapter to try to visually identify extreme values. Here’s a quick recap:\n\nhist(mtcars$mpg)\n\n\n\n\n\n\n17.2.6 Density Plot\nWe also used the following example in the outliers chapter to create a density plot:\n\nplot(density(mtcars$mpg))\n\n\n\n\nWe can take this one step further by adding a title and a shape to the plot.\n\nmpg <- density(mtcars$mpg)\nplot(mpg, main=\"MPG Distribution\")\npolygon(mpg, col=\"lightblue\", border=\"black\")\n\n\n\n\n\n\n17.2.7 Dot Chart\n\nsalesperson <- c(\"Susan\", \"Taylor\", \"Steven\", \"Michael\", \"Reagan\", \"Michael\", \"Alaka\", \"Trevor\", \"Isaac\", \"Jordan\", \"Aaron\", \"Miles\")\nproduct <- c(\"Professional Services\", \"Professional Services\", \"Professional Services\", \"Professional Services\", \"Software\",  \"Software\",  \"Software\",  \"Software\", \"Hardware\", \"Hardware\", \"Hardware\", \"Hardware\")\nsales <- c(10, 7, 13, 18, 12, 19, 14, 16, 21, 9, 17, 19)\ndf <- data.frame(salesperson = salesperson, product = product, sales = sales)\n\ndotchart(df$sales)\n\n\n\ndotchart(df$sales, labels = df$salesperson)\n\n\n\ngroups <- as.factor(df$product)\ndotchart(df$sales, labels = df$salesperson, groups = groups)\n\n\n\ngroup_colors <-  c(\"blue\", \"darkred\", \"darkgreen\")\ndotchart(df$sales, labels = df$salesperson, groups = groups, gcolor = group_colors)\n\n\n\ndotchart(df$sales\n            , labels = df$salesperson\n            , groups = groups\n            , gcolor = group_colors\n            , color = group_colors[groups]\n            , pch = 16)"
+  },
+  {
+    "objectID": "p5c2-r-markdown.html#r-notebook",
+    "href": "p5c2-r-markdown.html#r-notebook",
+    "title": "19  R Markdown",
+    "section": "19.4 R Notebook",
+    "text": "19.4 R Notebook\nSome more technical audiences may require reporting which includes your methodology. This is where R Notebooks come in. R Notebooks are a subset of R Markdown documents that allow you to display and execute code directly in your document.\n\nSubset of R Markdown"
+  },
+  {
+    "objectID": "p5c3-r-shiny.html",
+    "href": "p5c3-r-shiny.html",
+    "title": "20  R Shiny",
+    "section": "",
+    "text": "R Shiny is a tool used to develop web applications and is commonly deployed in the use of creating dashboards, hosting static reports, and custom tooling."
+  },
+  {
+    "objectID": "p5c3-r-shiny.html#quickstart",
+    "href": "p5c3-r-shiny.html#quickstart",
+    "title": "20  R Shiny",
+    "section": "20.1 Quickstart",
+    "text": "20.1 Quickstart\nExplain what a project is"
+  },
+  {
+    "objectID": "p5c3-r-shiny.html#basic-components-of-a-shiny-application",
+    "href": "p5c3-r-shiny.html#basic-components-of-a-shiny-application",
+    "title": "20  R Shiny",
+    "section": "20.2 Basic Components of a Shiny Application",
+    "text": "20.2 Basic Components of a Shiny Application\n\n20.2.1 Server\n\n\n20.2.2 UI"
+  },
+  {
+    "objectID": "p5c3-r-shiny.html#shinyapps.io",
+    "href": "p5c3-r-shiny.html#shinyapps.io",
+    "title": "20  R Shiny",
+    "section": "20.3 shinyapps.io",
+    "text": "20.3 shinyapps.io\n\nShiny apps account\nQuick Start"
+  },
+  {
+    "objectID": "p5c3-r-shiny.html#deploying-application",
+    "href": "p5c3-r-shiny.html#deploying-application",
+    "title": "20  R Shiny",
+    "section": "20.4 Deploying Application",
+    "text": "20.4 Deploying Application"
+  },
+  {
+    "objectID": "p5c3-r-shiny.html#shinyuieditor",
+    "href": "p5c3-r-shiny.html#shinyuieditor",
+    "title": "20  R Shiny",
+    "section": "20.5 Shinyuieditor?",
+    "text": "20.5 Shinyuieditor?"
+  },
+  {
+    "objectID": "p5c3-r-shiny.html#resources",
+    "href": "p5c3-r-shiny.html#resources",
+    "title": "20  R Shiny",
+    "section": "20.6 Resources",
+    "text": "20.6 Resources\n\nResource: https://shiny.rstudio.com/"
   }
 ]

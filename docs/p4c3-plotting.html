@@ -647,21 +647,21 @@ div.csl-indent {
 <p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>We can take this one step further by adding a title and a shape to the plot.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="ot">&lt;-</span> <span class="fu">density</span>(mtcars<span class="sc">$</span>mpg)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mpg, <span class="at">main=</span><span class="st">"MPG Distribution"</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(mpg, <span class="at">col=</span><span class="st">"lightblue"</span>, <span class="at">border=</span><span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
 </section>
 <section id="density-plot" class="level3" data-number="17.2.6">
 <h3 data-number="17.2.6" class="anchored" data-anchor-id="density-plot"><span class="header-section-number">17.2.6</span> Density Plot</h3>
 <p>We also used the following example in the outliers chapter to create a density plot:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(mtcars<span class="sc">$</span>mpg))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(mtcars<span class="sc">$</span>mpg))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>We can take this one step further by adding a title and a shape to the plot.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="ot">&lt;-</span> <span class="fu">density</span>(mtcars<span class="sc">$</span>mpg)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mpg, <span class="at">main=</span><span class="st">"MPG Distribution"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(mpg, <span class="at">col=</span><span class="st">"lightblue"</span>, <span class="at">border=</span><span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -707,6 +707,7 @@ div.csl-indent {
 </section>
 <section id="ggplot2" class="level2" data-number="17.3">
 <h2 data-number="17.3" class="anchored" data-anchor-id="ggplot2"><span class="header-section-number">17.3</span> ggplot2</h2>
+<p>One of the most widely used methods for plotting in R is the ggplot2 package.</p>
 <section id="different-types-of-plots" class="level3" data-number="17.3.1">
 <h3 data-number="17.3.1" class="anchored" data-anchor-id="different-types-of-plots"><span class="header-section-number">17.3.1</span> Different types of plots?</h3>
 </section>
@@ -714,7 +715,10 @@ div.csl-indent {
 <section id="resources" class="level2" data-number="17.4">
 <h2 data-number="17.4" class="anchored" data-anchor-id="resources"><span class="header-section-number">17.4</span> Resources</h2>
 <ul>
-<li>Resource: https://ggplot2.tidyverse.org/</li>
+<li>ggplot2 documentation: <a href="https://ggplot2.tidyverse.org/" class="uri">https://ggplot2.tidyverse.org/</a></li>
+<li>ggplot2 cheat sheet: <a href="https://github.com/rstudio/cheatsheets/blob/main/data-visualization.pdf" class="uri">https://github.com/rstudio/cheatsheets/blob/main/data-visualization.pdf</a></li>
+<li>ggplot2 extension gallery: <a href="https://exts.ggplot2.tidyverse.org/gallery/" class="uri">https://exts.ggplot2.tidyverse.org/gallery/</a></li>
+<li>R colors: <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf" class="uri">http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf</a></li>
 </ul>
 
 

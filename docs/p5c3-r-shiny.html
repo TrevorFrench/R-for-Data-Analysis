@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>R for Data Analysis - 3&nbsp; Setup</title>
+<title>R for Data Analysis - 20&nbsp; R Shiny</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,8 +25,8 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./p1-fundamentals.html" rel="next">
-<link href="./p0c2-what-is-data-analysis.html" rel="prev">
+<link href="./p5exercises.html" rel="next">
+<link href="./p5c2-r-markdown.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -57,12 +57,14 @@ ul.task-list{list-style: none;}
 }</script>
 
 
-<meta property="og:title" content="R for Data Analysis - 3&nbsp; Setup">
-<meta property="og:description" content="This chapter will walk you through how to download the R programming language as well as R Studio which is a popular tool for interacting with the R ecosystem.">
+<meta property="og:title" content="R for Data Analysis - 20&nbsp; R Shiny">
+<meta property="og:description" content="R Shiny is a tool used to develop web applications and is commonly deployed in the use of creating dashboards, hosting static reports, and custom tooling.">
+<meta property="og:image" content="images/reporting/preview-app.png">
 <meta property="og:site-name" content="R for Data Analysis">
-<meta name="twitter:title" content="R for Data Analysis - 3&nbsp; Setup">
-<meta name="twitter:description" content="This chapter will walk you through how to download the R programming language as well as R Studio which is a popular tool for interacting with the R ecosystem.">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="R for Data Analysis - 20&nbsp; R Shiny">
+<meta name="twitter:description" content="R Shiny is a tool used to develop web applications and is commonly deployed in the use of creating dashboards, hosting static reports, and custom tooling.">
+<meta name="twitter:image" content="images/reporting/preview-app.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating">
@@ -71,7 +73,7 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Setup</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">R Shiny</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -139,7 +141,7 @@ ul.task-list{list-style: none;}
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./p0c3-setup.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Setup</span></a>
+  <a href="./p0c3-setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Setup</span></a>
   </div>
 </li>
       </ul>
@@ -294,7 +296,7 @@ ul.task-list{list-style: none;}
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./p5c3-r-shiny.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">R Shiny</span></a>
+  <a href="./p5c3-r-shiny.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">R Shiny</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -318,24 +320,25 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#install-r" id="toc-install-r" class="nav-link active" data-scroll-target="#install-r"> <span class="header-section-number">3.1</span> Install R</a></li>
-  <li><a href="#install-r-studio" id="toc-install-r-studio" class="nav-link" data-scroll-target="#install-r-studio"> <span class="header-section-number">3.2</span> Install R Studio</a></li>
-  <li><a href="#alternatives" id="toc-alternatives" class="nav-link" data-scroll-target="#alternatives"> <span class="header-section-number">3.3</span> Alternatives</a>
+  <li><a href="#quickstart" id="toc-quickstart" class="nav-link active" data-scroll-target="#quickstart"> <span class="header-section-number">20.1</span> Quickstart</a></li>
+  <li><a href="#basic-components-of-a-shiny-application" id="toc-basic-components-of-a-shiny-application" class="nav-link" data-scroll-target="#basic-components-of-a-shiny-application"> <span class="header-section-number">20.2</span> Basic Components of a Shiny Application</a>
   <ul class="collapse">
-  <li><a href="#r-studio-cloud" id="toc-r-studio-cloud" class="nav-link" data-scroll-target="#r-studio-cloud"> <span class="header-section-number">3.3.1</span> R Studio Cloud</a></li>
-  <li><a href="#replit" id="toc-replit" class="nav-link" data-scroll-target="#replit"> <span class="header-section-number">3.3.2</span> Replit</a></li>
-  <li><a href="#kaggle" id="toc-kaggle" class="nav-link" data-scroll-target="#kaggle"> <span class="header-section-number">3.3.3</span> Kaggle</a></li>
+  <li><a href="#server" id="toc-server" class="nav-link" data-scroll-target="#server"> <span class="header-section-number">20.2.1</span> Server</a></li>
+  <li><a href="#ui" id="toc-ui" class="nav-link" data-scroll-target="#ui"> <span class="header-section-number">20.2.2</span> UI</a></li>
   </ul></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"> <span class="header-section-number">3.4</span> Resources</a></li>
+  <li><a href="#shinyapps.io" id="toc-shinyapps.io" class="nav-link" data-scroll-target="#shinyapps.io"> <span class="header-section-number">20.3</span> shinyapps.io</a></li>
+  <li><a href="#deploying-application" id="toc-deploying-application" class="nav-link" data-scroll-target="#deploying-application"> <span class="header-section-number">20.4</span> Deploying Application</a></li>
+  <li><a href="#shinyuieditor" id="toc-shinyuieditor" class="nav-link" data-scroll-target="#shinyuieditor"> <span class="header-section-number">20.5</span> Shinyuieditor?</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"> <span class="header-section-number">20.6</span> Resources</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/TrevorFrench/R-for-Data-Analysis/edit/main/p0c3-setup.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/TrevorFrench/R-for-Data-Analysis/edit/main/p5c3-r-shiny.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Setup</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">R Shiny</span></h1>
 </div>
 
 
@@ -349,131 +352,67 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<p>This chapter will walk you through how to download the R programming language as well as R Studio which is a popular tool for interacting with the R ecosystem. Additionally, there are alternatives to R Studio listed at the end of the chapter. However, R Studio is the recommended environment for completing this book.</p>
-<section id="install-r" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="install-r"><span class="header-section-number">3.1</span> Install R</h2>
-<p>Before you do anything, you’ll need to download R. This download will allow your computer to interpret the R code you write later on.</p>
-<ol type="1">
-<li><p>Download R From R: <a href="https://www.r-project.org/">The R Project for Statistical Computing</a></p></li>
-<li><p>Select “download R”</p></li>
-</ol>
+<p>R Shiny is a tool used to develop web applications and is commonly deployed in the use of creating dashboards, hosting static reports, and custom tooling.</p>
+<section id="quickstart" class="level2" data-number="20.1">
+<h2 data-number="20.1" class="anchored" data-anchor-id="quickstart"><span class="header-section-number">20.1</span> Quickstart</h2>
+<p>Explain what a project is</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="images/setup/install-r-1.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+<p><img src="images/reporting/new-project.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
 </div>
 </div>
-<ol start="3" type="1">
-<li>Choose any link but preferably the one closest to your physical location</li>
-</ol>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="images/setup/install-r-2.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+<p><img src="images/reporting/new-directory.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
 </div>
 </div>
-<ol start="4" type="1">
-<li>Choose your operating system</li>
-</ol>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="images/setup/install-r-3.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+<p><img src="images/reporting/shiny-application.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
 </div>
 </div>
-<ol start="5" type="1">
-<li>Press “Install R for the first time”</li>
-</ol>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="images/setup/install-r-4.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+<p><img src="images/reporting/name-directory.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
 </div>
 </div>
-<ol start="6" type="1">
-<li>Press “download”</li>
-</ol>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="images/setup/install-r-5.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+<p><img src="images/reporting/sample-app.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
 </div>
 </div>
-<ol start="7" type="1">
-<li>Open installer</li>
-</ol>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="images/setup/install-r-6.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
-</div>
-</div>
-<ol start="8" type="1">
-<li>Follow the prompts and leave all options set as their default values</li>
-</ol>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="images/setup/install-r-7.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+<p><img src="images/reporting/preview-app.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
 </div>
 </div>
 </section>
-<section id="install-r-studio" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="install-r-studio"><span class="header-section-number">3.2</span> Install R Studio</h2>
-<p>After you install R, you’ll need an environment to write and run your code in. Most people use a program called “R Studio” for this. To download R Studio follow the steps listed below:</p>
-<ol type="1">
-<li><p>Navigate to the R Studio download site: <a href="https://www.rstudio.com/products/rstudio/download/">Download the RStudio IDE</a></p></li>
-<li><p>Press the “download” button under RStudio Desktop</p></li>
-</ol>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="images/setup/install-rstudio-1.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
-</div>
-</div>
-<ol start="3" type="1">
-<li>Choose the download option for your operating system</li>
-</ol>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="images/setup/install-rstudio-2.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
-</div>
-</div>
-<ol start="4" type="1">
-<li>Open the installer and accept all defaults</li>
-</ol>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="images/setup/install-rstudio-3.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
-</div>
-</div>
+<section id="basic-components-of-a-shiny-application" class="level2" data-number="20.2">
+<h2 data-number="20.2" class="anchored" data-anchor-id="basic-components-of-a-shiny-application"><span class="header-section-number">20.2</span> Basic Components of a Shiny Application</h2>
+<section id="server" class="level3" data-number="20.2.1">
+<h3 data-number="20.2.1" class="anchored" data-anchor-id="server"><span class="header-section-number">20.2.1</span> Server</h3>
 </section>
-<section id="alternatives" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="alternatives"><span class="header-section-number">3.3</span> Alternatives</h2>
-<section id="r-studio-cloud" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="r-studio-cloud"><span class="header-section-number">3.3.1</span> R Studio Cloud</h3>
-<p>R Studio Cloud offers users a way to replicate the full R Studio experience without having to download or set anything up on your personal computer. You can sign up for a free account here: <a href="https://rstudio.cloud/"></a></p>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="images/setup/r-studio-cloud-1.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
-</div>
-</div>
-</section>
-<section id="replit" class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="replit"><span class="header-section-number">3.3.2</span> Replit</h3>
-<p>Replit allows users to code in 50+ languages in the browser. While you won’t be able to follow along with the R Studio specific examples, you will be able to run R code. You can sign up for a free account here: <a href="https://replit.com/"></a></p>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="images/setup/replit-1.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
-</div>
-</div>
-</section>
-<section id="kaggle" class="level3" data-number="3.3.3">
-<h3 data-number="3.3.3" class="anchored" data-anchor-id="kaggle"><span class="header-section-number">3.3.3</span> Kaggle</h3>
-<p>Kaggle is one of the most popular sites for data analysts to compete in data competitions, find data, and discuss data topics. They also have a feature that allows you to write and run R (and Python) code. You can sign up for a free account here: <a href="https://www.kaggle.com/"></a></p>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="images/setup/kaggle-1.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
-</div>
-</div>
+<section id="ui" class="level3" data-number="20.2.2">
+<h3 data-number="20.2.2" class="anchored" data-anchor-id="ui"><span class="header-section-number">20.2.2</span> UI</h3>
 </section>
 </section>
-<section id="resources" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="resources"><span class="header-section-number">3.4</span> Resources</h2>
+<section id="shinyapps.io" class="level2" data-number="20.3">
+<h2 data-number="20.3" class="anchored" data-anchor-id="shinyapps.io"><span class="header-section-number">20.3</span> shinyapps.io</h2>
 <ul>
-<li>“R Installation and Administration” by the R Core Team <a href="https://cran.r-project.org/doc/manuals/r-release/R-admin.html" class="uri">https://cran.r-project.org/doc/manuals/r-release/R-admin.html</a></li>
+<li>Shiny apps account</li>
+<li>Quick Start</li>
+</ul>
+</section>
+<section id="deploying-application" class="level2" data-number="20.4">
+<h2 data-number="20.4" class="anchored" data-anchor-id="deploying-application"><span class="header-section-number">20.4</span> Deploying Application</h2>
+</section>
+<section id="shinyuieditor" class="level2" data-number="20.5">
+<h2 data-number="20.5" class="anchored" data-anchor-id="shinyuieditor"><span class="header-section-number">20.5</span> Shinyuieditor?</h2>
+</section>
+<section id="resources" class="level2" data-number="20.6">
+<h2 data-number="20.6" class="anchored" data-anchor-id="resources"><span class="header-section-number">20.6</span> Resources</h2>
+<ul>
+<li>Resource: https://shiny.rstudio.com/</li>
 </ul>
 
 
@@ -579,13 +518,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./p0c2-what-is-data-analysis.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is Data Analysis?</span></span>
+      <a href="./p5c2-r-markdown.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">R Markdown</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./p1-fundamentals.html" class="pagination-link">
-        <span class="nav-page-text">Part I: Fundamentals</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./p5exercises.html" class="pagination-link">
+        <span class="nav-page-text">Exercises</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

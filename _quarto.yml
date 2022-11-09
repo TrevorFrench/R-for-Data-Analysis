@@ -50,8 +50,7 @@ book:
       chapters: 
         - p5c1-spreadsheets.qmd
         - p5c2-r-markdown.qmd
-        - p5c3-r-notebook.qmd
-        - p5c4-r-shiny.qmd
+        - p5c3-r-shiny.qmd
         - p5exercises.qmd
     - references.qmd
 

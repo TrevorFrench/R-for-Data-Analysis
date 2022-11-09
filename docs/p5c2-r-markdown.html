@@ -25,7 +25,7 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./p5c3-r-notebook.html" rel="next">
+<link href="./p5c3-r-shiny.html" rel="next">
 <link href="./p5c1-spreadsheets.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -55,15 +55,16 @@ ul.task-list{list-style: none;}
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script async="" src="https://hypothes.is/embed.js"></script>
 
 
 <meta property="og:title" content="R for Data Analysis - 19&nbsp; R Markdown">
 <meta property="og:description" content="R Markdown allows you to create documents in a programmatic fashion that lends itself towards reproducibility.">
+<meta property="og:image" content="images/reporting/preview-notebook.png">
 <meta property="og:site-name" content="R for Data Analysis">
 <meta name="twitter:title" content="R for Data Analysis - 19&nbsp; R Markdown">
 <meta name="twitter:description" content="R Markdown allows you to create documents in a programmatic fashion that lends itself towards reproducibility.">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="images/reporting/preview-notebook.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating">
@@ -88,23 +89,9 @@ ul.task-list{list-style: none;}
       <a href="./">R for Data Analysis</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/TrevorFrench/R-for-Data-Analysis" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
-    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
+    <a href="./R-for-Data-Analysis.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
+    <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="./R-for-Data-Analysis.pdf">
-            <i class="bi bi-bi-file-pdf pe-1"></i>
-          Download PDF
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="./R-for-Data-Analysis.epub">
-            <i class="bi bi-bi-journal pe-1"></i>
-          Download ePub
-          </a>
-        </li>
-    </ul>
-    <a href="" title="Share" id="sidebar-tool-dropdown-1" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
-    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-1">
         <li>
           <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
             <i class="bi bi-bi-twitter pe-1"></i>
@@ -309,12 +296,7 @@ ul.task-list{list-style: none;}
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./p5c3-r-notebook.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">R Notebook</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./p5c4-r-shiny.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">R Shiny</span></a>
+  <a href="./p5c3-r-shiny.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">R Shiny</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -341,7 +323,8 @@ ul.task-list{list-style: none;}
   <li><a href="#format-options-all-of-the-output-options" id="toc-format-options-all-of-the-output-options" class="nav-link active" data-scroll-target="#format-options-all-of-the-output-options"> <span class="header-section-number">19.1</span> Format Options (All of the output options)</a></li>
   <li><a href="#example-maybe-pdf-and-another-section-for-htmlpowerpointetc." id="toc-example-maybe-pdf-and-another-section-for-htmlpowerpointetc." class="nav-link" data-scroll-target="#example-maybe-pdf-and-another-section-for-htmlpowerpointetc."> <span class="header-section-number">19.2</span> Example (maybe pdf? and another section for html/powerpoint/etc.)</a></li>
   <li><a href="#including-plots" id="toc-including-plots" class="nav-link" data-scroll-target="#including-plots"> <span class="header-section-number">19.3</span> Including Plots</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"> <span class="header-section-number">19.4</span> Resources</a></li>
+  <li><a href="#r-notebook" id="toc-r-notebook" class="nav-link" data-scroll-target="#r-notebook"> <span class="header-section-number">19.4</span> R Notebook</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"> <span class="header-section-number">19.5</span> Resources</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/TrevorFrench/R-for-Data-Analysis/edit/main/p5c2-r-markdown.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -379,11 +362,34 @@ ul.task-list{list-style: none;}
 <section id="including-plots" class="level2" data-number="19.3">
 <h2 data-number="19.3" class="anchored" data-anchor-id="including-plots"><span class="header-section-number">19.3</span> Including Plots</h2>
 </section>
-<section id="resources" class="level2" data-number="19.4">
-<h2 data-number="19.4" class="anchored" data-anchor-id="resources"><span class="header-section-number">19.4</span> Resources</h2>
+<section id="r-notebook" class="level2" data-number="19.4">
+<h2 data-number="19.4" class="anchored" data-anchor-id="r-notebook"><span class="header-section-number">19.4</span> R Notebook</h2>
+<p>Some more technical audiences may require reporting which includes your methodology. This is where R Notebooks come in. R Notebooks are a subset of R Markdown documents that allow you to display and execute code directly in your document.</p>
+<ul>
+<li>Subset of R Markdown</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/create-notebook.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 40%;" width="500"></p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/sample-notebook.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/preview-notebook.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+</section>
+<section id="resources" class="level2" data-number="19.5">
+<h2 data-number="19.5" class="anchored" data-anchor-id="resources"><span class="header-section-number">19.5</span> Resources</h2>
 <ul>
 <li><p>Formats: https://rmarkdown.rstudio.com/formats.html</p></li>
 <li><p>Resource: https://rmarkdown.rstudio.com/</p></li>
+<li><p>Resource: https://rmarkdown.rstudio.com/lesson-10.html</p></li>
 </ul>
 
 
@@ -494,8 +500,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./p5c3-r-notebook.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">R Notebook</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./p5c3-r-shiny.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">R Shiny</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
