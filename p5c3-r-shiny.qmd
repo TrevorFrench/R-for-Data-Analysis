@@ -4,7 +4,7 @@ R Shiny is a tool used to develop web applications and is commonly deployed in t
 
 ## Quickstart
 
-Explain what a project is
+Let's create a new project containing a shiny application. Projects allow you to bundle multiple files into a single location and allow you to keep a separate workspace saved for when you are working on a specific thing. You can create a new project via the "Create a new project" button towards the top left corner in R Studio.
 
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
 #| label: new-project
@@ -13,12 +13,16 @@ Explain what a project is
 knitr::include_graphics("images/reporting/new-project.png", dpi = 270)
 ```
 
+Since we are starting this project from scratch, let's choose the "New Directory" option.
+
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
 #| label: new-directory
 #| echo: false
 #| out.width: 500
 knitr::include_graphics("images/reporting/new-directory.png", dpi = 270)
 ```
+
+Now you can see there are many types of projects that you can create (not just Shiny Applications). However, we are going to choose "Shiny Application" for this example.
 
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
 #| label: shiny-application
@@ -27,12 +31,16 @@ knitr::include_graphics("images/reporting/new-directory.png", dpi = 270)
 knitr::include_graphics("images/reporting/shiny-application.png", dpi = 270)
 ```
 
+This is going to create a new folder containing your project files. Choose what you would like to name that folder and where you would like for it to be saved.
+
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
 #| label: name-directory
 #| echo: false
 #| out.width: 500
 knitr::include_graphics("images/reporting/name-directory.png", dpi = 270)
 ```
+
+If you're working in R Studio, you should now have a sample application in your source pane. We'll go more in depth into what all of this means later.
 
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
 #| label: sample-app
@@ -41,6 +49,8 @@ knitr::include_graphics("images/reporting/name-directory.png", dpi = 270)
 knitr::include_graphics("images/reporting/sample-app.png", dpi = 270)
 ```
 
+For now, let's demo what this app looks like by pressing the "Run App" button towards the top right corner of your source pane. You should see a screen pop up that looks like this.
+
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
 #| label: preview-app
 #| echo: false
@@ -48,11 +58,82 @@ knitr::include_graphics("images/reporting/sample-app.png", dpi = 270)
 knitr::include_graphics("images/reporting/preview-app.png", dpi = 270)
 ```
 
+We can see that the application is using the faithful dataset to create a histogram which accepts user input to dynamically adjust the number of bins presented in the histogram.
+
 ## Basic Components of a Shiny Application
+
+Shiny applications consist of two main components: a sever function and a UI object. The server function will handle any logic you need to put into your application while the UI object will create a user interface. Additionally, you will need to include the "shiny" library and any other libraries that you use in your code. Let's break down everything that is happening in this sample application
+
+### Libraries
+
+One library you will always need to include in your shiny applications is the "shiny" library. Make sure you include any other libraries you plan on using in your code.
+
+```{r}
+#| eval: false
+library(shiny)
+```
+
+### UI
+
+The next thing we see in our code is the creation of our ui object. This is where the application layout is created. The first function is the "fluidPage" function. This is probably one of the most common ways to create user interfaces in shiny applications. Layouts created with the fluid page methodology are organized into rows and columns and scale to fit varying browser sizes.
+
+The "titlePanel" function creates a panel with your title inside of it. In our case, this function is responsible for "Old Faithful Geyser Data" being displayed at the top of the page.
+
+Next, we see the "sidebarLayout" function. This is essentially a pre-constructed layout which consists of a "sidebar" panel and a "main" panel which are created using the "sidebarPanel" and "mainPanel" functions, respectively. You'll notice that our sidebar is actually located above our main panel rather than to the side. This is just because the size of our browser was small enough that they collapsed to be stacked on top of each other. If you increase the size of your browser, you will see the sidebar return to it's original location.
+
+Inside of the "sidebarPanel" function, we have a function called "sliderInput". 
+
+```{r}
+#| eval: false
+ui <- fluidPage(
+
+    # Application title
+    titlePanel("Old Faithful Geyser Data"),
+
+    # Sidebar with a slider input for number of bins 
+    sidebarLayout(
+        sidebarPanel(
+            sliderInput("bins",
+                        "Number of bins:",
+                        min = 1,
+                        max = 50,
+                        value = 30)
+        ),
+
+        # Show a plot of the generated distribution
+        mainPanel(
+           plotOutput("distPlot")
+        )
+    )
+)
+```
 
 ### Server
 
-### UI
+```{r}
+#| eval: false
+server <- function(input, output) {
+
+    output$distPlot <- renderPlot({
+        # generate bins based on input$bins from ui.R
+        x    <- faithful[, 2]
+        bins <- seq(min(x), max(x), length.out = input$bins + 1)
+
+        # draw the histogram with the specified number of bins
+        hist(x, breaks = bins, col = 'darkgray', border = 'white',
+             xlab = 'Waiting time to next eruption (in mins)',
+             main = 'Histogram of waiting times')
+    })
+}
+```
+
+### Putting it Together
+
+```{r}
+#| eval: false
+shinyApp(ui = ui, server = server)
+```
+
 
 ## shinyapps.io
 - Shiny apps account
