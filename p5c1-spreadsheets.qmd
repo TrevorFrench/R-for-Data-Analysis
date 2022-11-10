@@ -79,6 +79,65 @@ output <- "C:/File Location/example.xlsx"
 write_xlsx(df, output)
 ```
 
+```{r}
+# library(openxlsx)
+# head(iris)
+
+# # Create datasets
+
+# setosa <- iris[which(iris$"Species" == "setosa"),]
+# versicolor <- iris[which(iris$"Species" == "versicolor"),]
+# virginica <- iris[which(iris$"Species" == "virginica"),]
+
+# # Create workbook object
+# wb <- createWorkbook()
+
+# # Add worksheets
+# addWorksheet(wb, "Setosa")
+# addWorksheet(wb, "Versicolor")
+# addWorksheet(wb, "Virginica")
+
+# # Create styles
+# heading <- createStyle(fontName = "Segoe UI"
+#                         , fontSize = 12
+#                         , fontColour = "#FFFFFF"
+#                         , bgFill = "#244062"
+#                         , textDecoration = "bold")
+
+# body <- createStyle(fontName = "Segoe UI", fontSize = 12)
+
+# # Add data
+# writeData(wb, "Setosa", setosa, startCol = 1, startRow = 1, rowNames = TRUE)
+
+# # Apply styles
+# addStyle(wb, "Setosa", cols = 1:length(setosa), rows = 1, style = heading, gridExpand = TRUE)
+# addStyle(wb, "Setosa", cols = 1:length(setosa), rows = 2:nrow(setosa), style = body, gridExpand = TRUE)
+
+# saveWorkbook(wb, "C:/Users/Trevor French/OneDrive - TaxBit/Desktop/filetest.xlsx", overwrite = TRUE)
+# COlor
+# row names False
+# Formulas
+# show a way to do it with loops as well
+# createStyle(
+#   fontName = NULL,
+#   fontSize = NULL,
+#   fontColour = NULL,
+#   numFmt = openxlsx_getOp("numFmt", "GENERAL"),
+#   border = NULL,
+#   borderColour = openxlsx_getOp("borderColour", "black"),
+#   borderStyle = openxlsx_getOp("borderStyle", "thin"),
+#   bgFill = NULL,
+#   fgFill = NULL,
+#   halign = NULL,
+#   valign = NULL,
+#   textDecoration = NULL,
+#   wrapText = FALSE,
+#   textRotation = NULL,
+#   indent = NULL,
+#   locked = NULL,
+#   hidden = NULL
+# )
+```
 saveworkbook
 -csvs and xlsx
 
