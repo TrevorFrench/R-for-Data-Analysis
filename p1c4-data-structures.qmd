@@ -82,3 +82,5 @@ x <- array(
 
 print(x)
 ```
+
+## Resources
