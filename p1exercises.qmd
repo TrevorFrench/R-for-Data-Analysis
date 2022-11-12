@@ -48,6 +48,58 @@ Write a for loop which loops through your vector and prints any element that is 
 
 :::
 
+::: callout
+## Exercise: 6-A
+
+Convert the following character variable to a variable with the data type "raw":
+
+``` r
+x <- "Trevor rocks"
+```
+
+You should store your raw data in a variable named "raw_data", print the data to the console, and check the data type with the "typeof" function. Your output should look like the following:
+
+``` r
+print(raw_data)
+# [1] 54 72 65 76 6f 72 20 72 6f 63 6b 73
+typeof(raw_data)
+# [1] "raw"
+```
+
+:::
+
+::: callout
+## Exercise: 6-B
+
+Create a variable named "spending" and give it a value of 120. Then create a variable named "budget" and give it a value of 100. Next, check whether spending is greater than budget and store the resulting logical data in a variable named "over_budget". Finally, print the value of "over_budget" variable and check it's data type with the "typeof" function.
+
+Your final output should look like this:
+
+``` r
+print(over_budget)
+# [1] TRUE
+typeof(over_budget)
+# [1] "logical"
+```
+
+:::
+
+::: callout
+## Exercise: 7-A
+
+Create a vector named "animal" and give it the following three values: "cow", "cat", "pig". Create a second vector named "sound" and give it the following three values: "moo", "meow", "oink". Finally, create a data frame named "animal_sounds" and assign each of these vectors to be a column.
+
+After printing the resulting data frame to the console, you should get the following output:
+
+``` r
+#   animal sound
+# 1    cow   moo
+# 2    cat  meow
+# 3    pig  oink
+```
+
+:::
+
 ## Answers
 
 ::: callout
@@ -138,5 +190,54 @@ for (number in numbers) {
     print(number)
   }
 }
+```
+:::
+
+::: callout
+## Answer: 6-A
+
+You can accomplish this task through the "charToRaw" function.
+
+``` r
+x <- "Trevor rocks"
+raw_data <- charToRaw(x)
+print(raw_data)
+# [1] 54 72 65 76 6f 72 20 72 6f 63 6b 73
+typeof(raw_data)
+# [1] "raw"
+```
+:::
+
+::: callout
+## Answer: 6-B
+
+The following example demonstrates how you can accomplish this task.
+
+``` r
+spending <- 120
+budget <- 100
+over_budget <- spending > budget
+print(over_budget)
+# [1] TRUE
+typeof(over_budget)
+# [1] "logical"
+```
+:::
+
+::: callout
+## Answer: 7-A
+
+The following example demonstrates how you can accomplish this task.
+
+``` r
+animal <- c("cow", "cat", "pig")
+sound <- c("moo", "meow", "oink")
+animal_sounds <- data.frame(animal = animal, sound = sound)
+
+print(animal_sounds)
+#   animal sound
+# 1    cow   moo
+# 2    cat  meow
+# 3    pig  oink
 ```
 :::

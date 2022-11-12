@@ -84,3 +84,5 @@ print(x)
 ```
 
 ## Resources
+
+- W3 Schools: <https://www.w3schools.com/r/r_vectors.asp>

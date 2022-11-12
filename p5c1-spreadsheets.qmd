@@ -79,75 +79,247 @@ output <- "C:/File Location/example.xlsx"
 write_xlsx(df, output)
 ```
 
-```{r}
-# library(openxlsx)
-# head(iris)
-
-# # Create datasets
-
-# setosa <- iris[which(iris$"Species" == "setosa"),]
-# versicolor <- iris[which(iris$"Species" == "versicolor"),]
-# virginica <- iris[which(iris$"Species" == "virginica"),]
-
-# # Create workbook object
-# wb <- createWorkbook()
-
-# # Add worksheets
-# addWorksheet(wb, "Setosa")
-# addWorksheet(wb, "Versicolor")
-# addWorksheet(wb, "Virginica")
-
-# # Create styles
-# heading <- createStyle(fontName = "Segoe UI"
-#                         , fontSize = 12
-#                         , fontColour = "#FFFFFF"
-#                         , bgFill = "#244062"
-#                         , textDecoration = "bold")
-
-# body <- createStyle(fontName = "Segoe UI", fontSize = 12)
-
-# # Add data
-# writeData(wb, "Setosa", setosa, startCol = 1, startRow = 1, rowNames = TRUE)
-
-# # Apply styles
-# addStyle(wb, "Setosa", cols = 1:length(setosa), rows = 1, style = heading, gridExpand = TRUE)
-# addStyle(wb, "Setosa", cols = 1:length(setosa), rows = 2:nrow(setosa), style = body, gridExpand = TRUE)
-
-# saveWorkbook(wb, "C:/Users/Trevor French/OneDrive - TaxBit/Desktop/filetest.xlsx", overwrite = TRUE)
-# COlor
-# row names False
-# Formulas
-# show a way to do it with loops as well
-# createStyle(
-#   fontName = NULL,
-#   fontSize = NULL,
-#   fontColour = NULL,
-#   numFmt = openxlsx_getOp("numFmt", "GENERAL"),
-#   border = NULL,
-#   borderColour = openxlsx_getOp("borderColour", "black"),
-#   borderStyle = openxlsx_getOp("borderStyle", "thin"),
-#   bgFill = NULL,
-#   fgFill = NULL,
-#   halign = NULL,
-#   valign = NULL,
-#   textDecoration = NULL,
-#   wrapText = FALSE,
-#   textRotation = NULL,
-#   indent = NULL,
-#   locked = NULL,
-#   hidden = NULL
-# )
-```
-saveworkbook
--csvs and xlsx
-
 ## Formatting
 
-- colors
-- tabs
-- font
-- etc
+When saving Excel workbooks, you can also leverage the "openxlsx" library to format and add formulas to your workbook. Let's use the iris dataset to demontrate these capabilities.
+
+The first thing you'll need to do is require the "openxlsx" library.
+
+```{r}
+#| eval: false
+library(openxlsx)
+```
+
+Next, let's break down the iris dataset into three separate datasets based on species.
+
+```{r}
+#| eval: false
+setosa <- iris[which(iris$"Species" == "setosa"),]
+versicolor <- iris[which(iris$"Species" == "versicolor"),]
+virginica <- iris[which(iris$"Species" == "virginica"),]
+```
+
+Now, we'll use the "createWorkbook" function from the "openxlsx" library to create a blank workbook object.
+
+```{r}
+#| eval: false
+wb <- createWorkbook()
+```
+
+We'll now add three worksheets to our workbook. These worksheets will ultimately be tabs in our Excel workbook.
+
+```{r}
+#| eval: false
+addWorksheet(wb, "Setosa")
+addWorksheet(wb, "Versicolor")
+addWorksheet(wb, "Virginica")
+```
+
+We can also create styles to apply to our workbook. Let's create a style for our headers as well as a style for the body of our data.
+
+```{r}
+#| eval: false
+heading <- createStyle(fontName = "Segoe UI"
+                        , fontSize = 12
+                        , fontColour = "#FFFFFF"
+                        , bgFill = "#244062"
+                        , textDecoration = "bold")
+
+body <- createStyle(fontName = "Segoe UI", fontSize = 12)
+```
+
+Let's now apply our three datasets to the workbook object we previously created.
+
+```{r}
+#| eval: false
+# Write the setosa dataset to the "Setosa" worksheet
+writeData(wb, "Setosa", setosa, startCol = 1, startRow = 1, rowNames = FALSE)
+
+# Write the versicolor dataset to the "Versicolor" worksheet
+writeData(wb, "Versicolor", versicolor, startCol = 1, startRow = 1, rowNames = FALSE)
+
+# Write the virginica dataset to the "Virginica" worksheet
+writeData(wb, "Virginica", virginica, startCol = 1, startRow = 1, rowNames = FALSE)
+```
+
+Now let's apply our styles to each worksheet.
+
+```{r}
+#| eval: false
+# Apply styles to "Setosa" worksheet
+addStyle(wb, "Setosa", cols = 1:length(setosa), rows = 1, style = heading, gridExpand = TRUE)
+addStyle(wb, "Setosa", cols = 1:length(setosa), rows = 2:nrow(setosa), style = body, gridExpand = TRUE)
+
+# Apply styles to "Versicolor" worksheet
+addStyle(wb, "Versicolor", cols = 1:length(versicolor), rows = 1, style = heading, gridExpand = TRUE)
+addStyle(wb, "Versicolor", cols = 1:length(versicolor), rows = 2:nrow(versicolor), style = body, gridExpand = TRUE)
+
+# Apply styles to "Virginica" worksheet
+addStyle(wb, "Virginica", cols = 1:length(virginica), rows = 1, style = heading, gridExpand = TRUE)
+addStyle(wb, "Virginica", cols = 1:length(virginica), rows = 2:nrow(virginica), style = body, gridExpand = TRUE)
+```
+
+Finally, we will save our workbook to a file named "iris.xlsx".
+
+```{r}
+#| eval: false
+saveWorkbook(wb, "iris.xlsx", overwrite = TRUE)
+```
+
+This will result in a workbook that looks like the following image.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: spreadsheets-1
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/spreadsheets-1.png", dpi = 270)
+```
+
+The full script is located below.
+
+```{r}
+#| eval: false
+library(openxlsx)
+
+# Create datasets
+setosa <- iris[which(iris$"Species" == "setosa"),]
+versicolor <- iris[which(iris$"Species" == "versicolor"),]
+virginica <- iris[which(iris$"Species" == "virginica"),]
+
+# Create workbook object
+wb <- createWorkbook()
+
+#Add worksheets
+addWorksheet(wb, "Setosa")
+addWorksheet(wb, "Versicolor")
+addWorksheet(wb, "Virginica")
+
+# Create Styles
+heading <- createStyle(fontName = "Segoe UI"
+                       , fontSize = 12
+                       , fontColour = "#FFFFFF"
+                       , bgFill = "#244062"
+                       , textDecoration = "bold")
+
+body <- createStyle(fontName = "Segoe UI", fontSize = 12)
+
+# Write the setosa dataset to the "Setosa" worksheet
+writeData(wb, "Setosa", setosa, startCol = 1, startRow = 1, rowNames = FALSE)
+
+# Write the versicolor dataset to the "Versicolor" worksheet
+writeData(wb, "Versicolor", versicolor, startCol = 1, startRow = 1, rowNames = FALSE)
+
+# Write the virginica dataset to the "Virginica" worksheet
+writeData(wb, "Virginica", virginica, startCol = 1, startRow = 1, rowNames = FALSE)
+
+# Apply styles to "Setosa" worksheet
+addStyle(wb, "Setosa", cols = 1:length(setosa), rows = 1, style = heading, gridExpand = TRUE)
+addStyle(wb, "Setosa", cols = 1:length(setosa), rows = 2:nrow(setosa), style = body, gridExpand = TRUE)
+
+# Apply styles to "Versicolor" worksheet
+addStyle(wb, "Versicolor", cols = 1:length(versicolor), rows = 1, style = heading, gridExpand = TRUE)
+addStyle(wb, "Versicolor", cols = 1:length(versicolor), rows = 2:nrow(versicolor), style = body, gridExpand = TRUE)
+
+# Apply styles to "Virginica" worksheet
+addStyle(wb, "Virginica", cols = 1:length(virginica), rows = 1, style = heading, gridExpand = TRUE)
+addStyle(wb, "Virginica", cols = 1:length(virginica), rows = 2:nrow(virginica), style = body, gridExpand = TRUE)
+
+saveWorkbook(wb, "iris.xlsx", overwrite = TRUE)
+```
+
+You may notice that this script is a little longer than it needs to be. Let's try to simplify it with a loop.
+
+The following script will accomplish the exact same thing as the first script.
+
+```{r}
+#| eval: false
+library(openxlsx)
+
+setosa <- iris[which(iris$"Species" == "setosa"),]
+versicolor <- iris[which(iris$"Species" == "versicolor"),]
+virginica <- iris[which(iris$"Species" == "virginica"),]
+
+wb <- createWorkbook()
+
+heading <- createStyle(fontName = "Segoe UI"
+                       , fontSize = 12
+                       , fontColour = "#FFFFFF"
+                       , bgFill = "#244062"
+                       , textDecoration = "bold")
+
+body <- createStyle(fontName = "Segoe UI", fontSize = 12)
+
+datasets <- list(setosa, virginica, versicolor)
+worksheets <- c("Setosa", "Virginica", "Versicolor")
+
+for (i in 1:3) {
+  df <- as.data.frame(datasets[i])
+  addWorksheet(wb, worksheets[i])
+  writeData(wb, worksheets[i], df, startCol = 1, startRow = 1, rowNames = FALSE)
+  addStyle(wb, worksheets[i], cols = 1:length(df), rows = 1, style = heading, gridExpand = TRUE)
+  addStyle(wb, worksheets[i], cols = 1:length(df), rows = 2:nrow(df), style = body, gridExpand = TRUE)
+}
+
+saveWorkbook(wb, "iris.xlsx", overwrite = TRUE)
+```
 
 ## Formulas
 
+If we wanted to add another column to each of our worksheets that used an Excel formula to determine the ratio between the sepal length and the sepal width, we could use the "writeFormula" function to accomplish that.
+
+The following example uses a loop that creates a formula for each row which divides the respective value in column A by the the respective value in column B. Next we add the heading style to the first row in column six and add a header named "Sepal.Ratio". Finally, we write the formula vector to column six beginning on row 2.
+
+```{r}
+library(openxlsx)
+
+setosa <- iris[which(iris$"Species" == "setosa"),]
+versicolor <- iris[which(iris$"Species" == "versicolor"),]
+virginica <- iris[which(iris$"Species" == "virginica"),]
+
+wb <- createWorkbook()
+
+heading <- createStyle(fontName = "Segoe UI"
+                       , fontSize = 12
+                       , fontColour = "#FFFFFF"
+                       , bgFill = "#244062"
+                       , textDecoration = "bold")
+
+body <- createStyle(fontName = "Segoe UI", fontSize = 12)
+
+datasets <- list(setosa, virginica, versicolor)
+worksheets <- c("Setosa", "Virginica", "Versicolor")
+
+for (i in 1:3) {
+  df <- as.data.frame(datasets[i])
+  addWorksheet(wb, worksheets[i])
+  writeData(wb, worksheets[i], df, startCol = 1, startRow = 1, rowNames = FALSE)
+  addStyle(wb, worksheets[i], cols = 1:length(df), rows = 1, style = heading, gridExpand = TRUE)
+  addStyle(wb, worksheets[i], cols = 1:length(df), rows = 2:nrow(df), style = body, gridExpand = TRUE)
+  
+  formula <- c()
+  
+  for (x in 2:(nrow(df) + 1)) {
+    formula <- append(formula, paste("A", x, "/B", x, sep = ''))
+  }
+
+  addStyle(wb, worksheets[i], cols = 6, rows = 1, style = heading, gridExpand = TRUE)
+  writeData(wb, worksheets[i], "Sepal.Ratio", startCol = 6, startRow = 1, rowNames = FALSE)
+  writeFormula(wb, worksheets[i], formula, startCol = 6, startRow = 2)
+
+}
+
+saveWorkbook(wb, "iris.xlsx", overwrite = TRUE)
+```
+
+This gives us an Excel workbook that looks like the following image.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: spreadsheets-2
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/spreadsheets-2.png", dpi = 270)
+```
+
 ## Resources
+
+- openxlsx documentation: <https://cran.r-project.org/web/packages/openxlsx/openxlsx.pdf>

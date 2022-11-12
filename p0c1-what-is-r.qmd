@@ -14,12 +14,12 @@ While R was officially first released in 1993, it wasn't until 1995 that Ross Ih
 
 ## Resources
 
-- You can learn more about R at <https://www.r-project.org/>
-- Read Ross Ihaka's account of R's origination here <https://www.stat.auckland.ac.nz/~ihaka/downloads/Interface98.pdf>
-- "What is R?"" by Microsoft <https://mran.microsoft.com/documents/what-is-r>
-- R manuals by the R Development Core Team <https://cran.r-project.org/manuals.html>
-- R-bloggers <https://www.r-bloggers.com/>
-- R User Groups <https://www.meetup.com/pro/r-user-groups/>
-- R Studio Community <https://community.rstudio.com/>
-- The R Journal <https://journal.r-project.org/>
-- Microsoft R Application Network <https://mran.microsoft.com/>
+- You can learn more about R here: <https://www.r-project.org/>
+- Read Ross Ihaka's account of R's origination: <https://www.stat.auckland.ac.nz/~ihaka/downloads/Interface98.pdf>
+- "What is R?"" by Microsoft: <https://mran.microsoft.com/documents/what-is-r>
+- R manuals by the R Development Core Team: <https://cran.r-project.org/manuals.html>
+- R-bloggers: <https://www.r-bloggers.com/>
+- R User Groups: <https://www.meetup.com/pro/r-user-groups/>
+- R Studio Community: <https://community.rstudio.com/>
+- The R Journal: <https://journal.r-project.org/>
+- Microsoft R Application Network: <https://mran.microsoft.com/>

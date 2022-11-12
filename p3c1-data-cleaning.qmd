@@ -183,4 +183,4 @@ knitr::kable(df, format="markdown")
 
 ## Resources
 
-- Separate function documentation <https://tidyr.tidyverse.org/reference/separate.html>
+- "Separate" function documentation: <https://tidyr.tidyverse.org/reference/separate.html>

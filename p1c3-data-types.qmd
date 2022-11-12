@@ -17,6 +17,7 @@ There are five basic data types in R:
 ### Double
 
 Let's explore the "double" data type by assigning a number to a variable and then check it's type by using the "typeof" function. Alternatively, we can use the "is.double" function to check whether or not the variable is a double.
+
 ```{r}
 x <- 6.2
 typeof(x)
@@ -24,6 +25,7 @@ is.double(x)
 ```
 
 Next, let's check whether or not the variable is numeric by using the "is.numeric" function.
+
 ```{r}
 is.numeric(x)
 ```
@@ -31,7 +33,9 @@ is.numeric(x)
 This function should return "TRUE" as well, which demonstrates the fact that a double is a subset of the numeric data type.
 
 ### Integer
+
 Let's explore the "integer" data type by assigning a whole number followed by the capital letter "L" to a variable and then check it's type by using the "typeof" function. Alternatively, we can use the "is.integer" function to check whether or not the variable is an integer.
+
 ```{r}
 x <- 6L
 # By using the "typeof" function, we can check the data type of x
@@ -40,6 +44,7 @@ is.integer(x)
 ```
 
 Next, let's check whether or not the variable is numeric by using the "is.numeric" function.
+
 ```{r}
 is.numeric(x)
 ```
@@ -56,18 +61,27 @@ typeof(x)
 ```
 
 ## Character
+
+Character data types store text data. When creating characters, make sure you wrap your text in quotation marks.
+
 ```{r}
 x <- "Hello!"
 typeof(x)
 ```
 
 ## Logical
+
+Logical data types store either "TRUE" or "FALSE". Unlike characters, these data should not be wrapped in quotation marks.
+
 ```{r}
 x <- TRUE
 typeof(x)
 ```
 
 ## Raw
+
+Used less often, the raw data type will store data as raw bytes. YOu can convert character data types to raw data types by using the "charToRaw" function. Similarly, you can convert integer data types to raw data types through the use of the "intToBits" function.
+
 ```{r}
 x <- charToRaw("Hello!")
 print(x)
@@ -80,4 +94,5 @@ typeof(x)
 
 ## Resources
 
-- W3 Schools <https://www.w3schools.com/r/r_data_types.asp>
+- W3 Schools: <https://www.w3schools.com/r/r_data_types.asp>
+- "Bits and Bytes" from Stanford CS 101: <https://web.stanford.edu/class/cs101/bits-bytes.html>

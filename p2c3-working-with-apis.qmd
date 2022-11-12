@@ -2,6 +2,8 @@
 
 API stands for Application Programming Interface. These sorts of tools are commonly used to programmatically pull data from a third party resource. This chapter demonstrates how one can begin to leverage these tools in their own workflows.
 
+The following example uses the Helium API to return data about it's blockchain network.
+
 ## Install Packages
 
 ```{r}
@@ -131,6 +133,15 @@ print(fee)
 
 ## Resources
 
-- Blog post by Trevor French <https://medium.com/trevor-french/api-calls-in-r-136290ead81d>
+- Blog post by Trevor French: <https://medium.com/trevor-french/api-calls-in-r-136290ead81d>
 
 ### Helpful APIs
+
+- Meta Graph API: <https://developers.facebook.com/docs/graph-api/>
+- Twitter API: <https://developer.twitter.com/en/docs/twitter-api>
+- NASA APIs: <https://api.nasa.gov/>
+- Etherscan API: <https://etherscan.io/apis>
+- Covalent API: <https://www.covalenthq.com/docs/api/#/0/0/USD/1>
+- EDGAR APIs from the SEC: <https://www.sec.gov/edgar/sec-api-documentation>
+- Weather API: <https://openweathermap.org/api>
+- Helium API: <https://docs.helium.com/api/>

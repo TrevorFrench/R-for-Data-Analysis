@@ -489,6 +489,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="character" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="character"><span class="header-section-number">6.3</span> Character</h2>
+<p>Character data types store text data. When creating characters, make sure you wrap your text in quotation marks.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">"Hello!"</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -499,6 +500,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="logical" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="logical"><span class="header-section-number">6.4</span> Logical</h2>
+<p>Logical data types store either “TRUE” or “FALSE”. Unlike characters, these data should not be wrapped in quotation marks.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -509,6 +511,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="raw" class="level2" data-number="6.5">
 <h2 data-number="6.5" class="anchored" data-anchor-id="raw"><span class="header-section-number">6.5</span> Raw</h2>
+<p>Used less often, the raw data type will store data as raw bytes. YOu can convert character data types to raw data types by using the “charToRaw” function. Similarly, you can convert integer data types to raw data types through the use of the “intToBits” function.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">charToRaw</span>(<span class="st">"Hello!"</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -534,7 +537,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="resources" class="level2" data-number="6.6">
 <h2 data-number="6.6" class="anchored" data-anchor-id="resources"><span class="header-section-number">6.6</span> Resources</h2>
 <ul>
-<li>W3 Schools <a href="https://www.w3schools.com/r/r_data_types.asp" class="uri">https://www.w3schools.com/r/r_data_types.asp</a></li>
+<li>W3 Schools: <a href="https://www.w3schools.com/r/r_data_types.asp" class="uri">https://www.w3schools.com/r/r_data_types.asp</a></li>
+<li>“Bits and Bytes” from Stanford CS 101: <a href="https://web.stanford.edu/class/cs101/bits-bytes.html" class="uri">https://web.stanford.edu/class/cs101/bits-bytes.html</a></li>
 </ul>
 
 

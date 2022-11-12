@@ -141,4 +141,4 @@ knitr::include_graphics("images/setup/kaggle-1.png", dpi = 270)
 
 ## Resources
 
-- "R Installation and Administration" by the R Core Team <https://cran.r-project.org/doc/manuals/r-release/R-admin.html>
+- "R Installation and Administration" by the R Core Team: <https://cran.r-project.org/doc/manuals/r-release/R-admin.html>

@@ -143,3 +143,5 @@ print(df)
 ```
 
 ## Resources
+
+- "Missing-data Imputation" from Columbia: <http://www.stat.columbia.edu/~gelman/arm/missing.pdf>

@@ -115,3 +115,5 @@ print(statistically_cleaned)
 ```
 
 ## Resources
+
+"Statistics - Standard Deviation" by W3 Schools: <https://www.w3schools.com/statistics/statistics_standard_deviation.php>

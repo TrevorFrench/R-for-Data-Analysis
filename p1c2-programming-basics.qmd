@@ -410,5 +410,5 @@ library(trevoR)
 
 ## Resources
 
-- W3 Schools R Tutorial <https://www.w3schools.com/r/>
+- W3 Schools R Tutorial: <https://www.w3schools.com/r/>
 - Assignment Operators: <https://stat.ethz.ch/R-manual/R-devel/library/base/html/assignOps.html>

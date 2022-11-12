@@ -24,6 +24,6 @@ This book will focus on the technical skills required to conduct an analysis. Be
 
 ## Resources
 
-- Data Science & Big Data Analytics: Discovering, Analyzing, Visualizing and Presenting Data <https://onlinelibrary.wiley.com/doi/book/10.1002/9781119183686>
-- Managing the Analytics Life Cycle for Decisions at Scale <https://www.sas.com/content/dam/SAS/en_us/doc/whitepaper1/manage-analytical-life-cycle-continuous-innovation-106179.pdf>
+- "Data Science & Big Data Analytics: Discovering, Analyzing, Visualizing and Presenting Data" by EMC Education Services: <https://onlinelibrary.wiley.com/doi/book/10.1002/9781119183686>
+- "Managing the Analytics Life Cycle for Decisions at Scale" by SAS: <https://www.sas.com/content/dam/SAS/en_us/doc/whitepaper1/manage-analytical-life-cycle-continuous-innovation-106179.pdf>
 

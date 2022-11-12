@@ -146,7 +146,7 @@ knitr::include_graphics("images/r-studio/files-pane-1.png", dpi = 270)
 
 ## Resources
 
-- "Editing and Executing Code in the RStudio IDE" from the R Studio Support team <https://support.rstudio.com/hc/en-us/articles/200484448-Editing-and-Executing-Code>
-- "Code Folding and Sections in the RStudio IDE" from the R Studio Support team <https://support.rstudio.com/hc/en-us/articles/200484568-Code-Folding-and-Sections-in-the-RStudio-IDE>
-- "Keyboard Shortcuts in the RStudio IDE" from the R Studio Support team <https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE>
-- "Navigating Code in the RStudio IDE" from the R Studio Support team <https://support.rstudio.com/hc/en-us/articles/200710523-Navigating-Code-in-the-RStudio-IDE>
+- "Editing and Executing Code in the RStudio IDE" from the R Studio Support team: <https://support.rstudio.com/hc/en-us/articles/200484448-Editing-and-Executing-Code>
+- "Code Folding and Sections in the RStudio IDE" from the R Studio Support team: <https://support.rstudio.com/hc/en-us/articles/200484568-Code-Folding-and-Sections-in-the-RStudio-IDE>
+- "Keyboard Shortcuts in the RStudio IDE" from the R Studio Support team: <https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE>
+- "Navigating Code in the RStudio IDE" from the R Studio Support team: <https://support.rstudio.com/hc/en-us/articles/200710523-Navigating-Code-in-the-RStudio-IDE>

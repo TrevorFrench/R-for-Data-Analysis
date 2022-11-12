@@ -119,5 +119,5 @@ You can find more information about the "group_by" function and other dplyr "ver
 
 ## Resources
 
-- dplyr "filter" function documentation <https://dplyr.tidyverse.org/reference/filter.html>
-- dplyr "group_by" function documentation <https://dplyr.tidyverse.org/reference/group_by.html>
+- dplyr "filter" function documentation: <https://dplyr.tidyverse.org/reference/filter.html>
+- dplyr "group_by" function documentation: <https://dplyr.tidyverse.org/reference/group_by.html>

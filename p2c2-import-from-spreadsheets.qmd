@@ -73,4 +73,4 @@ All of the headers must match in your CSV files must match exactly for this func
 
 ## Resources
 
-- trevoR package documentation <https://github.com/TrevorFrench/trevoR>
+- trevoR package documentation: <https://github.com/TrevorFrench/trevoR>

@@ -48,3 +48,5 @@ table(iris$Species)
 If you need to keep digging for insights, you can represent your categories however you'd like to using the "group_by" function covered in the last chapter.
 
 ## Resources
+
+- "Exploring Data and Descriptive Statistics (using R)" from princeton: <https://www.princeton.edu/~otorres/sessions/s2r.pdf>

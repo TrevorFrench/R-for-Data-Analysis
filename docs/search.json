@@ -46,7 +46,7 @@
     "href": "p3c1-data-cleaning.html#resources",
     "title": "11  Data Cleaning",
     "section": "11.6 Resources",
-    "text": "11.6 Resources\n\nSeparate function documentation https://tidyr.tidyverse.org/reference/separate.html"
+    "text": "11.6 Resources\n\n“Separate” function documentation: https://tidyr.tidyverse.org/reference/separate.html"
   },
   {
     "objectID": "p0c1-what-is-r.html",
@@ -67,7 +67,7 @@
     "href": "p0c1-what-is-r.html#resources",
     "title": "1  What is R?",
     "section": "1.2 Resources",
-    "text": "1.2 Resources\n\nYou can learn more about R at https://www.r-project.org/\nRead Ross Ihaka’s account of R’s origination here https://www.stat.auckland.ac.nz/~ihaka/downloads/Interface98.pdf\n“What is R?”” by Microsoft https://mran.microsoft.com/documents/what-is-r\nR manuals by the R Development Core Team https://cran.r-project.org/manuals.html\nR-bloggers https://www.r-bloggers.com/\nR User Groups https://www.meetup.com/pro/r-user-groups/\nR Studio Community https://community.rstudio.com/\nThe R Journal https://journal.r-project.org/\nMicrosoft R Application Network https://mran.microsoft.com/\n\n\n\n\n\nHermans, Felienne. 2021. “Hadley Wickham on r and Tidyverse [Audio Podcast].” Software Engineering Radio. https://www.se-radio.net/2021/03/episode-450-hadley-wickham-on-r-and-tidyverse/.\n\n\nIhaka, Ross. 1998. “R : Past and Future History.” https://www.stat.auckland.ac.nz/~ihaka/downloads/Interface98.pdf."
+    "text": "1.2 Resources\n\nYou can learn more about R here: https://www.r-project.org/\nRead Ross Ihaka’s account of R’s origination: https://www.stat.auckland.ac.nz/~ihaka/downloads/Interface98.pdf\n“What is R?”” by Microsoft: https://mran.microsoft.com/documents/what-is-r\nR manuals by the R Development Core Team: https://cran.r-project.org/manuals.html\nR-bloggers: https://www.r-bloggers.com/\nR User Groups: https://www.meetup.com/pro/r-user-groups/\nR Studio Community: https://community.rstudio.com/\nThe R Journal: https://journal.r-project.org/\nMicrosoft R Application Network: https://mran.microsoft.com/\n\n\n\n\n\nHermans, Felienne. 2021. “Hadley Wickham on r and Tidyverse [Audio Podcast].” Software Engineering Radio. https://www.se-radio.net/2021/03/episode-450-hadley-wickham-on-r-and-tidyverse/.\n\n\nIhaka, Ross. 1998. “R : Past and Future History.” https://www.stat.auckland.ac.nz/~ihaka/downloads/Interface98.pdf."
   },
   {
     "objectID": "p0c2-what-is-data-analysis.html",
@@ -88,7 +88,7 @@
     "href": "p0c2-what-is-data-analysis.html#resources",
     "title": "2  What is Data Analysis?",
     "section": "2.2 Resources",
-    "text": "2.2 Resources\n\nData Science & Big Data Analytics: Discovering, Analyzing, Visualizing and Presenting Data https://onlinelibrary.wiley.com/doi/book/10.1002/9781119183686\nManaging the Analytics Life Cycle for Decisions at Scale https://www.sas.com/content/dam/SAS/en_us/doc/whitepaper1/manage-analytical-life-cycle-continuous-innovation-106179.pdf\n\n\n\n\n\nEremenko, Kirill. 2020. “Hadley Wickham Talks Integration and Future of r and Python [Audio Podcast].” SuperDataScience. https://www.superdatascience.com/podcast/hadley-wickham-talks-integration-and-future-of-python-and-r."
+    "text": "2.2 Resources\n\n“Data Science & Big Data Analytics: Discovering, Analyzing, Visualizing and Presenting Data” by EMC Education Services: https://onlinelibrary.wiley.com/doi/book/10.1002/9781119183686\n“Managing the Analytics Life Cycle for Decisions at Scale” by SAS: https://www.sas.com/content/dam/SAS/en_us/doc/whitepaper1/manage-analytical-life-cycle-continuous-innovation-106179.pdf\n\n\n\n\n\nEremenko, Kirill. 2020. “Hadley Wickham Talks Integration and Future of r and Python [Audio Podcast].” SuperDataScience. https://www.superdatascience.com/podcast/hadley-wickham-talks-integration-and-future-of-python-and-r."
   },
   {
     "objectID": "p0c3-setup.html",
@@ -123,7 +123,7 @@
     "href": "p0c3-setup.html#resources",
     "title": "3  Setup",
     "section": "3.4 Resources",
-    "text": "3.4 Resources\n\n“R Installation and Administration” by the R Core Team https://cran.r-project.org/doc/manuals/r-release/R-admin.html"
+    "text": "3.4 Resources\n\n“R Installation and Administration” by the R Core Team: https://cran.r-project.org/doc/manuals/r-release/R-admin.html"
   },
   {
     "objectID": "p1-fundamentals.html",
@@ -179,7 +179,7 @@
     "href": "p1c1-r-studio.html#resources",
     "title": "4  Getting Familiar with R Studio",
     "section": "4.6 Resources",
-    "text": "4.6 Resources\n\n“Editing and Executing Code in the RStudio IDE” from the R Studio Support team https://support.rstudio.com/hc/en-us/articles/200484448-Editing-and-Executing-Code\n“Code Folding and Sections in the RStudio IDE” from the R Studio Support team https://support.rstudio.com/hc/en-us/articles/200484568-Code-Folding-and-Sections-in-the-RStudio-IDE\n“Keyboard Shortcuts in the RStudio IDE” from the R Studio Support team https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE\n“Navigating Code in the RStudio IDE” from the R Studio Support team https://support.rstudio.com/hc/en-us/articles/200710523-Navigating-Code-in-the-RStudio-IDE\n\n\n\n\n\nPaulson, Josh. 2022. Navigating Code in the RStudio IDE. https://support.rstudio.com/hc/en-us/articles/200710523-Navigating-Code-in-the-RStudio-IDE."
+    "text": "4.6 Resources\n\n“Editing and Executing Code in the RStudio IDE” from the R Studio Support team: https://support.rstudio.com/hc/en-us/articles/200484448-Editing-and-Executing-Code\n“Code Folding and Sections in the RStudio IDE” from the R Studio Support team: https://support.rstudio.com/hc/en-us/articles/200484568-Code-Folding-and-Sections-in-the-RStudio-IDE\n“Keyboard Shortcuts in the RStudio IDE” from the R Studio Support team: https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE\n“Navigating Code in the RStudio IDE” from the R Studio Support team: https://support.rstudio.com/hc/en-us/articles/200710523-Navigating-Code-in-the-RStudio-IDE\n\n\n\n\n\nPaulson, Josh. 2022. Navigating Code in the RStudio IDE. https://support.rstudio.com/hc/en-us/articles/200710523-Navigating-Code-in-the-RStudio-IDE."
   },
   {
     "objectID": "p1c2-programming-basics.html",
@@ -249,7 +249,7 @@
     "href": "p1c2-programming-basics.html#resources",
     "title": "5  Programming Basics",
     "section": "5.9 Resources",
-    "text": "5.9 Resources\n\nW3 Schools R Tutorial https://www.w3schools.com/r/\nAssignment Operators: https://stat.ethz.ch/R-manual/R-devel/library/base/html/assignOps.html"
+    "text": "5.9 Resources\n\nW3 Schools R Tutorial: https://www.w3schools.com/r/\nAssignment Operators: https://stat.ethz.ch/R-manual/R-devel/library/base/html/assignOps.html"
   },
   {
     "objectID": "p1c3-data-types.html",
@@ -277,28 +277,28 @@
     "href": "p1c3-data-types.html#character",
     "title": "6  Data Types",
     "section": "6.3 Character",
-    "text": "6.3 Character\n\nx <- \"Hello!\"\ntypeof(x)\n\n[1] \"character\""
+    "text": "6.3 Character\nCharacter data types store text data. When creating characters, make sure you wrap your text in quotation marks.\n\nx <- \"Hello!\"\ntypeof(x)\n\n[1] \"character\""
   },
   {
     "objectID": "p1c3-data-types.html#logical",
     "href": "p1c3-data-types.html#logical",
     "title": "6  Data Types",
     "section": "6.4 Logical",
-    "text": "6.4 Logical\n\nx <- TRUE\ntypeof(x)\n\n[1] \"logical\""
+    "text": "6.4 Logical\nLogical data types store either “TRUE” or “FALSE”. Unlike characters, these data should not be wrapped in quotation marks.\n\nx <- TRUE\ntypeof(x)\n\n[1] \"logical\""
   },
   {
     "objectID": "p1c3-data-types.html#raw",
     "href": "p1c3-data-types.html#raw",
     "title": "6  Data Types",
     "section": "6.5 Raw",
-    "text": "6.5 Raw\n\nx <- charToRaw(\"Hello!\")\nprint(x)\n\n[1] 48 65 6c 6c 6f 21\n\ntypeof(x)\n\n[1] \"raw\"\n\nx <- intToBits(6L)\nprint(x)\n\n [1] 00 01 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n[26] 00 00 00 00 00 00 00\n\ntypeof(x)\n\n[1] \"raw\""
+    "text": "6.5 Raw\nUsed less often, the raw data type will store data as raw bytes. YOu can convert character data types to raw data types by using the “charToRaw” function. Similarly, you can convert integer data types to raw data types through the use of the “intToBits” function.\n\nx <- charToRaw(\"Hello!\")\nprint(x)\n\n[1] 48 65 6c 6c 6f 21\n\ntypeof(x)\n\n[1] \"raw\"\n\nx <- intToBits(6L)\nprint(x)\n\n [1] 00 01 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n[26] 00 00 00 00 00 00 00\n\ntypeof(x)\n\n[1] \"raw\""
   },
   {
     "objectID": "p1c3-data-types.html#resources",
     "href": "p1c3-data-types.html#resources",
     "title": "6  Data Types",
     "section": "6.6 Resources",
-    "text": "6.6 Resources\n\nW3 Schools https://www.w3schools.com/r/r_data_types.asp"
+    "text": "6.6 Resources\n\nW3 Schools: https://www.w3schools.com/r/r_data_types.asp\n“Bits and Bytes” from Stanford CS 101: https://web.stanford.edu/class/cs101/bits-bytes.html"
   },
   {
     "objectID": "p1c4-data-structures.html",
@@ -354,14 +354,14 @@
     "href": "p1exercises.html",
     "title": "Exercises",
     "section": "",
-    "text": "Exercise: 5-A\n\n\n\nWrite a function called “multiply” that will accept two numbers as arguments and will output the product of those two numbers when called as is demonstrated below.\nmultiply(3, 3)\n\n# [1] 9\n\n\n\n\n\n\n\n\nExercise: 5-B\n\n\n\nWrite an equation which will return the remainder of 12 divided by 8.\n\n\n\n\n\n\n\n\nExercise: 5-C\n\n\n\nWrite an equation which will return the remainder of 36 divided by 10.\n\n\n\n\n\n\n\n\nExercise: 5-D\n\n\n\nWrite a “while” loop which prints all even numbers from 0 to 10.\n\n\n\n\n\n\n\n\nExercise: 5-E\n\n\n\nYou are given a vector that looks like this:\nnumbers <- c(0:12)\nWrite a for loop which loops through your vector and prints any element that is greater than or equal to 3."
+    "text": "Exercise: 5-A\n\n\n\nWrite a function called “multiply” that will accept two numbers as arguments and will output the product of those two numbers when called as is demonstrated below.\nmultiply(3, 3)\n\n# [1] 9\n\n\n\n\n\n\n\n\nExercise: 5-B\n\n\n\nWrite an equation which will return the remainder of 12 divided by 8.\n\n\n\n\n\n\n\n\nExercise: 5-C\n\n\n\nWrite an equation which will return the remainder of 36 divided by 10.\n\n\n\n\n\n\n\n\nExercise: 5-D\n\n\n\nWrite a “while” loop which prints all even numbers from 0 to 10.\n\n\n\n\n\n\n\n\nExercise: 5-E\n\n\n\nYou are given a vector that looks like this:\nnumbers <- c(0:12)\nWrite a for loop which loops through your vector and prints any element that is greater than or equal to 3.\n\n\n\n\n\n\n\n\nExercise: 6-A\n\n\n\nConvert the following character variable to a variable with the data type “raw”:\nx <- \"Trevor rocks\"\nYou should store your raw data in a variable named “raw_data”, print the data to the console, and check the data type with the “typeof” function. Your output should look like the following:\nprint(raw_data)\n# [1] 54 72 65 76 6f 72 20 72 6f 63 6b 73\ntypeof(raw_data)\n# [1] \"raw\"\n\n\n\n\n\n\n\n\nExercise: 6-B\n\n\n\nCreate a variable named “spending” and give it a value of 120. Then create a variable named “budget” and give it a value of 100. Next, check whether spending is greater than budget and store the resulting logical data in a variable named “over_budget”. Finally, print the value of “over_budget” variable and check it’s data type with the “typeof” function.\nYour final output should look like this:\nprint(over_budget)\n# [1] TRUE\ntypeof(over_budget)\n# [1] \"logical\"\n\n\n\n\n\n\n\n\nExercise: 7-A\n\n\n\nCreate a vector named “animal” and give it the following three values: “cow”, “cat”, “pig”. Create a second vector named “sound” and give it the following three values: “moo”, “meow”, “oink”. Finally, create a data frame named “animal_sounds” and assign each of these vectors to be a column.\nAfter printing the resulting data frame to the console, you should get the following output:\n#   animal sound\n# 1    cow   moo\n# 2    cat  meow\n# 3    pig  oink"
   },
   {
     "objectID": "p1exercises.html#answers",
     "href": "p1exercises.html#answers",
     "title": "Exercises",
     "section": "Answers",
-    "text": "Answers\n\n\n\n\n\n\nAnswer: 5-A\n\n\n\nOne way you could accomplish this task is demonstrated in the following solution.\nmultiply <- function(x, y) {\n  return (x * y)\n}\n\n\n\n\n\n\n\n\nAnswer: 5-B\n\n\n\nA remainder is referred to as “modulus” in programming. We can use the “%%” operator to accomplish this. For this example, the output of your equation should be 4.\n12 %% 8\n# [1] 4\n\n\n\n\n\n\n\n\nAnswer: 5-C\n\n\n\nA remainder is referred to as “modulus” in programming. We can use the “%%” operator to accomplish this. For this example, the output of your equation should be 6.\n36 %% 10\n# [1] 6\n\n\n\n\n\n\n\n\nAnswer: 5-D\n\n\n\nIt’s possible for this task to be accomplished in several ways; however, the output of your program should always look like this:\n# [1] 0\n# [1] 2\n# [1] 4\n# [1] 6\n# [1] 8\n# [1] 10\nHere’s one way you could write your while loop to achieve this output:\ni <- 0\n\nwhile (i <= 10) {\n  print(i)\n  i <- i + 2\n}\n\n\n\n\n\n\n\n\nAnswer: 5-E\n\n\n\nIt’s possible for this task to be accomplished in several ways; however, the output of your program should always look like this:\n# [1] 3\n# [1] 4\n# [1] 5\n# [1] 6\n# [1] 7\n# [1] 8\n# [1] 9\n# [1] 10\n# [1] 11\n# [1] 12\nHere’s one way you could write your for loop to achieve this output:\nnumbers <- c(0:12)\n\nfor (number in numbers) {\n  if (number >= 3) {\n    print(number)\n  }\n}"
+    "text": "Answers\n\n\n\n\n\n\nAnswer: 5-A\n\n\n\nOne way you could accomplish this task is demonstrated in the following solution.\nmultiply <- function(x, y) {\n  return (x * y)\n}\n\n\n\n\n\n\n\n\nAnswer: 5-B\n\n\n\nA remainder is referred to as “modulus” in programming. We can use the “%%” operator to accomplish this. For this example, the output of your equation should be 4.\n12 %% 8\n# [1] 4\n\n\n\n\n\n\n\n\nAnswer: 5-C\n\n\n\nA remainder is referred to as “modulus” in programming. We can use the “%%” operator to accomplish this. For this example, the output of your equation should be 6.\n36 %% 10\n# [1] 6\n\n\n\n\n\n\n\n\nAnswer: 5-D\n\n\n\nIt’s possible for this task to be accomplished in several ways; however, the output of your program should always look like this:\n# [1] 0\n# [1] 2\n# [1] 4\n# [1] 6\n# [1] 8\n# [1] 10\nHere’s one way you could write your while loop to achieve this output:\ni <- 0\n\nwhile (i <= 10) {\n  print(i)\n  i <- i + 2\n}\n\n\n\n\n\n\n\n\nAnswer: 5-E\n\n\n\nIt’s possible for this task to be accomplished in several ways; however, the output of your program should always look like this:\n# [1] 3\n# [1] 4\n# [1] 5\n# [1] 6\n# [1] 7\n# [1] 8\n# [1] 9\n# [1] 10\n# [1] 11\n# [1] 12\nHere’s one way you could write your for loop to achieve this output:\nnumbers <- c(0:12)\n\nfor (number in numbers) {\n  if (number >= 3) {\n    print(number)\n  }\n}\n\n\n\n\n\n\n\n\nAnswer: 6-A\n\n\n\nYou can accomplish this task through the “charToRaw” function.\nx <- \"Trevor rocks\"\nraw_data <- charToRaw(x)\nprint(raw_data)\n# [1] 54 72 65 76 6f 72 20 72 6f 63 6b 73\ntypeof(raw_data)\n# [1] \"raw\"\n\n\n\n\n\n\n\n\nAnswer: 6-B\n\n\n\nThe following example demonstrates how you can accomplish this task.\nspending <- 120\nbudget <- 100\nover_budget <- spending > budget\nprint(over_budget)\n# [1] TRUE\ntypeof(over_budget)\n# [1] \"logical\"\n\n\n\n\n\n\n\n\nAnswer: 7-A\n\n\n\nThe following example demonstrates how you can accomplish this task.\nanimal <- c(\"cow\", \"cat\", \"pig\")\nsound <- c(\"moo\", \"meow\", \"oink\")\nanimal_sounds <- data.frame(animal = animal, sound = sound)\n\nprint(animal_sounds)\n#   animal sound\n# 1    cow   moo\n# 2    cat  meow\n# 3    pig  oink"
   },
   {
     "objectID": "p2-data-acquisition.html",
@@ -396,7 +396,7 @@
     "href": "p2c1-included-datasets.html#resources",
     "title": "8  Included Datasets",
     "section": "8.3 Resources",
-    "text": "8.3 Resources\n\nList of datasets available in Base R https://www.rdocumentation.org/packages/datasets/versions/3.6.2"
+    "text": "8.3 Resources\n\nList of datasets available in Base R: https://www.rdocumentation.org/packages/datasets/versions/3.6.2"
   },
   {
     "objectID": "p2c2-import-from-spreadsheets.html",
@@ -431,14 +431,14 @@
     "href": "p2c2-import-from-spreadsheets.html#resources",
     "title": "9  Import from Spreadsheets",
     "section": "9.4 Resources",
-    "text": "9.4 Resources\n\ntrevoR package documentation https://github.com/TrevorFrench/trevoR"
+    "text": "9.4 Resources\n\ntrevoR package documentation: https://github.com/TrevorFrench/trevoR"
   },
   {
     "objectID": "p2c3-working-with-apis.html",
     "href": "p2c3-working-with-apis.html",
     "title": "10  Working with APIs",
     "section": "",
-    "text": "API stands for Application Programming Interface. These sorts of tools are commonly used to programmatically pull data from a third party resource. This chapter demonstrates how one can begin to leverage these tools in their own workflows."
+    "text": "API stands for Application Programming Interface. These sorts of tools are commonly used to programmatically pull data from a third party resource. This chapter demonstrates how one can begin to leverage these tools in their own workflows.\nThe following example uses the Helium API to return data about it’s blockchain network."
   },
   {
     "objectID": "p2c3-working-with-apis.html#install-packages",
@@ -487,7 +487,7 @@
     "href": "p2c3-working-with-apis.html#resources",
     "title": "10  Working with APIs",
     "section": "10.7 Resources",
-    "text": "10.7 Resources\n\nBlog post by Trevor French https://medium.com/trevor-french/api-calls-in-r-136290ead81d\n\n\n10.7.1 Helpful APIs"
+    "text": "10.7 Resources\n\nBlog post by Trevor French: https://medium.com/trevor-french/api-calls-in-r-136290ead81d\n\n\n10.7.1 Helpful APIs\n\nMeta Graph API: https://developers.facebook.com/docs/graph-api/\nTwitter API: https://developer.twitter.com/en/docs/twitter-api\nNASA APIs: https://api.nasa.gov/\nEtherscan API: https://etherscan.io/apis\nCovalent API: https://www.covalenthq.com/docs/api/#/0/0/USD/1\nEDGAR APIs from the SEC: https://www.sec.gov/edgar/sec-api-documentation\nWeather API: https://openweathermap.org/api\nHelium API: https://docs.helium.com/api/"
   },
   {
     "objectID": "p2exercises.html",
@@ -543,7 +543,7 @@
     "href": "p3c2-handling-missing-data.html#resources",
     "title": "12  Handling Missing Data",
     "section": "12.5 Resources",
-    "text": "12.5 Resources"
+    "text": "12.5 Resources\n\n“Missing-data Imputation” from Columbia: http://www.stat.columbia.edu/~gelman/arm/missing.pdf"
   },
   {
     "objectID": "p3c3-outliers.html",
@@ -557,7 +557,7 @@
     "href": "p3c3-outliers.html#resources",
     "title": "13  Outliers",
     "section": "13.4 Resources",
-    "text": "13.4 Resources"
+    "text": "13.4 Resources\n“Statistics - Standard Deviation” by W3 Schools: https://www.w3schools.com/statistics/statistics_standard_deviation.php"
   },
   {
     "objectID": "p3c4-organizing-data.html",
@@ -592,7 +592,7 @@
     "href": "p3c4-organizing-data.html#resources",
     "title": "14  Organizing Data",
     "section": "14.4 Resources",
-    "text": "14.4 Resources\n\ndplyr “filter” function documentation https://dplyr.tidyverse.org/reference/filter.html\ndplyr “group_by” function documentation https://dplyr.tidyverse.org/reference/group_by.html"
+    "text": "14.4 Resources\n\ndplyr “filter” function documentation: https://dplyr.tidyverse.org/reference/filter.html\ndplyr “group_by” function documentation: https://dplyr.tidyverse.org/reference/group_by.html"
   },
   {
     "objectID": "p3exercises.html",
@@ -641,7 +641,7 @@
     "href": "p4c1-summary-statistics.html#resources",
     "title": "15  Summary Statistics",
     "section": "15.3 Resources",
-    "text": "15.3 Resources"
+    "text": "15.3 Resources\n\n“Exploring Data and Descriptive Statistics (using R)” from princeton: https://www.princeton.edu/~otorres/sessions/s2r.pdf"
   },
   {
     "objectID": "p4c2-regression.html",
@@ -739,28 +739,28 @@
     "href": "p5c1-spreadsheets.html#export",
     "title": "18  Spreadsheets",
     "section": "18.1 Export",
-    "text": "18.1 Export\n\n18.1.1 Export .csv Files\nIn order to export a dataframe to a CSV file, you can use the “write.csv” function. This function will accept a dataframe followed by the desired output location of your file. Let’s start by creating a sample dataframe to work with.\n\npeople <- c(\"John\", \"Jane\", NA)\nid <- c(12, 27, 23)\ndf <- data.frame(id = id, person = people)\n\n\n\n\n\n\nid\nperson\n\n\n\n\n12\nJohn\n\n\n27\nJane\n\n\n23\nNA\n\n\n\n\n\nNow, let’s specify the location we want to store the CSV file at and execute the “write.csv” function.\n\noutput <- \"C:/File Location/example.csv\"\nwrite.csv(df, output)\n\nThis will give you a file that looks like the following image.\n\n\n\n\n\nYou’ll notice that the first column contains the row numbers of the dataframe. This can be remedied by setting “row.names” to “FALSE” as follows.\n\nwrite.csv(df, output, row.names = FALSE)\n\nThis will yield the following result.\n\n\n\n\n\nFinally, you’ll notice that one of the names is an “NA” value. You can tell R how to handle these values at the time of exporting your file with the “na” argument. This argument will replace any “NA” values with the value of your chooseing. Let’s try replacing the “NA” value with “Unspecified”.\n\nwrite.csv(df, output, row.names = FALSE, na = \"Unspecified\")\n\nThis results in the following output:\n\n\n\n\n\n\n\n18.1.2 Export .xlsx Files\nExcel files are handled very similarly to CSV files with the exception being that you will need to use the “write_excel” function from the “writexl” library. The following code snippet demonstrates how to export your data to an Excel file.\n\nlibrary(writexl)\noutput <- \"C:/File Location/example.xlsx\"\nwrite_xlsx(df, output)\n\n\n# library(openxlsx)\n# head(iris)\n\n# # Create datasets\n\n# setosa <- iris[which(iris$\"Species\" == \"setosa\"),]\n# versicolor <- iris[which(iris$\"Species\" == \"versicolor\"),]\n# virginica <- iris[which(iris$\"Species\" == \"virginica\"),]\n\n# # Create workbook object\n# wb <- createWorkbook()\n\n# # Add worksheets\n# addWorksheet(wb, \"Setosa\")\n# addWorksheet(wb, \"Versicolor\")\n# addWorksheet(wb, \"Virginica\")\n\n# # Create styles\n# heading <- createStyle(fontName = \"Segoe UI\"\n#                         , fontSize = 12\n#                         , fontColour = \"#FFFFFF\"\n#                         , bgFill = \"#244062\"\n#                         , textDecoration = \"bold\")\n\n# body <- createStyle(fontName = \"Segoe UI\", fontSize = 12)\n\n# # Add data\n# writeData(wb, \"Setosa\", setosa, startCol = 1, startRow = 1, rowNames = TRUE)\n\n# # Apply styles\n# addStyle(wb, \"Setosa\", cols = 1:length(setosa), rows = 1, style = heading, gridExpand = TRUE)\n# addStyle(wb, \"Setosa\", cols = 1:length(setosa), rows = 2:nrow(setosa), style = body, gridExpand = TRUE)\n\n# saveWorkbook(wb, \"C:/Users/Trevor French/OneDrive - TaxBit/Desktop/filetest.xlsx\", overwrite = TRUE)\n# COlor\n# row names False\n# Formulas\n# show a way to do it with loops as well\n# createStyle(\n#   fontName = NULL,\n#   fontSize = NULL,\n#   fontColour = NULL,\n#   numFmt = openxlsx_getOp(\"numFmt\", \"GENERAL\"),\n#   border = NULL,\n#   borderColour = openxlsx_getOp(\"borderColour\", \"black\"),\n#   borderStyle = openxlsx_getOp(\"borderStyle\", \"thin\"),\n#   bgFill = NULL,\n#   fgFill = NULL,\n#   halign = NULL,\n#   valign = NULL,\n#   textDecoration = NULL,\n#   wrapText = FALSE,\n#   textRotation = NULL,\n#   indent = NULL,\n#   locked = NULL,\n#   hidden = NULL\n# )\n\nsaveworkbook -csvs and xlsx"
+    "text": "18.1 Export\n\n18.1.1 Export .csv Files\nIn order to export a dataframe to a CSV file, you can use the “write.csv” function. This function will accept a dataframe followed by the desired output location of your file. Let’s start by creating a sample dataframe to work with.\n\npeople <- c(\"John\", \"Jane\", NA)\nid <- c(12, 27, 23)\ndf <- data.frame(id = id, person = people)\n\n\n\n\n\n\nid\nperson\n\n\n\n\n12\nJohn\n\n\n27\nJane\n\n\n23\nNA\n\n\n\n\n\nNow, let’s specify the location we want to store the CSV file at and execute the “write.csv” function.\n\noutput <- \"C:/File Location/example.csv\"\nwrite.csv(df, output)\n\nThis will give you a file that looks like the following image.\n\n\n\n\n\nYou’ll notice that the first column contains the row numbers of the dataframe. This can be remedied by setting “row.names” to “FALSE” as follows.\n\nwrite.csv(df, output, row.names = FALSE)\n\nThis will yield the following result.\n\n\n\n\n\nFinally, you’ll notice that one of the names is an “NA” value. You can tell R how to handle these values at the time of exporting your file with the “na” argument. This argument will replace any “NA” values with the value of your chooseing. Let’s try replacing the “NA” value with “Unspecified”.\n\nwrite.csv(df, output, row.names = FALSE, na = \"Unspecified\")\n\nThis results in the following output:\n\n\n\n\n\n\n\n18.1.2 Export .xlsx Files\nExcel files are handled very similarly to CSV files with the exception being that you will need to use the “write_excel” function from the “writexl” library. The following code snippet demonstrates how to export your data to an Excel file.\n\nlibrary(writexl)\noutput <- \"C:/File Location/example.xlsx\"\nwrite_xlsx(df, output)"
   },
   {
     "objectID": "p5c1-spreadsheets.html#formatting",
     "href": "p5c1-spreadsheets.html#formatting",
     "title": "18  Spreadsheets",
     "section": "18.2 Formatting",
-    "text": "18.2 Formatting\n\ncolors\ntabs\nfont\netc"
+    "text": "18.2 Formatting\nWhen saving Excel workbooks, you can also leverage the “openxlsx” library to format and add formulas to your workbook. Let’s use the iris dataset to demontrate these capabilities.\nThe first thing you’ll need to do is require the “openxlsx” library.\n\nlibrary(openxlsx)\n\nNext, let’s break down the iris dataset into three separate datasets based on species.\n\nsetosa <- iris[which(iris$\"Species\" == \"setosa\"),]\nversicolor <- iris[which(iris$\"Species\" == \"versicolor\"),]\nvirginica <- iris[which(iris$\"Species\" == \"virginica\"),]\n\nNow, we’ll use the “createWorkbook” function from the “openxlsx” library to create a blank workbook object.\n\nwb <- createWorkbook()\n\nWe’ll now add three worksheets to our workbook. These worksheets will ultimately be tabs in our Excel workbook.\n\naddWorksheet(wb, \"Setosa\")\naddWorksheet(wb, \"Versicolor\")\naddWorksheet(wb, \"Virginica\")\n\nWe can also create styles to apply to our workbook. Let’s create a style for our headers as well as a style for the body of our data.\n\nheading <- createStyle(fontName = \"Segoe UI\"\n                        , fontSize = 12\n                        , fontColour = \"#FFFFFF\"\n                        , bgFill = \"#244062\"\n                        , textDecoration = \"bold\")\n\nbody <- createStyle(fontName = \"Segoe UI\", fontSize = 12)\n\nLet’s now apply our three datasets to the workbook object we previously created.\n\n# Write the setosa dataset to the \"Setosa\" worksheet\nwriteData(wb, \"Setosa\", setosa, startCol = 1, startRow = 1, rowNames = FALSE)\n\n# Write the versicolor dataset to the \"Versicolor\" worksheet\nwriteData(wb, \"Versicolor\", versicolor, startCol = 1, startRow = 1, rowNames = FALSE)\n\n# Write the virginica dataset to the \"Virginica\" worksheet\nwriteData(wb, \"Virginica\", virginica, startCol = 1, startRow = 1, rowNames = FALSE)\n\nNow let’s apply our styles to each worksheet.\n\n# Apply styles to \"Setosa\" worksheet\naddStyle(wb, \"Setosa\", cols = 1:length(setosa), rows = 1, style = heading, gridExpand = TRUE)\naddStyle(wb, \"Setosa\", cols = 1:length(setosa), rows = 2:nrow(setosa), style = body, gridExpand = TRUE)\n\n# Apply styles to \"Versicolor\" worksheet\naddStyle(wb, \"Versicolor\", cols = 1:length(versicolor), rows = 1, style = heading, gridExpand = TRUE)\naddStyle(wb, \"Versicolor\", cols = 1:length(versicolor), rows = 2:nrow(versicolor), style = body, gridExpand = TRUE)\n\n# Apply styles to \"Virginica\" worksheet\naddStyle(wb, \"Virginica\", cols = 1:length(virginica), rows = 1, style = heading, gridExpand = TRUE)\naddStyle(wb, \"Virginica\", cols = 1:length(virginica), rows = 2:nrow(virginica), style = body, gridExpand = TRUE)\n\nFinally, we will save our workbook to a file named “iris.xlsx”.\n\nsaveWorkbook(wb, \"iris.xlsx\", overwrite = TRUE)\n\nThis will result in a workbook that looks like the following image.\n\n\n\n\n\nThe full script is located below.\n\nlibrary(openxlsx)\n\n# Create datasets\nsetosa <- iris[which(iris$\"Species\" == \"setosa\"),]\nversicolor <- iris[which(iris$\"Species\" == \"versicolor\"),]\nvirginica <- iris[which(iris$\"Species\" == \"virginica\"),]\n\n# Create workbook object\nwb <- createWorkbook()\n\n#Add worksheets\naddWorksheet(wb, \"Setosa\")\naddWorksheet(wb, \"Versicolor\")\naddWorksheet(wb, \"Virginica\")\n\n# Create Styles\nheading <- createStyle(fontName = \"Segoe UI\"\n                       , fontSize = 12\n                       , fontColour = \"#FFFFFF\"\n                       , bgFill = \"#244062\"\n                       , textDecoration = \"bold\")\n\nbody <- createStyle(fontName = \"Segoe UI\", fontSize = 12)\n\n# Write the setosa dataset to the \"Setosa\" worksheet\nwriteData(wb, \"Setosa\", setosa, startCol = 1, startRow = 1, rowNames = FALSE)\n\n# Write the versicolor dataset to the \"Versicolor\" worksheet\nwriteData(wb, \"Versicolor\", versicolor, startCol = 1, startRow = 1, rowNames = FALSE)\n\n# Write the virginica dataset to the \"Virginica\" worksheet\nwriteData(wb, \"Virginica\", virginica, startCol = 1, startRow = 1, rowNames = FALSE)\n\n# Apply styles to \"Setosa\" worksheet\naddStyle(wb, \"Setosa\", cols = 1:length(setosa), rows = 1, style = heading, gridExpand = TRUE)\naddStyle(wb, \"Setosa\", cols = 1:length(setosa), rows = 2:nrow(setosa), style = body, gridExpand = TRUE)\n\n# Apply styles to \"Versicolor\" worksheet\naddStyle(wb, \"Versicolor\", cols = 1:length(versicolor), rows = 1, style = heading, gridExpand = TRUE)\naddStyle(wb, \"Versicolor\", cols = 1:length(versicolor), rows = 2:nrow(versicolor), style = body, gridExpand = TRUE)\n\n# Apply styles to \"Virginica\" worksheet\naddStyle(wb, \"Virginica\", cols = 1:length(virginica), rows = 1, style = heading, gridExpand = TRUE)\naddStyle(wb, \"Virginica\", cols = 1:length(virginica), rows = 2:nrow(virginica), style = body, gridExpand = TRUE)\n\nsaveWorkbook(wb, \"iris.xlsx\", overwrite = TRUE)\n\nYou may notice that this script is a little longer than it needs to be. Let’s try to simplify it with a loop.\nThe following script will accomplish the exact same thing as the first script.\n\nlibrary(openxlsx)\n\nsetosa <- iris[which(iris$\"Species\" == \"setosa\"),]\nversicolor <- iris[which(iris$\"Species\" == \"versicolor\"),]\nvirginica <- iris[which(iris$\"Species\" == \"virginica\"),]\n\nwb <- createWorkbook()\n\nheading <- createStyle(fontName = \"Segoe UI\"\n                       , fontSize = 12\n                       , fontColour = \"#FFFFFF\"\n                       , bgFill = \"#244062\"\n                       , textDecoration = \"bold\")\n\nbody <- createStyle(fontName = \"Segoe UI\", fontSize = 12)\n\ndatasets <- list(setosa, virginica, versicolor)\nworksheets <- c(\"Setosa\", \"Virginica\", \"Versicolor\")\n\nfor (i in 1:3) {\n  df <- as.data.frame(datasets[i])\n  addWorksheet(wb, worksheets[i])\n  writeData(wb, worksheets[i], df, startCol = 1, startRow = 1, rowNames = FALSE)\n  addStyle(wb, worksheets[i], cols = 1:length(df), rows = 1, style = heading, gridExpand = TRUE)\n  addStyle(wb, worksheets[i], cols = 1:length(df), rows = 2:nrow(df), style = body, gridExpand = TRUE)\n}\n\nsaveWorkbook(wb, \"iris.xlsx\", overwrite = TRUE)"
   },
   {
     "objectID": "p5c1-spreadsheets.html#formulas",
     "href": "p5c1-spreadsheets.html#formulas",
     "title": "18  Spreadsheets",
     "section": "18.3 Formulas",
-    "text": "18.3 Formulas"
+    "text": "18.3 Formulas\nIf we wanted to add another column to each of our worksheets that used an Excel formula to determine the ratio between the sepal length and the sepal width, we could use the “writeFormula” function to accomplish that.\nThe following example uses a loop that creates a formula for each row which divides the respective value in column A by the the respective value in column B. Next we add the heading style to the first row in column six and add a header named “Sepal.Ratio”. Finally, we write the formula vector to column six beginning on row 2.\n\nlibrary(openxlsx)\n\nsetosa <- iris[which(iris$\"Species\" == \"setosa\"),]\nversicolor <- iris[which(iris$\"Species\" == \"versicolor\"),]\nvirginica <- iris[which(iris$\"Species\" == \"virginica\"),]\n\nwb <- createWorkbook()\n\nheading <- createStyle(fontName = \"Segoe UI\"\n                       , fontSize = 12\n                       , fontColour = \"#FFFFFF\"\n                       , bgFill = \"#244062\"\n                       , textDecoration = \"bold\")\n\nbody <- createStyle(fontName = \"Segoe UI\", fontSize = 12)\n\ndatasets <- list(setosa, virginica, versicolor)\nworksheets <- c(\"Setosa\", \"Virginica\", \"Versicolor\")\n\nfor (i in 1:3) {\n  df <- as.data.frame(datasets[i])\n  addWorksheet(wb, worksheets[i])\n  writeData(wb, worksheets[i], df, startCol = 1, startRow = 1, rowNames = FALSE)\n  addStyle(wb, worksheets[i], cols = 1:length(df), rows = 1, style = heading, gridExpand = TRUE)\n  addStyle(wb, worksheets[i], cols = 1:length(df), rows = 2:nrow(df), style = body, gridExpand = TRUE)\n  \n  formula <- c()\n  \n  for (x in 2:(nrow(df) + 1)) {\n    formula <- append(formula, paste(\"A\", x, \"/B\", x, sep = ''))\n  }\n\n  addStyle(wb, worksheets[i], cols = 6, rows = 1, style = heading, gridExpand = TRUE)\n  writeData(wb, worksheets[i], \"Sepal.Ratio\", startCol = 6, startRow = 1, rowNames = FALSE)\n  writeFormula(wb, worksheets[i], formula, startCol = 6, startRow = 2)\n\n}\n\nsaveWorkbook(wb, \"iris.xlsx\", overwrite = TRUE)\n\nThis gives us an Excel workbook that looks like the following image."
   },
   {
     "objectID": "p5c1-spreadsheets.html#resources",
     "href": "p5c1-spreadsheets.html#resources",
     "title": "18  Spreadsheets",
     "section": "18.4 Resources",
-    "text": "18.4 Resources"
+    "text": "18.4 Resources\n\nopenxlsx documentation: https://cran.r-project.org/web/packages/openxlsx/openxlsx.pdf"
   },
   {
     "objectID": "p5c2-r-markdown.html",
@@ -1027,5 +1027,12 @@
     "title": "20  R Shiny",
     "section": "20.6 Resources",
     "text": "20.6 Resources\n\nResource: https://shiny.rstudio.com/"
+  },
+  {
+    "objectID": "p1c4-data-structures.html#resources",
+    "href": "p1c4-data-structures.html#resources",
+    "title": "7  Data Structures",
+    "section": "7.7 Resources",
+    "text": "7.7 Resources\n\nW3 Schools: https://www.w3schools.com/r/r_vectors.asp"
   }
 ]
