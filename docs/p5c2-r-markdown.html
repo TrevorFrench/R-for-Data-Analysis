@@ -320,11 +320,10 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#format-options-all-of-the-output-options" id="toc-format-options-all-of-the-output-options" class="nav-link active" data-scroll-target="#format-options-all-of-the-output-options"> <span class="header-section-number">19.1</span> Format Options (All of the output options)</a></li>
-  <li><a href="#example-maybe-pdf-and-another-section-for-htmlpowerpointetc." id="toc-example-maybe-pdf-and-another-section-for-htmlpowerpointetc." class="nav-link" data-scroll-target="#example-maybe-pdf-and-another-section-for-htmlpowerpointetc."> <span class="header-section-number">19.2</span> Example (maybe pdf? and another section for html/powerpoint/etc.)</a></li>
-  <li><a href="#including-plots" id="toc-including-plots" class="nav-link" data-scroll-target="#including-plots"> <span class="header-section-number">19.3</span> Including Plots</a></li>
-  <li><a href="#r-notebook" id="toc-r-notebook" class="nav-link" data-scroll-target="#r-notebook"> <span class="header-section-number">19.4</span> R Notebook</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"> <span class="header-section-number">19.5</span> Resources</a></li>
+  <li><a href="#format-options" id="toc-format-options" class="nav-link active" data-scroll-target="#format-options"> <span class="header-section-number">19.1</span> Format Options</a></li>
+  <li><a href="#html-document-example" id="toc-html-document-example" class="nav-link" data-scroll-target="#html-document-example"> <span class="header-section-number">19.2</span> HTML Document Example</a></li>
+  <li><a href="#r-notebook" id="toc-r-notebook" class="nav-link" data-scroll-target="#r-notebook"> <span class="header-section-number">19.3</span> R Notebook</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"> <span class="header-section-number">19.4</span> Resources</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/TrevorFrench/R-for-Data-Analysis/edit/main/p5c2-r-markdown.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -348,49 +347,127 @@ ul.task-list{list-style: none;}
 </header>
 
 <p>R Markdown allows you to create documents in a programmatic fashion that lends itself towards reproducibility. This chapter will cover the different formats that are available in R as well as how to create them.</p>
-<p>Can we do image beside text right here?</p>
+<section id="format-options" class="level2" data-number="19.1">
+<h2 data-number="19.1" class="anchored" data-anchor-id="format-options"><span class="header-section-number">19.1</span> Format Options</h2>
+<p>We’ll begin by creating a new document by selecting the “New File” button towards the top left corner of R Studio and choosing “R Markdown” from the dropdown menu.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="images/reporting/create-markdown.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 40%;" width="500"></p>
 </div>
 </div>
-<section id="format-options-all-of-the-output-options" class="level2" data-number="19.1">
-<h2 data-number="19.1" class="anchored" data-anchor-id="format-options-all-of-the-output-options"><span class="header-section-number">19.1</span> Format Options (All of the output options)</h2>
+<p>This will display a menu that looks like the following image.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/r-markdown-1.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<p>You’ll notice that you have four main options on the left-hand side: “Document”, “Presentation”, “Shiny”, and “From Template”.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/r-markdown-2.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<p>Each of these options will have several sub-options. The “Document” option, for example is selected by default and you can see there are three sub-options on the right-hand side: “HTML”, “PDF”, and “Word”.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/r-markdown-3.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<p>The “Presentation” option allows you to create slide-based presentations in either HTML, PDF, or PowerPoint format.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/r-markdown-4.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<p>The “Shiny” option allows you to create either presentations or documents which include interactive Shiny components.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/r-markdown-5.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<p>Finally, the “From Template” option will display several options for you to leverage pre-made templates.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/r-markdown-6.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
 </section>
-<section id="example-maybe-pdf-and-another-section-for-htmlpowerpointetc." class="level2" data-number="19.2">
-<h2 data-number="19.2" class="anchored" data-anchor-id="example-maybe-pdf-and-another-section-for-htmlpowerpointetc."><span class="header-section-number">19.2</span> Example (maybe pdf? and another section for html/powerpoint/etc.)</h2>
+<section id="html-document-example" class="level2" data-number="19.2">
+<h2 data-number="19.2" class="anchored" data-anchor-id="html-document-example"><span class="header-section-number">19.2</span> HTML Document Example</h2>
+<p>Let’s choose the HTML sub-option from the Document option and select “OK”.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/r-markdown-7.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<p>This will result in a new file in your source pane that looks similar to the following image.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/r-markdown-8.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<p>You can either continue to edit your document with markdown code or you can select the “visual” option towards the top-left corner of the source pane to have more of a traditional text editor experience.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/r-markdown-9.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<p>Finally, we can render our document by selecting the “knit” button.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/r-markdown-10.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<p>Selecting this will prompt you to save your file. After you do so, your rendered document will appear in your viewer tab.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/r-markdown-11.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<p>In addition to the preview being displayed in your viewer tab, you should now also have an HTML file located in the same place as you saved your R Markdown file. You can select this file to preview it in your browser as well as send it to others for them to preview.</p>
 </section>
-<section id="including-plots" class="level2" data-number="19.3">
-<h2 data-number="19.3" class="anchored" data-anchor-id="including-plots"><span class="header-section-number">19.3</span> Including Plots</h2>
-</section>
-<section id="r-notebook" class="level2" data-number="19.4">
-<h2 data-number="19.4" class="anchored" data-anchor-id="r-notebook"><span class="header-section-number">19.4</span> R Notebook</h2>
-<p>Some more technical audiences may require reporting which includes your methodology. This is where R Notebooks come in. R Notebooks are a subset of R Markdown documents that allow you to display and execute code directly in your document.</p>
-<ul>
-<li>Subset of R Markdown</li>
-</ul>
+<section id="r-notebook" class="level2" data-number="19.3">
+<h2 data-number="19.3" class="anchored" data-anchor-id="r-notebook"><span class="header-section-number">19.3</span> R Notebook</h2>
+<p>Another subset of R Markdown is R Notebooks. There is a lot of crossover between regular R Markdown documents and R Notebooks; however, R notebooks will generally be used for more technical audiences such as other R users or even just to organize your own thought processes while coding.</p>
+<p>Let’s try creating a notebook by selecting the “New File” button towards the top left corner of R Studio and choosing “R Notebook” from the dropdown menu.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="images/reporting/create-notebook.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 40%;" width="500"></p>
 </div>
 </div>
+<p>This will generate a new file in your source pane that looks like the following image.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="images/reporting/sample-notebook.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
 </div>
 </div>
+<p>You’ll notice that there is no “knit” option like there is in an ordinary R Markdown file. This is because this file is meant to be shared in it’s current format rather than as a rendered document. The “knit” option is replaced by a “preview” option. Selecting this option will result in the following output.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="images/reporting/preview-notebook.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
 </div>
 </div>
+<p>This generates a preview of your file in the viewer tab. You may also notice that the output of the “plot(cars)” code has not been rendered in the preview. This is because code has to be explicitly run in R Notebooks in order for it to be displayed in the rendered preview.</p>
+<p>Let’s run the code by pressing the green play button inside the code chunk.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/r-markdown-12.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<p>Now if you preview the notebook again you’ll see the plot output included.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/r-markdown-13.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
 </section>
-<section id="resources" class="level2" data-number="19.5">
-<h2 data-number="19.5" class="anchored" data-anchor-id="resources"><span class="header-section-number">19.5</span> Resources</h2>
+<section id="resources" class="level2" data-number="19.4">
+<h2 data-number="19.4" class="anchored" data-anchor-id="resources"><span class="header-section-number">19.4</span> Resources</h2>
 <ul>
-<li><p>Formats: https://rmarkdown.rstudio.com/formats.html</p></li>
-<li><p>Resource: https://rmarkdown.rstudio.com/</p></li>
-<li><p>Resource: https://rmarkdown.rstudio.com/lesson-10.html</p></li>
+<li>“Document Templates” from “R Markdown: The Definitive Guide”: <a href="https://bookdown.org/yihui/rmarkdown/document-templates.html?version=2022.07.2%2B576&amp;mode=desktop" class="uri">https://bookdown.org/yihui/rmarkdown/document-templates.html?version=2022.07.2%2B576&amp;mode=desktop</a></li>
+<li>R Markdown Formats: <a href="https://rmarkdown.rstudio.com/formats.html" class="uri">https://rmarkdown.rstudio.com/formats.html</a></li>
+<li>R Markdown Home Page: <a href="https://rmarkdown.rstudio.com/" class="uri">https://rmarkdown.rstudio.com/</a></li>
+<li>R Markdown Notebooks: <a href="https://rmarkdown.rstudio.com/lesson-10.html" class="uri">https://rmarkdown.rstudio.com/lesson-10.html</a></li>
 </ul>
 
 

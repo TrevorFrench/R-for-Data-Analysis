@@ -767,7 +767,7 @@
     "href": "p5c2-r-markdown.html",
     "title": "19  R Markdown",
     "section": "",
-    "text": "R Markdown allows you to create documents in a programmatic fashion that lends itself towards reproducibility. This chapter will cover the different formats that are available in R as well as how to create them.\nCan we do image beside text right here?"
+    "text": "R Markdown allows you to create documents in a programmatic fashion that lends itself towards reproducibility. This chapter will cover the different formats that are available in R as well as how to create them."
   },
   {
     "objectID": "p5c2-r-markdown.html#format-options-all-of-the-output-options",
@@ -794,8 +794,8 @@
     "objectID": "p5c2-r-markdown.html#resources",
     "href": "p5c2-r-markdown.html#resources",
     "title": "19  R Markdown",
-    "section": "19.5 Resources",
-    "text": "19.5 Resources\n\nFormats: https://rmarkdown.rstudio.com/formats.html\nResource: https://rmarkdown.rstudio.com/\nResource: https://rmarkdown.rstudio.com/lesson-10.html"
+    "section": "19.4 Resources",
+    "text": "19.4 Resources\n\n“Document Templates” from “R Markdown: The Definitive Guide”: https://bookdown.org/yihui/rmarkdown/document-templates.html?version=2022.07.2%2B576&mode=desktop\nR Markdown Formats: https://rmarkdown.rstudio.com/formats.html\nR Markdown Home Page: https://rmarkdown.rstudio.com/\nR Markdown Notebooks: https://rmarkdown.rstudio.com/lesson-10.html"
   },
   {
     "objectID": "p5c3-r-notebook.html",
@@ -976,8 +976,8 @@
     "objectID": "p5c2-r-markdown.html#r-notebook",
     "href": "p5c2-r-markdown.html#r-notebook",
     "title": "19  R Markdown",
-    "section": "19.4 R Notebook",
-    "text": "19.4 R Notebook\nSome more technical audiences may require reporting which includes your methodology. This is where R Notebooks come in. R Notebooks are a subset of R Markdown documents that allow you to display and execute code directly in your document.\n\nSubset of R Markdown"
+    "section": "19.3 R Notebook",
+    "text": "19.3 R Notebook\nAnother subset of R Markdown is R Notebooks. There is a lot of crossover between regular R Markdown documents and R Notebooks; however, R notebooks will generally be used for more technical audiences such as other R users or even just to organize your own thought processes while coding.\nLet’s try creating a notebook by selecting the “New File” button towards the top left corner of R Studio and choosing “R Notebook” from the dropdown menu.\n\n\n\n\n\nThis will generate a new file in your source pane that looks like the following image.\n\n\n\n\n\nYou’ll notice that there is no “knit” option like there is in an ordinary R Markdown file. This is because this file is meant to be shared in it’s current format rather than as a rendered document. The “knit” option is replaced by a “preview” option. Selecting this option will result in the following output.\n\n\n\n\n\nThis generates a preview of your file in the viewer tab. You may also notice that the output of the “plot(cars)” code has not been rendered in the preview. This is because code has to be explicitly run in R Notebooks in order for it to be displayed in the rendered preview.\nLet’s run the code by pressing the green play button inside the code chunk.\n\n\n\n\n\nNow if you preview the notebook again you’ll see the plot output included."
   },
   {
     "objectID": "p5c3-r-shiny.html",
@@ -1034,5 +1034,19 @@
     "title": "7  Data Structures",
     "section": "7.7 Resources",
     "text": "7.7 Resources\n\nW3 Schools: https://www.w3schools.com/r/r_vectors.asp"
+  },
+  {
+    "objectID": "p5c2-r-markdown.html#format-options",
+    "href": "p5c2-r-markdown.html#format-options",
+    "title": "19  R Markdown",
+    "section": "19.1 Format Options",
+    "text": "19.1 Format Options\nWe’ll begin by creating a new document by selecting the “New File” button towards the top left corner of R Studio and choosing “R Markdown” from the dropdown menu.\n\n\n\n\n\nThis will display a menu that looks like the following image.\n\n\n\n\n\nYou’ll notice that you have four main options on the left-hand side: “Document”, “Presentation”, “Shiny”, and “From Template”.\n\n\n\n\n\nEach of these options will have several sub-options. The “Document” option, for example is selected by default and you can see there are three sub-options on the right-hand side: “HTML”, “PDF”, and “Word”.\n\n\n\n\n\nThe “Presentation” option allows you to create slide-based presentations in either HTML, PDF, or PowerPoint format.\n\n\n\n\n\nThe “Shiny” option allows you to create either presentations or documents which include interactive Shiny components.\n\n\n\n\n\nFinally, the “From Template” option will display several options for you to leverage pre-made templates."
+  },
+  {
+    "objectID": "p5c2-r-markdown.html#html-document-example",
+    "href": "p5c2-r-markdown.html#html-document-example",
+    "title": "19  R Markdown",
+    "section": "19.2 HTML Document Example",
+    "text": "19.2 HTML Document Example\nLet’s choose the HTML sub-option from the Document option and select “OK”.\n\n\n\n\n\nThis will result in a new file in your source pane that looks similar to the following image.\n\n\n\n\n\nYou can either continue to edit your document with markdown code or you can select the “visual” option towards the top-left corner of the source pane to have more of a traditional text editor experience.\n\n\n\n\n\nFinally, we can render our document by selecting the “knit” button.\n\n\n\n\n\nSelecting this will prompt you to save your file. After you do so, your rendered document will appear in your viewer tab.\n\n\n\n\n\nIn addition to the preview being displayed in your viewer tab, you should now also have an HTML file located in the same place as you saved your R Markdown file. You can select this file to preview it in your browser as well as send it to others for them to preview."
   }
 ]

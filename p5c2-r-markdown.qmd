@@ -2,7 +2,10 @@
 
 R Markdown allows you to create documents in a programmatic fashion that lends itself towards reproducibility. This chapter will cover the different formats that are available in R as well as how to create them.
 
-Can we do image beside text right here?
+## Format Options
+
+We'll begin by creating a new document by selecting the "New File" button towards the top left corner of R Studio and choosing "R Markdown" from the dropdown menu.
+
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 40%;'"}
 #| label: create-markdown
 #| echo: false
@@ -10,17 +13,114 @@ Can we do image beside text right here?
 knitr::include_graphics("images/reporting/create-markdown.png", dpi = 270)
 ```
 
-## Format Options (All of the output options)
+This will display a menu that looks like the following image.
 
-## Example (maybe pdf? and another section for html/powerpoint/etc.)
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: r-markdown-1
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/r-markdown-1.png", dpi = 270)
+```
 
-## Including Plots
+You'll notice that you have four main options on the left-hand side: "Document", "Presentation", "Shiny", and "From Template".
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: r-markdown-2
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/r-markdown-2.png", dpi = 270)
+```
+
+ Each of these options will have several sub-options. The "Document" option, for example is selected by default and you can see there are three sub-options on the right-hand side: "HTML", "PDF", and "Word".
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: r-markdown-3
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/r-markdown-3.png", dpi = 270)
+```
+
+The "Presentation" option allows you to create slide-based presentations in either HTML, PDF, or PowerPoint format.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: r-markdown-4
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/r-markdown-4.png", dpi = 270)
+```
+
+The "Shiny" option allows you to create either presentations or documents which include interactive Shiny components.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: r-markdown-5
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/r-markdown-5.png", dpi = 270)
+```
+
+Finally, the "From Template" option will display several options for you to leverage pre-made templates.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: r-markdown-6
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/r-markdown-6.png", dpi = 270)
+```
+
+## HTML Document Example
+
+Let's choose the HTML sub-option from the Document option and select "OK".
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: r-markdown-7
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/r-markdown-7.png", dpi = 270)
+```
+
+This will result in a new file in your source pane that looks similar to the following image.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: r-markdown-8
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/r-markdown-8.png", dpi = 270)
+```
+
+You can either continue to edit your document with markdown code or you can select the "visual" option towards the top-left corner of the source pane to have more of a traditional text editor experience.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: r-markdown-9
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/r-markdown-9.png", dpi = 270)
+```
+
+Finally, we can render our document by selecting the "knit" button.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: r-markdown-10
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/r-markdown-10.png", dpi = 270)
+```
+
+Selecting this will prompt you to save your file. After you do so, your rendered document will appear in your viewer tab.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: r-markdown-11
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/r-markdown-11.png", dpi = 270)
+```
+
+In addition to the preview being displayed in your viewer tab, you should now also have an HTML file located in the same place as you saved your R Markdown file. You can select this file to preview it in your browser as well as send it to others for them to preview.
 
 ## R Notebook
 
-Some more technical audiences may require reporting which includes your methodology. This is where R Notebooks come in. R Notebooks are a subset of R Markdown documents that allow you to display and execute code directly in your document.
+Another subset of R Markdown is R Notebooks. There is a lot of crossover between regular R Markdown documents and R Notebooks; however, R notebooks will generally be used for more technical audiences such as other R users or even just to organize your own thought processes while coding.
 
-- Subset of R Markdown
+Let's try creating a notebook by selecting the "New File" button towards the top left corner of R Studio and choosing "R Notebook" from the dropdown menu.
 
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 40%;'"}
 #| label: create-notebook
@@ -29,12 +129,16 @@ Some more technical audiences may require reporting which includes your methodol
 knitr::include_graphics("images/reporting/create-notebook.png", dpi = 270)
 ```
 
+This will generate a new file in your source pane that looks like the following image.
+
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
 #| label: sample-notebook
 #| echo: false
 #| out.width: 500
 knitr::include_graphics("images/reporting/sample-notebook.png", dpi = 270)
 ```
+
+You'll notice that there is no "knit" option like there is in an ordinary R Markdown file. This is because this file is meant to be shared in it's current format rather than as a rendered document. The "knit" option is replaced by a "preview" option. Selecting this option will result in the following output.
 
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
 #| label: preview-notebook
@@ -43,10 +147,29 @@ knitr::include_graphics("images/reporting/sample-notebook.png", dpi = 270)
 knitr::include_graphics("images/reporting/preview-notebook.png", dpi = 270)
 ```
 
+This generates a preview of your file in the viewer tab. You may also notice that the output of the "plot(cars)" code has not been rendered in the preview. This is because code has to be explicitly run in R Notebooks in order for it to be displayed in the rendered preview.
+
+Let's run the code by pressing the green play button inside the code chunk.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: r-markdown-12
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/r-markdown-12.png", dpi = 270)
+```
+
+Now if you preview the notebook again you'll see the plot output included.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: r-markdown-13
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/r-markdown-13.png", dpi = 270)
+```
 
 ## Resources
 
-- Formats: https://rmarkdown.rstudio.com/formats.html
-
-- Resource: https://rmarkdown.rstudio.com/
-- Resource: https://rmarkdown.rstudio.com/lesson-10.html
+- "Document Templates" from "R Markdown: The Definitive Guide": <https://bookdown.org/yihui/rmarkdown/document-templates.html?version=2022.07.2%2B576&mode=desktop>
+- R Markdown Formats: <https://rmarkdown.rstudio.com/formats.html>
+- R Markdown Home Page: <https://rmarkdown.rstudio.com/>
+- R Markdown Notebooks: <https://rmarkdown.rstudio.com/lesson-10.html>
