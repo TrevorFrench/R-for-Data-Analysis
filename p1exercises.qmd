@@ -14,6 +14,40 @@ multiply(3, 3)
 ```
 :::
 
+::: callout
+## Exercise: 5-B
+
+Write an equation which will return the remainder of 12 divided by 8.
+
+:::
+
+::: callout
+## Exercise: 5-C
+
+Write an equation which will return the remainder of 36 divided by 10.
+
+:::
+
+::: callout
+## Exercise: 5-D
+
+Write a "while" loop which prints all even numbers from 0 to 10. 
+
+:::
+
+::: callout
+## Exercise: 5-E
+
+You are given a vector that looks like this:
+
+``` r
+numbers <- c(0:12)
+```
+
+Write a for loop which loops through your vector and prints any element that is greater than or equal to 3.
+
+:::
+
 ## Answers
 
 ::: callout
@@ -24,6 +58,85 @@ One way you could accomplish this task is demonstrated in the following solution
 ``` r
 multiply <- function(x, y) {
   return (x * y)
+}
+```
+:::
+
+::: callout
+## Answer: 5-B
+
+A remainder is referred to as "modulus" in programming. We can use the "%%" operator to accomplish this. For this example, the output of your equation should be 4.
+
+``` r
+12 %% 8
+# [1] 4
+```
+:::
+
+::: callout
+## Answer: 5-C
+
+A remainder is referred to as "modulus" in programming. We can use the "%%" operator to accomplish this. For this example, the output of your equation should be 6.
+
+``` r
+36 %% 10
+# [1] 6
+```
+:::
+
+::: callout
+## Answer: 5-D
+
+It's possible for this task to be accomplished in several ways; however, the output of your program should always look like this:
+
+``` r
+# [1] 0
+# [1] 2
+# [1] 4
+# [1] 6
+# [1] 8
+# [1] 10
+```
+
+Here's one way you could write your while loop to achieve this output:
+
+``` r
+i <- 0
+
+while (i <= 10) {
+  print(i)
+  i <- i + 2
+}
+```
+:::
+
+::: callout
+## Answer: 5-E
+
+It's possible for this task to be accomplished in several ways; however, the output of your program should always look like this:
+
+``` r
+# [1] 3
+# [1] 4
+# [1] 5
+# [1] 6
+# [1] 7
+# [1] 8
+# [1] 9
+# [1] 10
+# [1] 11
+# [1] 12
+```
+
+Here's one way you could write your for loop to achieve this output:
+
+``` r
+numbers <- c(0:12)
+
+for (number in numbers) {
+  if (number >= 3) {
+    print(number)
+  }
 }
 ```
 :::

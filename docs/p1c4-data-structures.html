@@ -432,6 +432,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="lists" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="lists"><span class="header-section-number">7.2</span> Lists</h2>
+<p>Lists are a collection of objects. This means that each element can be a different data type (unlike vectors). In the following example we’ll create a list which contains two chracter objects and one vector. This can be accomplished through the use of the “list” function.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>first_name <span class="ot">&lt;-</span> <span class="st">"John"</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>last_name <span class="ot">&lt;-</span> <span class="st">"Smith"</span></span>
@@ -454,6 +455,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="matrices" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="matrices"><span class="header-section-number">7.3</span> Matrices</h2>
+<p>A matrix is a two-dimensional array where the data is all of the same type. In the following example, we’ll create an array which has three rows and four columns.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">matrix</span>(</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">7</span>)</span>
@@ -472,6 +474,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="factors" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="factors"><span class="header-section-number">7.4</span> Factors</h2>
+<p>Factors are used to designate levels within categorical data. In the following example, we’ll use the “factor” function on a vector of assorted color names to receive the “levels” which it contains.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Red"</span>, <span class="st">"Blue"</span>, <span class="st">"Red"</span>, <span class="st">"Yellow"</span>, <span class="st">"Yellow"</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -486,6 +489,7 @@ Levels: Blue Red Yellow</code></pre>
 </section>
 <section id="data-frames" class="level2" data-number="7.5">
 <h2 data-number="7.5" class="anchored" data-anchor-id="data-frames"><span class="header-section-number">7.5</span> Data Frames</h2>
+<p>A data frame contains two-dimensional data. Unlike the matrix data structure, a data frame can contain data of differing types. The following example will create a dataframe with two rows and two columns.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>people <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"John"</span>, <span class="st">"Jane"</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>id <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
@@ -501,6 +505,7 @@ Levels: Blue Red Yellow</code></pre>
 </section>
 <section id="arrays" class="level2" data-number="7.6">
 <h2 data-number="7.6" class="anchored" data-anchor-id="arrays"><span class="header-section-number">7.6</span> Arrays</h2>
+<p>Arrays are objects which can have more than two dimensions. This is sometimes referred to as being “n-dimensional”. The dimensions of the following example are 1 x 4 x 3. You’ll see that the data consist of one row and four columns spread out over a third dimension.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">array</span>(</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">7</span>)</span>

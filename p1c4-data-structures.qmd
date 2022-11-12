@@ -20,6 +20,9 @@ print(x)
 ```
 
 ## Lists
+
+Lists are a collection of objects. This means that each element can be a different data type (unlike vectors). In the following example we'll create a list which contains two chracter objects and one vector. This can be accomplished through the use of the "list" function.
+
 ```{r}
 first_name <- "John"
 last_name <- "Smith"
@@ -31,6 +34,9 @@ print(person)
 ```
 
 ## Matrices
+
+A matrix is a two-dimensional array where the data is all of the same type. In the following example, we'll create an array which has three rows and four columns.
+
 ```{r}
 x <- matrix(
         c(1,3,3,7,1,3,3,7,1,3,3,7)
@@ -42,6 +48,9 @@ print(x)
 ```
 
 ## Factors
+
+Factors are used to designate levels within categorical data. In the following example, we'll use the "factor" function on a vector of assorted color names to receive the "levels" which it contains.
+
 ```{r}
 x <- c("Red", "Blue", "Red", "Yellow", "Yellow")
 
@@ -51,6 +60,9 @@ print(colors)
 ```
 
 ## Data Frames
+
+A data frame contains two-dimensional data. Unlike the matrix data structure, a data frame can contain data of differing types. The following example will create a dataframe with two rows and two columns.
+
 ```{r}
 people <- c("John", "Jane")
 id <- c(1, 2)
@@ -60,6 +72,9 @@ print(df)
 ```
 
 ## Arrays
+
+Arrays are objects which can have more than two dimensions. This is sometimes referred to as being "n-dimensional". The dimensions of the following example are 1 x 4 x 3. You'll see that the data consist of one row and four columns spread out over a third dimension.
+
 ```{r}
 x <- array(
         c(1,3,3,7,1,3,3,7,1,3,3,7)
