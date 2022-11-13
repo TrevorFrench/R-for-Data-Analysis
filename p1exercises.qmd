@@ -9,30 +9,34 @@ Write a function called "multiply" that will accept two numbers as arguments and
 
 ``` r
 multiply(3, 3)
-
 # [1] 9
 ```
 :::
 
 ::: callout
 ## Exercise: 5-B
-
 Write an equation which will return the remainder of 12 divided by 8.
-
 :::
 
 ::: callout
 ## Exercise: 5-C
-
 Write an equation which will return the remainder of 36 divided by 10.
-
 :::
 
 ::: callout
 ## Exercise: 5-D
+Write a "while" loop which prints all even numbers from 0 to 10.
 
-Write a "while" loop which prints all even numbers from 0 to 10. 
+It's possible for this task to be accomplished in several ways; however, the output of your program should always look like this:
 
+``` r
+# [1] 0
+# [1] 2
+# [1] 4
+# [1] 6
+# [1] 8
+# [1] 10
+```
 :::
 
 ::: callout
@@ -46,6 +50,20 @@ numbers <- c(0:12)
 
 Write a for loop which loops through your vector and prints any element that is greater than or equal to 3.
 
+It's possible for this task to be accomplished in several ways; however, the output of your program should always look like this:
+
+``` r
+# [1] 3
+# [1] 4
+# [1] 5
+# [1] 6
+# [1] 7
+# [1] 8
+# [1] 9
+# [1] 10
+# [1] 11
+# [1] 12
+```
 :::
 
 ::: callout
@@ -86,7 +104,6 @@ typeof(over_budget)
 
 ::: callout
 ## Exercise: 7-A
-
 Create a vector named "animal" and give it the following three values: "cow", "cat", "pig". Create a second vector named "sound" and give it the following three values: "moo", "meow", "oink". Finally, create a data frame named "animal_sounds" and assign each of these vectors to be a column.
 
 After printing the resulting data frame to the console, you should get the following output:
@@ -97,7 +114,6 @@ After printing the resulting data frame to the console, you should get the follo
 # 2    cat  meow
 # 3    pig  oink
 ```
-
 :::
 
 ## Answers
@@ -107,10 +123,12 @@ After printing the resulting data frame to the console, you should get the follo
 
 One way you could accomplish this task is demonstrated in the following solution.
 
-``` r
+```{r}
 multiply <- function(x, y) {
   return (x * y)
 }
+
+multiply(3, 3)
 ```
 :::
 
@@ -119,9 +137,8 @@ multiply <- function(x, y) {
 
 A remainder is referred to as "modulus" in programming. We can use the "%%" operator to accomplish this. For this example, the output of your equation should be 4.
 
-``` r
+```{r}
 12 %% 8
-# [1] 4
 ```
 :::
 
@@ -130,29 +147,16 @@ A remainder is referred to as "modulus" in programming. We can use the "%%" oper
 
 A remainder is referred to as "modulus" in programming. We can use the "%%" operator to accomplish this. For this example, the output of your equation should be 6.
 
-``` r
+```{r}
 36 %% 10
-# [1] 6
 ```
 :::
 
 ::: callout
 ## Answer: 5-D
-
-It's possible for this task to be accomplished in several ways; however, the output of your program should always look like this:
-
-``` r
-# [1] 0
-# [1] 2
-# [1] 4
-# [1] 6
-# [1] 8
-# [1] 10
-```
-
 Here's one way you could write your while loop to achieve this output:
 
-``` r
+```{r}
 i <- 0
 
 while (i <= 10) {
@@ -164,25 +168,9 @@ while (i <= 10) {
 
 ::: callout
 ## Answer: 5-E
-
-It's possible for this task to be accomplished in several ways; however, the output of your program should always look like this:
-
-``` r
-# [1] 3
-# [1] 4
-# [1] 5
-# [1] 6
-# [1] 7
-# [1] 8
-# [1] 9
-# [1] 10
-# [1] 11
-# [1] 12
-```
-
 Here's one way you could write your for loop to achieve this output:
 
-``` r
+```{r}
 numbers <- c(0:12)
 
 for (number in numbers) {
@@ -198,13 +186,11 @@ for (number in numbers) {
 
 You can accomplish this task through the "charToRaw" function.
 
-``` r
+```{r}
 x <- "Trevor rocks"
 raw_data <- charToRaw(x)
 print(raw_data)
-# [1] 54 72 65 76 6f 72 20 72 6f 63 6b 73
 typeof(raw_data)
-# [1] "raw"
 ```
 :::
 
@@ -213,14 +199,12 @@ typeof(raw_data)
 
 The following example demonstrates how you can accomplish this task.
 
-``` r
+```{r}
 spending <- 120
 budget <- 100
 over_budget <- spending > budget
 print(over_budget)
-# [1] TRUE
 typeof(over_budget)
-# [1] "logical"
 ```
 :::
 
@@ -229,15 +213,10 @@ typeof(over_budget)
 
 The following example demonstrates how you can accomplish this task.
 
-``` r
+```{r}
 animal <- c("cow", "cat", "pig")
 sound <- c("moo", "meow", "oink")
 animal_sounds <- data.frame(animal = animal, sound = sound)
-
 print(animal_sounds)
-#   animal sound
-# 1    cow   moo
-# 2    cat  meow
-# 3    pig  oink
 ```
 :::

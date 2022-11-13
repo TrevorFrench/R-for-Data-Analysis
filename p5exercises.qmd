@@ -3,23 +3,39 @@
 ## Questions
 
 ::: callout
-## Exercise: 21-A
+## Exercise: 18-A
+Write the first seven rows of the "faithful" dataset to a csv file named "faithful.csv". Make sure you do not include any row names in your output file.
+:::
 
-text
-
-``` r
-x 
-```
+::: callout
+## Exercise: 18-B
+Write the entire "faithful" dataset to an xlsx file using the "saveWorkbook" function. Name the tab (worksheet) that the data is on "data" and make the text in the header row bold.
 :::
 
 ## Answers
 
 ::: callout
-## Answer: 21-A
+## Answer: 18-A
 
-text
+You can accomplish this through the use of the "write.csv" function.
 
 ``` r
-x 
+write.csv(head(faithful, 7), "faithful.csv", row.names = FALSE)
+```
+:::
+
+::: callout
+## Answer: 18-B
+
+The following code will allow you to accomplish this task.
+
+``` r
+library(openxlsx)
+wb <- createWorkbook()
+heading <- createStyle(textDecoration = "bold")
+addWorksheet(wb, "data")
+writeData(wb, "data", faithful, startCol = 1, startRow = 1, rowNames = FALSE)
+addStyle(wb, "data", cols = 1:length(faithful), rows = 1, style = heading, gridExpand = TRUE)
+saveWorkbook(wb, "faithful.xlsx", overwrite = TRUE)
 ```
 :::

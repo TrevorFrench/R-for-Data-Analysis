@@ -34,6 +34,42 @@ Your final output should resemble the following:
 ```
 :::
 
+::: callout
+## Exercise: 16-A
+
+Use the "lm" function to create a linear model using the "ChickWeight" dataset. Your model should predict the "weight" variable using the "Diet" and "Time" variables.
+
+Name your linear model "lm" and then view a summary of your model using the "summary" function. The output of your summary should look like this:
+
+``` r
+# Call:
+# lm(formula = weight ~ Diet + Time, data = ChickWeight)
+
+# Residuals:
+#      Min       1Q   Median       3Q      Max 
+# -136.851  -17.151   -2.595   15.033  141.816 
+
+# Coefficients:
+#             Estimate Std. Error t value Pr(>|t|)    
+# (Intercept)  10.9244     3.3607   3.251  0.00122 ** 
+# Diet2        16.1661     4.0858   3.957 8.56e-05 ***
+# Diet3        36.4994     4.0858   8.933  < 2e-16 ***
+# Diet4        30.2335     4.1075   7.361 6.39e-13 ***
+# Time          8.7505     0.2218  39.451  < 2e-16 ***
+# ---
+# Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+# Residual standard error: 35.99 on 573 degrees of freedom
+# Multiple R-squared:  0.7453,	Adjusted R-squared:  0.7435 
+# F-statistic: 419.2 on 4 and 573 DF,  p-value: < 2.2e-16
+```
+:::
+
+::: callout
+## Exercise: 17-A
+Create a density plot using the "Nile" dataset.
+:::
+
 ## Answers
 
 ::: callout
@@ -43,5 +79,26 @@ Here's how you can accomplish this task:
 
 ```{r}
 summary(mtcars)
+```
+:::
+
+::: callout
+## Answer: 16-A
+
+You can create your model with the following code:
+
+```{r}
+lm <- lm(weight ~ Diet + Time, data = ChickWeight)
+summary(lm)
+```
+:::
+
+::: callout
+## Answer: 17-A
+
+You can create your density plot with the following code:
+
+```{r}
+plot(density(Nile))
 ```
 :::

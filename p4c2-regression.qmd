@@ -2,6 +2,10 @@
 
 Regression is a common statistical technique employed by many to make generalizations as well as predictions about data.
 
+::: callout-note
+The purpose of this chapter is to give readers a high-level overview of how to apply regression techniques in R rather than to give a full introduction to regression itself. However, there are multiple comprehensive resources in the resources section for interested readers.
+:::
+
 ## Linear Regression
 
 The first kind of regression we'll cover is linear regression. Linear regression will use your data to come up with a linear model that describes the general trend of your data. Generally speaking, a linear model will consist of a dependent variable (y), at least one independent variable (x), coefficients to go along with each independent variable, and an intercept. Here's one common linear model you may remember:
@@ -104,8 +108,8 @@ summary(glm)
 
 ## Resources
 
-- Need to add more complete regression resources here
+- "Lecture 9 - Linear regression in R" by Professor Alexandra Chouldechova at Carnegie Mellon University: <https://www.andrew.cmu.edu/user/achoulde/94842/lectures/lecture09/lecture09-94842.html>
 
-- Need to explain summary of logistic regression output
+- "Logistic Regression" by Erin Bugbee and Jared Wilber: <https://mlu-explain.github.io/logistic-regression/>
 
 - "Visualizing OLS Linear Regression Assumptions in R" by Trevor French <https://medium.com/trevor-french/visualizing-ols-linear-regression-assumptions-in-r-e762ba7afaff>
