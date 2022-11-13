@@ -270,6 +270,7 @@ If we wanted to add another column to each of our worksheets that used an Excel 
 The following example uses a loop that creates a formula for each row which divides the respective value in column A by the the respective value in column B. Next we add the heading style to the first row in column six and add a header named "Sepal.Ratio". Finally, we write the formula vector to column six beginning on row 2.
 
 ```{r}
+#| eval: false
 library(openxlsx)
 
 setosa <- iris[which(iris$"Species" == "setosa"),]

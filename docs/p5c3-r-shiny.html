@@ -391,10 +391,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#server" id="toc-server" class="nav-link" data-scroll-target="#server"> <span class="header-section-number">20.2.3</span> Server</a></li>
   <li><a href="#putting-it-together" id="toc-putting-it-together" class="nav-link" data-scroll-target="#putting-it-together"> <span class="header-section-number">20.2.4</span> Putting it Together</a></li>
   </ul></li>
-  <li><a href="#shinyapps.io" id="toc-shinyapps.io" class="nav-link" data-scroll-target="#shinyapps.io"> <span class="header-section-number">20.3</span> shinyapps.io</a></li>
-  <li><a href="#deploying-application" id="toc-deploying-application" class="nav-link" data-scroll-target="#deploying-application"> <span class="header-section-number">20.4</span> Deploying Application</a></li>
-  <li><a href="#shinyuieditor" id="toc-shinyuieditor" class="nav-link" data-scroll-target="#shinyuieditor"> <span class="header-section-number">20.5</span> Shinyuieditor?</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"> <span class="header-section-number">20.6</span> Resources</a></li>
+  <li><a href="#deploying-application" id="toc-deploying-application" class="nav-link" data-scroll-target="#deploying-application"> <span class="header-section-number">20.3</span> Deploying Application</a>
+  <ul class="collapse">
+  <li><a href="#shinyapps.io" id="toc-shinyapps.io" class="nav-link" data-scroll-target="#shinyapps.io"> <span class="header-section-number">20.3.1</span> ShinyApps.io</a></li>
+  <li><a href="#configuring-account" id="toc-configuring-account" class="nav-link" data-scroll-target="#configuring-account"> <span class="header-section-number">20.3.2</span> Configuring Account</a></li>
+  </ul></li>
+  <li><a href="#shinyuieditor" id="toc-shinyuieditor" class="nav-link" data-scroll-target="#shinyuieditor"> <span class="header-section-number">20.4</span> Shinyuieditor?</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"> <span class="header-section-number">20.5</span> Resources</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/TrevorFrench/R-for-Data-Analysis/edit/main/p5c3-r-shiny.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -473,7 +476,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The next thing we see in our code is the creation of our ui object. This is where the application layout is created. The first function is the “fluidPage” function. This is probably one of the most common ways to create user interfaces in shiny applications. Layouts created with the fluid page methodology are organized into rows and columns and scale to fit varying browser sizes.</p>
 <p>The “titlePanel” function creates a panel with your title inside of it. In our case, this function is responsible for “Old Faithful Geyser Data” being displayed at the top of the page.</p>
 <p>Next, we see the “sidebarLayout” function. This is essentially a pre-constructed layout which consists of a “sidebar” panel and a “main” panel which are created using the “sidebarPanel” and “mainPanel” functions, respectively. You’ll notice that our sidebar is actually located above our main panel rather than to the side. This is just because the size of our browser was small enough that they collapsed to be stacked on top of each other. If you increase the size of your browser, you will see the sidebar return to it’s original location.</p>
-<p>Inside of the “sidebarPanel” function, we have a function called “sliderInput”.</p>
+<p>Inside of the “sidebarPanel” function, we have a function called “sliderInput”. The “sliderInput” function creates the component which allows the user to select the number of bins in our app. We can see this function gives the component the name “bins”, the title “Number of Bins”, a minimum input of “1”, a maximum value of “50”, and a default value of “30”.</p>
+<p>The last component of our UI object is the “mainPanel” function. This main panel designates the section where our output plot will ultimately go as can be observed by the “plotOutput” function nested inside of it. This “plotOutput” function is given the name “distPlot”. This is done so that it can be referenced later in our server function.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -500,6 +504,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="server" class="level3" data-number="20.2.3">
 <h3 data-number="20.2.3" class="anchored" data-anchor-id="server"><span class="header-section-number">20.2.3</span> Server</h3>
+<p>After we create the UI object, we’ll need to create our server function. We’ll pass two arguments into the function: “input” and “output”. The input argument allows us to access data from the user interface while the output argument allows us to pass data back to the user interface.</p>
+<p>Inside the function, we reference the “distPlot” component of the UI by typing “output$distPlot”. After this, we pass a plot to the UI with the “renderPlot” function.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The UI can only accept the plot we are going to send it because it is using the “plotOutput” function. If you were going to send a different form of data, the UI would need to have the corresponding function in order to accept it.</p>
+<p>For example, if your server was going to send a table to the UI your server would need to use the “renderTable” function and your UI would need to use the “tableOutput” function.</p>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -518,26 +538,87 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="putting-it-together" class="level3" data-number="20.2.4">
 <h3 data-number="20.2.4" class="anchored" data-anchor-id="putting-it-together"><span class="header-section-number">20.2.4</span> Putting it Together</h3>
+<p>Finally, you will combine your server and your UI and actually run your app with the “shinyApp” function.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
-<section id="shinyapps.io" class="level2" data-number="20.3">
-<h2 data-number="20.3" class="anchored" data-anchor-id="shinyapps.io"><span class="header-section-number">20.3</span> shinyapps.io</h2>
-<ul>
-<li>Shiny apps account</li>
-<li>Quick Start</li>
-</ul>
+<section id="deploying-application" class="level2" data-number="20.3">
+<h2 data-number="20.3" class="anchored" data-anchor-id="deploying-application"><span class="header-section-number">20.3</span> Deploying Application</h2>
+<p>Now that you’ve built an application, you can actually deploy it for the whole world to see. There are many ways to do this; however, probably the easiest way to get started is to create a free account with ShinyApps.io.</p>
+<section id="shinyapps.io" class="level3" data-number="20.3.1">
+<h3 data-number="20.3.1" class="anchored" data-anchor-id="shinyapps.io"><span class="header-section-number">20.3.1</span> ShinyApps.io</h3>
+<p>Navigate to <a href="https://www.shinyapps.io/" class="uri">https://www.shinyapps.io/</a>, select the “Sign Up” button and follow the steps to create a free account.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/shinyappsio-1.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<p>Once you create your account and see your dashboard, you can navigate to your “tokens” by selecting your name in the top right corner and choosing “tokens” from the dropdown menu.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/shinyappsio-2.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<p>Choose the green “Add Token” button to create a new token.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/shinyappsio-7.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<p>Now that your token has been generated, select the blue “Show” button to view it.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/shinyappsio-8.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<p>You should now have a window that resembles the following image. Select the “Show secret” button and then copy the code to your clipboard for use later.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/shinyappsio-9.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
 </section>
-<section id="deploying-application" class="level2" data-number="20.4">
-<h2 data-number="20.4" class="anchored" data-anchor-id="deploying-application"><span class="header-section-number">20.4</span> Deploying Application</h2>
+<section id="configuring-account" class="level3" data-number="20.3.2">
+<h3 data-number="20.3.2" class="anchored" data-anchor-id="configuring-account"><span class="header-section-number">20.3.2</span> Configuring Account</h3>
+<p>The next thing we’ll need to do is to link R Studio to your ShinyApps.io account. You can do this by navigating back to R Studio and choosing the dropdown menu next to the publish button. From here, select the “Manage Accounts” option.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/shinyappsio-3.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<p>You’ll then get a window the resembles the following image. Choose the “Connect” button to continue.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/shinyappsio-4.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<p>Next, you’ll see the following options. Choose “ShinyApps.io” to continue.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/shinyappsio-5.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<p>Now you’ll have the oppportunity to paste your token from you ShinyApps.io account. After you do so, press the “Connect Account” button.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/shinyappsio-6.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
+<p>Now that R Studio is linked to your ShinyApps.io account, you can press the publish button. You’ll then get a window which allows you to name your app before publishing. Once you are satisfied with the name you choose, select “Publish”.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/reporting/shinyappsio-10.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
+</div>
+</div>
 </section>
-<section id="shinyuieditor" class="level2" data-number="20.5">
-<h2 data-number="20.5" class="anchored" data-anchor-id="shinyuieditor"><span class="header-section-number">20.5</span> Shinyuieditor?</h2>
 </section>
-<section id="resources" class="level2" data-number="20.6">
-<h2 data-number="20.6" class="anchored" data-anchor-id="resources"><span class="header-section-number">20.6</span> Resources</h2>
+<section id="shinyuieditor" class="level2" data-number="20.4">
+<h2 data-number="20.4" class="anchored" data-anchor-id="shinyuieditor"><span class="header-section-number">20.4</span> Shinyuieditor?</h2>
+</section>
+<section id="resources" class="level2" data-number="20.5">
+<h2 data-number="20.5" class="anchored" data-anchor-id="resources"><span class="header-section-number">20.5</span> Resources</h2>
 <ul>
 <li>Resource: https://shiny.rstudio.com/</li>
 </ul>

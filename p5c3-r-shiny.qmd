@@ -81,7 +81,9 @@ The "titlePanel" function creates a panel with your title inside of it. In our c
 
 Next, we see the "sidebarLayout" function. This is essentially a pre-constructed layout which consists of a "sidebar" panel and a "main" panel which are created using the "sidebarPanel" and "mainPanel" functions, respectively. You'll notice that our sidebar is actually located above our main panel rather than to the side. This is just because the size of our browser was small enough that they collapsed to be stacked on top of each other. If you increase the size of your browser, you will see the sidebar return to it's original location.
 
-Inside of the "sidebarPanel" function, we have a function called "sliderInput". 
+Inside of the "sidebarPanel" function, we have a function called "sliderInput". The "sliderInput" function creates the component which allows the user to select the number of bins in our app. We can see this function gives the component the name "bins", the title "Number of Bins", a minimum input of "1", a maximum value of "50", and a default value of "30".
+
+The last component of our UI object is the "mainPanel" function. This main panel designates the section where our output plot will ultimately go as can be observed by the "plotOutput" function nested inside of it. This "plotOutput" function is given the name "distPlot". This is done so that it can be referenced later in our server function.
 
 ```{r}
 #| eval: false
@@ -110,6 +112,16 @@ ui <- fluidPage(
 
 ### Server
 
+After we create the UI object, we'll need to create our server function. We'll pass two arguments into the function: "input" and "output". The input argument allows us to access data from the user interface while the output argument allows us to pass data back to the user interface.
+
+Inside the function, we reference the "distPlot" component of the UI by typing "output$distPlot". After this, we pass a plot to the UI with the "renderPlot" function.
+
+::: callout-note
+The UI can only accept the plot we are going to send it because it is using the "plotOutput" function. If you were going to send a different form of data, the UI would need to have the corresponding function in order to accept it.
+
+For example, if your server was going to send a table to the UI your server would need to use the "renderTable" function and your UI would need to use the "tableOutput" function.
+:::
+
 ```{r}
 #| eval: false
 server <- function(input, output) {
@@ -129,20 +141,114 @@ server <- function(input, output) {
 
 ### Putting it Together
 
+Finally, you will combine your server and your UI and actually run your app with the "shinyApp" function.
+
 ```{r}
 #| eval: false
 shinyApp(ui = ui, server = server)
 ```
 
-
-## shinyapps.io
-- Shiny apps account
-- Quick Start
-
 ## Deploying Application
 
-## Shinyuieditor?
+Now that you've built an application, you can actually deploy it for the whole world to see. There are many ways to do this; however, probably the easiest way to get started is to create a free account with ShinyApps.io.
+
+### ShinyApps.io
+
+Navigate to <https://www.shinyapps.io/>, select the "Sign Up" button and follow the steps to create a free account.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: shinyappsio-1
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/shinyappsio-1.png", dpi = 270)
+```
+
+Once you create your account and see your dashboard, you can navigate to your "tokens" by selecting your name in the top right corner and choosing "tokens" from the dropdown menu.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: shinyappsio-2
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/shinyappsio-2.png", dpi = 270)
+```
+
+Choose the green "Add Token" button to create a new token.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: shinyappsio-7
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/shinyappsio-7.png", dpi = 270)
+```
+
+Now that your token has been generated, select the blue "Show" button to view it.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: shinyappsio-8
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/shinyappsio-8.png", dpi = 270)
+```
+
+You should now have a window that resembles the following image. Select the "Show secret" button and then copy the code to your clipboard for use later.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: shinyappsio-9
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/shinyappsio-9.png", dpi = 270)
+```
+
+### Configuring Account
+
+The next thing we'll need to do is to link R Studio to your ShinyApps.io account. You can do this by navigating back to R Studio and choosing the dropdown menu next to the publish button. From here, select the "Manage Accounts" option.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: shinyappsio-3
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/shinyappsio-3.png", dpi = 270)
+```
+
+You'll then get a window the resembles the following image. Choose the "Connect" button to continue.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: shinyappsio-4
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/shinyappsio-4.png", dpi = 270)
+```
+
+Next, you'll see the following options. Choose "ShinyApps.io" to continue.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: shinyappsio-5
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/shinyappsio-5.png", dpi = 270)
+```
+
+Now you'll have the oppportunity to paste your token from you ShinyApps.io account. After you do so, press the "Connect Account" button.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: shinyappsio-6
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/shinyappsio-6.png", dpi = 270)
+```
+
+Now that R Studio is linked to your ShinyApps.io account, you can press the publish button. You'll then get a window which allows you to name your app before publishing. Once you are satisfied with the name you choose, select "Publish".
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
+#| label: shinyappsio-10
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/reporting/shinyappsio-10.png", dpi = 270)
+```
+
+After a few moments, your browser should launch displaying your newly created Shiny App!
 
 ## Resources
 
-- Resource: https://shiny.rstudio.com/
+- Shiny Home Page: <https://shiny.rstudio.com/>
+- Shiny UI Editor: <https://rstudio.github.io/shinyuieditor/>
