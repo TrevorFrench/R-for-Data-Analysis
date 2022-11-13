@@ -50,6 +50,17 @@ no_blanks <- blanks[blanks != ""]
 print(no_blanks)
 ```
 
+When working with dataframes rather than just vectors, you can also use the "na.omit" function to remove complete rows with "NA" values.
+
+```{r}
+students <- c("John", "Jane", "Joe")
+scores <- c(100, 80, NA)
+df <- data.frame(student = students, score = scores)
+print(df)
+df <- na.omit(df)
+print(df)
+```
+
 ## Constant Value Imputation
 
 Many datasets you encounter will likely be missing data. The temptation may be to immediately disregard these observations; however, it's important to consider what missing data represents in the context of your dataset as well as the context of what your analysis is hoping to achieve. For example, say you are a teacher and you are trying to determine the average test scores of your students. You have a dataset which lists your students names along with their respective test scores. However, you find that one of your students has an "NA" value in place of a test score.

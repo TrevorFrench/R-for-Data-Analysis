@@ -14,13 +14,14 @@ data()
 This will open a new tab in your R Studio instance that looks similar to the following image:
 
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 90%;'"}
-#| label: console-pane-1
+#| label: data
 #| echo: false
 #| out.width: 500
 knitr::include_graphics("images/data-acquisition/data.png", dpi = 270)
 ```
 
 ## Working with Included Data
+
 The first step to begin working with your chosen dataset is to load it into your environment by using the "data" function with the quoted name of your dataset inside the parentheses. In the following example, we'll attach the "iris" dataset to our environment.
 
 ::: callout-note
@@ -33,6 +34,7 @@ data("iris")
 ```
 
 This action will then give us a variable with the same name as our dataset which we can call as we would with any other data structure. Let's preview the "iris" dataset by using the "head" function.
+
 ```{r}
 #| eval: false
 head(iris)
@@ -41,6 +43,61 @@ head(iris)
 ```{r}
 #| echo: false
 knitr::kable(head(iris), format="markdown")
+```
+
+Finally, you can view more information about any given dataset by typing the dataset name into the "Help" tab in the "Files" pane.
+
+```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 90%;'"}
+#| label: data-acq-1
+#| echo: false
+#| out.width: 500
+knitr::include_graphics("images/data-acquisition/data-acq-1.png", dpi = 270)
+```
+
+## Common Datasets
+
+Here are a few other commonly used datasets in the R community. These datasets are commonly used to practice and to teach.
+
+### mtcars
+
+```{r}
+#| eval: false
+head(mtcars)
+```
+
+```{r}
+#| echo: false
+knitr::kable(head(mtcars), format="markdown")
+```
+
+### faithful
+
+```{r}
+#| eval: false
+head(faithful)
+```
+
+```{r}
+#| echo: false
+knitr::kable(head(faithful), format="markdown")
+```
+
+### ChickWeight
+
+```{r}
+#| eval: false
+head(ChickWeight)
+```
+
+```{r}
+#| echo: false
+knitr::kable(head(ChickWeight), format="markdown")
+```
+
+### Titanic
+
+```{r}
+head(Titanic)
 ```
 
 ## Resources
