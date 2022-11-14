@@ -2,8 +2,6 @@
 
 This chapter will cover the basics of creating plots in R. It will begin by demonstrating the plotting capabilities available in R out of the box. These capabilities are often referred to as "Base R". This will be followed by an introduction to "ggplot2" which is one of the most common plotting libraries in R.
 
-word cloud
-
 ## Plotting your Regression Model
 
 Now that you've learned how create a linear regression model, let's look at how you might go about representing it visually.
