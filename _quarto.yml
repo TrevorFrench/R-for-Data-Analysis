@@ -12,9 +12,9 @@ book:
   downloads: [pdf]
   sharing: [twitter, facebook, linkedin]
   open-graph:
-    image: images/wide-cover.png
+    image: https://trevorfrench.github.io/R-for-Data-Analysis/images/wide-cover.png
   twitter-card:
-    image: images/wide-cover.png
+    image: https://trevorfrench.github.io/R-for-Data-Analysis/images/wide-cover.png
   site-url: https://trevorfrench.github.io/R-for-Data-Analysis/
   chapters:
     - part: index.qmd
