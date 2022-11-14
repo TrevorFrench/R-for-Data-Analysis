@@ -633,8 +633,8 @@
     "objectID": "p4c3-plotting.html#resources",
     "href": "p4c3-plotting.html#resources",
     "title": "17  Plotting",
-    "section": "17.4 Resources",
-    "text": "17.4 Resources\n\nggplot2 documentation: https://ggplot2.tidyverse.org/\nggplot2 cheat sheet: https://github.com/rstudio/cheatsheets/blob/main/data-visualization.pdf\nggplot2 extension gallery: https://exts.ggplot2.tidyverse.org/gallery/\nR colors: http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf\n\n\n\n\n\nChambers, Cleveland, J. M., and P. A. Tukey. 1983. Graphical Methods for Data Analysis. Wadsworth & Brooks/Cole."
+    "section": "17.3 Resources",
+    "text": "17.3 Resources\n\nggplot2 documentation: https://ggplot2.tidyverse.org/\nggplot2 cheat sheet: https://github.com/rstudio/cheatsheets/blob/main/data-visualization.pdf\nggplot2 extension gallery: https://exts.ggplot2.tidyverse.org/gallery/\nR colors: http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf\n\n\n\n\n\nChambers, Cleveland, J. M., and P. A. Tukey. 1983. Graphical Methods for Data Analysis. Wadsworth & Brooks/Cole."
   },
   {
     "objectID": "p4exercises.html#questions",

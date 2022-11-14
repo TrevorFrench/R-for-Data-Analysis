@@ -220,12 +220,12 @@ dotchart(df$sales
             , color = group_colors[groups]
             , pch = 16)
 ```
-
+<!-- 
 ## ggplot2
 
 One of the most widely used methods for plotting in R is the ggplot2 package.
 
-### Different types of plots?
+### Different types of plots? -->
 
 
 ## Resources
