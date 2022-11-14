@@ -1,0 +1,1 @@
+Sitemap: https://trevorfrench.github.io/R-for-Data-Analysis/sitemap.xml

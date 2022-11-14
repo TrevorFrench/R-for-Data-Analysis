@@ -1,24 +1,31 @@
 [
   {
-    "objectID": "p1exercises.html",
-    "href": "p1exercises.html",
-    "title": "Exercises",
-    "section": "",
-    "text": "Exercise: 5-A\n\n\n\nWrite a function called “multiply” that will accept two numbers as arguments and will output the product of those two numbers when called as is demonstrated below.\nmultiply(3, 3)\n# [1] 9\n\n\n\n\n\n\n\n\nExercise: 5-B\n\n\n\nWrite an equation which will return the remainder of 12 divided by 8.\n\n\n\n\n\n\n\n\nExercise: 5-C\n\n\n\nWrite an equation which will return the remainder of 36 divided by 10.\n\n\n\n\n\n\n\n\nExercise: 5-D\n\n\n\nWrite a “while” loop which prints all even numbers from 0 to 10.\nIt’s possible for this task to be accomplished in several ways; however, the output of your program should always look like this:\n# [1] 0\n# [1] 2\n# [1] 4\n# [1] 6\n# [1] 8\n# [1] 10\n\n\n\n\n\n\n\n\nExercise: 5-E\n\n\n\nYou are given a vector that looks like this:\nnumbers <- c(0:12)\nWrite a for loop which loops through your vector and prints any element that is greater than or equal to 3.\nIt’s possible for this task to be accomplished in several ways; however, the output of your program should always look like this:\n# [1] 3\n# [1] 4\n# [1] 5\n# [1] 6\n# [1] 7\n# [1] 8\n# [1] 9\n# [1] 10\n# [1] 11\n# [1] 12\n\n\n\n\n\n\n\n\nExercise: 6-A\n\n\n\nConvert the following character variable to a variable with the data type “raw”:\nx <- \"Trevor rocks\"\nYou should store your raw data in a variable named “raw_data”, print the data to the console, and check the data type with the “typeof” function. Your output should look like the following:\nprint(raw_data)\n# [1] 54 72 65 76 6f 72 20 72 6f 63 6b 73\ntypeof(raw_data)\n# [1] \"raw\"\n\n\n\n\n\n\n\n\nExercise: 6-B\n\n\n\nCreate a variable named “spending” and give it a value of 120. Then create a variable named “budget” and give it a value of 100. Next, check whether spending is greater than budget and store the resulting logical data in a variable named “over_budget”. Finally, print the value of “over_budget” variable and check it’s data type with the “typeof” function.\nYour final output should look like this:\nprint(over_budget)\n# [1] TRUE\ntypeof(over_budget)\n# [1] \"logical\"\n\n\n\n\n\n\n\n\nExercise: 7-A\n\n\n\nCreate a vector named “animal” and give it the following three values: “cow”, “cat”, “pig”. Create a second vector named “sound” and give it the following three values: “moo”, “meow”, “oink”. Finally, create a data frame named “animal_sounds” and assign each of these vectors to be a column.\nAfter printing the resulting data frame to the console, you should get the following output:\n#   animal sound\n# 1    cow   moo\n# 2    cat  meow\n# 3    pig  oink"
+    "objectID": "p4c2-regression.html#linear-regression",
+    "href": "p4c2-regression.html#linear-regression",
+    "title": "16  Regression",
+    "section": "16.1 Linear Regression",
+    "text": "16.1 Linear Regression\nThe first kind of regression we’ll cover is linear regression. Linear regression will use your data to come up with a linear model that describes the general trend of your data. Generally speaking, a linear model will consist of a dependent variable (y), at least one independent variable (x), coefficients to go along with each independent variable, and an intercept. Here’s one common linear model you may remember:\n\\[\ny = mx + b\n\\]\nThis is a simple linear model many people begin with where x and y are the independent and dependent variables, respectively, m is the slope (or coefficient of x), and b is the intercept.\nTo perform linear regression in R, you’ll use the “lm” function. Let’s try it out on the “faithful” dataset.\n\nhead(faithful)\n\n\n\n\n\n\neruptions\nwaiting\n\n\n\n\n3.600\n79\n\n\n1.800\n54\n\n\n3.333\n74\n\n\n2.283\n62\n\n\n4.533\n85\n\n\n2.883\n55\n\n\n\n\n\nThe “lm” function will accept at least two parameters which represent “y” and “x” in this format:\n\nlm(y ~ x)\n\nLet’s try this out by setting the y variable to eruptions and the x variable to waiting. We can then view the output of our linear model by using the “summary” function.\n\nlm <- lm(faithful$eruptions ~ faithful$waiting)\nsummary(lm)\n\n\nCall:\nlm(formula = faithful$eruptions ~ faithful$waiting)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-1.29917 -0.37689  0.03508  0.34909  1.19329 \n\nCoefficients:\n                  Estimate Std. Error t value Pr(>|t|)    \n(Intercept)      -1.874016   0.160143  -11.70   <2e-16 ***\nfaithful$waiting  0.075628   0.002219   34.09   <2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.4965 on 270 degrees of freedom\nMultiple R-squared:  0.8115,    Adjusted R-squared:  0.8108 \nF-statistic:  1162 on 1 and 270 DF,  p-value: < 2.2e-16\n\n\nThis summary will show us the statistical significance of our model along with all relevant statistics to correctly interpret the significance. Additionally, we now have our model coefficients. From this summary we can assume that our model looks something like this:\n\\[\neruptions = waiting * 0.075628 - 1.874016\n\\]\nLet’s break down everything that the model summary returns.\n\nThe “Call” section calls the model that you created\nThe “Residuals” section gives you a summary of all of your model residuals. Simply put, a residual denotes how far away any given point falls from the predicted value.\nThe “Coefficients” section gives us our model coefficients, our intercept, and statistical values to determine their significance.\n\nFor each coefficient, we are given the respective standard error. The standard error is used to meaure the preciseness in which the coefficient was estimated. Standard errors which are smaller are considered to be more precise.\nNext, we have a t value for each coefficient. The t value is calculate by dividing the coefficient by the standard error.\nFinally, you have the p value accompanied by symbols to denote the corresponding significance level.\n\nThe residual standard error gives you a way to measure the standard deviation of the residuals and is calculated by dividing residual sum of squares by the residual degrees of freedom and taking the square root of that where the residual degrees of freedom is equal to total observations - total model parameters - 1.\nR-squared gives you the proportion of variance that can be explained by your model. Your adjusted R-squared statistic will tell you the same thing but will adjust for the amount of variables you’ve included in your model.\nYour F-statistic will help you to understand the probability that all of your model parameters are actually equal to zero."
   },
   {
-    "objectID": "p1exercises.html#answers",
-    "href": "p1exercises.html#answers",
-    "title": "Exercises",
-    "section": "Answers",
-    "text": "Answers\n\n\n\n\n\n\nAnswer: 5-A\n\n\n\nOne way you could accomplish this task is demonstrated in the following solution.\n\nmultiply <- function(x, y) {\n  return (x * y)\n}\n\nmultiply(3, 3)\n\n[1] 9\n\n\n\n\n\n\n\n\n\n\nAnswer: 5-B\n\n\n\nA remainder is referred to as “modulus” in programming. We can use the “%%” operator to accomplish this. For this example, the output of your equation should be 4.\n\n12 %% 8\n\n[1] 4\n\n\n\n\n\n\n\n\n\n\nAnswer: 5-C\n\n\n\nA remainder is referred to as “modulus” in programming. We can use the “%%” operator to accomplish this. For this example, the output of your equation should be 6.\n\n36 %% 10\n\n[1] 6\n\n\n\n\n\n\n\n\n\n\nAnswer: 5-D\n\n\n\nHere’s one way you could write your while loop to achieve this output:\n\ni <- 0\n\nwhile (i <= 10) {\n  print(i)\n  i <- i + 2\n}\n\n[1] 0\n[1] 2\n[1] 4\n[1] 6\n[1] 8\n[1] 10\n\n\n\n\n\n\n\n\n\n\nAnswer: 5-E\n\n\n\nHere’s one way you could write your for loop to achieve this output:\n\nnumbers <- c(0:12)\n\nfor (number in numbers) {\n  if (number >= 3) {\n    print(number)\n  }\n}\n\n[1] 3\n[1] 4\n[1] 5\n[1] 6\n[1] 7\n[1] 8\n[1] 9\n[1] 10\n[1] 11\n[1] 12\n\n\n\n\n\n\n\n\n\n\nAnswer: 6-A\n\n\n\nYou can accomplish this task through the “charToRaw” function.\n\nx <- \"Trevor rocks\"\nraw_data <- charToRaw(x)\nprint(raw_data)\n\n [1] 54 72 65 76 6f 72 20 72 6f 63 6b 73\n\ntypeof(raw_data)\n\n[1] \"raw\"\n\n\n\n\n\n\n\n\n\n\nAnswer: 6-B\n\n\n\nThe following example demonstrates how you can accomplish this task.\n\nspending <- 120\nbudget <- 100\nover_budget <- spending > budget\nprint(over_budget)\n\n[1] TRUE\n\ntypeof(over_budget)\n\n[1] \"logical\"\n\n\n\n\n\n\n\n\n\n\nAnswer: 7-A\n\n\n\nThe following example demonstrates how you can accomplish this task.\n\nanimal <- c(\"cow\", \"cat\", \"pig\")\nsound <- c(\"moo\", \"meow\", \"oink\")\nanimal_sounds <- data.frame(animal = animal, sound = sound)\nprint(animal_sounds)\n\n  animal sound\n1    cow   moo\n2    cat  meow\n3    pig  oink"
+    "objectID": "p4c2-regression.html#multiple-regression",
+    "href": "p4c2-regression.html#multiple-regression",
+    "title": "16  Regression",
+    "section": "16.2 Multiple Regression",
+    "text": "16.2 Multiple Regression\nIf you had more x variables you wanted to add to your linear model, you could add them just like you would in any other math equation. Here’s an example:\n\nlm(data$y ~ data$x1 + data$x2 - data$x3 * data$x4)\n\nAdditionally, you can use the “data” parameter rather than putting the name of the dataset before every variable.\n\nlm(y ~ x1 + x2 - x3 * x4, data = data)\n\nLet’s try a real example with the mtcars dataset.\n\nhead(mtcars)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n1\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n1\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n2\n\n\nValiant\n18.1\n6\n225\n105\n2.76\n3.460\n20.22\n1\n0\n3\n1\n\n\n\n\n\nNow, let’s try to predict mpg and use every other column as a variable then see what the results look like.\n\nlm <- lm(mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb, data = mtcars)\nsummary(lm)\n\n\nCall:\nlm(formula = mpg ~ cyl + disp + hp + drat + wt + qsec + vs + \n    am + gear + carb, data = mtcars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-3.4506 -1.6044 -0.1196  1.2193  4.6271 \n\nCoefficients:\n            Estimate Std. Error t value Pr(>|t|)  \n(Intercept) 12.30337   18.71788   0.657   0.5181  \ncyl         -0.11144    1.04502  -0.107   0.9161  \ndisp         0.01334    0.01786   0.747   0.4635  \nhp          -0.02148    0.02177  -0.987   0.3350  \ndrat         0.78711    1.63537   0.481   0.6353  \nwt          -3.71530    1.89441  -1.961   0.0633 .\nqsec         0.82104    0.73084   1.123   0.2739  \nvs           0.31776    2.10451   0.151   0.8814  \nam           2.52023    2.05665   1.225   0.2340  \ngear         0.65541    1.49326   0.439   0.6652  \ncarb        -0.19942    0.82875  -0.241   0.8122  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.65 on 21 degrees of freedom\nMultiple R-squared:  0.869, Adjusted R-squared:  0.8066 \nF-statistic: 13.93 on 10 and 21 DF,  p-value: 3.793e-07\n\n\nFrom here, you would likely tweak your model further based on the significance statistics we see here; however, that’s outside the scope of what we’re doing in this book. Take a look in the resources section at the end of this chapter to dive deeper into developing regression models."
   },
   {
-    "objectID": "p0c1-what-is-r.html",
-    "href": "p0c1-what-is-r.html",
-    "title": "1  What is R?",
-    "section": "",
-    "text": "R was a programming language that was designed specifically for the needs of statistics and data analysis.  -Hadley Wickham (Hermans 2021)\nR is a statistical programming language used commonly for data analysis across a wide array of disciplines and industries. It’s often preferred over similar languages for it’s robust support of statistical analysis, the ease in which one is able to create beautiful graphics, and it’s open source nature amongst other reasons."
+    "objectID": "p4c2-regression.html#logistic-regression",
+    "href": "p4c2-regression.html#logistic-regression",
+    "title": "16  Regression",
+    "section": "16.3 Logistic Regression",
+    "text": "16.3 Logistic Regression\nLogistic regression is commonly used when your dependent variable (y) binomial (0 or 1). Instead of using the “lm” function though, you will use the “glm” function. Let’s try this out on the mtcars dataset again but this time with “am” as the dependent variable.\n\nglm <- glm(am ~ cyl + hp + wt, family = binomial, data = mtcars)\nsummary(glm)\n\n\nCall:\nglm(formula = am ~ cyl + hp + wt, family = binomial, data = mtcars)\n\nDeviance Residuals: \n     Min        1Q    Median        3Q       Max  \n-2.17272  -0.14907  -0.01464   0.14116   1.27641  \n\nCoefficients:\n            Estimate Std. Error z value Pr(>|z|)  \n(Intercept) 19.70288    8.11637   2.428   0.0152 *\ncyl          0.48760    1.07162   0.455   0.6491  \nhp           0.03259    0.01886   1.728   0.0840 .\nwt          -9.14947    4.15332  -2.203   0.0276 *\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for binomial family taken to be 1)\n\n    Null deviance: 43.2297  on 31  degrees of freedom\nResidual deviance:  9.8415  on 28  degrees of freedom\nAIC: 17.841\n\nNumber of Fisher Scoring iterations: 8"
+  },
+  {
+    "objectID": "p4c2-regression.html#resources",
+    "href": "p4c2-regression.html#resources",
+    "title": "16  Regression",
+    "section": "16.4 Resources",
+    "text": "16.4 Resources\n\n“Lecture 9 - Linear regression in R” by Professor Alexandra Chouldechova at Carnegie Mellon University: https://www.andrew.cmu.edu/user/achoulde/94842/lectures/lecture09/lecture09-94842.html\n“Logistic Regression” by Erin Bugbee and Jared Wilber: https://mlu-explain.github.io/logistic-regression/\n“Visualizing OLS Linear Regression Assumptions in R” by Trevor French https://medium.com/trevor-french/visualizing-ols-linear-regression-assumptions-in-r-e762ba7afaff"
   },
   {
     "objectID": "p0c1-what-is-r.html#history",
@@ -35,13 +42,6 @@
     "text": "1.2 Resources\n\nYou can learn more about R here: https://www.r-project.org/\nRead Ross Ihaka’s account of R’s origination: https://www.stat.auckland.ac.nz/~ihaka/downloads/Interface98.pdf\n“What is R?”” by Microsoft: https://mran.microsoft.com/documents/what-is-r\nR manuals by the R Development Core Team: https://cran.r-project.org/manuals.html\nR-bloggers: https://www.r-bloggers.com/\nR User Groups: https://www.meetup.com/pro/r-user-groups/\nR Studio Community: https://community.rstudio.com/\nThe R Journal: https://journal.r-project.org/\nMicrosoft R Application Network: https://mran.microsoft.com/\n\n\n\n\n\nHermans, Felienne. 2021. “Hadley Wickham on r and Tidyverse [Audio Podcast].” Software Engineering Radio. https://www.se-radio.net/2021/03/episode-450-hadley-wickham-on-r-and-tidyverse/.\n\n\nIhaka, Ross. 1998. “R : Past and Future History.” https://www.stat.auckland.ac.nz/~ihaka/downloads/Interface98.pdf."
   },
   {
-    "objectID": "p0c2-what-is-data-analysis.html",
-    "href": "p0c2-what-is-data-analysis.html",
-    "title": "2  What is Data Analysis?",
-    "section": "",
-    "text": "I mean my definition is data science is like data analysis by programming. Which of course begs the question of what data analysis is, and so I think of data analysis as really any activity where the input is data and the output is understanding or knowledge or insights. So I think of that pretty broadly. And then to do data science you’re not doing it by pointing and clicking. You’re doing it by writing some code in a programming language.  -Hadley Wickham (Eremenko 2020)\nData analysis at it’s most simple form is the process of searching for meaning in data with the ultimate goal being to draw insight from that meaning."
-  },
-  {
     "objectID": "p0c2-what-is-data-analysis.html#the-process-of-data-analysis",
     "href": "p0c2-what-is-data-analysis.html#the-process-of-data-analysis",
     "title": "2  What is Data Analysis?",
@@ -54,13 +54,6 @@
     "title": "2  What is Data Analysis?",
     "section": "2.2 Resources",
     "text": "2.2 Resources\n\n“Data Science & Big Data Analytics: Discovering, Analyzing, Visualizing and Presenting Data” by EMC Education Services: https://onlinelibrary.wiley.com/doi/book/10.1002/9781119183686\n“Managing the Analytics Life Cycle for Decisions at Scale” by SAS: https://www.sas.com/content/dam/SAS/en_us/doc/whitepaper1/manage-analytical-life-cycle-continuous-innovation-106179.pdf\n\n\n\n\n\nEremenko, Kirill. 2020. “Hadley Wickham Talks Integration and Future of r and Python [Audio Podcast].” SuperDataScience. https://www.superdatascience.com/podcast/hadley-wickham-talks-integration-and-future-of-python-and-r."
-  },
-  {
-    "objectID": "p0c3-setup.html",
-    "href": "p0c3-setup.html",
-    "title": "3  Setup",
-    "section": "",
-    "text": "This chapter will walk you through how to download the R programming language as well as R Studio which is a popular tool for interacting with the R ecosystem. Additionally, there are alternatives to R Studio listed at the end of the chapter. However, R Studio is the recommended environment for completing this book."
   },
   {
     "objectID": "p0c3-setup.html#install-r",
@@ -95,14 +88,7 @@
     "href": "p1-fundamentals.html",
     "title": "Part I: Fundamentals",
     "section": "",
-    "text": "Note\n\n\n\nFor users with a moderate amount of experience in R or another programming language feel free to either skip, skim, or leverage this chapter as a reference guide.\n\n\n\nGetting Familiar with R Studio- There are four sections in R Studio. These sections are often referred to as “panes”. This chapter will introduce you to the “source” pane, “console” pane, “environment” pane, and “files” pane. Additionally, you will learn about the different ways you can customize your version of R Studio such as changing the color scheme.\nProgramming Basics- While the R language certainly has it’s unique advantages, it still leverages principles found in many other programming languages such as functions, comments, and loops. Learn how to apply these and other principles in R.\nData Types- Data is stored differently depending on what it represents when programming. For example, a number is going to be stored as a different data type than a letter is. Learn about the five basic data types in R and how to use them.\nData Structures- In computer science, a data structure refers to the method which one uses to organize their data. There are six basic data structures which are commonly used in R. Learn about each of them in this chapter."
-  },
-  {
-    "objectID": "p1c1-r-studio.html",
-    "href": "p1c1-r-studio.html",
-    "title": "4  Getting Familiar with R Studio",
-    "section": "",
-    "text": "To begin, we are going to walkthrough how to customize your version of R Studio to make it the most comfortable environment for you personally. Following this, we are going to walk through the four panes of R Studio. At a glance, R Studio may seem overwhelming; however, by the end of this chapter you will have learned the essentials needed to embark on your data analysis journey."
+    "text": "This section will introduce you to the basics of programming in the context of R. There are four chapters in this book. Each chapter has a brief description listed below. After you have finished reading through each of them, you will have the opportunity to attempt practical exercises to reinforce your newly-gained knowledge.\n\n\n\n\n\n\nNote\n\n\n\nFor users with a moderate amount of experience in R or another programming language feel free to either skip, skim, or leverage this chapter as a reference guide.\n\n\n\nGetting Familiar with R Studio- There are four sections in R Studio. These sections are often referred to as “panes”. This chapter will introduce you to the “source” pane, “console” pane, “environment” pane, and “files” pane. Additionally, you will learn about the different ways you can customize your version of R Studio such as changing the color scheme.\nProgramming Basics- While the R language certainly has it’s unique advantages, it still leverages principles found in many other programming languages such as functions, comments, and loops. Learn how to apply these and other principles in R.\nData Types- Data is stored differently depending on what it represents when programming. For example, a number is going to be stored as a different data type than a letter is. Learn about the five basic data types in R and how to use them.\nData Structures- In computer science, a data structure refers to the method which one uses to organize their data. There are six basic data structures which are commonly used in R. Learn about each of them in this chapter."
   },
   {
     "objectID": "p1c1-r-studio.html#customization",
@@ -145,13 +131,6 @@
     "title": "4  Getting Familiar with R Studio",
     "section": "4.6 Resources",
     "text": "4.6 Resources\n\n“Editing and Executing Code in the RStudio IDE” from the R Studio Support team: https://support.rstudio.com/hc/en-us/articles/200484448-Editing-and-Executing-Code\n“Code Folding and Sections in the RStudio IDE” from the R Studio Support team: https://support.rstudio.com/hc/en-us/articles/200484568-Code-Folding-and-Sections-in-the-RStudio-IDE\n“Keyboard Shortcuts in the RStudio IDE” from the R Studio Support team: https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE\n“Navigating Code in the RStudio IDE” from the R Studio Support team: https://support.rstudio.com/hc/en-us/articles/200710523-Navigating-Code-in-the-RStudio-IDE\n\n\n\n\n\nPaulson, Josh. 2022. Navigating Code in the RStudio IDE. https://support.rstudio.com/hc/en-us/articles/200710523-Navigating-Code-in-the-RStudio-IDE."
-  },
-  {
-    "objectID": "p1c2-programming-basics.html",
-    "href": "p1c2-programming-basics.html",
-    "title": "5  Programming Basics",
-    "section": "",
-    "text": "This chapter will walk you through how to execute code and write scripts in R. You will then build upon that knowledge by learning about comments, variables, operators, functions, loops, conditionals, and libraries. While this chapter is titled “Programming Basics”, the knowledge you will have learned by the end of this chapter is enough for you to accomplish a huge variety of tasks."
   },
   {
     "objectID": "p1c2-programming-basics.html#executing-code",
@@ -217,13 +196,6 @@
     "text": "5.9 Resources\n\nW3 Schools R Tutorial: https://www.w3schools.com/r/\nAssignment Operators: https://stat.ethz.ch/R-manual/R-devel/library/base/html/assignOps.html"
   },
   {
-    "objectID": "p1c3-data-types.html",
-    "href": "p1c3-data-types.html",
-    "title": "6  Data Types",
-    "section": "",
-    "text": "Data is stored differently depending on what it represents when programming. For example, a number is going to be stored as a different data type than a letter is.\nThere are five basic data types in R:"
-  },
-  {
     "objectID": "p1c3-data-types.html#numeric",
     "href": "p1c3-data-types.html#numeric",
     "title": "6  Data Types",
@@ -264,13 +236,6 @@
     "title": "6  Data Types",
     "section": "6.6 Resources",
     "text": "6.6 Resources\n\nW3 Schools: https://www.w3schools.com/r/r_data_types.asp\n“Bits and Bytes” from Stanford CS 101: https://web.stanford.edu/class/cs101/bits-bytes.html"
-  },
-  {
-    "objectID": "p1c4-data-structures.html",
-    "href": "p1c4-data-structures.html",
-    "title": "7  Data Structures",
-    "section": "",
-    "text": "In computer science, a data structure refers to the method which one uses to organize their data. There are six basic data structures which are commonly used in R:"
   },
   {
     "objectID": "p1c4-data-structures.html#vectors",
@@ -322,18 +287,25 @@
     "text": "7.7 Resources\n\nW3 Schools: https://www.w3schools.com/r/r_vectors.asp"
   },
   {
+    "objectID": "p1exercises.html#questions",
+    "href": "p1exercises.html#questions",
+    "title": "Exercises",
+    "section": "Questions",
+    "text": "Questions\n\n\n\n\n\n\nExercise: 5-A\n\n\n\nWrite a function called “multiply” that will accept two numbers as arguments and will output the product of those two numbers when called as is demonstrated below.\nmultiply(3, 3)\n# [1] 9\n\n\n\n\n\n\n\n\nExercise: 5-B\n\n\n\nWrite an equation which will return the remainder of 12 divided by 8.\n\n\n\n\n\n\n\n\nExercise: 5-C\n\n\n\nWrite an equation which will return the remainder of 36 divided by 10.\n\n\n\n\n\n\n\n\nExercise: 5-D\n\n\n\nWrite a “while” loop which prints all even numbers from 0 to 10.\nIt’s possible for this task to be accomplished in several ways; however, the output of your program should always look like this:\n# [1] 0\n# [1] 2\n# [1] 4\n# [1] 6\n# [1] 8\n# [1] 10\n\n\n\n\n\n\n\n\nExercise: 5-E\n\n\n\nYou are given a vector that looks like this:\nnumbers <- c(0:12)\nWrite a for loop which loops through your vector and prints any element that is greater than or equal to 3.\nIt’s possible for this task to be accomplished in several ways; however, the output of your program should always look like this:\n# [1] 3\n# [1] 4\n# [1] 5\n# [1] 6\n# [1] 7\n# [1] 8\n# [1] 9\n# [1] 10\n# [1] 11\n# [1] 12\n\n\n\n\n\n\n\n\nExercise: 6-A\n\n\n\nConvert the following character variable to a variable with the data type “raw”:\nx <- \"Trevor rocks\"\nYou should store your raw data in a variable named “raw_data”, print the data to the console, and check the data type with the “typeof” function. Your output should look like the following:\nprint(raw_data)\n# [1] 54 72 65 76 6f 72 20 72 6f 63 6b 73\ntypeof(raw_data)\n# [1] \"raw\"\n\n\n\n\n\n\n\n\nExercise: 6-B\n\n\n\nCreate a variable named “spending” and give it a value of 120. Then create a variable named “budget” and give it a value of 100. Next, check whether spending is greater than budget and store the resulting logical data in a variable named “over_budget”. Finally, print the value of “over_budget” variable and check it’s data type with the “typeof” function.\nYour final output should look like this:\nprint(over_budget)\n# [1] TRUE\ntypeof(over_budget)\n# [1] \"logical\"\n\n\n\n\n\n\n\n\nExercise: 7-A\n\n\n\nCreate a vector named “animal” and give it the following three values: “cow”, “cat”, “pig”. Create a second vector named “sound” and give it the following three values: “moo”, “meow”, “oink”. Finally, create a data frame named “animal_sounds” and assign each of these vectors to be a column.\nAfter printing the resulting data frame to the console, you should get the following output:\n#   animal sound\n# 1    cow   moo\n# 2    cat  meow\n# 3    pig  oink"
+  },
+  {
+    "objectID": "p1exercises.html#answers",
+    "href": "p1exercises.html#answers",
+    "title": "Exercises",
+    "section": "Answers",
+    "text": "Answers\n\n\n\n\n\n\nAnswer: 5-A\n\n\n\nOne way you could accomplish this task is demonstrated in the following solution.\n\nmultiply <- function(x, y) {\n  return (x * y)\n}\n\nmultiply(3, 3)\n\n[1] 9\n\n\n\n\n\n\n\n\n\n\nAnswer: 5-B\n\n\n\nA remainder is referred to as “modulus” in programming. We can use the “%%” operator to accomplish this. For this example, the output of your equation should be 4.\n\n12 %% 8\n\n[1] 4\n\n\n\n\n\n\n\n\n\n\nAnswer: 5-C\n\n\n\nA remainder is referred to as “modulus” in programming. We can use the “%%” operator to accomplish this. For this example, the output of your equation should be 6.\n\n36 %% 10\n\n[1] 6\n\n\n\n\n\n\n\n\n\n\nAnswer: 5-D\n\n\n\nHere’s one way you could write your while loop to achieve this output:\n\ni <- 0\n\nwhile (i <= 10) {\n  print(i)\n  i <- i + 2\n}\n\n[1] 0\n[1] 2\n[1] 4\n[1] 6\n[1] 8\n[1] 10\n\n\n\n\n\n\n\n\n\n\nAnswer: 5-E\n\n\n\nHere’s one way you could write your for loop to achieve this output:\n\nnumbers <- c(0:12)\n\nfor (number in numbers) {\n  if (number >= 3) {\n    print(number)\n  }\n}\n\n[1] 3\n[1] 4\n[1] 5\n[1] 6\n[1] 7\n[1] 8\n[1] 9\n[1] 10\n[1] 11\n[1] 12\n\n\n\n\n\n\n\n\n\n\nAnswer: 6-A\n\n\n\nYou can accomplish this task through the “charToRaw” function.\n\nx <- \"Trevor rocks\"\nraw_data <- charToRaw(x)\nprint(raw_data)\n\n [1] 54 72 65 76 6f 72 20 72 6f 63 6b 73\n\ntypeof(raw_data)\n\n[1] \"raw\"\n\n\n\n\n\n\n\n\n\n\nAnswer: 6-B\n\n\n\nThe following example demonstrates how you can accomplish this task.\n\nspending <- 120\nbudget <- 100\nover_budget <- spending > budget\nprint(over_budget)\n\n[1] TRUE\n\ntypeof(over_budget)\n\n[1] \"logical\"\n\n\n\n\n\n\n\n\n\n\nAnswer: 7-A\n\n\n\nThe following example demonstrates how you can accomplish this task.\n\nanimal <- c(\"cow\", \"cat\", \"pig\")\nsound <- c(\"moo\", \"meow\", \"oink\")\nanimal_sounds <- data.frame(animal = animal, sound = sound)\nprint(animal_sounds)\n\n  animal sound\n1    cow   moo\n2    cat  meow\n3    pig  oink"
+  },
+  {
     "objectID": "p2-data-acquisition.html",
     "href": "p2-data-acquisition.html",
     "title": "Part II: Data Acquisition",
     "section": "",
-    "text": "Included Datasets- R comes with a variety of datasets already built in. This chapter will teach you how to view the catalog of included datasets, preview individual datasets, and begin working with the data.\nImport from Spreadsheets- Most R users will have to work with spreadsheets at some point in their careers. This chapter will teach you how to import data from spreadsheets whether it’s in a .csv or .xlsx file and get the imported data into a format that’s easy to work with.\nWorking with APIs- API stands for Application Programming Interface. These sorts of tools are commonly used to programmatically pull data from a third party resource. This chapter demonstrates how you can begin to leverage these tools in your own workflows."
-  },
-  {
-    "objectID": "p2c1-included-datasets.html",
-    "href": "p2c1-included-datasets.html",
-    "title": "8  Included Datasets",
-    "section": "",
-    "text": "R comes with a variety of datasets already built in. This chapter will teach you how to view the catalog of included datasets, preview individual datasets, and begin working with the data."
+    "text": "As you might imagine, you must acquire your data before conducting an analysis. This may be done through the methods such as manual creation of datasets, importing pre-constructed data, or leveraging APIs.\n\nIncluded Datasets- R comes with a variety of datasets already built in. This chapter will teach you how to view the catalog of included datasets, preview individual datasets, and begin working with the data.\nImport from Spreadsheets- Most R users will have to work with spreadsheets at some point in their careers. This chapter will teach you how to import data from spreadsheets whether it’s in a .csv or .xlsx file and get the imported data into a format that’s easy to work with.\nWorking with APIs- API stands for Application Programming Interface. These sorts of tools are commonly used to programmatically pull data from a third party resource. This chapter demonstrates how you can begin to leverage these tools in your own workflows."
   },
   {
     "objectID": "p2c1-included-datasets.html#view-catalog",
@@ -364,13 +336,6 @@
     "text": "8.4 Resources\n\nList of datasets available in Base R: https://www.rdocumentation.org/packages/datasets/versions/3.6.2"
   },
   {
-    "objectID": "p2c2-import-from-spreadsheets.html",
-    "href": "p2c2-import-from-spreadsheets.html",
-    "title": "9  Import from Spreadsheets",
-    "section": "",
-    "text": "Most R users will have to work with spreadsheets at some point in their careers. This chapter will teach you how to import data from spreadsheets whether it’s in a .csv or .xlsx file and get the imported data into a format that’s easy to work with. Additionally, this chapter will demonstrate how to import multiple files at once and combine them all into a single dataframe."
-  },
-  {
     "objectID": "p2c2-import-from-spreadsheets.html#import-from-.csv-files",
     "href": "p2c2-import-from-spreadsheets.html#import-from-.csv-files",
     "title": "9  Import from Spreadsheets",
@@ -397,13 +362,6 @@
     "title": "9  Import from Spreadsheets",
     "section": "9.4 Resources",
     "text": "9.4 Resources\n\ntrevoR package documentation: https://github.com/TrevorFrench/trevoR"
-  },
-  {
-    "objectID": "p2c3-working-with-apis.html",
-    "href": "p2c3-working-with-apis.html",
-    "title": "10  Working with APIs",
-    "section": "",
-    "text": "API stands for Application Programming Interface. These sorts of tools are commonly used to programmatically pull data from a third party resource. This chapter demonstrates how one can begin to leverage these tools in their own workflows.\nThe following example uses the Helium API to return data about it’s blockchain network."
   },
   {
     "objectID": "p2c3-working-with-apis.html#install-packages",
@@ -455,11 +413,11 @@
     "text": "10.7 Resources\n\nBlog post by Trevor French: https://medium.com/trevor-french/api-calls-in-r-136290ead81d\n\n\n10.7.1 Helpful APIs\n\nMeta Graph API: https://developers.facebook.com/docs/graph-api/\nTwitter API: https://developer.twitter.com/en/docs/twitter-api\nNASA APIs: https://api.nasa.gov/\nEtherscan API: https://etherscan.io/apis\nCovalent API: https://www.covalenthq.com/docs/api/#/0/0/USD/1\nEDGAR APIs from the SEC: https://www.sec.gov/edgar/sec-api-documentation\nWeather API: https://openweathermap.org/api\nHelium API: https://docs.helium.com/api/"
   },
   {
-    "objectID": "p2exercises.html",
-    "href": "p2exercises.html",
+    "objectID": "p2exercises.html#questions",
+    "href": "p2exercises.html#questions",
     "title": "Exercises",
-    "section": "",
-    "text": "Exercise: 8-A\n\n\n\nCreate a dataframe named “cars” which is equal to the first five rows of the mtcars dataset using the “head” function. After printing to the console, you should get the following result:\n#                    mpg cyl disp  hp drat    wt  qsec vs am gear carb\n# Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\n# Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\n# Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\n# Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\n# Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\n\n\n\n\n\n\n\n\nExercise: 9-A\n\n\n\nWrite a function named “read_file” which will accept a file name as a parameter named “file_name”. The function should then read in a csv with the specified name, store it as a dataframe named “df”, and return “df” as the final output.\n\n\n\n\n\n\n\n\nExercise: 9-B\n\n\n\nIn exercise 9-A you created a function that will allow you to read csv files. Build on this function by adding a second parameter named “csv” which will accept either “TRUE” or “FALSE”. The functionality shouldn’t change if the parameter is equal to “TRUE”; however, if the function is equal to “FALSE”, the function should allow the user to read in an xlsx file.\nFor example, if a user wanted to read in a csv file they would use the function in this way:\nread_file(\"iris.csv\", TRUE)\nIf the user wanted to read in an xlsx file they would use the function in this way:\nread_file(\"iris.xlsx\", FALSE)"
+    "section": "Questions",
+    "text": "Questions\n\n\n\n\n\n\nExercise: 8-A\n\n\n\nCreate a dataframe named “cars” which is equal to the first five rows of the mtcars dataset using the “head” function. After printing to the console, you should get the following result:\n#                    mpg cyl disp  hp drat    wt  qsec vs am gear carb\n# Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\n# Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\n# Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\n# Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\n# Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\n\n\n\n\n\n\n\n\nExercise: 9-A\n\n\n\nWrite a function named “read_file” which will accept a file name as a parameter named “file_name”. The function should then read in a csv with the specified name, store it as a dataframe named “df”, and return “df” as the final output.\n\n\n\n\n\n\n\n\nExercise: 9-B\n\n\n\nIn exercise 9-A you created a function that will allow you to read csv files. Build on this function by adding a second parameter named “csv” which will accept either “TRUE” or “FALSE”. The functionality shouldn’t change if the parameter is equal to “TRUE”; however, if the function is equal to “FALSE”, the function should allow the user to read in an xlsx file.\nFor example, if a user wanted to read in a csv file they would use the function in this way:\nread_file(\"iris.csv\", TRUE)\nIf the user wanted to read in an xlsx file they would use the function in this way:\nread_file(\"iris.xlsx\", FALSE)"
   },
   {
     "objectID": "p2exercises.html#answers",
@@ -473,14 +431,7 @@
     "href": "p3-data-preparation.html",
     "title": "Part III: Data Preparation",
     "section": "",
-    "text": "Most data will not be received in the precise format you need to begin your analysis. The process of data preparation is where you will structure and add features to your data.\n\nData Cleaning- This chapter will cover the basics of cleaning your data including renaming variables, splitting text, replacing values, dropping columns, and dropping rows. These basic actions will be essential to preparing your data prior to developing insights.\nHandling Missing Data- You may encounter situations while analysing data that some of your data are missing. This chapter will cover best practices in regards to handling these situations as well as the technical details on how to remedy the data.\nOutliers- Outliers are observations that fall outside the expected scope of the dataset. It’s important to identify outliers in your data and determine the necessary treatment for them before moving into the next analysis phase.\nOrganizing Data- This chapter will focus on sorting, filtering, and grouping your datasets."
-  },
-  {
-    "objectID": "p3c1-data-cleaning.html",
-    "href": "p3c1-data-cleaning.html",
-    "title": "11  Data Cleaning",
-    "section": "",
-    "text": "This chapter will cover the basics of cleaning your data including renaming variables, splitting text, replacing values, dropping columns, and dropping rows. These basic actions will be essential to preparing your data prior to developing insights."
+    "text": "Should we add a feature engineering chapter to this part?\nMost data will not be received in the precise format you need to begin your analysis. The process of data preparation is where you will structure and add features to your data.\n\nData Cleaning- This chapter will cover the basics of cleaning your data including renaming variables, splitting text, replacing values, dropping columns, and dropping rows. These basic actions will be essential to preparing your data prior to developing insights.\nHandling Missing Data- You may encounter situations while analysing data that some of your data are missing. This chapter will cover best practices in regards to handling these situations as well as the technical details on how to remedy the data.\nOutliers- Outliers are observations that fall outside the expected scope of the dataset. It’s important to identify outliers in your data and determine the necessary treatment for them before moving into the next analysis phase.\nOrganizing Data- This chapter will focus on sorting, filtering, and grouping your datasets."
   },
   {
     "objectID": "p3c1-data-cleaning.html#renaming-variables",
@@ -525,13 +476,6 @@
     "text": "11.6 Resources\n\n“Separate” function documentation: https://tidyr.tidyverse.org/reference/separate.html"
   },
   {
-    "objectID": "p3c2-handling-missing-data.html",
-    "href": "p3c2-handling-missing-data.html",
-    "title": "12  Handling Missing Data",
-    "section": "",
-    "text": "You may encounter situations while analysing data that some of your data are missing. This chapter will cover best practices in regards to handling these situations as well as the technical details on how to remedy the data.\nMissing data will often be represented by either “NA” or “” in R. Sometimes you will be able to manage by just ignoring this data; however, other times you will need to “impute” the missing data. This just means you end up coming up with a value that makes sense to use in place of the missing data. The three imputation methods we are going to cover in this chapter are constant vaue imputation, central tendency imputation, and multiple imputation."
-  },
-  {
     "objectID": "p3c2-handling-missing-data.html#handling-nablank-values",
     "href": "p3c2-handling-missing-data.html#handling-nablank-values",
     "title": "12  Handling Missing Data",
@@ -567,13 +511,6 @@
     "text": "12.5 Resources\n\n“Missing-data Imputation” from Columbia: http://www.stat.columbia.edu/~gelman/arm/missing.pdf"
   },
   {
-    "objectID": "p3c3-outliers.html",
-    "href": "p3c3-outliers.html",
-    "title": "13  Outliers",
-    "section": "",
-    "text": "Outliers are observations that fall outside the expected scope of the dataset. It’s important to identify outliers in your data and determine the necessary treatment for them before moving into the next analysis phase.\nmight be necessary to impute value, remove row or may be necessary to keep the data besides extreme value"
-  },
-  {
     "objectID": "p3c3-outliers.html#finding-outliers-visually",
     "href": "p3c3-outliers.html#finding-outliers-visually",
     "title": "13  Outliers",
@@ -600,13 +537,6 @@
     "title": "13  Outliers",
     "section": "13.4 Resources",
     "text": "13.4 Resources\n“Statistics - Standard Deviation” by W3 Schools: https://www.w3schools.com/statistics/statistics_standard_deviation.php"
-  },
-  {
-    "objectID": "p3c4-organizing-data.html",
-    "href": "p3c4-organizing-data.html",
-    "title": "14  Organizing Data",
-    "section": "",
-    "text": "This chapter will focus on sorting, filtering, and grouping your datasets."
   },
   {
     "objectID": "p3c4-organizing-data.html#sort-order-and-rank",
@@ -637,11 +567,11 @@
     "text": "14.4 Resources\n\ndplyr “filter” function documentation: https://dplyr.tidyverse.org/reference/filter.html\ndplyr “group_by” function documentation: https://dplyr.tidyverse.org/reference/group_by.html"
   },
   {
-    "objectID": "p3exercises.html",
-    "href": "p3exercises.html",
+    "objectID": "p3exercises.html#questions",
+    "href": "p3exercises.html#questions",
     "title": "Exercises",
-    "section": "",
-    "text": "Exercise: 11-A\n\n\n\nCreate a dataframe named “df” which is equal to the first three columns and the first five rows of the “mtcars” dataset. Next, rename the “mpg” column to “miles_per_gallon”.\nAfter printing the resulting dataframe to the console you should have the following results:\n#                   miles_per_gallon cyl disp\n# Mazda RX4                     21.0   6  160\n# Mazda RX4 Wag                 21.0   6  160\n# Datsun 710                    22.8   4  108\n# Hornet 4 Drive                21.4   6  258\n# Hornet Sportabout             18.7   8  360\n\n\n\n\n\n\n\n\nExercise: 12-A\n\n\n\nYou are given the following dataframe:\nvar_1 <- c(3, 4, 2, 9, NA, 2, 7)\nvar_2 <- c(8, NA, 6, 4, 8, 5, 5)\ndf <- data.frame(var_1 = var_1, var_2 = var_2)\nprint(df)\n#   var_1 var_2\n# 1     3     8\n# 2     4    NA\n# 3     2     6\n# 4     9     4\n# 5    NA     8\n# 6     2     5\n# 7     7     5\nCreate a new dataframe called “cleaned_df” which is equal to “df” except with both rows which contain “NA” values removed.\nThe final output of “cleaned_df” should look like this:\n#   var_1 var_2\n# 1     3     8\n# 3     2     6\n# 4     9     4\n# 6     2     5\n# 7     7     5\n\n\n\n\n\n\n\n\nExercise: 12-B\n\n\n\nTake the original “df” dataframe from exercise 12-A and apply a constant value of “5” to each “NA” value. Store this new dataframe in a variable named “constant_value”.\nYour final output after printing “constant_value” to the console should look like this:\nprint(constant_value)\n#   var_1 var_2\n# 1     3     8\n# 2     4     5\n# 3     2     6\n# 4     9     4\n# 5     5     8\n# 6     2     5\n# 7     7     5\n\n\n\n\n\n\n\n\nExercise: 12-C\n\n\n\nTake the same “df” dataframe from exercises 12-A and 12-B and apply an average value of each column to “NA” values in each respective column. Store this new dataframe in a variable named “mean_value”.\nYour final output after printing “mean_value” to the console should look like this:\nprint(mean_value)\n#   var_1 var_2\n# 1   3.0     8\n# 2   4.0     6\n# 3   2.0     6\n# 4   9.0     4\n# 5   4.5     8\n# 6   2.0     5\n# 7   7.0     5\n\n\n\n\n\n\n\n\nExercise: 13-A\n\n\n\nUse the “Nile” dataset to create a histogram to view the distribution of it’s data.\n\n\n\n\n\n\n\n\nExercise: 14-A\n\n\n\nTake the dataframe created in exercise 11-A and drop any row where the “disp” column is equal to “160”.\nYou should receive the following results when you print the resulting dataframe to the console.\n#                   miles_per_gallon cyl disp\n# Datsun 710                    22.8   4  108\n# Hornet 4 Drive                21.4   6  258\n# Hornet Sportabout             18.7   8  360"
+    "section": "Questions",
+    "text": "Questions\n\n\n\n\n\n\nExercise: 11-A\n\n\n\nCreate a dataframe named “df” which is equal to the first three columns and the first five rows of the “mtcars” dataset. Next, rename the “mpg” column to “miles_per_gallon”.\nAfter printing the resulting dataframe to the console you should have the following results:\n#                   miles_per_gallon cyl disp\n# Mazda RX4                     21.0   6  160\n# Mazda RX4 Wag                 21.0   6  160\n# Datsun 710                    22.8   4  108\n# Hornet 4 Drive                21.4   6  258\n# Hornet Sportabout             18.7   8  360\n\n\n\n\n\n\n\n\nExercise: 12-A\n\n\n\nYou are given the following dataframe:\nvar_1 <- c(3, 4, 2, 9, NA, 2, 7)\nvar_2 <- c(8, NA, 6, 4, 8, 5, 5)\ndf <- data.frame(var_1 = var_1, var_2 = var_2)\nprint(df)\n#   var_1 var_2\n# 1     3     8\n# 2     4    NA\n# 3     2     6\n# 4     9     4\n# 5    NA     8\n# 6     2     5\n# 7     7     5\nCreate a new dataframe called “cleaned_df” which is equal to “df” except with both rows which contain “NA” values removed.\nThe final output of “cleaned_df” should look like this:\n#   var_1 var_2\n# 1     3     8\n# 3     2     6\n# 4     9     4\n# 6     2     5\n# 7     7     5\n\n\n\n\n\n\n\n\nExercise: 12-B\n\n\n\nTake the original “df” dataframe from exercise 12-A and apply a constant value of “5” to each “NA” value. Store this new dataframe in a variable named “constant_value”.\nYour final output after printing “constant_value” to the console should look like this:\nprint(constant_value)\n#   var_1 var_2\n# 1     3     8\n# 2     4     5\n# 3     2     6\n# 4     9     4\n# 5     5     8\n# 6     2     5\n# 7     7     5\n\n\n\n\n\n\n\n\nExercise: 12-C\n\n\n\nTake the same “df” dataframe from exercises 12-A and 12-B and apply an average value of each column to “NA” values in each respective column. Store this new dataframe in a variable named “mean_value”.\nYour final output after printing “mean_value” to the console should look like this:\nprint(mean_value)\n#   var_1 var_2\n# 1   3.0     8\n# 2   4.0     6\n# 3   2.0     6\n# 4   9.0     4\n# 5   4.5     8\n# 6   2.0     5\n# 7   7.0     5\n\n\n\n\n\n\n\n\nExercise: 13-A\n\n\n\nUse the “Nile” dataset to create a histogram to view the distribution of it’s data.\n\n\n\n\n\n\n\n\nExercise: 14-A\n\n\n\nTake the dataframe created in exercise 11-A and drop any row where the “disp” column is equal to “160”.\nYou should receive the following results when you print the resulting dataframe to the console.\n#                   miles_per_gallon cyl disp\n# Datsun 710                    22.8   4  108\n# Hornet 4 Drive                21.4   6  258\n# Hornet Sportabout             18.7   8  360"
   },
   {
     "objectID": "p3exercises.html#answers",
@@ -655,14 +585,7 @@
     "href": "p4-developing-insights.html",
     "title": "Part IV: Developing Insights",
     "section": "",
-    "text": "Once your data is prepared, you can now begin to make sense of your data and develop insights about it’s meaning. For many, this is where the data analysis process becomes the most fulfilling. This is the point where you get to reap what you’ve sown in the previous phases of the data analysis lifecycle.\n\nSummary Statistics- Summary statistics are usually where one starts when beginning to develop insights. You may hear the phrase “Exploratory Data Analysis” (sometimes abbreviated “EDA”) throughout your career. This is the point where you try to get a high-level understanding of your data through methods such as summary statistics.\nRegression- Regression is a common statistical technique employed by many to make generalizations as well as predictions about data.\nPlotting- This chapter will cover the basics of creating plots in R. It will begin by demonstrating the plotting capabilities available in R “out of the box”. This will be followed by an introduction to “ggplot2” which is one of the most common plotting libraries in R.\n\n\n\n\n\nGarvin, David A. 1993. “Building a Learning Organization.” Harvard Business Review July-August 1993."
-  },
-  {
-    "objectID": "p4c1-summary-statistics.html",
-    "href": "p4c1-summary-statistics.html",
-    "title": "15  Summary Statistics",
-    "section": "",
-    "text": "Summary statistics (otherwise known as descriptive statistics) are usually where one starts when beginning to develop insights. You may hear the phrase “Exploratory Data Analysis” (sometimes abbreviated “EDA”) throughout your career. This is the point where you try to get a high-level understanding of your data through methods such as summary statistics."
+    "text": "“A learning organization is an organization skilled at creating, acquiring, and transferring knowledge, and at modifying its behavior to reflect new knowledge and insights.”  -David A. Garvin (Garvin 1993)\n\nOnce your data is prepared, you can now begin to make sense of your data and develop insights about it’s meaning. For many, this is where the data analysis process becomes the most fulfilling. This is the point where you get to reap what you’ve sown in the previous phases of the data analysis lifecycle.\n\nSummary Statistics- Summary statistics are usually where one starts when beginning to develop insights. You may hear the phrase “Exploratory Data Analysis” (sometimes abbreviated “EDA”) throughout your career. This is the point where you try to get a high-level understanding of your data through methods such as summary statistics.\nRegression- Regression is a common statistical technique employed by many to make generalizations as well as predictions about data.\nPlotting- This chapter will cover the basics of creating plots in R. It will begin by demonstrating the plotting capabilities available in R “out of the box”. This will be followed by an introduction to “ggplot2” which is one of the most common plotting libraries in R.\n\n\n\n\n\nGarvin, David A. 1993. “Building a Learning Organization.” Harvard Business Review July-August 1993."
   },
   {
     "objectID": "p4c1-summary-statistics.html#quantitative-data",
@@ -684,48 +607,6 @@
     "title": "15  Summary Statistics",
     "section": "15.3 Resources",
     "text": "15.3 Resources\n\n“Exploring Data and Descriptive Statistics (using R)” from princeton: https://www.princeton.edu/~otorres/sessions/s2r.pdf"
-  },
-  {
-    "objectID": "p4c2-regression.html",
-    "href": "p4c2-regression.html",
-    "title": "16  Regression",
-    "section": "",
-    "text": "Regression is a common statistical technique employed by many to make generalizations as well as predictions about data."
-  },
-  {
-    "objectID": "p4c2-regression.html#linear-regression",
-    "href": "p4c2-regression.html#linear-regression",
-    "title": "16  Regression",
-    "section": "16.1 Linear Regression",
-    "text": "16.1 Linear Regression\nThe first kind of regression we’ll cover is linear regression. Linear regression will use your data to come up with a linear model that describes the general trend of your data. Generally speaking, a linear model will consist of a dependent variable (y), at least one independent variable (x), coefficients to go along with each independent variable, and an intercept. Here’s one common linear model you may remember:\n\\[\ny = mx + b\n\\]\nThis is a simple linear model many people begin with where x and y are the independent and dependent variables, respectively, m is the slope (or coefficient of x), and b is the intercept.\nTo perform linear regression in R, you’ll use the “lm” function. Let’s try it out on the “faithful” dataset.\n\nhead(faithful)\n\n\n\n\n\n\neruptions\nwaiting\n\n\n\n\n3.600\n79\n\n\n1.800\n54\n\n\n3.333\n74\n\n\n2.283\n62\n\n\n4.533\n85\n\n\n2.883\n55\n\n\n\n\n\nThe “lm” function will accept at least two parameters which represent “y” and “x” in this format:\n\nlm(y ~ x)\n\nLet’s try this out by setting the y variable to eruptions and the x variable to waiting. We can then view the output of our linear model by using the “summary” function.\n\nlm <- lm(faithful$eruptions ~ faithful$waiting)\nsummary(lm)\n\n\nCall:\nlm(formula = faithful$eruptions ~ faithful$waiting)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-1.29917 -0.37689  0.03508  0.34909  1.19329 \n\nCoefficients:\n                  Estimate Std. Error t value Pr(>|t|)    \n(Intercept)      -1.874016   0.160143  -11.70   <2e-16 ***\nfaithful$waiting  0.075628   0.002219   34.09   <2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.4965 on 270 degrees of freedom\nMultiple R-squared:  0.8115,    Adjusted R-squared:  0.8108 \nF-statistic:  1162 on 1 and 270 DF,  p-value: < 2.2e-16\n\n\nThis summary will show us the statistical significance of our model along with all relevant statistics to correctly interpret the significance. Additionally, we now have our model coefficients. From this summary we can assume that our model looks something like this:\n\\[\neruptions = waiting * 0.075628 - 1.874016\n\\]\nLet’s break down everything that the model summary returns.\n\nThe “Call” section calls the model that you created\nThe “Residuals” section gives you a summary of all of your model residuals. Simply put, a residual denotes how far away any given point falls from the predicted value.\nThe “Coefficients” section gives us our model coefficients, our intercept, and statistical values to determine their significance.\n\nFor each coefficient, we are given the respective standard error. The standard error is used to meaure the preciseness in which the coefficient was estimated. Standard errors which are smaller are considered to be more precise.\nNext, we have a t value for each coefficient. The t value is calculate by dividing the coefficient by the standard error.\nFinally, you have the p value accompanied by symbols to denote the corresponding significance level.\n\nThe residual standard error gives you a way to measure the standard deviation of the residuals and is calculated by dividing residual sum of squares by the residual degrees of freedom and taking the square root of that where the residual degrees of freedom is equal to total observations - total model parameters - 1.\nR-squared gives you the proportion of variance that can be explained by your model. Your adjusted R-squared statistic will tell you the same thing but will adjust for the amount of variables you’ve included in your model.\nYour F-statistic will help you to understand the probability that all of your model parameters are actually equal to zero."
-  },
-  {
-    "objectID": "p4c2-regression.html#multiple-regression",
-    "href": "p4c2-regression.html#multiple-regression",
-    "title": "16  Regression",
-    "section": "16.2 Multiple Regression",
-    "text": "16.2 Multiple Regression\nIf you had more x variables you wanted to add to your linear model, you could add them just like you would in any other math equation. Here’s an example:\n\nlm(data$y ~ data$x1 + data$x2 - data$x3 * data$x4)\n\nAdditionally, you can use the “data” parameter rather than putting the name of the dataset before every variable.\n\nlm(y ~ x1 + x2 - x3 * x4, data = data)\n\nLet’s try a real example with the mtcars dataset.\n\nhead(mtcars)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n1\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n1\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n2\n\n\nValiant\n18.1\n6\n225\n105\n2.76\n3.460\n20.22\n1\n0\n3\n1\n\n\n\n\n\nNow, let’s try to predict mpg and use every other column as a variable then see what the results look like.\n\nlm <- lm(mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb, data = mtcars)\nsummary(lm)\n\n\nCall:\nlm(formula = mpg ~ cyl + disp + hp + drat + wt + qsec + vs + \n    am + gear + carb, data = mtcars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-3.4506 -1.6044 -0.1196  1.2193  4.6271 \n\nCoefficients:\n            Estimate Std. Error t value Pr(>|t|)  \n(Intercept) 12.30337   18.71788   0.657   0.5181  \ncyl         -0.11144    1.04502  -0.107   0.9161  \ndisp         0.01334    0.01786   0.747   0.4635  \nhp          -0.02148    0.02177  -0.987   0.3350  \ndrat         0.78711    1.63537   0.481   0.6353  \nwt          -3.71530    1.89441  -1.961   0.0633 .\nqsec         0.82104    0.73084   1.123   0.2739  \nvs           0.31776    2.10451   0.151   0.8814  \nam           2.52023    2.05665   1.225   0.2340  \ngear         0.65541    1.49326   0.439   0.6652  \ncarb        -0.19942    0.82875  -0.241   0.8122  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.65 on 21 degrees of freedom\nMultiple R-squared:  0.869, Adjusted R-squared:  0.8066 \nF-statistic: 13.93 on 10 and 21 DF,  p-value: 3.793e-07\n\n\nFrom here, you would likely tweak your model further based on the significance statistics we see here; however, that’s outside the scope of what we’re doing in this book. Take a look in the resources section at the end of this chapter to dive deeper into developing regression models."
-  },
-  {
-    "objectID": "p4c2-regression.html#logistic-regression",
-    "href": "p4c2-regression.html#logistic-regression",
-    "title": "16  Regression",
-    "section": "16.3 Logistic Regression",
-    "text": "16.3 Logistic Regression\nLogistic regression is commonly used when your dependent variable (y) binomial (0 or 1). Instead of using the “lm” function though, you will use the “glm” function. Let’s try this out on the mtcars dataset again but this time with “am” as the dependent variable.\n\nglm <- glm(am ~ cyl + hp + wt, family = binomial, data = mtcars)\nsummary(glm)\n\n\nCall:\nglm(formula = am ~ cyl + hp + wt, family = binomial, data = mtcars)\n\nDeviance Residuals: \n     Min        1Q    Median        3Q       Max  \n-2.17272  -0.14907  -0.01464   0.14116   1.27641  \n\nCoefficients:\n            Estimate Std. Error z value Pr(>|z|)  \n(Intercept) 19.70288    8.11637   2.428   0.0152 *\ncyl          0.48760    1.07162   0.455   0.6491  \nhp           0.03259    0.01886   1.728   0.0840 .\nwt          -9.14947    4.15332  -2.203   0.0276 *\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for binomial family taken to be 1)\n\n    Null deviance: 43.2297  on 31  degrees of freedom\nResidual deviance:  9.8415  on 28  degrees of freedom\nAIC: 17.841\n\nNumber of Fisher Scoring iterations: 8"
-  },
-  {
-    "objectID": "p4c2-regression.html#resources",
-    "href": "p4c2-regression.html#resources",
-    "title": "16  Regression",
-    "section": "16.4 Resources",
-    "text": "16.4 Resources\n\n“Lecture 9 - Linear regression in R” by Professor Alexandra Chouldechova at Carnegie Mellon University: https://www.andrew.cmu.edu/user/achoulde/94842/lectures/lecture09/lecture09-94842.html\n“Logistic Regression” by Erin Bugbee and Jared Wilber: https://mlu-explain.github.io/logistic-regression/\n“Visualizing OLS Linear Regression Assumptions in R” by Trevor French https://medium.com/trevor-french/visualizing-ols-linear-regression-assumptions-in-r-e762ba7afaff"
-  },
-  {
-    "objectID": "p4c3-plotting.html",
-    "href": "p4c3-plotting.html",
-    "title": "17  Plotting",
-    "section": "",
-    "text": "This chapter will cover the basics of creating plots in R. It will begin by demonstrating the plotting capabilities available in R out of the box. These capabilities are often referred to as “Base R”. This will be followed by an introduction to “ggplot2” which is one of the most common plotting libraries in R.\nword cloud"
   },
   {
     "objectID": "p4c3-plotting.html#plotting-your-regression-model",
@@ -756,11 +637,11 @@
     "text": "17.4 Resources\n\nggplot2 documentation: https://ggplot2.tidyverse.org/\nggplot2 cheat sheet: https://github.com/rstudio/cheatsheets/blob/main/data-visualization.pdf\nggplot2 extension gallery: https://exts.ggplot2.tidyverse.org/gallery/\nR colors: http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf\n\n\n\n\n\nChambers, Cleveland, J. M., and P. A. Tukey. 1983. Graphical Methods for Data Analysis. Wadsworth & Brooks/Cole."
   },
   {
-    "objectID": "p4exercises.html",
-    "href": "p4exercises.html",
+    "objectID": "p4exercises.html#questions",
+    "href": "p4exercises.html#questions",
     "title": "Exercises",
-    "section": "",
-    "text": "Exercise: 15-A\n\n\n\nUse the “summary” function to get summary statistics for all columns in the “mtcars” dataset.\nYour final output should resemble the following:\n#       mpg             cyl             disp             hp       \n#  Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  \n#  1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  \n#  Median :19.20   Median :6.000   Median :196.3   Median :123.0  \n#  Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  \n#  3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  \n#  Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  \n#       drat             wt             qsec             vs        \n#  Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  \n#  1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  \n#  Median :3.695   Median :3.325   Median :17.71   Median :0.0000  \n#  Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  \n#  3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  \n#  Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  \n#        am              gear            carb      \n#  Min.   :0.0000   Min.   :3.000   Min.   :1.000  \n#  1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  \n#  Median :0.0000   Median :4.000   Median :2.000  \n#  Mean   :0.4062   Mean   :3.688   Mean   :2.812  \n#  3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  \n#  Max.   :1.0000   Max.   :5.000   Max.   :8.000 \n\n\n\n\n\n\n\n\nExercise: 16-A\n\n\n\nUse the “lm” function to create a linear model using the “ChickWeight” dataset. Your model should predict the “weight” variable using the “Diet” and “Time” variables.\nName your linear model “lm” and then view a summary of your model using the “summary” function. The output of your summary should look like this:\n# Call:\n# lm(formula = weight ~ Diet + Time, data = ChickWeight)\n\n# Residuals:\n#      Min       1Q   Median       3Q      Max \n# -136.851  -17.151   -2.595   15.033  141.816 \n\n# Coefficients:\n#             Estimate Std. Error t value Pr(>|t|)    \n# (Intercept)  10.9244     3.3607   3.251  0.00122 ** \n# Diet2        16.1661     4.0858   3.957 8.56e-05 ***\n# Diet3        36.4994     4.0858   8.933  < 2e-16 ***\n# Diet4        30.2335     4.1075   7.361 6.39e-13 ***\n# Time          8.7505     0.2218  39.451  < 2e-16 ***\n# ---\n# Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1\n\n# Residual standard error: 35.99 on 573 degrees of freedom\n# Multiple R-squared:  0.7453,  Adjusted R-squared:  0.7435 \n# F-statistic: 419.2 on 4 and 573 DF,  p-value: < 2.2e-16\n\n\n\n\n\n\n\n\nExercise: 17-A\n\n\n\nCreate a density plot using the “Nile” dataset."
+    "section": "Questions",
+    "text": "Questions\n\n\n\n\n\n\nExercise: 15-A\n\n\n\nUse the “summary” function to get summary statistics for all columns in the “mtcars” dataset.\nYour final output should resemble the following:\n#       mpg             cyl             disp             hp       \n#  Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  \n#  1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  \n#  Median :19.20   Median :6.000   Median :196.3   Median :123.0  \n#  Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  \n#  3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  \n#  Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  \n#       drat             wt             qsec             vs        \n#  Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  \n#  1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  \n#  Median :3.695   Median :3.325   Median :17.71   Median :0.0000  \n#  Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  \n#  3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  \n#  Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  \n#        am              gear            carb      \n#  Min.   :0.0000   Min.   :3.000   Min.   :1.000  \n#  1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  \n#  Median :0.0000   Median :4.000   Median :2.000  \n#  Mean   :0.4062   Mean   :3.688   Mean   :2.812  \n#  3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  \n#  Max.   :1.0000   Max.   :5.000   Max.   :8.000 \n\n\n\n\n\n\n\n\nExercise: 16-A\n\n\n\nUse the “lm” function to create a linear model using the “ChickWeight” dataset. Your model should predict the “weight” variable using the “Diet” and “Time” variables.\nName your linear model “lm” and then view a summary of your model using the “summary” function. The output of your summary should look like this:\n# Call:\n# lm(formula = weight ~ Diet + Time, data = ChickWeight)\n\n# Residuals:\n#      Min       1Q   Median       3Q      Max \n# -136.851  -17.151   -2.595   15.033  141.816 \n\n# Coefficients:\n#             Estimate Std. Error t value Pr(>|t|)    \n# (Intercept)  10.9244     3.3607   3.251  0.00122 ** \n# Diet2        16.1661     4.0858   3.957 8.56e-05 ***\n# Diet3        36.4994     4.0858   8.933  < 2e-16 ***\n# Diet4        30.2335     4.1075   7.361 6.39e-13 ***\n# Time          8.7505     0.2218  39.451  < 2e-16 ***\n# ---\n# Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1\n\n# Residual standard error: 35.99 on 573 degrees of freedom\n# Multiple R-squared:  0.7453,  Adjusted R-squared:  0.7435 \n# F-statistic: 419.2 on 4 and 573 DF,  p-value: < 2.2e-16\n\n\n\n\n\n\n\n\nExercise: 17-A\n\n\n\nCreate a density plot using the “Nile” dataset."
   },
   {
     "objectID": "p4exercises.html#answers",
@@ -774,14 +655,7 @@
     "href": "p5-reporting.html",
     "title": "Part V: Reporting",
     "section": "",
-    "text": "Finally, it’s important to report on your data in such a way that the information is able to be digested by the people who need to see it when they need to see it.\n\nSpreadsheets- Spreadsheets are common way to communicate information to stakeholders. This chapter will go over how to export .xlsx and .csv files from R, how to format those spreadsheets, and how to add formulas to them.\nR Markdown- R Markdown allows you to create documents in a programmatic fashion that lends itself towards reproducibility. This chapter will cover the different formats that are available in R as well as how to create them.\nR Shiny- R Shiny is a tool used to develop web applications and is commonly deployed in the use of creating dashboards, hosting static reports, and custom tooling.\n\n\n\n\n\nMcCandless, David. 2010. “The Beauty of Data Visualization.” https://www.ted.com/talks/david_mccandless_the_beauty_of_data_visualization/transcript?language=en."
-  },
-  {
-    "objectID": "p5c1-spreadsheets.html",
-    "href": "p5c1-spreadsheets.html",
-    "title": "18  Spreadsheets",
-    "section": "",
-    "text": "Spreadsheets are common way to communicate information to stakeholders. This chapter will go over how to export .xlsx and .csv files from R, how to format those spreadsheets, and how to add formulas to them."
+    "text": "“It feels like we’re all suffering from information overload or data glut. And the good news is there might be an easy solution to that, and that’s using our eyes more. So, visualizing information, so that we can see the patterns and connections that matter and then designing that information so it makes more sense, or it tells a story, or allows us to focus only on the information that’s important. Failing that, visualized information can just look really cool.”  -David McCandless (McCandless 2010)\n\nFinally, it’s important to report on your data in such a way that the information is able to be digested by the people who need to see it when they need to see it.\n\nSpreadsheets- Spreadsheets are common way to communicate information to stakeholders. This chapter will go over how to export .xlsx and .csv files from R, how to format those spreadsheets, and how to add formulas to them.\nR Markdown- R Markdown allows you to create documents in a programmatic fashion that lends itself towards reproducibility. This chapter will cover the different formats that are available in R as well as how to create them.\nR Shiny- R Shiny is a tool used to develop web applications and is commonly deployed in the use of creating dashboards, hosting static reports, and custom tooling.\n\n\n\n\n\nMcCandless, David. 2010. “The Beauty of Data Visualization.” https://www.ted.com/talks/david_mccandless_the_beauty_of_data_visualization/transcript?language=en."
   },
   {
     "objectID": "p5c1-spreadsheets.html#export",
@@ -812,13 +686,6 @@
     "text": "18.4 Resources\n\nopenxlsx documentation: https://cran.r-project.org/web/packages/openxlsx/openxlsx.pdf"
   },
   {
-    "objectID": "p5c2-r-markdown.html",
-    "href": "p5c2-r-markdown.html",
-    "title": "19  R Markdown",
-    "section": "",
-    "text": "R Markdown allows you to create documents in a programmatic fashion that lends itself towards reproducibility. This chapter will cover the different formats that are available in R as well as how to create them."
-  },
-  {
     "objectID": "p5c2-r-markdown.html#format-options",
     "href": "p5c2-r-markdown.html#format-options",
     "title": "19  R Markdown",
@@ -845,13 +712,6 @@
     "title": "19  R Markdown",
     "section": "19.4 Resources",
     "text": "19.4 Resources\n\n“Document Templates” from “R Markdown: The Definitive Guide”: https://bookdown.org/yihui/rmarkdown/document-templates.html?version=2022.07.2%2B576&mode=desktop\nR Markdown Formats: https://rmarkdown.rstudio.com/formats.html\nR Markdown Home Page: https://rmarkdown.rstudio.com/\nR Markdown Notebooks: https://rmarkdown.rstudio.com/lesson-10.html"
-  },
-  {
-    "objectID": "p5c3-r-shiny.html",
-    "href": "p5c3-r-shiny.html",
-    "title": "20  R Shiny",
-    "section": "",
-    "text": "R Shiny is a tool used to develop web applications and is commonly deployed in the use of creating dashboards, hosting static reports, and custom tooling."
   },
   {
     "objectID": "p5c3-r-shiny.html#quickstart",
@@ -882,11 +742,11 @@
     "text": "20.4 Resources\n\nShiny Home Page: https://shiny.rstudio.com/\nShiny UI Editor: https://rstudio.github.io/shinyuieditor/"
   },
   {
-    "objectID": "p5exercises.html",
-    "href": "p5exercises.html",
+    "objectID": "p5exercises.html#questions",
+    "href": "p5exercises.html#questions",
     "title": "Exercises",
-    "section": "",
-    "text": "Exercise: 18-A\n\n\n\nWrite the first seven rows of the “faithful” dataset to a csv file named “faithful.csv”. Make sure you do not include any row names in your output file.\n\n\n\n\n\n\n\n\nExercise: 18-B\n\n\n\nWrite the entire “faithful” dataset to an xlsx file using the “saveWorkbook” function. Name the tab (worksheet) that the data is on “data” and make the text in the header row bold."
+    "section": "Questions",
+    "text": "Questions\n\n\n\n\n\n\nExercise: 18-A\n\n\n\nWrite the first seven rows of the “faithful” dataset to a csv file named “faithful.csv”. Make sure you do not include any row names in your output file.\n\n\n\n\n\n\n\n\nExercise: 18-B\n\n\n\nWrite the entire “faithful” dataset to an xlsx file using the “saveWorkbook” function. Name the tab (worksheet) that the data is on “data” and make the text in the header row bold."
   },
   {
     "objectID": "p5exercises.html#answers",
@@ -907,6 +767,27 @@
     "href": "index.html",
     "title": "R for Data Analysis",
     "section": "",
-    "text": "“There is synthesis when, in combining therein judgments that are made known to us from simpler relations, one deduces judgments from them relative to more complicated relations. There is analysis when from a complicated truth one deduces more simple truths.”  -André-Marie Ampère (Hofmann 1996)\n\nEveryone is a data analyst. The purpose of this book is to inspire and enable anyone who reads it to reconsider the methods they currently employ to analyse data. This is not to suggest that the methodologies outlined will be useful or sufficient for everyone who reads it. Some analyses can be performed quickly without the need for additional computation while others will require advanced analytics techniques not outlined in this book; however, the aspiration is that all will be equipped with novel tools and ideas for approaching data analysis.\n\n\nNo prior knowledge is required to begin this book. The content will start at the very beginning by showing you how to set up your R environment and the basics of programming in R. By the end of the book, you will be able to perform intermediate analytics techniques such as linear regresion and automatic report generation.\nYou will need an environment which you use to run your code. It is recommended that you download R and R Studio locally for this requirement. This book will walk you through how to do that as well as offer alternatives if that is not an option for you.\n\n\n\n\nPart I (Fundamentals) will introduce you to the basics of programming in the context of R.\nPart II (Data Acquisition) will teach you how to create, import, and access data.\nPart III (Data Preparation) will show you how to begin preparing your data for analysis.\nPart IV (Developing Insights) goes through the process of searching for and extracting insights from your data.\nPart V (Reporting) demonstrates how to wrap your analysis up by developing and automating reports.\n\nEach part will contain several chapters which cover specific ideas realted to the overarching topic. At the end of each of these chapters you will find additional resources for you to use to dive deeper into the ideas.\nEach part will be concluded with practical exercises for you to test your skills.\n\n\n\nThis website is free to use, and is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 4.0 License. Physical copies of this book are not currently available; however, you can download a pdf in the top left corner of this site. Feel free to contribute by reporting a typo or leaving a pull request at https://github.com/TrevorFrench/R-for-Data-Analysis.\n\n\n\n\nHofmann, J. R. 1996. Enlightenment and Electrodynamics. Cambridge University Press."
+    "text": "Everyone is a data analyst. The purpose of this book is to inspire and enable anyone who reads it to reconsider the methods they currently employ to analyse data. This is not to suggest that the methodologies outlined will be useful or sufficient for everyone who reads it. Some analyses can be performed quickly without the need for additional computation while others will require advanced analytics techniques not outlined in this book; however, the aspiration is that all will be equipped with novel tools and ideas for approaching data analysis."
+  },
+  {
+    "objectID": "index.html#prerequisites",
+    "href": "index.html#prerequisites",
+    "title": "R for Data Analysis",
+    "section": "1.1 Prerequisites",
+    "text": "1.1 Prerequisites\nNo prior knowledge is required to begin this book. The content will start at the very beginning by showing you how to set up your R environment and the basics of programming in R. By the end of the book, you will be able to perform intermediate analytics techniques such as linear regresion and automatic report generation.\nYou will need an environment which you use to run your code. It is recommended that you download R and R Studio locally for this requirement. This book will walk you through how to do that as well as offer alternatives if that is not an option for you."
+  },
+  {
+    "objectID": "index.html#structure-of-the-book",
+    "href": "index.html#structure-of-the-book",
+    "title": "R for Data Analysis",
+    "section": "1.2 Structure of the Book",
+    "text": "1.2 Structure of the Book\n\nPart I (Fundamentals) will introduce you to the basics of programming in the context of R.\nPart II (Data Acquisition) will teach you how to create, import, and access data.\nPart III (Data Preparation) will show you how to begin preparing your data for analysis.\nPart IV (Developing Insights) goes through the process of searching for and extracting insights from your data.\nPart V (Reporting) demonstrates how to wrap your analysis up by developing and automating reports.\n\nEach part will contain several chapters which cover specific ideas realted to the overarching topic. At the end of each of these chapters you will find additional resources for you to use to dive deeper into the ideas.\nEach part will be concluded with practical exercises for you to test your skills."
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "R for Data Analysis",
+    "section": "1.3 License",
+    "text": "1.3 License\nThis website is free to use, and is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 4.0 License. Physical copies of this book are not currently available; however, you can download a pdf in the top left corner of this site. Feel free to contribute by reporting a typo or leaving a pull request at https://github.com/TrevorFrench/R-for-Data-Analysis.\n\n\n\n\nHofmann, J. R. 1996. Enlightenment and Electrodynamics. Cambridge University Press."
   }
 ]
