@@ -534,27 +534,75 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Let’s now apply our three datasets to the workbook object we previously created.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write the setosa dataset to the "Setosa" worksheet</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">writeData</span>(wb, <span class="st">"Setosa"</span>, setosa, <span class="at">startCol =</span> <span class="dv">1</span>, <span class="at">startRow =</span> <span class="dv">1</span>, <span class="at">rowNames =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Write the versicolor dataset to the "Versicolor" worksheet</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">writeData</span>(wb, <span class="st">"Versicolor"</span>, versicolor, <span class="at">startCol =</span> <span class="dv">1</span>, <span class="at">startRow =</span> <span class="dv">1</span>, <span class="at">rowNames =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Write the virginica dataset to the "Virginica" worksheet</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">writeData</span>(wb, <span class="st">"Virginica"</span>, virginica, <span class="at">startCol =</span> <span class="dv">1</span>, <span class="at">startRow =</span> <span class="dv">1</span>, <span class="at">rowNames =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">writeData</span>(wb</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>            , <span class="st">"Setosa"</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>            , setosa</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>            , <span class="at">startCol =</span> <span class="dv">1</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>            , <span class="at">startRow =</span> <span class="dv">1</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>            , <span class="at">rowNames =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Write the versicolor dataset to the "Versicolor" worksheet</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="fu">writeData</span>(wb</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>            , <span class="st">"Versicolor"</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>            , versicolor</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>            , <span class="at">startCol =</span> <span class="dv">1</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>            , <span class="at">startRow =</span> <span class="dv">1</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>            , <span class="at">rowNames =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Write the virginica dataset to the "Virginica" worksheet</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="fu">writeData</span>(wb</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>            , <span class="st">"Virginica"</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>            , virginica</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>            , <span class="at">startCol =</span> <span class="dv">1</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>            , <span class="at">startRow =</span> <span class="dv">1</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>            , <span class="at">rowNames =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now let’s apply our styles to each worksheet.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply styles to "Setosa" worksheet</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">addStyle</span>(wb, <span class="st">"Setosa"</span>, <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(setosa), <span class="at">rows =</span> <span class="dv">1</span>, <span class="at">style =</span> heading, <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">addStyle</span>(wb, <span class="st">"Setosa"</span>, <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(setosa), <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">nrow</span>(setosa), <span class="at">style =</span> body, <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply styles to "Versicolor" worksheet</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">addStyle</span>(wb, <span class="st">"Versicolor"</span>, <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(versicolor), <span class="at">rows =</span> <span class="dv">1</span>, <span class="at">style =</span> heading, <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="fu">addStyle</span>(wb, <span class="st">"Versicolor"</span>, <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(versicolor), <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">nrow</span>(versicolor), <span class="at">style =</span> body, <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply styles to "Virginica" worksheet</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="fu">addStyle</span>(wb, <span class="st">"Virginica"</span>, <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(virginica), <span class="at">rows =</span> <span class="dv">1</span>, <span class="at">style =</span> heading, <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="fu">addStyle</span>(wb, <span class="st">"Virginica"</span>, <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(virginica), <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">nrow</span>(virginica), <span class="at">style =</span> body, <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">addStyle</span>(wb</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>          , <span class="st">"Setosa"</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>          , <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(setosa)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>          , <span class="at">rows =</span> <span class="dv">1</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>          , <span class="at">style =</span> heading</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>          , <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>          </span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="fu">addStyle</span>(wb</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>          , <span class="st">"Setosa"</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>          , <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(setosa)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>          , <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">nrow</span>(setosa)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>          , <span class="at">style =</span> body</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>          , <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply styles to "Versicolor" worksheet</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="fu">addStyle</span>(wb</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>          , <span class="st">"Versicolor"</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>          , <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(versicolor)</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>          , <span class="at">rows =</span> <span class="dv">1</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>          , <span class="at">style =</span> heading</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>          , <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="fu">addStyle</span>(wb</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>          , <span class="st">"Versicolor"</span></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>          , <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(versicolor)</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>          , <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">nrow</span>(versicolor)</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>          , <span class="at">style =</span> body</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>          , <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply styles to "Virginica" worksheet</span></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a><span class="fu">addStyle</span>(wb</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>          , <span class="st">"Virginica"</span></span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>          , <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(virginica)</span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>          , <span class="at">rows =</span> <span class="dv">1</span></span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>          , <span class="at">style =</span> heading</span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>          , <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a><span class="fu">addStyle</span>(wb</span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>          , <span class="st">"Virginica"</span></span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>          , <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(virginica)</span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a>          , <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">nrow</span>(virginica)</span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>          , <span class="at">style =</span> body</span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>          , <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Finally, we will save our workbook to a file named “iris.xlsx”.</p>
 <div class="cell">
@@ -593,27 +641,75 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>body <span class="ot">&lt;-</span> <span class="fu">createStyle</span>(<span class="at">fontName =</span> <span class="st">"Segoe UI"</span>, <span class="at">fontSize =</span> <span class="dv">12</span>)</span>
 <span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Write the setosa dataset to the "Setosa" worksheet</span></span>
-<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a><span class="fu">writeData</span>(wb, <span class="st">"Setosa"</span>, setosa, <span class="at">startCol =</span> <span class="dv">1</span>, <span class="at">startRow =</span> <span class="dv">1</span>, <span class="at">rowNames =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Write the versicolor dataset to the "Versicolor" worksheet</span></span>
-<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a><span class="fu">writeData</span>(wb, <span class="st">"Versicolor"</span>, versicolor, <span class="at">startCol =</span> <span class="dv">1</span>, <span class="at">startRow =</span> <span class="dv">1</span>, <span class="at">rowNames =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Write the virginica dataset to the "Virginica" worksheet</span></span>
-<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a><span class="fu">writeData</span>(wb, <span class="st">"Virginica"</span>, virginica, <span class="at">startCol =</span> <span class="dv">1</span>, <span class="at">startRow =</span> <span class="dv">1</span>, <span class="at">rowNames =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply styles to "Setosa" worksheet</span></span>
-<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a><span class="fu">addStyle</span>(wb, <span class="st">"Setosa"</span>, <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(setosa), <span class="at">rows =</span> <span class="dv">1</span>, <span class="at">style =</span> heading, <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a><span class="fu">addStyle</span>(wb, <span class="st">"Setosa"</span>, <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(setosa), <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">nrow</span>(setosa), <span class="at">style =</span> body, <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply styles to "Versicolor" worksheet</span></span>
-<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a><span class="fu">addStyle</span>(wb, <span class="st">"Versicolor"</span>, <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(versicolor), <span class="at">rows =</span> <span class="dv">1</span>, <span class="at">style =</span> heading, <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a><span class="fu">addStyle</span>(wb, <span class="st">"Versicolor"</span>, <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(versicolor), <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">nrow</span>(versicolor), <span class="at">style =</span> body, <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply styles to "Virginica" worksheet</span></span>
-<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a><span class="fu">addStyle</span>(wb, <span class="st">"Virginica"</span>, <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(virginica), <span class="at">rows =</span> <span class="dv">1</span>, <span class="at">style =</span> heading, <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a><span class="fu">addStyle</span>(wb, <span class="st">"Virginica"</span>, <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(virginica), <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">nrow</span>(virginica), <span class="at">style =</span> body, <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a><span class="fu">saveWorkbook</span>(wb, <span class="st">"iris.xlsx"</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a><span class="fu">writeData</span>(wb</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>            , <span class="st">"Setosa"</span></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>            , setosa</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>            , <span class="at">startCol =</span> <span class="dv">1</span></span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>            , <span class="at">startRow =</span> <span class="dv">1</span></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>            , <span class="at">rowNames =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Write the versicolor dataset to the "Versicolor" worksheet</span></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a><span class="fu">writeData</span>(wb</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>            , <span class="st">"Versicolor"</span></span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>            , versicolor</span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>            , <span class="at">startCol =</span> <span class="dv">1</span></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>            , <span class="at">startRow =</span> <span class="dv">1</span></span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>            , <span class="at">rowNames =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Write the virginica dataset to the "Virginica" worksheet</span></span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a><span class="fu">writeData</span>(wb</span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>            , <span class="st">"Virginica"</span></span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>            , virginica</span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>            , <span class="at">startCol =</span> <span class="dv">1</span></span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>            , <span class="at">startRow =</span> <span class="dv">1</span></span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a>            , <span class="at">rowNames =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply styles to "Setosa" worksheet</span></span>
+<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a><span class="fu">addStyle</span>(wb</span>
+<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a>          , <span class="st">"Setosa"</span></span>
+<span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a>          , <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(setosa)</span>
+<span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a>          , <span class="at">rows =</span> <span class="dv">1</span></span>
+<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a>          , <span class="at">style =</span> heading</span>
+<span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a>          , <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a><span class="fu">addStyle</span>(wb</span>
+<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a>          , <span class="st">"Setosa"</span></span>
+<span id="cb14-59"><a href="#cb14-59" aria-hidden="true" tabindex="-1"></a>          , <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(setosa)</span>
+<span id="cb14-60"><a href="#cb14-60" aria-hidden="true" tabindex="-1"></a>          , <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">nrow</span>(setosa)</span>
+<span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a>          , <span class="at">style =</span> body</span>
+<span id="cb14-62"><a href="#cb14-62" aria-hidden="true" tabindex="-1"></a>          , <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-63"><a href="#cb14-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply styles to "Versicolor" worksheet</span></span>
+<span id="cb14-65"><a href="#cb14-65" aria-hidden="true" tabindex="-1"></a><span class="fu">addStyle</span>(wb</span>
+<span id="cb14-66"><a href="#cb14-66" aria-hidden="true" tabindex="-1"></a>          , <span class="st">"Versicolor"</span></span>
+<span id="cb14-67"><a href="#cb14-67" aria-hidden="true" tabindex="-1"></a>          , <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(versicolor)</span>
+<span id="cb14-68"><a href="#cb14-68" aria-hidden="true" tabindex="-1"></a>          , <span class="at">rows =</span> <span class="dv">1</span></span>
+<span id="cb14-69"><a href="#cb14-69" aria-hidden="true" tabindex="-1"></a>          , <span class="at">style =</span> heading</span>
+<span id="cb14-70"><a href="#cb14-70" aria-hidden="true" tabindex="-1"></a>          , <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-71"><a href="#cb14-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-72"><a href="#cb14-72" aria-hidden="true" tabindex="-1"></a><span class="fu">addStyle</span>(wb</span>
+<span id="cb14-73"><a href="#cb14-73" aria-hidden="true" tabindex="-1"></a>          , <span class="st">"Versicolor"</span></span>
+<span id="cb14-74"><a href="#cb14-74" aria-hidden="true" tabindex="-1"></a>          , <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(versicolor)</span>
+<span id="cb14-75"><a href="#cb14-75" aria-hidden="true" tabindex="-1"></a>          , <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">nrow</span>(versicolor)</span>
+<span id="cb14-76"><a href="#cb14-76" aria-hidden="true" tabindex="-1"></a>          , <span class="at">style =</span> body</span>
+<span id="cb14-77"><a href="#cb14-77" aria-hidden="true" tabindex="-1"></a>          , <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-78"><a href="#cb14-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-79"><a href="#cb14-79" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply styles to "Virginica" worksheet</span></span>
+<span id="cb14-80"><a href="#cb14-80" aria-hidden="true" tabindex="-1"></a><span class="fu">addStyle</span>(wb</span>
+<span id="cb14-81"><a href="#cb14-81" aria-hidden="true" tabindex="-1"></a>          , <span class="st">"Virginica"</span></span>
+<span id="cb14-82"><a href="#cb14-82" aria-hidden="true" tabindex="-1"></a>          , <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(virginica)</span>
+<span id="cb14-83"><a href="#cb14-83" aria-hidden="true" tabindex="-1"></a>          , <span class="at">rows =</span> <span class="dv">1</span></span>
+<span id="cb14-84"><a href="#cb14-84" aria-hidden="true" tabindex="-1"></a>          , <span class="at">style =</span> heading</span>
+<span id="cb14-85"><a href="#cb14-85" aria-hidden="true" tabindex="-1"></a>          , <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-86"><a href="#cb14-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-87"><a href="#cb14-87" aria-hidden="true" tabindex="-1"></a><span class="fu">addStyle</span>(wb</span>
+<span id="cb14-88"><a href="#cb14-88" aria-hidden="true" tabindex="-1"></a>          , <span class="st">"Virginica"</span></span>
+<span id="cb14-89"><a href="#cb14-89" aria-hidden="true" tabindex="-1"></a>          , <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(virginica)</span>
+<span id="cb14-90"><a href="#cb14-90" aria-hidden="true" tabindex="-1"></a>          , <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">nrow</span>(virginica)</span>
+<span id="cb14-91"><a href="#cb14-91" aria-hidden="true" tabindex="-1"></a>          , <span class="at">style =</span> body</span>
+<span id="cb14-92"><a href="#cb14-92" aria-hidden="true" tabindex="-1"></a>          , <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-93"><a href="#cb14-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-94"><a href="#cb14-94" aria-hidden="true" tabindex="-1"></a><span class="fu">saveWorkbook</span>(wb, <span class="st">"iris.xlsx"</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You may notice that this script is a little longer than it needs to be. Let’s try to simplify it with a loop.</p>
 <p>The following script will accomplish the exact same thing as the first script.</p>
@@ -640,12 +736,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) {</span>
 <span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(datasets[i])</span>
 <span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addWorksheet</span>(wb, worksheets[i])</span>
-<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeData</span>(wb, worksheets[i], df, <span class="at">startCol =</span> <span class="dv">1</span>, <span class="at">startRow =</span> <span class="dv">1</span>, <span class="at">rowNames =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addStyle</span>(wb, worksheets[i], <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(df), <span class="at">rows =</span> <span class="dv">1</span>, <span class="at">style =</span> heading, <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addStyle</span>(wb, worksheets[i], <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(df), <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">nrow</span>(df), <span class="at">style =</span> body, <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a><span class="fu">saveWorkbook</span>(wb, <span class="st">"iris.xlsx"</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeData</span>(wb</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>              , worksheets[i]</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>              , df</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>              , <span class="at">startCol =</span> <span class="dv">1</span></span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>              , <span class="at">startRow =</span> <span class="dv">1</span></span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>              , <span class="at">rowNames =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addStyle</span>(wb</span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>            , worksheets[i]</span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>            , <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(df)</span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>            , <span class="at">rows =</span> <span class="dv">1</span></span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>            , <span class="at">style =</span> heading</span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>            , <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addStyle</span>(wb</span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>            , worksheets[i]</span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a>            , <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(df)</span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a>            , <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">nrow</span>(df)</span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a>            , <span class="at">style =</span> body</span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a>            , <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a><span class="fu">saveWorkbook</span>(wb, <span class="st">"iris.xlsx"</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="formulas" class="level2" data-number="18.3">
@@ -675,23 +786,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) {</span>
 <span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(datasets[i])</span>
 <span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addWorksheet</span>(wb, worksheets[i])</span>
-<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeData</span>(wb, worksheets[i], df, <span class="at">startCol =</span> <span class="dv">1</span>, <span class="at">startRow =</span> <span class="dv">1</span>, <span class="at">rowNames =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addStyle</span>(wb, worksheets[i], <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(df), <span class="at">rows =</span> <span class="dv">1</span>, <span class="at">style =</span> heading, <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addStyle</span>(wb, worksheets[i], <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(df), <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">nrow</span>(df), <span class="at">style =</span> body, <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>  formula <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (x <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>(<span class="fu">nrow</span>(df) <span class="sc">+</span> <span class="dv">1</span>)) {</span>
-<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>    formula <span class="ot">&lt;-</span> <span class="fu">append</span>(formula, <span class="fu">paste</span>(<span class="st">"A"</span>, x, <span class="st">"/B"</span>, x, <span class="at">sep =</span> <span class="st">''</span>))</span>
-<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addStyle</span>(wb, worksheets[i], <span class="at">cols =</span> <span class="dv">6</span>, <span class="at">rows =</span> <span class="dv">1</span>, <span class="at">style =</span> heading, <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeData</span>(wb, worksheets[i], <span class="st">"Sepal.Ratio"</span>, <span class="at">startCol =</span> <span class="dv">6</span>, <span class="at">startRow =</span> <span class="dv">1</span>, <span class="at">rowNames =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeFormula</span>(wb, worksheets[i], formula, <span class="at">startCol =</span> <span class="dv">6</span>, <span class="at">startRow =</span> <span class="dv">2</span>)</span>
-<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a><span class="fu">saveWorkbook</span>(wb, <span class="st">"iris.xlsx"</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeData</span>(wb</span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>            , worksheets[i]</span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>            , df</span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>            , <span class="at">startCol =</span> <span class="dv">1</span></span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>            , <span class="at">startRow =</span> <span class="dv">1</span></span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>            , <span class="at">rowNames =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addStyle</span>(wb</span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>            , worksheets[i]</span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>            , <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(df)</span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>            , <span class="at">rows =</span> <span class="dv">1</span></span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>            , <span class="at">style =</span> heading</span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>            , <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addStyle</span>(wb</span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a>            , worksheets[i]</span>
+<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a>            , <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(df)</span>
+<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a>            , <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">nrow</span>(df)</span>
+<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a>            , <span class="at">style =</span> body</span>
+<span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a>            , <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-42"><a href="#cb16-42" aria-hidden="true" tabindex="-1"></a>  formula <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb16-43"><a href="#cb16-43" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-44"><a href="#cb16-44" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (x <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>(<span class="fu">nrow</span>(df) <span class="sc">+</span> <span class="dv">1</span>)) {</span>
+<span id="cb16-45"><a href="#cb16-45" aria-hidden="true" tabindex="-1"></a>    formula <span class="ot">&lt;-</span> <span class="fu">append</span>(formula, <span class="fu">paste</span>(<span class="st">"A"</span>, x, <span class="st">"/B"</span>, x, <span class="at">sep =</span> <span class="st">''</span>))</span>
+<span id="cb16-46"><a href="#cb16-46" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb16-47"><a href="#cb16-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-48"><a href="#cb16-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addStyle</span>(wb</span>
+<span id="cb16-49"><a href="#cb16-49" aria-hidden="true" tabindex="-1"></a>            , worksheets[i]</span>
+<span id="cb16-50"><a href="#cb16-50" aria-hidden="true" tabindex="-1"></a>            , <span class="at">cols =</span> <span class="dv">6</span></span>
+<span id="cb16-51"><a href="#cb16-51" aria-hidden="true" tabindex="-1"></a>            , <span class="at">rows =</span> <span class="dv">1</span></span>
+<span id="cb16-52"><a href="#cb16-52" aria-hidden="true" tabindex="-1"></a>            , <span class="at">style =</span> heading</span>
+<span id="cb16-53"><a href="#cb16-53" aria-hidden="true" tabindex="-1"></a>            , <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb16-54"><a href="#cb16-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeData</span>(wb</span>
+<span id="cb16-55"><a href="#cb16-55" aria-hidden="true" tabindex="-1"></a>              , worksheets[i]</span>
+<span id="cb16-56"><a href="#cb16-56" aria-hidden="true" tabindex="-1"></a>              , <span class="st">"Sepal.Ratio"</span></span>
+<span id="cb16-57"><a href="#cb16-57" aria-hidden="true" tabindex="-1"></a>              , <span class="at">startCol =</span> <span class="dv">6</span></span>
+<span id="cb16-58"><a href="#cb16-58" aria-hidden="true" tabindex="-1"></a>              , <span class="at">startRow =</span> <span class="dv">1</span></span>
+<span id="cb16-59"><a href="#cb16-59" aria-hidden="true" tabindex="-1"></a>              , <span class="at">rowNames =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb16-60"><a href="#cb16-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeFormula</span>(wb</span>
+<span id="cb16-61"><a href="#cb16-61" aria-hidden="true" tabindex="-1"></a>                , worksheets[i]</span>
+<span id="cb16-62"><a href="#cb16-62" aria-hidden="true" tabindex="-1"></a>                , formula</span>
+<span id="cb16-63"><a href="#cb16-63" aria-hidden="true" tabindex="-1"></a>                , <span class="at">startCol =</span> <span class="dv">6</span></span>
+<span id="cb16-64"><a href="#cb16-64" aria-hidden="true" tabindex="-1"></a>                , <span class="at">startRow =</span> <span class="dv">2</span>)</span>
+<span id="cb16-65"><a href="#cb16-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-66"><a href="#cb16-66" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-67"><a href="#cb16-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-68"><a href="#cb16-68" aria-hidden="true" tabindex="-1"></a><span class="fu">saveWorkbook</span>(wb, <span class="st">"iris.xlsx"</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This gives us an Excel workbook that looks like the following image.</p>
 <div class="cell">

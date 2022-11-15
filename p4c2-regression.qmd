@@ -91,7 +91,8 @@ knitr::kable(head(mtcars), format="markdown")
 Now, let's try to predict mpg and use every other column as a variable then see what the results look like.
 
 ```{r}
-lm <- lm(mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb, data = mtcars)
+lm <- lm(mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb
+            , data = mtcars)
 summary(lm)
 ```
 

@@ -665,8 +665,9 @@ eruptions = waiting * 0.075628 - 1.874016
 </div>
 <p>Now, let’s try to predict mpg and use every other column as a variable then see what the results look like.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> cyl <span class="sc">+</span> disp <span class="sc">+</span> hp <span class="sc">+</span> drat <span class="sc">+</span> wt <span class="sc">+</span> qsec <span class="sc">+</span> vs <span class="sc">+</span> am <span class="sc">+</span> gear <span class="sc">+</span> carb, <span class="at">data =</span> mtcars)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> cyl <span class="sc">+</span> disp <span class="sc">+</span> hp <span class="sc">+</span> drat <span class="sc">+</span> wt <span class="sc">+</span> qsec <span class="sc">+</span> vs <span class="sc">+</span> am <span class="sc">+</span> gear <span class="sc">+</span> carb</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>            , <span class="at">data =</span> mtcars)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:

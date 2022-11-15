@@ -442,7 +442,7 @@ div.csl-indent {
 
 </header>
 
-<p>This chapter will cover the basics of creating plots in R. It will begin by demonstrating the plotting capabilities available in R out of the box. These capabilities are often referred to as “Base R”. This will be followed by an introduction to “ggplot2” which is one of the most common plotting libraries in R.</p>
+<p>This chapter will cover the basics of creating plots in R. It will begin by demonstrating the plotting capabilities available in R out of the box. These capabilities are often referred to as “Base R”. In the resources section, you can also find resources to learn more about “ggplot2” which is one of the most common plotting libraries in R.</p>
 <section id="plotting-your-regression-model" class="level2" data-number="17.1">
 <h2 data-number="17.1" class="anchored" data-anchor-id="plotting-your-regression-model"><span class="header-section-number">17.1</span> Plotting your Regression Model</h2>
 <p>Now that you’ve learned how create a linear regression model, let’s look at how you might go about representing it visually.</p>
@@ -504,14 +504,26 @@ div.csl-indent {
 </div>
 <p>The “cex” option allows you to adjust the symbol size. The default value is 1. If you were to change the value to .75, for example, the plot symbol would be scaled down the 3/4 of the default size. The “col” option allows you to adjust the color of your plot symbols.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>x, df<span class="sc">$</span>y, <span class="at">col=</span><span class="fu">rgb</span>(<span class="fl">0.4</span>,<span class="fl">0.4</span>,<span class="fl">0.8</span>,<span class="fl">0.6</span>), <span class="at">pch=</span><span class="dv">16</span>, <span class="at">cex=</span><span class="fl">1.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>x</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>        , df<span class="sc">$</span>y</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        , <span class="at">col=</span><span class="fu">rgb</span>(<span class="fl">0.4</span>,<span class="fl">0.4</span>,<span class="fl">0.8</span>,<span class="fl">0.6</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        , <span class="at">pch=</span><span class="dv">16</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        , <span class="at">cex=</span><span class="fl">1.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>You can adjust the axes with the “xlab”, “ylab”, “xaxt”, and “yaxt” options (amongst other available options). In the following example we will remove the axes altogether.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>x, df<span class="sc">$</span>y, <span class="at">col=</span><span class="fu">rgb</span>(<span class="fl">0.4</span>,<span class="fl">0.4</span>,<span class="fl">0.8</span>,<span class="fl">0.6</span>), <span class="at">pch=</span><span class="dv">16</span>, <span class="at">cex=</span><span class="fl">1.2</span>, <span class="at">xlab=</span><span class="st">""</span>, <span class="at">ylab=</span><span class="st">""</span>, <span class="at">xaxt=</span><span class="st">"n"</span>, <span class="at">yaxt=</span><span class="st">"n"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>x</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>        , df<span class="sc">$</span>y</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        , <span class="at">col=</span><span class="fu">rgb</span>(<span class="fl">0.4</span>,<span class="fl">0.4</span>,<span class="fl">0.8</span>,<span class="fl">0.6</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        , <span class="at">pch=</span><span class="dv">16</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        , <span class="at">cex=</span><span class="fl">1.2</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        , <span class="at">xlab=</span><span class="st">""</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        , <span class="at">ylab=</span><span class="st">""</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        , <span class="at">xaxt=</span><span class="st">"n"</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        , <span class="at">yaxt=</span><span class="st">"n"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -519,14 +531,14 @@ div.csl-indent {
 <p>Finally, you can add a trend line by creating a model and adding the fitted values to the graph. We’ll also adjust the line width and color with the “lwd” and “col” parameters, respectively.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>x</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    , df<span class="sc">$</span>y</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    , <span class="at">col=</span><span class="fu">rgb</span>(<span class="fl">0.4</span>,<span class="fl">0.4</span>,<span class="fl">0.8</span>,<span class="fl">0.6</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    , <span class="at">pch=</span><span class="dv">16</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    , <span class="at">cex=</span><span class="fl">1.2</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    , <span class="at">xlab=</span><span class="st">""</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    , <span class="at">ylab=</span><span class="st">""</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    , <span class="at">xaxt=</span><span class="st">"n"</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    , <span class="at">yaxt=</span><span class="st">"n"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>        , df<span class="sc">$</span>y</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        , <span class="at">col=</span><span class="fu">rgb</span>(<span class="fl">0.4</span>,<span class="fl">0.4</span>,<span class="fl">0.8</span>,<span class="fl">0.6</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        , <span class="at">pch=</span><span class="dv">16</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        , <span class="at">cex=</span><span class="fl">1.2</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        , <span class="at">xlab=</span><span class="st">""</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        , <span class="at">ylab=</span><span class="st">""</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        , <span class="at">xaxt=</span><span class="st">"n"</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        , <span class="at">yaxt=</span><span class="st">"n"</span>)</span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(df<span class="sc">$</span>y <span class="sc">~</span> df<span class="sc">$</span>x)</span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(model<span class="sc">$</span>fitted.values, <span class="at">col=</span><span class="dv">2</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -547,16 +559,27 @@ div.csl-indent {
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>predict_model <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="at">interval=</span><span class="st">"predict"</span>)</span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot your raw data</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">col=</span><span class="fu">rgb</span>(<span class="fl">0.4</span>,<span class="fl">0.4</span>,<span class="fl">0.8</span>,<span class="fl">0.6</span>), <span class="at">pch=</span><span class="dv">16</span>, <span class="at">cex=</span><span class="fl">1.2</span>, <span class="at">xlab=</span><span class="st">""</span>, <span class="at">ylab=</span><span class="st">""</span>, <span class="at">xaxt=</span><span class="st">"n"</span>, <span class="at">yaxt=</span><span class="st">"n"</span>)</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the index of your data</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>ix <span class="ot">&lt;-</span> <span class="fu">sort</span>(x, <span class="at">index.return=</span>T)<span class="sc">$</span>ix</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Add your trendline</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x[ix], predict_model[ix, <span class="dv">1</span>], <span class="at">col=</span><span class="dv">2</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a shape to represent your upper and lower limits</span></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(<span class="fu">c</span>(<span class="fu">rev</span>(x[ix]), x[ix]), <span class="fu">c</span>(<span class="fu">rev</span>(predict_model[ix, <span class="dv">3</span>]), predict_model[ix, <span class="dv">2</span>]), <span class="at">col =</span> <span class="fu">rgb</span>(<span class="fl">0.7</span>,<span class="fl">0.7</span>,<span class="fl">0.7</span>,<span class="fl">0.4</span>), <span class="at">border =</span> <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        , y</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>        , <span class="at">col=</span><span class="fu">rgb</span>(<span class="fl">0.4</span>,<span class="fl">0.4</span>,<span class="fl">0.8</span>,<span class="fl">0.6</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>        , <span class="at">pch=</span><span class="dv">16</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>        , <span class="at">cex=</span><span class="fl">1.2</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>        , <span class="at">xlab=</span><span class="st">""</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>        , <span class="at">ylab=</span><span class="st">""</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>        , <span class="at">xaxt=</span><span class="st">"n"</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>        , <span class="at">yaxt=</span><span class="st">"n"</span>)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the index of your data</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>ix <span class="ot">&lt;-</span> <span class="fu">sort</span>(x, <span class="at">index.return=</span>T)<span class="sc">$</span>ix</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Add your trendline</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x[ix], predict_model[ix, <span class="dv">1</span>], <span class="at">col=</span><span class="dv">2</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a shape to represent your upper and lower limits</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(<span class="fu">c</span>(<span class="fu">rev</span>(x[ix]), x[ix])</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>            , <span class="fu">c</span>(<span class="fu">rev</span>(predict_model[ix, <span class="dv">3</span>]), predict_model[ix, <span class="dv">2</span>])</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>            , <span class="at">col =</span> <span class="fu">rgb</span>(<span class="fl">0.7</span>,<span class="fl">0.7</span>,<span class="fl">0.7</span>,<span class="fl">0.4</span>)</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>            , <span class="at">border =</span> <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -668,12 +691,18 @@ div.csl-indent {
 <section id="dot-chart" class="level3" data-number="17.2.7">
 <h3 data-number="17.2.7" class="anchored" data-anchor-id="dot-chart"><span class="header-section-number">17.2.7</span> Dot Chart</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>salesperson <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Susan"</span>, <span class="st">"Taylor"</span>, <span class="st">"Steven"</span>, <span class="st">"Michael"</span>, <span class="st">"Reagan"</span>, <span class="st">"Michael"</span>, <span class="st">"Alaka"</span>, <span class="st">"Trevor"</span>, <span class="st">"Isaac"</span>, <span class="st">"Jordan"</span>, <span class="st">"Aaron"</span>, <span class="st">"Miles"</span>)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>product <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Professional Services"</span>, <span class="st">"Professional Services"</span>, <span class="st">"Professional Services"</span>, <span class="st">"Professional Services"</span>, <span class="st">"Software"</span>,  <span class="st">"Software"</span>,  <span class="st">"Software"</span>,  <span class="st">"Software"</span>, <span class="st">"Hardware"</span>, <span class="st">"Hardware"</span>, <span class="st">"Hardware"</span>, <span class="st">"Hardware"</span>)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>sales <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">7</span>, <span class="dv">13</span>, <span class="dv">18</span>, <span class="dv">12</span>, <span class="dv">19</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">21</span>, <span class="dv">9</span>, <span class="dv">17</span>, <span class="dv">19</span>)</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">salesperson =</span> salesperson, <span class="at">product =</span> product, <span class="at">sales =</span> sales)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dotchart</span>(df<span class="sc">$</span>sales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>salesperson <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Susan"</span>, <span class="st">"Taylor"</span>, <span class="st">"Steven"</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>                    , <span class="st">"Michael"</span>, <span class="st">"Reagan"</span>, <span class="st">"Michael"</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>                    , <span class="st">"Alaka"</span>, <span class="st">"Trevor"</span>, <span class="st">"Isaac"</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>                    , <span class="st">"Jordan"</span>, <span class="st">"Aaron"</span>, <span class="st">"Miles"</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>product <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Professional Services"</span>, <span class="st">"Professional Services"</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>                , <span class="st">"Professional Services"</span>, <span class="st">"Professional Services"</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>                , <span class="st">"Software"</span>,  <span class="st">"Software"</span>,  <span class="st">"Software"</span>,  <span class="st">"Software"</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>                , <span class="st">"Hardware"</span>, <span class="st">"Hardware"</span>, <span class="st">"Hardware"</span>, <span class="st">"Hardware"</span>)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>sales <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">7</span>, <span class="dv">13</span>, <span class="dv">18</span>, <span class="dv">12</span>, <span class="dv">19</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">21</span>, <span class="dv">9</span>, <span class="dv">17</span>, <span class="dv">19</span>)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">salesperson =</span> salesperson, <span class="at">product =</span> product, <span class="at">sales =</span> sales)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="fu">dotchart</span>(df<span class="sc">$</span>sales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -687,7 +716,10 @@ div.csl-indent {
 <p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-19-3.png" class="img-fluid" width="672"></p>
 </div>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>group_colors <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"darkred"</span>, <span class="st">"darkgreen"</span>)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dotchart</span>(df<span class="sc">$</span>sales, <span class="at">labels =</span> df<span class="sc">$</span>salesperson, <span class="at">groups =</span> groups, <span class="at">gcolor =</span> group_colors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dotchart</span>(df<span class="sc">$</span>sales</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>            , <span class="at">labels =</span> df<span class="sc">$</span>salesperson</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>            , <span class="at">groups =</span> groups</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>            , <span class="at">gcolor =</span> group_colors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="p4c3-plotting_files/figure-html/unnamed-chunk-19-4.png" class="img-fluid" width="672"></p>
 </div>

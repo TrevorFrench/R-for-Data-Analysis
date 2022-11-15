@@ -1,6 +1,6 @@
 # Plotting
 
-This chapter will cover the basics of creating plots in R. It will begin by demonstrating the plotting capabilities available in R out of the box. These capabilities are often referred to as "Base R". This will be followed by an introduction to "ggplot2" which is one of the most common plotting libraries in R.
+This chapter will cover the basics of creating plots in R. It will begin by demonstrating the plotting capabilities available in R out of the box. These capabilities are often referred to as "Base R". In the resources section, you can also find resources to learn more about "ggplot2" which is one of the most common plotting libraries in R.
 
 ## Plotting your Regression Model
 
@@ -49,27 +49,39 @@ ggpubr::show_point_shapes()
 The “cex” option allows you to adjust the symbol size. The default value is 1. If you were to change the value to .75, for example, the plot symbol would be scaled down the 3/4 of the default size. The “col” option allows you to adjust the color of your plot symbols.
 
 ```{r}
-plot(df$x, df$y, col=rgb(0.4,0.4,0.8,0.6), pch=16, cex=1.2)
+plot(df$x
+        , df$y
+        , col=rgb(0.4,0.4,0.8,0.6)
+        , pch=16
+        , cex=1.2)
 ```
 
 You can adjust the axes with the “xlab”, “ylab”, “xaxt”, and “yaxt” options (amongst other available options). In the following example we will remove the axes altogether.
 
 ```{r}
-plot(df$x, df$y, col=rgb(0.4,0.4,0.8,0.6), pch=16, cex=1.2, xlab="", ylab="", xaxt="n", yaxt="n")
+plot(df$x
+        , df$y
+        , col=rgb(0.4,0.4,0.8,0.6)
+        , pch=16
+        , cex=1.2
+        , xlab=""
+        , ylab=""
+        , xaxt="n"
+        , yaxt="n")
 ```
 
 Finally, you can add a trend line by creating a model and adding the fitted values to the graph. We’ll also adjust the line width and color with the “lwd” and “col” parameters, respectively.
 
 ```{r}
 plot(df$x
-    , df$y
-    , col=rgb(0.4,0.4,0.8,0.6)
-    , pch=16
-    , cex=1.2
-    , xlab=""
-    , ylab=""
-    , xaxt="n"
-    , yaxt="n")
+        , df$y
+        , col=rgb(0.4,0.4,0.8,0.6)
+        , pch=16
+        , cex=1.2
+        , xlab=""
+        , ylab=""
+        , xaxt="n"
+        , yaxt="n")
 
 model <- lm(df$y ~ df$x)
 lines(model$fitted.values, col=2, lwd=2)
@@ -90,7 +102,15 @@ model <- lm(y ~ x)
 predict_model <- predict(model, interval="predict")
 
 # Plot your raw data
-plot(x, y, col=rgb(0.4,0.4,0.8,0.6), pch=16, cex=1.2, xlab="", ylab="", xaxt="n", yaxt="n")
+plot(x
+        , y
+        , col=rgb(0.4,0.4,0.8,0.6)
+        , pch=16
+        , cex=1.2
+        , xlab=""
+        , ylab=""
+        , xaxt="n"
+        , yaxt="n")
 
 # Get the index of your data
 ix <- sort(x, index.return=T)$ix
@@ -99,7 +119,10 @@ ix <- sort(x, index.return=T)$ix
 lines(x[ix], predict_model[ix, 1], col=2, lwd=2)
 
 # Add a shape to represent your upper and lower limits
-polygon(c(rev(x[ix]), x[ix]), c(rev(predict_model[ix, 3]), predict_model[ix, 2]), col = rgb(0.7,0.7,0.7,0.4), border = NA)
+polygon(c(rev(x[ix]), x[ix])
+            , c(rev(predict_model[ix, 3]), predict_model[ix, 2])
+            , col = rgb(0.7,0.7,0.7,0.4)
+            , border = NA)
 
 ```
 
@@ -200,8 +223,14 @@ polygon(mpg, col="lightblue", border="black")
 ### Dot Chart
 
 ```{r}
-salesperson <- c("Susan", "Taylor", "Steven", "Michael", "Reagan", "Michael", "Alaka", "Trevor", "Isaac", "Jordan", "Aaron", "Miles")
-product <- c("Professional Services", "Professional Services", "Professional Services", "Professional Services", "Software",  "Software",  "Software",  "Software", "Hardware", "Hardware", "Hardware", "Hardware")
+salesperson <- c("Susan", "Taylor", "Steven"
+                    , "Michael", "Reagan", "Michael"
+                    , "Alaka", "Trevor", "Isaac"
+                    , "Jordan", "Aaron", "Miles")
+product <- c("Professional Services", "Professional Services"
+                , "Professional Services", "Professional Services"
+                , "Software",  "Software",  "Software",  "Software"
+                , "Hardware", "Hardware", "Hardware", "Hardware")
 sales <- c(10, 7, 13, 18, 12, 19, 14, 16, 21, 9, 17, 19)
 df <- data.frame(salesperson = salesperson, product = product, sales = sales)
 
@@ -210,7 +239,10 @@ dotchart(df$sales, labels = df$salesperson)
 groups <- as.factor(df$product)
 dotchart(df$sales, labels = df$salesperson, groups = groups)
 group_colors <-  c("blue", "darkred", "darkgreen")
-dotchart(df$sales, labels = df$salesperson, groups = groups, gcolor = group_colors)
+dotchart(df$sales
+            , labels = df$salesperson
+            , groups = groups
+            , gcolor = group_colors)
 dotchart(df$sales
             , labels = df$salesperson
             , groups = groups

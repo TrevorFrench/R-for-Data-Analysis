@@ -1,131 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p4c2-regression.html</loc>
-    <lastmod>2022-11-14T03:14:52.095Z</lastmod>
+    <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p4exercises.html</loc>
+    <lastmod>2022-11-15T03:21:26.259Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p0c1-what-is-r.html</loc>
-    <lastmod>2022-11-14T03:15:08.020Z</lastmod>
+    <lastmod>2022-11-15T03:19:50.832Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p0c2-what-is-data-analysis.html</loc>
-    <lastmod>2022-11-14T03:15:12.083Z</lastmod>
+    <lastmod>2022-11-15T03:19:54.091Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p0c3-setup.html</loc>
-    <lastmod>2022-11-14T03:15:14.961Z</lastmod>
+    <lastmod>2022-11-15T03:19:57.104Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p1-fundamentals.html</loc>
-    <lastmod>2022-11-14T03:15:17.501Z</lastmod>
+    <lastmod>2022-11-15T03:19:59.764Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p1c1-r-studio.html</loc>
-    <lastmod>2022-11-14T03:15:21.627Z</lastmod>
+    <lastmod>2022-11-15T03:20:02.912Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p1c2-programming-basics.html</loc>
-    <lastmod>2022-11-14T03:15:26.113Z</lastmod>
+    <lastmod>2022-11-15T03:20:07.138Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p1c3-data-types.html</loc>
-    <lastmod>2022-11-14T03:15:29.496Z</lastmod>
+    <lastmod>2022-11-15T03:20:10.578Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p1c4-data-structures.html</loc>
-    <lastmod>2022-11-14T03:15:32.589Z</lastmod>
+    <lastmod>2022-11-15T03:20:13.833Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p1exercises.html</loc>
-    <lastmod>2022-11-14T03:15:36.216Z</lastmod>
+    <lastmod>2022-11-15T03:20:17.327Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p2-data-acquisition.html</loc>
-    <lastmod>2022-11-14T03:15:38.625Z</lastmod>
+    <lastmod>2022-11-15T03:20:20.697Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p2c1-included-datasets.html</loc>
-    <lastmod>2022-11-14T03:15:42.114Z</lastmod>
+    <lastmod>2022-11-15T03:20:24.735Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p2c2-import-from-spreadsheets.html</loc>
-    <lastmod>2022-11-14T03:15:45.649Z</lastmod>
+    <lastmod>2022-11-15T03:20:28.386Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p2c3-working-with-apis.html</loc>
-    <lastmod>2022-11-14T03:15:48.506Z</lastmod>
+    <lastmod>2022-11-15T03:20:32.528Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p2exercises.html</loc>
-    <lastmod>2022-11-14T03:15:51.377Z</lastmod>
+    <lastmod>2022-11-15T03:20:36.571Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p3-data-preparation.html</loc>
-    <lastmod>2022-11-14T03:15:54.500Z</lastmod>
+    <lastmod>2022-11-15T03:20:40.674Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p3c1-data-cleaning.html</loc>
-    <lastmod>2022-11-14T03:15:57.926Z</lastmod>
+    <lastmod>2022-11-15T03:20:45.095Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p3c2-handling-missing-data.html</loc>
-    <lastmod>2022-11-14T03:16:01.687Z</lastmod>
+    <lastmod>2022-11-15T03:20:48.902Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p3c3-outliers.html</loc>
-    <lastmod>2022-11-14T03:16:05.292Z</lastmod>
+    <lastmod>2022-11-15T03:20:53.454Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p3c4-organizing-data.html</loc>
-    <lastmod>2022-11-14T03:16:08.982Z</lastmod>
+    <lastmod>2022-11-15T03:20:58.589Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p3exercises.html</loc>
-    <lastmod>2022-11-14T03:16:12.271Z</lastmod>
+    <lastmod>2022-11-15T03:21:03.296Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p4-developing-insights.html</loc>
-    <lastmod>2022-11-14T03:16:14.735Z</lastmod>
+    <lastmod>2022-11-15T03:21:08.271Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p4c1-summary-statistics.html</loc>
-    <lastmod>2022-11-14T03:16:17.578Z</lastmod>
+    <lastmod>2022-11-15T03:21:12.506Z</lastmod>
+  </url>
+  <url>
+    <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p4c2-regression.html</loc>
+    <lastmod>2022-11-15T03:21:16.876Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p4c3-plotting.html</loc>
-    <lastmod>2022-11-14T22:00:20.844Z</lastmod>
-  </url>
-  <url>
-    <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p4exercises.html</loc>
-    <lastmod>2022-11-14T03:16:24.617Z</lastmod>
+    <lastmod>2022-11-15T03:21:21.616Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p5-reporting.html</loc>
-    <lastmod>2022-11-14T03:16:27.419Z</lastmod>
+    <lastmod>2022-11-15T03:21:30.221Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p5c1-spreadsheets.html</loc>
-    <lastmod>2022-11-14T03:16:31.154Z</lastmod>
+    <lastmod>2022-11-15T03:21:34.658Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p5c2-r-markdown.html</loc>
-    <lastmod>2022-11-14T03:16:35.493Z</lastmod>
+    <lastmod>2022-11-15T03:21:37.946Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p5c3-r-shiny.html</loc>
-    <lastmod>2022-11-14T03:16:38.734Z</lastmod>
+    <lastmod>2022-11-15T03:21:41.823Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/p5exercises.html</loc>
-    <lastmod>2022-11-14T03:16:41.261Z</lastmod>
+    <lastmod>2022-11-15T03:21:46.055Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/references.html</loc>
-    <lastmod>2022-11-14T03:16:44.739Z</lastmod>
+    <lastmod>2022-11-15T03:21:50.694Z</lastmod>
   </url>
   <url>
     <loc>https://trevorfrench.github.io/R-for-Data-Analysis/index.html</loc>
-    <lastmod>2022-11-14T03:15:00.198Z</lastmod>
+    <lastmod>2022-11-15T03:19:31.473Z</lastmod>
   </url>
 </urlset>

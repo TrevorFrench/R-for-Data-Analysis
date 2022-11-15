@@ -133,13 +133,28 @@ Let's now apply our three datasets to the workbook object we previously created.
 ```{r}
 #| eval: false
 # Write the setosa dataset to the "Setosa" worksheet
-writeData(wb, "Setosa", setosa, startCol = 1, startRow = 1, rowNames = FALSE)
+writeData(wb
+            , "Setosa"
+            , setosa
+            , startCol = 1
+            , startRow = 1
+            , rowNames = FALSE)
 
 # Write the versicolor dataset to the "Versicolor" worksheet
-writeData(wb, "Versicolor", versicolor, startCol = 1, startRow = 1, rowNames = FALSE)
+writeData(wb
+            , "Versicolor"
+            , versicolor
+            , startCol = 1
+            , startRow = 1
+            , rowNames = FALSE)
 
 # Write the virginica dataset to the "Virginica" worksheet
-writeData(wb, "Virginica", virginica, startCol = 1, startRow = 1, rowNames = FALSE)
+writeData(wb
+            , "Virginica"
+            , virginica
+            , startCol = 1
+            , startRow = 1
+            , rowNames = FALSE)
 ```
 
 Now let's apply our styles to each worksheet.
@@ -147,16 +162,49 @@ Now let's apply our styles to each worksheet.
 ```{r}
 #| eval: false
 # Apply styles to "Setosa" worksheet
-addStyle(wb, "Setosa", cols = 1:length(setosa), rows = 1, style = heading, gridExpand = TRUE)
-addStyle(wb, "Setosa", cols = 1:length(setosa), rows = 2:nrow(setosa), style = body, gridExpand = TRUE)
+addStyle(wb
+          , "Setosa"
+          , cols = 1:length(setosa)
+          , rows = 1
+          , style = heading
+          , gridExpand = TRUE)
+          
+addStyle(wb
+          , "Setosa"
+          , cols = 1:length(setosa)
+          , rows = 2:nrow(setosa)
+          , style = body
+          , gridExpand = TRUE)
 
 # Apply styles to "Versicolor" worksheet
-addStyle(wb, "Versicolor", cols = 1:length(versicolor), rows = 1, style = heading, gridExpand = TRUE)
-addStyle(wb, "Versicolor", cols = 1:length(versicolor), rows = 2:nrow(versicolor), style = body, gridExpand = TRUE)
+addStyle(wb
+          , "Versicolor"
+          , cols = 1:length(versicolor)
+          , rows = 1
+          , style = heading
+          , gridExpand = TRUE)
+
+addStyle(wb
+          , "Versicolor"
+          , cols = 1:length(versicolor)
+          , rows = 2:nrow(versicolor)
+          , style = body
+          , gridExpand = TRUE)
 
 # Apply styles to "Virginica" worksheet
-addStyle(wb, "Virginica", cols = 1:length(virginica), rows = 1, style = heading, gridExpand = TRUE)
-addStyle(wb, "Virginica", cols = 1:length(virginica), rows = 2:nrow(virginica), style = body, gridExpand = TRUE)
+addStyle(wb
+          , "Virginica"
+          , cols = 1:length(virginica)
+          , rows = 1
+          , style = heading
+          , gridExpand = TRUE)
+
+addStyle(wb
+          , "Virginica"
+          , cols = 1:length(virginica)
+          , rows = 2:nrow(virginica)
+          , style = body
+          , gridExpand = TRUE)
 ```
 
 Finally, we will save our workbook to a file named "iris.xlsx".
@@ -204,25 +252,73 @@ heading <- createStyle(fontName = "Segoe UI"
 body <- createStyle(fontName = "Segoe UI", fontSize = 12)
 
 # Write the setosa dataset to the "Setosa" worksheet
-writeData(wb, "Setosa", setosa, startCol = 1, startRow = 1, rowNames = FALSE)
+writeData(wb
+            , "Setosa"
+            , setosa
+            , startCol = 1
+            , startRow = 1
+            , rowNames = FALSE)
 
 # Write the versicolor dataset to the "Versicolor" worksheet
-writeData(wb, "Versicolor", versicolor, startCol = 1, startRow = 1, rowNames = FALSE)
+writeData(wb
+            , "Versicolor"
+            , versicolor
+            , startCol = 1
+            , startRow = 1
+            , rowNames = FALSE)
 
 # Write the virginica dataset to the "Virginica" worksheet
-writeData(wb, "Virginica", virginica, startCol = 1, startRow = 1, rowNames = FALSE)
+writeData(wb
+            , "Virginica"
+            , virginica
+            , startCol = 1
+            , startRow = 1
+            , rowNames = FALSE)
 
 # Apply styles to "Setosa" worksheet
-addStyle(wb, "Setosa", cols = 1:length(setosa), rows = 1, style = heading, gridExpand = TRUE)
-addStyle(wb, "Setosa", cols = 1:length(setosa), rows = 2:nrow(setosa), style = body, gridExpand = TRUE)
+addStyle(wb
+          , "Setosa"
+          , cols = 1:length(setosa)
+          , rows = 1
+          , style = heading
+          , gridExpand = TRUE)
+
+addStyle(wb
+          , "Setosa"
+          , cols = 1:length(setosa)
+          , rows = 2:nrow(setosa)
+          , style = body
+          , gridExpand = TRUE)
 
 # Apply styles to "Versicolor" worksheet
-addStyle(wb, "Versicolor", cols = 1:length(versicolor), rows = 1, style = heading, gridExpand = TRUE)
-addStyle(wb, "Versicolor", cols = 1:length(versicolor), rows = 2:nrow(versicolor), style = body, gridExpand = TRUE)
+addStyle(wb
+          , "Versicolor"
+          , cols = 1:length(versicolor)
+          , rows = 1
+          , style = heading
+          , gridExpand = TRUE)
+
+addStyle(wb
+          , "Versicolor"
+          , cols = 1:length(versicolor)
+          , rows = 2:nrow(versicolor)
+          , style = body
+          , gridExpand = TRUE)
 
 # Apply styles to "Virginica" worksheet
-addStyle(wb, "Virginica", cols = 1:length(virginica), rows = 1, style = heading, gridExpand = TRUE)
-addStyle(wb, "Virginica", cols = 1:length(virginica), rows = 2:nrow(virginica), style = body, gridExpand = TRUE)
+addStyle(wb
+          , "Virginica"
+          , cols = 1:length(virginica)
+          , rows = 1
+          , style = heading
+          , gridExpand = TRUE)
+
+addStyle(wb
+          , "Virginica"
+          , cols = 1:length(virginica)
+          , rows = 2:nrow(virginica)
+          , style = body
+          , gridExpand = TRUE)
 
 saveWorkbook(wb, "iris.xlsx", overwrite = TRUE)
 ```
@@ -255,9 +351,24 @@ worksheets <- c("Setosa", "Virginica", "Versicolor")
 for (i in 1:3) {
   df <- as.data.frame(datasets[i])
   addWorksheet(wb, worksheets[i])
-  writeData(wb, worksheets[i], df, startCol = 1, startRow = 1, rowNames = FALSE)
-  addStyle(wb, worksheets[i], cols = 1:length(df), rows = 1, style = heading, gridExpand = TRUE)
-  addStyle(wb, worksheets[i], cols = 1:length(df), rows = 2:nrow(df), style = body, gridExpand = TRUE)
+  writeData(wb
+              , worksheets[i]
+              , df
+              , startCol = 1
+              , startRow = 1
+              , rowNames = FALSE)
+  addStyle(wb
+            , worksheets[i]
+            , cols = 1:length(df)
+            , rows = 1
+            , style = heading
+            , gridExpand = TRUE)
+  addStyle(wb
+            , worksheets[i]
+            , cols = 1:length(df)
+            , rows = 2:nrow(df)
+            , style = body
+            , gridExpand = TRUE)
 }
 
 saveWorkbook(wb, "iris.xlsx", overwrite = TRUE)
@@ -293,9 +404,24 @@ worksheets <- c("Setosa", "Virginica", "Versicolor")
 for (i in 1:3) {
   df <- as.data.frame(datasets[i])
   addWorksheet(wb, worksheets[i])
-  writeData(wb, worksheets[i], df, startCol = 1, startRow = 1, rowNames = FALSE)
-  addStyle(wb, worksheets[i], cols = 1:length(df), rows = 1, style = heading, gridExpand = TRUE)
-  addStyle(wb, worksheets[i], cols = 1:length(df), rows = 2:nrow(df), style = body, gridExpand = TRUE)
+  writeData(wb
+            , worksheets[i]
+            , df
+            , startCol = 1
+            , startRow = 1
+            , rowNames = FALSE)
+  addStyle(wb
+            , worksheets[i]
+            , cols = 1:length(df)
+            , rows = 1
+            , style = heading
+            , gridExpand = TRUE)
+  addStyle(wb
+            , worksheets[i]
+            , cols = 1:length(df)
+            , rows = 2:nrow(df)
+            , style = body
+            , gridExpand = TRUE)
   
   formula <- c()
   
@@ -303,9 +429,23 @@ for (i in 1:3) {
     formula <- append(formula, paste("A", x, "/B", x, sep = ''))
   }
 
-  addStyle(wb, worksheets[i], cols = 6, rows = 1, style = heading, gridExpand = TRUE)
-  writeData(wb, worksheets[i], "Sepal.Ratio", startCol = 6, startRow = 1, rowNames = FALSE)
-  writeFormula(wb, worksheets[i], formula, startCol = 6, startRow = 2)
+  addStyle(wb
+            , worksheets[i]
+            , cols = 6
+            , rows = 1
+            , style = heading
+            , gridExpand = TRUE)
+  writeData(wb
+              , worksheets[i]
+              , "Sepal.Ratio"
+              , startCol = 6
+              , startRow = 1
+              , rowNames = FALSE)
+  writeFormula(wb
+                , worksheets[i]
+                , formula
+                , startCol = 6
+                , startRow = 2)
 
 }
 
