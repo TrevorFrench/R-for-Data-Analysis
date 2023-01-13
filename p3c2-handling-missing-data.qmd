@@ -2,7 +2,7 @@
 
 You may encounter situations while analysing data that some of your data are missing. This chapter will cover best practices in regards to handling these situations as well as the technical details on how to remedy the data.
 
-Missing data will often be represented by either "NA" or "" in R. Sometimes you will be able to manage by just ignoring this data; however, other times you will need to "impute" the missing data. This just means you end up coming up with a value that makes sense to use in place of the missing data. The three imputation methods we are going to cover in this chapter are constant vaue imputation, central tendency imputation, and multiple imputation.
+Missing data will often be represented by either "NA" or "" in R. Sometimes you will be able to manage by just ignoring this data; however, other times you will need to "impute" the missing data. This just means you end up coming up with a value that makes sense to use in place of the missing data. The three imputation methods we are going to cover in this chapter are constant value imputation, central tendency imputation, and multiple imputation.
 
 ## Handling NA/Blank Values
 
