@@ -6,8 +6,7 @@
 - Talk about viewing dataframes in r studio
 
 # R for Data Analysis
-
-![cover](cover.png)
+ <a href='https://github.com/TrevorFrench/R-for-Data-Analysis'><img src='https://raw.githubusercontent.com/TrevorFrench/R-for-Data-Analysis/main/cover.png' align="right" height="300" /></a>
 
 # Introduction
 
