@@ -6,7 +6,7 @@ Data analysis at it's most simple form is the process of searching for meaning i
 
 ## The Process of Data Analysis
 
-The process of data analysis can be generally described in six steps:
+The process of data analysis can be generally described in five steps:
 
 1. **Gathering Requirements** - Before one embarks on an analysis, it's important to make sure the requirements are understood. Requirements include the questions which your stakeholders are hoping to answer as well as the technical requirements of how you are going to perform your analysis.
 
