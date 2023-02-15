@@ -1,14 +1,6 @@
-# TODO:
-
-- Add README
-- Embed cover image in README
-- Maybe just make the readme equal to the index page
-- Talk about viewing dataframes in r studio
+<a href='https://github.com/TrevorFrench/R-for-Data-Analysis'><img src='https://raw.githubusercontent.com/TrevorFrench/R-for-Data-Analysis/main/cover.png' align="right" height="300" /></a>
 
 # R for Data Analysis
- <a href='https://github.com/TrevorFrench/R-for-Data-Analysis'><img src='https://raw.githubusercontent.com/TrevorFrench/R-for-Data-Analysis/main/cover.png' align="right" height="300" /></a>
-
-# Introduction
 
 > "There is synthesis when, in combining therein judgments that are made known to us from simpler relations, one deduces judgments from them relative to more complicated relations. There is analysis when from a complicated truth one deduces more simple truths."  <br><br> -André-Marie Ampère [@Hofmann96]
 
