@@ -15,9 +15,9 @@ bibliography: paper.bib
 
 # Summary
 
-R for Data Analysis is a sequential learning system designed to teach anyone how to use R to analyze data. The materials can be used in aggregate to learn how to analyze data programmatically or broken into modules and used to supplement an existing educational program. Each lesson contains a conceptual overview, practical examples, resources for further study, and exercises designed to reinforce understanding.
+R for Data Analysis [@French] is a sequential learning system designed to teach anyone how to use R to analyze data. The materials can be used in aggregate to learn how to analyze data programmatically or broken into modules and used to supplement an existing educational program. Each lesson contains a conceptual overview, practical examples, resources for further study, and exercises designed to reinforce understanding.
 
-The materials have been made publicly available at: <https://trevorfrench.github.io/R-for-Data-Analysis/> and licensed under the [Creative Commons Attribution-NonCommercial-NoDerivs 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) (CC BY-NC-ND 4.0) License.
+The materials have been made publicly available at: <https://trevorfrench.github.io/R-for-Data-Analysis/> and licensed under the [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 (CC BY-NC-ND 4.0) License](https://creativecommons.org/licenses/by-nc-nd/4.0/).
 
 # Statement of Need
 
