@@ -10,7 +10,7 @@ The process of data analysis can be generally described in five steps:
 
 1. **Gathering Requirements** - Before one embarks on an analysis, it's important to make sure the requirements are understood. Requirements include the questions which your stakeholders are hoping to answer as well as the technical requirements of how you are going to perform your analysis.
 
-2. **Data Acquisition** - As you might imagine, you must acquire your data before conducting an analysis. This may be done through the methods such as manual creation of datasets, importing pre-constructed data, or leveraging APIs.
+2. **Data Acquisition** - As you might imagine, you must acquire your data before conducting an analysis. This may be done through methods such as manual creation of datasets, importing pre-constructed data, or leveraging APIs.
 
 3. **Data Preparation** - Most data will not be received in the precise format you need to begin your analysis. The process of data preparation is where you will structure and add features to your data.
 
