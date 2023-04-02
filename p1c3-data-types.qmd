@@ -2,9 +2,9 @@
 
 Data is stored differently depending on what it represents when programming. For example, a number is going to be stored as a different data type than a letter is.
 
-There are five basic data types in R:
+There are five basic data types in R that each store a single value:
 
-- **Numeric** - This is the default treatment for numbers. This data type includes integers and doubles.
+- **Numeric** - This is the default type for numbers, e.g. integers and doubles.
     - *Double* - A double allows you to store numbers as decimals. This is the default treatment for numbers.
     - *Integer* - An integer is a subset of the numeric data type. This type will only allow whole numbers and is denoted by the letter "L".
 - **Complex** - This type is created by using the imaginary variable "i".
@@ -12,11 +12,14 @@ There are five basic data types in R:
 - **Logical** - Sometimes referred to as "boolean", this data type will store either "TRUE" or "FALSE".
 - **Raw** - Used less often, this data type will store data as raw bytes.
 
+In addition, each missing values can be specified with the special `NA` type,
+which can represent each of the data types listed above.
+
 ## Numeric
 
 ### Double
 
-Let's explore the "double" data type by assigning a number to a variable and then check it's type by using the "typeof" function. Alternatively, we can use the "is.double" function to check whether or not the variable is a double.
+Let's explore the "double" data type by assigning a number to a variable and then check its type by using the "typeof" function. Alternatively, we can use the "is.double" function to check whether or not the variable is a double.
 
 ```{r}
 x <- 6.2
@@ -34,7 +37,7 @@ This function should return "TRUE" as well, which demonstrates the fact that a d
 
 ### Integer
 
-Let's explore the "integer" data type by assigning a whole number followed by the capital letter "L" to a variable and then check it's type by using the "typeof" function. Alternatively, we can use the "is.integer" function to check whether or not the variable is an integer.
+Let's explore the "integer" data type by assigning a whole number followed by the capital letter "L" to a variable and then check its type by using the "typeof" function. Alternatively, we can use the "is.integer" function to check whether or not the variable is an integer.
 
 ```{r}
 x <- 6L
@@ -49,7 +52,7 @@ Next, let's check whether or not the variable is numeric by using the "is.numeri
 is.numeric(x)
 ```
 
-This function should return "TRUE" as well, which demonstrates the fact that an integer is also a subset of the numeric data type.
+This function should return "TRUE" as well, demonstrating that an integer is also a subset of the numeric data type.
 
 ## Complex
 
@@ -80,7 +83,7 @@ typeof(x)
 
 ## Raw
 
-Used less often, the raw data type will store data as raw bytes. YOu can convert character data types to raw data types by using the "charToRaw" function. Similarly, you can convert integer data types to raw data types through the use of the "intToBits" function.
+Used less often, the raw data type will store data as raw bytes. You can convert character data types to raw data types by using the "charToRaw" function. Similarly, you can convert integer data types to raw data types through the use of the "intToBits" function.
 
 ```{r}
 x <- charToRaw("Hello!")
@@ -95,4 +98,5 @@ typeof(x)
 ## Resources
 
 - W3 Schools: <https://www.w3schools.com/r/r_data_types.asp>
+- "Advanced R" by Hadley Wickham: <https://adv-r.hadley.nz/vectors-chap.html#atomic-vectors>
 - "Bits and Bytes" from Stanford CS 101: <https://web.stanford.edu/class/cs101/bits-bytes.html>
