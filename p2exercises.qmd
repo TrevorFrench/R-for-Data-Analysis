@@ -5,7 +5,7 @@
 ::: callout
 ## Exercise: 8-A
 
-Create a dataframe named "cars" which is equal to the first five rows of the mtcars dataset using the "head" function. After printing to the console, you should get the following result:
+Create a data frame called "cars" that contains the first five rows of the mtcars dataset by using the "head" function. After printing to the console, you should get the following result:
 
 ``` r
 #                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
@@ -21,14 +21,14 @@ Create a dataframe named "cars" which is equal to the first five rows of the mtc
 ::: callout
 ## Exercise: 9-A
 
-Write a function named "read_file" which will accept a file name as a parameter named "file_name". The function should then read in a csv with the specified name, store it as a dataframe named "df", and return "df" as the final output.
+Write a function named "read_file" which will accept a file name as a parameter named "file_name". The function should then read in a csv with the specified name, store it as a data frame named "df", and return "df" as the final output.
 
 :::
 
 ::: callout
 ## Exercise: 9-B
 
-In exercise 9-A you created a function that will allow you to read csv files. Build on this function by adding a second parameter named "csv" which will accept either "TRUE" or "FALSE". The functionality shouldn't change if the parameter is equal to "TRUE"; however, if the function is equal to "FALSE", the function should allow the user to read in an xlsx file.
+In exercise 9-A you created a function that will allow you to read a csv file. Extend this function by adding a second parameter named "csv" which will accept either "TRUE" or "FALSE". The functionality shouldn't change if the parameter is equal to "TRUE"; however, if the function is equal to "FALSE", the function should allow the user to read in an xlsx file instead.
 
 For example, if a user wanted to read in a csv file they would use the function in this way:
 
