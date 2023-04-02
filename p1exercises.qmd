@@ -5,7 +5,7 @@
 ::: callout
 ## Exercise: 5-A
 
-Write a function called "multiply" that will accept two numbers as arguments and will output the product of those two numbers when called as is demonstrated below.
+Write a function called "multiply" that accepts two numbers as arguments and outputs the product of those two numbers when called as is demonstrated below.
 
 ``` r
 multiply(3, 3)
@@ -15,17 +15,17 @@ multiply(3, 3)
 
 ::: callout
 ## Exercise: 5-B
-Write an equation which will return the remainder of 12 divided by 8.
+Write an equation that returns the remainder of 12 divided by 8.
 :::
 
 ::: callout
 ## Exercise: 5-C
-Write an equation which will return the remainder of 36 divided by 10.
+Write an equation that returns the remainder of 36 divided by 10.
 :::
 
 ::: callout
 ## Exercise: 5-D
-Write a "while" loop which prints all even numbers from 0 to 10.
+Write a "while" loop that prints all even numbers from 0 to 10.
 
 It's possible for this task to be accomplished in several ways; however, the output of your program should always look like this:
 
@@ -48,7 +48,7 @@ You are given a vector that looks like this:
 numbers <- c(0:12)
 ```
 
-Write a for loop which loops through your vector and prints any element that is greater than or equal to 3.
+Write a for loop that loops through your vector and prints any element greater than or equal to 3.
 
 It's possible for this task to be accomplished in several ways; however, the output of your program should always look like this:
 
@@ -154,7 +154,7 @@ A remainder is referred to as "modulus" in programming. We can use the "%%" oper
 
 ::: callout
 ## Answer: 5-D
-Here's one way you could write your while loop to achieve this output:
+Here's one way you could write your `while` loop to achieve this output:
 
 ```{r}
 i <- 0
@@ -168,7 +168,7 @@ while (i <= 10) {
 
 ::: callout
 ## Answer: 5-E
-Here's one way you could write your for loop to achieve this output:
+Here's one way you could write your `for` loop to achieve this output:
 
 ```{r}
 numbers <- c(0:12)
@@ -184,7 +184,7 @@ for (number in numbers) {
 ::: callout
 ## Answer: 6-A
 
-You can accomplish this task through the "charToRaw" function.
+You can accomplish this task with the "charToRaw" function.
 
 ```{r}
 x <- "Trevor rocks"
