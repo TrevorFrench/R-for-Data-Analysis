@@ -2,7 +2,7 @@
 
 Most data will not be received in the precise format you need to begin your analysis. The process of data preparation is where you will structure and add features to your data.
 
-- **Data Cleaning**- This chapter will cover the basics of cleaning your data including renaming variables, splitting text, replacing values, dropping columns, and dropping rows. These basic actions will be essential to preparing your data prior to developing insights.
-- **Handling Missing Data**- You may encounter situations while analysing data that some of your data are missing. This chapter will cover best practices in regards to handling these situations as well as the technical details on how to remedy the data.
-- **Outliers**- Outliers are observations that fall outside the expected scope of the dataset. It's important to identify outliers in your data and determine the necessary treatment for them before moving into the next analysis phase.
+- **Data Cleaning**- This chapter will cover the basics of cleaning your data, including renaming variables, splitting text, replacing values, dropping columns, and dropping rows. These basic actions will be essential to preparing your data prior to developing insights.
+- **Handling Missing Data**- You may encounter situations where some of your data are missing. This chapter will cover best practices on dealing with missing data and introduce the tools to do so.
+- **Outliers**- Outliers are observations that fall outside the expected scope of the dataset. It's important to identify outliers and either choose analyses strategies that are robust to their presence or deal with them appropriately before moving into the next analysis phase.
 - **Organizing Data**- This chapter will focus on sorting, filtering, and grouping your datasets.

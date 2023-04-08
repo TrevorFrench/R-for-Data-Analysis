@@ -18,7 +18,7 @@ df <- head(iris)
 knitr::kable(df, format="markdown")
 ```
 
-Now, let's adjust our column names (otherwise known as variables) to be "snake case" (a method to name variables in which all words are lowercase and separated by underscores). We'll do this through the use of the "colnames" function. In the following example, we are renaming each column individually by specifying what number column to adjust.
+Now, let's change our column names (which contain different properties of iris species) into "snake case", e.g. all words are lowercase and separated by underscores. We'll do this through the use of the "colnames" function. In the following example, we are renaming each column individually by specifying what number column to adjust.
 
 ```{r}
 colnames(df)[1] <- "sepal_length"
@@ -33,7 +33,7 @@ colnames(df)[5] <- "species"
 knitr::kable(df, format="markdown")
 ```
 
-Let's adjust our column names again but to be "camel case" this time. Camel casing requires the first word in a name to be lowercase with all subsequent words having the first letter capitalized. Instead of using the column number though, this time we'll use the actual name of the column we want to adjust.
+Let's change the column names again, but use "camel case" this time, e.g. the first word will be lowercase, and all subsequent words will have the first letter capitalized. Instead of using the column number though, this time we'll use the actual name of the column we want to adjust.
 
 ```{r}
 colnames(df)[colnames(df) == "sepal_length"] <- "sepalLength"
@@ -47,7 +47,7 @@ colnames(df)[colnames(df) == "petal_width"] <- "petalWidth"
 knitr::kable(df, format="markdown")
 ```
 
-Alternatively, you can use the "rename" function from the "dplyr" library.
+Alternatively, you can use the "rename" function from the "dplyr" package.
 
 ```{r}
 #| output: false
@@ -64,7 +64,7 @@ knitr::kable(df, format="markdown")
 
 If you've worked in a spreadsheet application before, you're likely familiar with the "text-to-columns" tool. This tool allows you to split one column of data into multiple columns based on a delimiter. This same functionality is also achievable in R through functions such as the "separate" function from the "tidyr" library.
 
-To test this function out, let's first require the "tidyr" library and then create a test dataframe for us to use.
+To test this function out, let's first attach the "tidyr" package and then create a test data frame for us to use.
 
 ```{r}
 library(tidyr)
@@ -76,7 +76,7 @@ df <- data.frame(person = c("John_Doe", "Jane_Doe"))
 knitr::kable(df, format="markdown")
 ```
 
-We now have a dataframe with one column which contains a first name and a last name combined by an underscore. Let's now split the two names into their own separate columns.
+We now have a data frame with one column that contains a first name and a last name combined by an underscore. Let's now split the two names into their own separate columns.
 
 ```{r}
 df <- df %>% separate(person, c("first_name", "last_name"), "_")
@@ -144,7 +144,7 @@ df <- subset(df, select = c(mpg, cyl, disp, hp, drat, wt, qsec, vs, am, gear))
 knitr::kable(df, format="markdown")
 ```
 
-Alternatively, let's try gettig rid of the "gear" column directly. We can do this by putting a "-" in front of the "c" function.
+Alternatively, let's try getting rid of the "gear" column directly. We can do this by putting a "-" in front of the "c" function.
 
 ```{r}
 df <- subset(df, select = -c(gear))
