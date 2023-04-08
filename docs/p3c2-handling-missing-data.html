@@ -224,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./p1c1-r-studio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Familiar with R Studio</span></a>
+  <a href="./p1c1-r-studio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Familiar with RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -239,7 +239,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structures</span></a>
+  <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structure</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -417,7 +417,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <p>You may encounter situations while analysing data that some of your data are missing. This chapter will cover best practices in regards to handling these situations as well as the technical details on how to remedy the data.</p>
-<p>Missing data will often be represented by either “NA” or “” in R. Sometimes you will be able to manage by just ignoring this data; however, other times you will need to “impute” the missing data. This just means you end up coming up with a value that makes sense to use in place of the missing data. The three imputation methods we are going to cover in this chapter are constant vaue imputation, central tendency imputation, and multiple imputation.</p>
+<p>Missing data will often be represented by either “NA” or “” in R. Sometimes you will be able to manage by just ignoring this data; however, other times you will need to “impute” the missing data. This just means you end up coming up with a value that makes sense to use in place of the missing data. The three imputation methods we are going to cover in this chapter are constant value imputation, central tendency imputation, and multiple imputation.</p>
 <section id="handling-nablank-values" class="level2" data-number="12.1">
 <h2 data-number="12.1" class="anchored" data-anchor-id="handling-nablank-values"><span class="header-section-number">12.1</span> Handling NA/Blank Values</h2>
 <p>This section will cover common methods and formulas for identifying and isolating missing data. Let’s start by creating a a vector with one “” value and a vector with one “NA” value.</p>
@@ -583,7 +583,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="multiple-imputation" class="level2" data-number="12.4">
 <h2 data-number="12.4" class="anchored" data-anchor-id="multiple-imputation"><span class="header-section-number">12.4</span> Multiple Imputation</h2>
-<p>The two previous examples are types of “single value imputaion” as both examples took one value and applied it to every missing value in the dataset. At a very basic level, multiple imputation requires users to come up with some sort of model to fill in missing values. In the following example we are going to demonstrate how you might use a simple linear regression model to perform multiple imputation.</p>
+<p>The two previous examples are types of “single value imputation” as both examples took one value and applied it to every missing value in the dataset. At a very basic level, multiple imputation requires users to come up with some sort of model to fill in missing values. In the following example we are going to demonstrate how you might use a simple linear regression model to perform multiple imputation.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -645,12 +645,9 @@ F-statistic:   Inf on 1 and 2 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 <p>From the model summary, we can see that we have a model with a high level of statistical significance. Let’s now use the model coefficients to impute our missing values.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>x_coefficient <span class="ot">&lt;-</span> model<span class="sc">$</span>coefficients[<span class="st">"x"</span>]</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>intercept <span class="ot">&lt;-</span> model<span class="sc">$</span>coefficients[<span class="st">"(Intercept)"</span>]</span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>x_var <span class="ot">&lt;-</span> df<span class="sc">$</span>x[<span class="fu">is.na</span>(df<span class="sc">$</span>y)]</span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>y[<span class="fu">is.na</span>(df<span class="sc">$</span>y)] <span class="ot">&lt;-</span> x_var <span class="sc">*</span> x_coefficient <span class="sc">+</span> intercept</span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>imputed <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="at">newdata =</span> <span class="fu">list</span>(<span class="at">x =</span> df<span class="sc">$</span>x[<span class="fu">is.na</span>(df<span class="sc">$</span>y)]))</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>y[<span class="fu">is.na</span>(df<span class="sc">$</span>y)] <span class="ot">&lt;-</span> imputed</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   y  x
 1 10  8

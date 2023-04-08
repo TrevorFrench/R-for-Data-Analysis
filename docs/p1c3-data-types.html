@@ -224,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./p1c1-r-studio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Familiar with R Studio</span></a>
+  <a href="./p1c1-r-studio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Familiar with RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -239,7 +239,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structures</span></a>
+  <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structure</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -422,9 +422,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <p>Data is stored differently depending on what it represents when programming. For example, a number is going to be stored as a different data type than a letter is.</p>
-<p>There are five basic data types in R:</p>
+<p>There are five basic data types in R that each store a single value:</p>
 <ul>
-<li><strong>Numeric</strong> - This is the default treatment for numbers. This data type includes integers and doubles.
+<li><strong>Numeric</strong> - This is the default type for numbers, e.g.&nbsp;integers and doubles.
 <ul>
 <li><em>Double</em> - A double allows you to store numbers as decimals. This is the default treatment for numbers.</li>
 <li><em>Integer</em> - An integer is a subset of the numeric data type. This type will only allow whole numbers and is denoted by the letter “L”.</li>
@@ -434,11 +434,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>Logical</strong> - Sometimes referred to as “boolean”, this data type will store either “TRUE” or “FALSE”.</li>
 <li><strong>Raw</strong> - Used less often, this data type will store data as raw bytes.</li>
 </ul>
+<p>In addition, each missing values can be specified with the special <code>NA</code> type, which can represent each of the data types listed above.</p>
 <section id="numeric" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="numeric"><span class="header-section-number">6.1</span> Numeric</h2>
 <section id="double" class="level3" data-number="6.1.1">
 <h3 data-number="6.1.1" class="anchored" data-anchor-id="double"><span class="header-section-number">6.1.1</span> Double</h3>
-<p>Let’s explore the “double” data type by assigning a number to a variable and then check it’s type by using the “typeof” function. Alternatively, we can use the “is.double” function to check whether or not the variable is a double.</p>
+<p>Let’s explore the “double” data type by assigning a number to a variable and then check its type by using the “typeof” function. Alternatively, we can use the “is.double” function to check whether or not the variable is a double.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fl">6.2</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -461,7 +462,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="integer" class="level3" data-number="6.1.2">
 <h3 data-number="6.1.2" class="anchored" data-anchor-id="integer"><span class="header-section-number">6.1.2</span> Integer</h3>
-<p>Let’s explore the “integer” data type by assigning a whole number followed by the capital letter “L” to a variable and then check it’s type by using the “typeof” function. Alternatively, we can use the “is.integer” function to check whether or not the variable is an integer.</p>
+<p>Let’s explore the “integer” data type by assigning a whole number followed by the capital letter “L” to a variable and then check its type by using the “typeof” function. Alternatively, we can use the “is.integer” function to check whether or not the variable is an integer.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> 6L</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># By using the "typeof" function, we can check the data type of x</span></span>
@@ -481,7 +482,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>[1] TRUE</code></pre>
 </div>
 </div>
-<p>This function should return “TRUE” as well, which demonstrates the fact that an integer is also a subset of the numeric data type.</p>
+<p>This function should return “TRUE” as well, demonstrating that an integer is also a subset of the numeric data type.</p>
 </section>
 </section>
 <section id="complex" class="level2" data-number="6.2">
@@ -519,7 +520,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="raw" class="level2" data-number="6.5">
 <h2 data-number="6.5" class="anchored" data-anchor-id="raw"><span class="header-section-number">6.5</span> Raw</h2>
-<p>Used less often, the raw data type will store data as raw bytes. YOu can convert character data types to raw data types by using the “charToRaw” function. Similarly, you can convert integer data types to raw data types through the use of the “intToBits” function.</p>
+<p>Used less often, the raw data type will store data as raw bytes. You can convert character data types to raw data types by using the “charToRaw” function. Similarly, you can convert integer data types to raw data types through the use of the “intToBits” function.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">charToRaw</span>(<span class="st">"Hello!"</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -546,6 +547,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 data-number="6.6" class="anchored" data-anchor-id="resources"><span class="header-section-number">6.6</span> Resources</h2>
 <ul>
 <li>W3 Schools: <a href="https://www.w3schools.com/r/r_data_types.asp" class="uri">https://www.w3schools.com/r/r_data_types.asp</a></li>
+<li>“Advanced R” by Hadley Wickham: <a href="https://adv-r.hadley.nz/vectors-chap.html#atomic-vectors" class="uri">https://adv-r.hadley.nz/vectors-chap.html#atomic-vectors</a></li>
 <li>“Bits and Bytes” from Stanford CS 101: <a href="https://web.stanford.edu/class/cs101/bits-bytes.html" class="uri">https://web.stanford.edu/class/cs101/bits-bytes.html</a></li>
 </ul>
 
@@ -694,7 +696,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./p1c4-data-structures.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structures</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structure</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

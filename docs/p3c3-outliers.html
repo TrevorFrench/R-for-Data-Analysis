@@ -224,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./p1c1-r-studio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Familiar with R Studio</span></a>
+  <a href="./p1c1-r-studio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Familiar with RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -239,7 +239,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structures</span></a>
+  <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structure</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -425,10 +425,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <p>Outliers are observations that fall outside the expected scope of the dataset. It’s important to identify outliers in your data and determine the necessary treatment for them before moving into the next analysis phase.</p>
-<p>might be necessary to impute value, remove row or may be necessary to keep the data besides extreme value</p>
+<p>For example, it might be necessary to impute values, remove a row, perform sensitivity analysis, or choose analysis methods that are robust in the presence of outliers.</p>
 <section id="finding-outliers-visually" class="level2" data-number="13.1">
 <h2 data-number="13.1" class="anchored" data-anchor-id="finding-outliers-visually"><span class="header-section-number">13.1</span> Finding Outliers Visually</h2>
-<p>One common first step many people employ when looking for outliers is visualizing their datasets so that exterme values can be quickly identified. This section will briefly cover several common visualizations used to identify outlier; however, each of these plots will be explored more in-depth later in the book.</p>
+<p>One common first step many people employ when looking for outliers is visualizing their datasets so that extreme values can quickly be spotted This section will briefly cover several common visualizations used to identify outliers; however, each of these plots will be explored more in-depth later in the book.</p>
 <section id="scatter-plot" class="level3" data-number="13.1.1">
 <h3 data-number="13.1.1" class="anchored" data-anchor-id="scatter-plot"><span class="header-section-number">13.1.1</span> Scatter Plot</h3>
 <p>This is probably the first plot you’ll reach for when trying to visualize outliers in your data. The scatter plot is a great tool to quickly visualize your data at a high level and see if anything major stands out.</p>
@@ -484,7 +484,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="density-plot" class="level3" data-number="13.1.4">
 <h3 data-number="13.1.4" class="anchored" data-anchor-id="density-plot"><span class="header-section-number">13.1.4</span> Density Plot</h3>
-<p>Density plots allow you to see the distribution of your data in a more continuous manner than you might be able to achieve with a histogram.</p>
+<p>Density plots can be thought of as a smoothed version of a histogram. (You can tune the degree of smoothing, e.g.&nbsp;via the <code>adjust</code> argument to the <code>density()</code> function.)</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(mtcars<span class="sc">$</span>mpg))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -555,7 +555,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="resources" class="level2" data-number="13.4">
 <h2 data-number="13.4" class="anchored" data-anchor-id="resources"><span class="header-section-number">13.4</span> Resources</h2>
-<p>“Statistics - Standard Deviation” by W3 Schools: <a href="https://www.w3schools.com/statistics/statistics_standard_deviation.php" class="uri">https://www.w3schools.com/statistics/statistics_standard_deviation.php</a></p>
+<p>“Statistics - Standard Deviation” by W3 Schools: <a href="https://www.w3schools.com/statistics/statistics_standard_deviation.php" class="uri">https://www.w3schools.com/statistics/statistics_standard_deviation.php</a> “Identifying outliers with the 1.5xIQR rule”: <a href="https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/box-whisker-plots/a/identifying-outliers-iqr-rule" class="uri">https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/box-whisker-plots/a/identifying-outliers-iqr-rule</a></p>
 
 
 </section>
