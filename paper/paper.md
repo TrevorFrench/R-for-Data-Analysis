@@ -9,6 +9,10 @@ tags:
 authors:
   - name: Trevor French
     orcid: 0000-0002-6246-2249
+    affiliation: "1"
+affiliations:
+ - name: Independent Researcher, USA
+   index: 1
 date: 15 February 2023
 bibliography: paper.bib
 ---
