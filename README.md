@@ -24,6 +24,15 @@ Each part will contain several chapters which cover specific ideas related to th
 
 Each part will be concluded with practical exercises for you to test your skills.
 
+Physical copies of this book are not currently available; however, you can download a pdf in the top left corner of this site. Feel free to contribute by reporting a typo or leaving a pull request at <https://github.com/TrevorFrench/R-for-Data-Analysis>.
+
+# Contribution Guide
+
+- You can fix typos, spelling mistakes, or grammatical errors in the documentation directly using the GitHub web interface. Make sure to include a brief description of the changes you are proposing.
+- For other suggestions or larger problems, you can create an "issue" [here](https://github.com/TrevorFrench/R-for-Data-Analysis/issues).
+- Alternatively, you can create a pull request; however, it is generally a good idea to start a conversation about large changes by creating an issue before proposing them. If you have never created a pull request before, you can read more about them [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
+- If you have no changes to propose but still want to contribute- feel free to search the issue board and asked to be "assigned" to an issue.
+
 ## License
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is free to use, and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>. Physical copies of this book are not currently available; however, you can download a pdf in the top left corner of this site. Feel free to contribute by reporting a typo or leaving a pull request at <https://github.com/TrevorFrench/R-for-Data-Analysis>.
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is free to use, and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
