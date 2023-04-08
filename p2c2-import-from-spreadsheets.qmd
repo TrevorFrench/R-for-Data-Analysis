@@ -1,10 +1,10 @@
 # Import from Spreadsheets
 
-Most R users will have to work with spreadsheets at some point in their careers. This chapter will teach you how to import data from spreadsheets whether it's in a .csv or .xlsx file and get the imported data into a format that's easy to work with. Additionally, this chapter will demonstrate how to import multiple files at once and combine them all into a single dataframe.
+Most R users will have to work with spreadsheets at some point in their careers. This chapter will teach you how to import data from a .csv or .xlsx file, and how to get the imported data into a format that's easy to work with. Additionally, this chapter will demonstrate how to import multiple files at once and combine them all into a single dataframe.
 
 ## Import from .csv Files
 
-R has a function called "read.csv" which allows you to read a csv file directly to a dataframe. The following code snippet is a simple example of how to execute this function.
+R has a function called "read.csv" which allows you to read a csv file directly into a dataframe. The following code snippet is a simple example of how to execute this function.
 
 ::: callout-note
 It's worth noting that it isn't necessary to store the file path as a variable before calling the function; however, this habit may save you time down the road.
@@ -40,32 +40,31 @@ df <- read_excel(input)
 
 ## Import and Combine Multiple Files
 
-You may come across a situation where you have multiple CSV files in a folder which you need combined into a single data frame. The following function from a package I personally created will do just that.
-
-This package exists only on github (rather than being distributed through CRAN) so you'll have to perform an extra step to load the library.
+You may come across a situation where you have multiple CSV files in a folder that need to be combined into a single data frame. The `read_csv()` function from the `readr` package 
+accepts the paths to multiple files and will automatically concatenate them
+along their rows (if the columns match).
 
 ```{r}
 #| eval: false
-install.packages("remotes")
-remotes::install_github("TrevorFrench/trevoR")
+install.packages("readr")
+library(readr)
 ```
 
-Now that you have the package loaded, you can specify the folder that contains your files and use the "combineFiles" function.
+You can list the paths to all `.csv` files in a directory with the `dir()`
+command:
 
 ```{r}
 #| eval: false
 wd <- "C:/YOURWORKINGDIRECTORY"
-combineFiles(wd)
+dir(wd, full.names = TRUE, pattern = ".csv")
 ```
 
-To take this one step further, you can immediately assign the output of the function to a variable name as follows.
+And read them into a single data.frame with a single command:
 
 ```{r}
 #| eval: false
-df <- combineFiles(wd)
+df <- read_csv(dir(wd, full.names = TRUE, pattern = ".csv"))
 ```
-
-You now have a dataframe titled "df" which contains all of the data from your .csv files combined!
 
 ::: callout-note
 All of the headers must match in your CSV files must match exactly for this function to work as expected.

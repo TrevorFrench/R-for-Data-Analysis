@@ -45,7 +45,7 @@ You may have noticed in previous chapters that we've used comparison operators t
 completed_tasks[completed_tasks < 7]
 ```
 
-Alternatively, you can use the "filter" function from the "dplyr" library. Let's use this function with the "iris" dataset to filter out any species which isn't virginica.
+Alternatively, you can use the "filter" function from the "dplyr" library. Let's use this function with the "iris" dataset to filter out any species other than virginica.
 
 ```{r}
 #| eval: false

@@ -31,7 +31,7 @@ You'll notice that you have four main options on the left-hand side: "Document",
 knitr::include_graphics("images/reporting/r-markdown-2.png", dpi = 270)
 ```
 
- Each of these options will have several sub-options. The "Document" option, for example is selected by default and you can see there are three sub-options on the right-hand side: "HTML", "PDF", and "Word".
+Each of these options will have several sub-options. The "Document" option, for example is selected by default and you can see there are three sub-options on the right-hand side: "HTML", "PDF", and "Word".
 
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
 #| label: r-markdown-3
@@ -138,7 +138,7 @@ This will generate a new file in your source pane that looks like the following 
 knitr::include_graphics("images/reporting/sample-notebook.png", dpi = 270)
 ```
 
-You'll notice that there is no "knit" option like there is in an ordinary R Markdown file. This is because this file is meant to be shared in it's current format rather than as a rendered document. The "knit" option is replaced by a "preview" option. Selecting this option will result in the following output.
+You'll notice that there is no "knit" option like there is in an ordinary R Markdown file. This is because this file is meant to be shared in its current format rather than as a rendered document. The "knit" option is replaced by a "preview" option. Selecting this option will result in the following output.
 
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
 #| label: preview-notebook
@@ -147,7 +147,7 @@ You'll notice that there is no "knit" option like there is in an ordinary R Mark
 knitr::include_graphics("images/reporting/preview-notebook.png", dpi = 270)
 ```
 
-This generates a preview of your file in the viewer tab. You may also notice that the output of the "plot(cars)" code has not been rendered in the preview. This is because code has to be explicitly run in R Notebooks in order for it to be displayed in the rendered preview.
+This generates a preview of your file in the viewer tab. You may also notice that the output of the `plot(cars)` code has not been rendered in the preview. This is because code has to be explicitly run in R Notebooks in order for it to be displayed in the rendered preview.
 
 Let's run the code by pressing the green play button inside the code chunk.
 

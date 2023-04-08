@@ -2,21 +2,21 @@
 
 > I mean my definition is data science is like data analysis by programming. Which of course begs the question of what data analysis is, and so I think of data analysis as really any activity where the input is data and the output is understanding or knowledge or insights. So I think of that pretty broadly. And then to do data science you're not doing it by pointing and clicking. You're doing it by writing some code in a programming language. <br><br> -Hadley Wickham [@wickham20]
 
-Data analysis at it's most simple form is the process of searching for meaning in data with the ultimate goal being to draw insight from that meaning.
+Data analysis at its most simple form is the process of searching for meaning in data with the ultimate goal to draw insight from that meaning.
 
 ## The Process of Data Analysis
 
 The process of data analysis can be generally described in five steps:
 
-1. **Gathering Requirements** - Before one embarks on an analysis, it's important to make sure the requirements are understood. Requirements include the questions which your stakeholders are hoping to answer as well as the technical requirements of how you are going to perform your analysis.
+1. **Gathering Requirements** - Before one embarks on an analysis, it's important to make sure the requirements are understood. Requirements include the questions your stakeholders are hoping to answer as well as the technical requirements of how you are going to perform your analysis.
 
 2. **Data Acquisition** - As you might imagine, you must acquire your data before conducting an analysis. This may be done through methods such as manual creation of datasets, importing pre-constructed data, or leveraging APIs.
 
-3. **Data Preparation** - Most data will not be received in the precise format you need to begin your analysis. The process of data preparation is where you will structure and add features to your data.
+3. **Data Preparation** - Most data will not be received in the precise format you need to begin your analysis. The process of data preparation involves structuring and adding features to your data.
 
-4. **Developing Insights** - Once your data is prepared, you can now begin to make sense of your data and develop insights about it's meaning.
+4. **Developing Insights** - Once your data is prepared, you can begin to make sense of it and develop insights about its meaning.
 
-5. **Reporting** - Finally, it's important to report on your data in such a way that the information is able to be digested by the people who need to see it when they need to see it.
+5. **Reporting** - Finally, it's important to report on your data in such a way that the information can be digested by the people who need to see it when they need to see it.
 
 Other sources may include additional steps such as "acting on the analysis". While this is a critical step for organizations to capture the full value of their data, I would argue that it occurs outside of the *analysis* process.
 

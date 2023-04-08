@@ -53,11 +53,11 @@ Let's break down everything that the model summary returns.
 - The "Call" section calls the model that you created
 - The "Residuals" section gives you a summary of all of your model residuals. Simply put, a residual denotes how far away any given point falls from the predicted value.
 - The "Coefficients" section gives us our model coefficients, our intercept, and statistical values to determine their significance.
-    - For each coefficient, we are given the respective standard error. The standard error is used to meaure the preciseness in which the coefficient was estimated. Standard errors which are smaller are considered to be more precise.
-    - Next, we have a t value for each coefficient. The t value is calculate by dividing the coefficient by the standard error.
+    - For each coefficient, we are given the respective standard error. The standard error is used to measure the precision of coefficient's estimate. 
+    - Next, we have a t value for each coefficient. The t value is calculated by dividing the coefficient by the standard error.
     - Finally, you have the p value accompanied by symbols to denote the corresponding significance level.
 - The residual standard error gives you a way to measure the standard deviation of the residuals and is calculated by dividing residual sum of squares by the residual degrees of freedom and taking the square root of that where the residual degrees of freedom is equal to total observations - total model parameters - 1.
-- R-squared gives you the proportion of variance that can be explained by your model. Your adjusted R-squared statistic will tell you the same thing but will adjust for the amount of variables you've included in your model.
+- R-squared gives you the proportion of variance that can be explained by your model. Your adjusted R-squared statistic will tell you the same thing but will adjust for the number of variables you've included in your model.
 - Your F-statistic will help you to understand the probability that all of your model parameters are actually equal to zero.
 
 ## Multiple Regression

@@ -4,14 +4,14 @@ R comes with a variety of datasets already built in. This chapter will teach you
 
 ## View Catalog
 
-You can view a complete list of datsets available along with a brief description for each one by typing "data()" into your console.
+You can view the complete list of datasets available along with a brief description for each one by typing "data()" into your console.
 
 ```{r}
 #| eval: false
 data()
 ```
 
-This will open a new tab in your R Studio instance that looks similar to the following image:
+This will open a new tab in your RStudio instance that looks similar to the following image:
 
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 90%;'"}
 #| label: data
@@ -33,7 +33,7 @@ It may not be necessary for you to load your dataset via the "data" function pri
 data("iris")
 ```
 
-This action will then give us a variable with the same name as our dataset which we can call as we would with any other data structure. Let's preview the "iris" dataset by using the "head" function.
+This command will add a new object "iris" to our R session. Let's preview the "iris" dataset by using the "head" function.
 
 ```{r}
 #| eval: false
@@ -45,7 +45,7 @@ head(iris)
 knitr::kable(head(iris), format="markdown")
 ```
 
-Finally, you can view more information about any given dataset by typing the dataset name into the "Help" tab in the "Files" pane.
+Finally, you can view more information about any given dataset by typing its name into the "Help" tab in the "Files" pane.
 
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 90%;'"}
 #| label: data-acq-1
@@ -56,7 +56,7 @@ knitr::include_graphics("images/data-acquisition/data-acq-1.png", dpi = 270)
 
 ## Common Datasets
 
-Here are a few other commonly used datasets in the R community. These datasets are commonly used to practice and to teach.
+Here are a few other datasets commonly used in the R community to practice and to teach.
 
 ### mtcars
 

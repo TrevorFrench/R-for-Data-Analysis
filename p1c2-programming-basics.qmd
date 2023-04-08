@@ -1,6 +1,6 @@
 # Programming Basics
 
-This chapter will walk you through how to execute code and write scripts in R. You will then build upon that knowledge by learning about comments, variables, operators, functions, loops, conditionals, and libraries. While this chapter is titled "Programming Basics", the knowledge you will have learned by the end of this chapter is enough for you to accomplish a huge variety of tasks.
+This chapter will walk you through executing code and writing scripts in R. You will then build upon that knowledge by learning about comments, variables, operators, functions, loops, conditionals, and libraries. While this chapter is titled "Programming Basics", the knowledge you will have learned by the end of this chapter is enough for you to accomplish a huge variety of tasks.
 
 ## Executing Code
 
@@ -11,7 +11,7 @@ When working in most programming languages, you will generally have the option t
 
 ### Console
 
-The first way to run code is directly in the console. If you're working in R Studio, you will access the console through the "console" pane. 
+The first way to run code is directly in the console. If you're working in RStudio, you will access the console through the "console" pane. 
 
 Alternatively, if you downloaded R to your personal computer, you will likely be able to search your machine for an app named "RGui" and access the console this way as well.
 
@@ -34,7 +34,7 @@ You may be wondering what "[1]" represents. This is simply a line number in the 
 
 You likely will be using scripts most of the time when working in R. A script is just a file that allows you to type out longer sequences of code and execute them all at once.
 
-For those of you following along in R Studio, you can create a script by pressing "Ctrl + Shift + N" on Windows or by selecting "R Script" from the "New File" dropdown in the top left corner.
+For those of you following along in RStudio, you can create a script by pressing "Ctrl + Shift + N" on Windows or by selecting "R Script" from the "New File" dropdown in the top left corner.
 
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
 #| label: source-pane-2
@@ -103,7 +103,7 @@ knitr::include_graphics("images/programming-basics/operators-1.png", dpi = 270)
 
 ### Arithmetic Operators
 
-Arithmetic operators allow users to perform basic mathematic functions. The examples below demonstrate how these operators might be used. For those not familiar, the modulus operator will return the remainder of a division operation while integer (or Euclidean) division returns the result of a division operation without the fractional component.
+Arithmetic operators allow users to perform basic mathematical operations. The examples below demonstrate how these operators might be used. For those not familiar, the modulus operator will return the remainder of a division operation while integer (or Euclidean) division returns the result of a division operation without the fractional component.
 
 ```{r}
 3 + 3
@@ -130,7 +130,7 @@ Comparison operators allow users to compare values. The examples below demonstra
 
 ### Logical Operators
 
-Logical operators allow users to say "AND", "OR", and "NOT". The following examples demonstrate how these operators might be used in conjunction with comparison operators as well as the difference between standard logical operators and "vectorized" logical operators.
+Logical operators allow users to express "AND", "OR", and "NOT". The following examples demonstrate how these operators might be used in conjunction with comparison operators as well as the difference between standard logical operators and "vectorized" logical operators.
 
 In this example, we will evaluate two vectors of the same length from left to right. Each vector has seven observations (-3, -2, -1, 0, 1, 2, 3). Rather than simply returning a single "TRUE" or "FALSE", this will return seven "TRUE" or "FALSE" values. In this case, the first element of each vector ("-3" and "-3") will be evaluated against their respective conditions and return "TRUE" only if both conditions are met. This will then be repeated for each of the remaining elements.
 ```{r}
@@ -235,7 +235,7 @@ x %*% x
 
 ## Functions
 
-Functions allow you to execute a predefined set of commands with just one command. The syntax of functions in R is as follows.
+Functions allow you to bundle a predefined set of operations into one command. The syntax of functions in R is as follows.
 
 ```{r}
 # Create a function called function_name
@@ -361,20 +361,30 @@ if (x < 20) {
 }
 ```
 
-## Libraries
+## R packages
 
-Libraries allow you to access functions other people have created to perform common tasks.
+Packages allow you to access functions other people have created and shared in
+a standard format, e.g. via the 
+[Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/),
+[Bioconductor](https://www.bioconductor.org/), the
+[r-universe](https://r-universe.dev/search/) or e.g. as 
+[github repositories](https://github.com/).
+
+To access a package's functionality, you first have to add it to your system's
+library. Afterward, you can check it out for use in your current session with
+the `library()` command.
 
 In this example, we will be installing and loading a common package named "dplyr".
 
-You first need to install it using the following command. 
+You first retrieve it from CRAN with the following command. 
 
 ```{r}
 #| eval: false
 install.packages("dplyr")
 ```
 
-Next, you will require the package by using this command.
+Next, you make it available in your R session with the `library()` command. 
+(Alternatively, you can also use the `require()` command.)
 
 ```{r}
 #| eval: false
@@ -383,9 +393,9 @@ library(dplyr)
 
 You are now able to access all of the functions available in the dplyr library!
 
-Sometimes users in the R community create their own packages that aren't distributed through the CRAN network. You can still use these libraries but you'll just have to perform an extra step or two. One of the most common places to host packages is [Github](https://github.com/). The following example will demonstrate how to load a package that I created from Github.
+Sometimes users in the R community create their own packages that aren't distributed through the CRAN network. You can still use these packages, but you'll just have to perform an extra step or two. One of the most common places to host packages is [Github](https://github.com/). The following example will demonstrate how to load a package that I created from Github.
 
-First you'll need to install the "remotes" package. As the name might suggest, this library allows you to access other libraries from *remote* locations.
+First you'll need to install the "remotes" package. As the name might suggest, this package allows you to access other packages from *remote* locations.
 
 ```{r}
 #| eval: false

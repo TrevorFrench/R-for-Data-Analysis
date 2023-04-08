@@ -2,8 +2,8 @@
 
 > "It feels like we're all suffering from information overload or data glut. And the good news is there might be an easy solution to that, and that's using our eyes more. So, visualizing information, so that we can see the patterns and connections that matter and then designing that information so it makes more sense, or it tells a story, or allows us to focus only on the information that's important. Failing that, visualized information can just look really cool."  <br><br> -David McCandless [@McCandless2010]
 
-Finally, it’s important to report on your data in such a way that the information is able to be digested by the people who need to see it when they need to see it.
+Finally, it’s important to report on your data to make it easy for others to extract and understand the information that is most relevant.
 
-- **Spreadsheets**- Spreadsheets are common way to communicate information to stakeholders. This chapter will go over how to export .xlsx and .csv files from R, how to format those spreadsheets, and how to add formulas to them.
-- **R Markdown**- R Markdown allows you to create documents in a programmatic fashion that lends itself towards reproducibility. This chapter will cover the different formats that are available in R as well as how to create them.
+- **Spreadsheets**- Spreadsheets are a common way to communicate information to stakeholders. This chapter will go over how to export .xlsx and .csv files from R, how to format those spreadsheets, and how to add formulas to them.
+- **R Markdown**- R Markdown allows you to create documents in a programmatic fashion that improves reproducibility. This chapter will cover some of the different formats that are available in R as well as how to create them.
 - **R Shiny**- R Shiny is a tool used to develop web applications and is commonly deployed in the use of creating dashboards, hosting static reports, and custom tooling.
