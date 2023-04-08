@@ -222,7 +222,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./p1c1-r-studio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Familiar with R Studio</span></a>
+  <a href="./p1c1-r-studio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Familiar with RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -237,7 +237,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structures</span></a>
+  <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structure</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -423,7 +423,7 @@ Exercise: 8-A
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Create a dataframe named “cars” which is equal to the first five rows of the mtcars dataset using the “head” function. After printing to the console, you should get the following result:</p>
+<p>Create a data frame called “cars” that contains the first five rows of the mtcars dataset by using the “head” function. After printing to the console, you should get the following result:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#                    mpg cyl disp  hp drat    wt  qsec vs am gear carb</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4</span></span>
@@ -442,7 +442,7 @@ Exercise: 9-A
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Write a function named “read_file” which will accept a file name as a parameter named “file_name”. The function should then read in a csv with the specified name, store it as a dataframe named “df”, and return “df” as the final output.</p>
+<p>Write a function named “read_file” which will accept a file name as a parameter named “file_name”. The function should then read in a csv with the specified name, store it as a data frame named “df”, and return “df” as the final output.</p>
 </div>
 </div>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
@@ -455,7 +455,7 @@ Exercise: 9-B
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In exercise 9-A you created a function that will allow you to read csv files. Build on this function by adding a second parameter named “csv” which will accept either “TRUE” or “FALSE”. The functionality shouldn’t change if the parameter is equal to “TRUE”; however, if the function is equal to “FALSE”, the function should allow the user to read in an xlsx file.</p>
+<p>In exercise 9-A you created a function that will allow you to read a csv file. Extend this function by adding a second parameter named “csv” which will accept either “TRUE” or “FALSE”. The functionality shouldn’t change if the parameter is equal to “TRUE”; however, if the function is equal to “FALSE”, the function should allow the user to read in an xlsx file instead.</p>
 <p>For example, if a user wanted to read in a csv file they would use the function in this way:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_file</span>(<span class="st">"iris.csv"</span>, <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If the user wanted to read in an xlsx file they would use the function in this way:</p>

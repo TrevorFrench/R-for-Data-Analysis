@@ -224,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./p1c1-r-studio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Familiar with R Studio</span></a>
+  <a href="./p1c1-r-studio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Familiar with RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -239,7 +239,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structures</span></a>
+  <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structure</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -389,7 +389,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
   <li><a href="#install-packages" id="toc-install-packages" class="nav-link active" data-scroll-target="#install-packages"><span class="toc-section-number">10.1</span>  Install Packages</a></li>
-  <li><a href="#require-packages" id="toc-require-packages" class="nav-link" data-scroll-target="#require-packages"><span class="toc-section-number">10.2</span>  Require Packages</a></li>
+  <li><a href="#load-packages-from-the-library" id="toc-load-packages-from-the-library" class="nav-link" data-scroll-target="#load-packages-from-the-library"><span class="toc-section-number">10.2</span>  Load packages from the library</a></li>
   <li><a href="#make-request" id="toc-make-request" class="nav-link" data-scroll-target="#make-request"><span class="toc-section-number">10.3</span>  Make Request</a></li>
   <li><a href="#parse-explore-data" id="toc-parse-explore-data" class="nav-link" data-scroll-target="#parse-explore-data"><span class="toc-section-number">10.4</span>  Parse &amp; Explore Data</a></li>
   <li><a href="#adding-parameters-to-requests" id="toc-adding-parameters-to-requests" class="nav-link" data-scroll-target="#adding-parameters-to-requests"><span class="toc-section-number">10.5</span>  Adding Parameters to Requests</a></li>
@@ -422,15 +422,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <p>API stands for Application Programming Interface. These sorts of tools are commonly used to programmatically pull data from a third party resource. This chapter demonstrates how one can begin to leverage these tools in their own workflows.</p>
-<p>The following example uses the Helium API to return data about it’s blockchain network.</p>
+<p>The following example uses the Helium API to return data about its blockchain network.</p>
 <section id="install-packages" class="level2" data-number="10.1">
 <h2 data-number="10.1" class="anchored" data-anchor-id="install-packages"><span class="header-section-number">10.1</span> Install Packages</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">'httr'</span>, <span class="st">'jsonlite'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="require-packages" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="require-packages"><span class="header-section-number">10.2</span> Require Packages</h2>
+<section id="load-packages-from-the-library" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="load-packages-from-the-library"><span class="header-section-number">10.2</span> Load packages from the library</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'httr'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'jsonlite'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -510,7 +510,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="adding-headers-to-requests" class="level2" data-number="10.6">
 <h2 data-number="10.6" class="anchored" data-anchor-id="adding-headers-to-requests"><span class="header-section-number">10.6</span> Adding Headers to Requests</h2>
-<p>Execute the same query as above except this time specify headers. This will likely be necessary when working with an API which requires an API Key.</p>
+<p>Execute the same query as above except this time specify headers. This will likely be necessary when working with an API that requires an API Key.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">GET</span>(<span class="st">"https://api.helium.io/v1/dc_burns/sum"</span>,</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">query =</span> <span class="fu">list</span>(<span class="at">min_time =</span> <span class="st">"2020-07-27T00:00:00Z"</span></span>

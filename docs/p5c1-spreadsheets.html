@@ -126,11 +126,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 <meta property="og:title" content="R for Data Analysis - 18&nbsp; Spreadsheets">
-<meta property="og:description" content="Spreadsheets are common way to communicate information to stakeholders. This chapter will go over how to export .xlsx and .">
+<meta property="og:description" content="Spreadsheets are a common way to communicate information to stakeholders. This chapter will go over how to export .xlsx and .">
 <meta property="og:image" content="https://trevorfrench.github.io/R-for-Data-Analysis/images/wide-cover.png">
 <meta property="og:site-name" content="R for Data Analysis">
 <meta name="twitter:title" content="R for Data Analysis - 18&nbsp; Spreadsheets">
-<meta name="twitter:description" content="Spreadsheets are common way to communicate information to stakeholders. This chapter will go over how to export .xlsx and .">
+<meta name="twitter:description" content="Spreadsheets are a common way to communicate information to stakeholders. This chapter will go over how to export .xlsx and .">
 <meta name="twitter:image" content="https://trevorfrench.github.io/R-for-Data-Analysis/images/wide-cover.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -224,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./p1c1-r-studio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Familiar with R Studio</span></a>
+  <a href="./p1c1-r-studio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Familiar with RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -239,7 +239,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structures</span></a>
+  <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structure</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -419,7 +419,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>Spreadsheets are common way to communicate information to stakeholders. This chapter will go over how to export .xlsx and .csv files from R, how to format those spreadsheets, and how to add formulas to them.</p>
+<p>Spreadsheets are a common way to communicate information to stakeholders. This chapter will go over how to export .xlsx and .csv files from R, how to format those spreadsheets, and how to add formulas to them.</p>
 <section id="export" class="level2" data-number="18.1">
 <h2 data-number="18.1" class="anchored" data-anchor-id="export"><span class="header-section-number">18.1</span> Export</h2>
 <section id="export-.csv-files" class="level3" data-number="18.1.1">
@@ -456,9 +456,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 </div>
 </div>
-<p>Now, let’s specify the location we want to store the CSV file at and execute the “write.csv” function.</p>
+<p>Now, let’s specify the location we want to store the CSV file at and execute the “write.csv” function. (We use the <code>file.path()</code> to specify a path to the <code>example.csv</code> file in a temporary directory that will automatically be erased when your R session ends.)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>output <span class="ot">&lt;-</span> <span class="st">"C:/File Location/example.csv"</span></span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>output <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="fu">tempdir</span>(), <span class="st">"example.csv"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, output)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This will give you a file that looks like the following image.</p>
@@ -477,7 +477,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="images/reporting/csv-export-2.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 50%;" width="500"></p>
 </div>
 </div>
-<p>Finally, you’ll notice that one of the names is an “NA” value. You can tell R how to handle these values at the time of exporting your file with the “na” argument. This argument will replace any “NA” values with the value of your chooseing. Let’s try replacing the “NA” value with “Unspecified”.</p>
+<p>Finally, you’ll notice that one of the names is an “NA” value. You can tell R how to handle these values at the time of exporting your file with the “na” argument. This argument will replace any “NA” values with the value of your choice. Let’s try replacing the “NA” value with “Unspecified”.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, output, <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">na =</span> <span class="st">"Unspecified"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -490,7 +490,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="export-.xlsx-files" class="level3" data-number="18.1.2">
 <h3 data-number="18.1.2" class="anchored" data-anchor-id="export-.xlsx-files"><span class="header-section-number">18.1.2</span> Export .xlsx Files</h3>
-<p>Excel files are handled very similarly to CSV files with the exception being that you will need to use the “write_excel” function from the “writexl” library. The following code snippet demonstrates how to export your data to an Excel file.</p>
+<p>Excel files are handled very similarly to CSV files except that you will need to use the “write_excel” function from the “writexl” package. The following code snippet demonstrates how to export your data to an Excel file.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(writexl)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>output <span class="ot">&lt;-</span> <span class="st">"C:/File Location/example.xlsx"</span></span>
@@ -500,8 +500,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="formatting" class="level2" data-number="18.2">
 <h2 data-number="18.2" class="anchored" data-anchor-id="formatting"><span class="header-section-number">18.2</span> Formatting</h2>
-<p>When saving Excel workbooks, you can also leverage the “openxlsx” library to format and add formulas to your workbook. Let’s use the iris dataset to demontrate these capabilities.</p>
-<p>The first thing you’ll need to do is require the “openxlsx” library.</p>
+<p>When saving Excel workbooks, you can also leverage the “openxlsx” library to format and add formulas to your workbook. Let’s use the iris dataset to demonstrate these capabilities.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -614,7 +613,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="images/reporting/spreadsheets-1.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
 </div>
 </div>
-<p>The full script is located below.</p>
+<p>The full script is shown below.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>

@@ -126,11 +126,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 <meta property="og:title" content="R for Data Analysis - 5&nbsp; Programming Basics">
-<meta property="og:description" content="This chapter will walk you through how to execute code and write scripts in R.">
+<meta property="og:description" content="This chapter will walk you through executing code and writing scripts in R.">
 <meta property="og:image" content="https://trevorfrench.github.io/R-for-Data-Analysis/images/wide-cover.png">
 <meta property="og:site-name" content="R for Data Analysis">
 <meta name="twitter:title" content="R for Data Analysis - 5&nbsp; Programming Basics">
-<meta name="twitter:description" content="This chapter will walk you through how to execute code and write scripts in R.">
+<meta name="twitter:description" content="This chapter will walk you through executing code and writing scripts in R.">
 <meta name="twitter:image" content="https://trevorfrench.github.io/R-for-Data-Analysis/images/wide-cover.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -224,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./p1c1-r-studio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Familiar with R Studio</span></a>
+  <a href="./p1c1-r-studio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Familiar with RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -239,7 +239,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structures</span></a>
+  <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structure</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -410,7 +410,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#for-loops" id="toc-for-loops" class="nav-link" data-scroll-target="#for-loops"><span class="toc-section-number">5.6.2</span>  For Loops</a></li>
   </ul></li>
   <li><a href="#conditionals" id="toc-conditionals" class="nav-link" data-scroll-target="#conditionals"><span class="toc-section-number">5.7</span>  Conditionals</a></li>
-  <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries"><span class="toc-section-number">5.8</span>  Libraries</a></li>
+  <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages"><span class="toc-section-number">5.8</span>  R packages</a></li>
   <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"><span class="toc-section-number">5.9</span>  Resources</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/TrevorFrench/R-for-Data-Analysis/edit/main/p1c2-programming-basics.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
@@ -435,7 +435,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>This chapter will walk you through how to execute code and write scripts in R. You will then build upon that knowledge by learning about comments, variables, operators, functions, loops, conditionals, and libraries. While this chapter is titled “Programming Basics”, the knowledge you will have learned by the end of this chapter is enough for you to accomplish a huge variety of tasks.</p>
+<p>This chapter will walk you through executing code and writing scripts in R. You will then build upon that knowledge by learning about comments, variables, operators, functions, loops, conditionals, and libraries. While this chapter is titled “Programming Basics”, the knowledge you will have learned by the end of this chapter is enough for you to accomplish a huge variety of tasks.</p>
 <section id="executing-code" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="executing-code"><span class="header-section-number">5.1</span> Executing Code</h2>
 <p>When working in most programming languages, you will generally have the option to execute code one of two ways:</p>
@@ -445,7 +445,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <section id="console" class="level3" data-number="5.1.1">
 <h3 data-number="5.1.1" class="anchored" data-anchor-id="console"><span class="header-section-number">5.1.1</span> Console</h3>
-<p>The first way to run code is directly in the console. If you’re working in R Studio, you will access the console through the “console” pane.</p>
+<p>The first way to run code is directly in the console. If you’re working in RStudio, you will access the console through the “console” pane.</p>
 <p>Alternatively, if you downloaded R to your personal computer, you will likely be able to search your machine for an app named “RGui” and access the console this way as well.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -464,7 +464,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="script" class="level3" data-number="5.1.2">
 <h3 data-number="5.1.2" class="anchored" data-anchor-id="script"><span class="header-section-number">5.1.2</span> Script</h3>
 <p>You likely will be using scripts most of the time when working in R. A script is just a file that allows you to type out longer sequences of code and execute them all at once.</p>
-<p>For those of you following along in R Studio, you can create a script by pressing “Ctrl + Shift + N” on Windows or by selecting “R Script” from the “New File” dropdown in the top left corner.</p>
+<p>For those of you following along in RStudio, you can create a script by pressing “Ctrl + Shift + N” on Windows or by selecting “R Script” from the “New File” dropdown in the top left corner.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="images/r-studio/source-pane-2.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
@@ -530,7 +530,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <section id="arithmetic-operators" class="level3" data-number="5.4.1">
 <h3 data-number="5.4.1" class="anchored" data-anchor-id="arithmetic-operators"><span class="header-section-number">5.4.1</span> Arithmetic Operators</h3>
-<p>Arithmetic operators allow users to perform basic mathematic functions. The examples below demonstrate how these operators might be used. For those not familiar, the modulus operator will return the remainder of a division operation while integer (or Euclidean) division returns the result of a division operation without the fractional component.</p>
+<p>Arithmetic operators allow users to perform basic mathematical operations. The examples below demonstrate how these operators might be used. For those not familiar, the modulus operator will return the remainder of a division operation while integer (or Euclidean) division returns the result of a division operation without the fractional component.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">+</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -594,7 +594,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="logical-operators" class="level3" data-number="5.4.3">
 <h3 data-number="5.4.3" class="anchored" data-anchor-id="logical-operators"><span class="header-section-number">5.4.3</span> Logical Operators</h3>
-<p>Logical operators allow users to say “AND”, “OR”, and “NOT”. The following examples demonstrate how these operators might be used in conjunction with comparison operators as well as the difference between standard logical operators and “vectorized” logical operators.</p>
+<p>Logical operators allow users to express “AND”, “OR”, and “NOT”. The following examples demonstrate how these operators might be used in conjunction with comparison operators as well as the difference between standard logical operators and “vectorized” logical operators.</p>
 <p>In this example, we will evaluate two vectors of the same length from left to right. Each vector has seven observations (-3, -2, -1, 0, 1, 2, 3). Rather than simply returning a single “TRUE” or “FALSE”, this will return seven “TRUE” or “FALSE” values. In this case, the first element of each vector (“-3” and “-3”) will be evaluated against their respective conditions and return “TRUE” only if both conditions are met. This will then be repeated for each of the remaining elements.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vectorized "AND" operator</span></span>
@@ -735,7 +735,7 @@ Note
 </section>
 <section id="functions" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="functions"><span class="header-section-number">5.5</span> Functions</h2>
-<p>Functions allow you to execute a predefined set of commands with just one command. The syntax of functions in R is as follows.</p>
+<p>Functions allow you to bundle a predefined set of operations into one command. The syntax of functions in R is as follows.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a function called function_name</span></span>
 <span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>function_name <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
@@ -896,21 +896,22 @@ Note
 </div>
 </div>
 </section>
-<section id="libraries" class="level2" data-number="5.8">
-<h2 data-number="5.8" class="anchored" data-anchor-id="libraries"><span class="header-section-number">5.8</span> Libraries</h2>
-<p>Libraries allow you to access functions other people have created to perform common tasks.</p>
+<section id="r-packages" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="r-packages"><span class="header-section-number">5.8</span> R packages</h2>
+<p>Packages allow you to access functions other people have created and shared in a standard format, e.g.&nbsp;via the <a href="https://cran.r-project.org/">Comprehensive R Archive Network (CRAN)</a>, <a href="https://www.bioconductor.org/">Bioconductor</a>, the <a href="https://r-universe.dev/search/">r-universe</a> or e.g.&nbsp;as <a href="https://github.com/">github repositories</a>.</p>
+<p>To access a package’s functionality, you first have to add it to your system’s library. Afterward, you can check it out for use in your current session with the <code>library()</code> command.</p>
 <p>In this example, we will be installing and loading a common package named “dplyr”.</p>
-<p>You first need to install it using the following command.</p>
+<p>You first retrieve it from CRAN with the following command.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"dplyr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Next, you will require the package by using this command.</p>
+<p>Next, you make it available in your R session with the <code>library()</code> command. (Alternatively, you can also use the <code>require()</code> command.)</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You are now able to access all of the functions available in the dplyr library!</p>
-<p>Sometimes users in the R community create their own packages that aren’t distributed through the CRAN network. You can still use these libraries but you’ll just have to perform an extra step or two. One of the most common places to host packages is <a href="https://github.com/">Github</a>. The following example will demonstrate how to load a package that I created from Github.</p>
-<p>First you’ll need to install the “remotes” package. As the name might suggest, this library allows you to access other libraries from <em>remote</em> locations.</p>
+<p>Sometimes users in the R community create their own packages that aren’t distributed through the CRAN network. You can still use these packages, but you’ll just have to perform an extra step or two. One of the most common places to host packages is <a href="https://github.com/">Github</a>. The following example will demonstrate how to load a package that I created from Github.</p>
+<p>First you’ll need to install the “remotes” package. As the name might suggest, this package allows you to access other packages from <em>remote</em> locations.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1071,7 +1072,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./p1c1-r-studio.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Familiar with R Studio</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Familiar with RStudio</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

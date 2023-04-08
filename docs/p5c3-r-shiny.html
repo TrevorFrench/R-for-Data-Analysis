@@ -224,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./p1c1-r-studio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Familiar with R Studio</span></a>
+  <a href="./p1c1-r-studio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Familiar with RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -239,7 +239,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structures</span></a>
+  <a href="./p1c4-data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Structure</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -428,7 +428,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>R Shiny is a tool used to develop web applications and is commonly deployed in the use of creating dashboards, hosting static reports, and custom tooling.</p>
 <section id="quickstart" class="level2" data-number="20.1">
 <h2 data-number="20.1" class="anchored" data-anchor-id="quickstart"><span class="header-section-number">20.1</span> Quickstart</h2>
-<p>Let’s create a new project containing a shiny application. Projects allow you to bundle multiple files into a single location and allow you to keep a separate workspace saved for when you are working on a specific thing. You can create a new project via the “Create a new project” button towards the top left corner in R Studio.</p>
+<p>Let’s create a new project containing a shiny application. Projects allow you to bundle multiple files into a a single workspace. You can create a new project via the “Create a new project” button towards the top left corner in RStudio.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="images/reporting/new-project.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
@@ -452,7 +452,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="images/reporting/name-directory.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
 </div>
 </div>
-<p>If you’re working in R Studio, you should now have a sample application in your source pane. We’ll go more in depth into what all of this means later.</p>
+<p>If you’re working in RStudio, you should now have a sample application in your source pane. We’ll go more in depth into what all of this means later.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="images/reporting/sample-app.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
@@ -468,7 +468,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="basic-components-of-a-shiny-application" class="level2" data-number="20.2">
 <h2 data-number="20.2" class="anchored" data-anchor-id="basic-components-of-a-shiny-application"><span class="header-section-number">20.2</span> Basic Components of a Shiny Application</h2>
-<p>Shiny applications consist of two main components: a sever function and a UI object. The server function will handle any logic you need to put into your application while the UI object will create a user interface. Additionally, you will need to include the “shiny” library and any other libraries that you use in your code. Let’s break down everything that is happening in this sample application</p>
+<p>Shiny applications consist of two main components: a server function and a UI object. The server function will handle any logic you need to put into your application while the UI object will create a user interface. Additionally, you will need to include the “shiny” library and any other libraries that you use in your code. Let’s break down everything that is happening in this sample application</p>
 <section id="libraries" class="level3" data-number="20.2.1">
 <h3 data-number="20.2.1" class="anchored" data-anchor-id="libraries"><span class="header-section-number">20.2.1</span> Libraries</h3>
 <p>One library you will always need to include in your shiny applications is the “shiny” library. Make sure you include any other libraries you plan on using in your code.</p>
@@ -478,7 +478,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="ui" class="level3" data-number="20.2.2">
 <h3 data-number="20.2.2" class="anchored" data-anchor-id="ui"><span class="header-section-number">20.2.2</span> UI</h3>
-<p>The next thing we see in our code is the creation of our ui object. This is where the application layout is created. The first function is the “fluidPage” function. This is probably one of the most common ways to create user interfaces in shiny applications. Layouts created with the fluid page methodology are organized into rows and columns and scale to fit varying browser sizes.</p>
+<p>The next thing we see in our code is the creation of our UI object. This is where the application layout is created. The first function is the “fluidPage” function. This is probably one of the most common ways to create user interfaces in shiny applications. Layouts created with the fluid page methodology are organized into rows and columns and scale to fit varying browser sizes.</p>
 <p>The “titlePanel” function creates a panel with your title inside of it. In our case, this function is responsible for “Old Faithful Geyser Data” being displayed at the top of the page.</p>
 <p>Next, we see the “sidebarLayout” function. This is essentially a pre-constructed layout which consists of a “sidebar” panel and a “main” panel which are created using the “sidebarPanel” and “mainPanel” functions, respectively. You’ll notice that our sidebar is actually located above our main panel rather than to the side. This is just because the size of our browser was small enough that they collapsed to be stacked on top of each other. If you increase the size of your browser, you will see the sidebar return to it’s original location.</p>
 <p>Inside of the “sidebarPanel” function, we have a function called “sliderInput”. The “sliderInput” function creates the component which allows the user to select the number of bins in our app. We can see this function gives the component the name “bins”, the title “Number of Bins”, a minimum input of “1”, a maximum value of “50”, and a default value of “30”.</p>
@@ -587,7 +587,7 @@ Note
 </section>
 <section id="configuring-account" class="level3" data-number="20.3.2">
 <h3 data-number="20.3.2" class="anchored" data-anchor-id="configuring-account"><span class="header-section-number">20.3.2</span> Configuring Account</h3>
-<p>The next thing we’ll need to do is to link R Studio to your ShinyApps.io account. You can do this by navigating back to R Studio and choosing the dropdown menu next to the publish button. From here, select the “Manage Accounts” option.</p>
+<p>The next thing we’ll need to do is to link RStudio to your ShinyApps.io account. You can do this by navigating back to RStudio and choosing the dropdown menu next to the publish button. From here, select the “Manage Accounts” option.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="images/reporting/shinyappsio-3.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
@@ -611,7 +611,7 @@ Note
 <p><img src="images/reporting/shinyappsio-6.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
 </div>
 </div>
-<p>Now that R Studio is linked to your ShinyApps.io account, you can press the publish button. You’ll then get a window which allows you to name your app before publishing. Once you are satisfied with the name you choose, select “Publish”.</p>
+<p>Now that RStudio is linked to your ShinyApps.io account, you can press the publish button. You’ll then get a window which allows you to name your app before publishing. Once you are satisfied with the name you choose, select “Publish”.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="images/reporting/shinyappsio-10.png" class="img-fluid" style="background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;" width="500"></p>
