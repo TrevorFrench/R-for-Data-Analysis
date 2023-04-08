@@ -2,7 +2,7 @@
 
 API stands for Application Programming Interface. These sorts of tools are commonly used to programmatically pull data from a third party resource. This chapter demonstrates how one can begin to leverage these tools in their own workflows.
 
-The following example uses the Helium API to return data about it's blockchain network.
+The following example uses the Helium API to return data about its blockchain network.
 
 ## Install Packages
 
@@ -11,7 +11,7 @@ The following example uses the Helium API to return data about it's blockchain n
 install.packages(c('httr', 'jsonlite'))
 ```
 
-## Require Packages
+## Load packages from the library
 
 ```{r}
 library('httr')
@@ -113,7 +113,7 @@ print(fee)
 
 ## Adding Headers to Requests
 
-Execute the same query as above except this time specify headers. This will likely be necessary when working with an API which requires an API Key.
+Execute the same query as above except this time specify headers. This will likely be necessary when working with an API that requires an API Key.
 
 ```{r}
 #| eval: false

@@ -1,6 +1,6 @@
 # Setup
 
-This chapter will walk you through how to download the R programming language as well as R Studio which is a popular tool for interacting with the R ecosystem. Additionally, there are alternatives to R Studio listed at the end of the chapter. However, R Studio is the recommended environment for completing this book.
+This chapter will walk you through downloading the R programming language as well as R Studio, which is a popular tool for interacting with the R ecosystem. Additionally, there are alternatives to R Studio listed at the end of the chapter. However, R Studio is the recommended environment for completing this book.
 
 ## Install R
 
@@ -73,7 +73,7 @@ knitr::include_graphics("images/setup/install-r-7.png", dpi = 270)
 
 ## Install R Studio
 
-After you install R, you'll need an environment to write and run your code in. Most people use a program called "R Studio" for this. To download R Studio follow the steps listed below:
+After you install R, you'll need an environment to write and run your code in. Most people use a program called "RStudio" for this. To download RStudio follow the steps listed below:
 
 1. Navigate to the R Studio download site: [Download the RStudio IDE](https://www.rstudio.com/products/rstudio/download/) 
 
@@ -106,9 +106,9 @@ knitr::include_graphics("images/setup/install-rstudio-3.png", dpi = 270)
 
 ## Alternatives
 
-### R Studio Cloud
+### Posit Cloud
 
-R Studio Cloud offers users a way to replicate the full R Studio experience without having to download or set anything up on your personal computer. You can sign up for a free account here: [](https://rstudio.cloud/)
+Posit Cloud offers users a way to replicate the full RStudio experience without having to download or set anything up on your personal computer. You can sign up for a free account here: [](https://posit.cloud/)
 
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
 #| label: r-studio-cloud-1
@@ -119,7 +119,7 @@ knitr::include_graphics("images/setup/r-studio-cloud-1.png", dpi = 270)
 
 ### Replit
 
-Replit allows users to code in 50+ languages in the browser. While you won't be able to follow along with the R Studio specific examples, you will be able to run R code. You can sign up for a free account here: [](https://replit.com/)
+Replit allows users to code in 50+ languages in the browser. While you won't be able to follow along with the RStudio specific examples, you will be able to run R code. You can sign up for a free account here: [](https://replit.com/)
 
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
 #| label: replit-1

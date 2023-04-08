@@ -84,26 +84,22 @@ plot(df$x
         , yaxt="n")
 
 model <- lm(df$y ~ df$x)
-lines(model$fitted.values, col=2, lwd=2)
+abline(model, col=2, lwd=2)
 ```
 
-Alternatively, you can enrich your data with limits by using the "predict" function paired with the "polygon" function as shown below.
+The model also returns confidence intervals for the predictions, which can
+be added
 
 ```{r}
-#| warning: false
-# Declare your variables
-x <- df$x
-y <- df$y
+# Extract the upper and lower 95% confidence intervals of the predictions
+conf_interval <- predict(
+  model, 
+  newdata=data.frame(x=df$x), 
+  interval = "prediction",
+  level = 0.95)
 
-# Create your model
-model <- lm(y ~ x)
-
-# Predict your model
-predict_model <- predict(model, interval="predict")
-
-# Plot your raw data
-plot(x
-        , y
+plot(df$x
+        , df$y
         , col=rgb(0.4,0.4,0.8,0.6)
         , pch=16
         , cex=1.2
@@ -111,19 +107,9 @@ plot(x
         , ylab=""
         , xaxt="n"
         , yaxt="n")
-
-# Get the index of your data
-ix <- sort(x, index.return=T)$ix
-
-# Add your trendline
-lines(x[ix], predict_model[ix, 1], col=2, lwd=2)
-
-# Add a shape to represent your upper and lower limits
-polygon(c(rev(x[ix]), x[ix])
-            , c(rev(predict_model[ix, 3]), predict_model[ix, 2])
-            , col = rgb(0.7,0.7,0.7,0.4)
-            , border = NA)
-
+abline(model, col=2, lwd=2)
+lines(df$x, conf_interval[,2], col="blue", lty=2)
+lines(df$x, conf_interval[,3], col="blue", lty=2)
 ```
 
 ## Plots Available in Base R

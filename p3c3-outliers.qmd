@@ -2,11 +2,11 @@
 
 Outliers are observations that fall outside the expected scope of the dataset. It's important to identify outliers in your data and determine the necessary treatment for them before moving into the next analysis phase.
 
-might be necessary to impute value, remove row or may be necessary to keep the data besides extreme value
+For example, it might be necessary to impute values, remove a row, perform sensitivity analysis, or choose analysis methods that are robust in the presence of outliers.
 
 ## Finding Outliers Visually
 
-One common first step many people employ when looking for outliers is visualizing their datasets so that exterme values can be quickly identified. This section will briefly cover several common visualizations used to identify outlier; however, each of these plots will be explored more in-depth later in the book.
+One common first step many people employ when looking for outliers is visualizing their datasets so that extreme values can quickly be spotted This section will briefly cover several common visualizations used to identify outliers; however, each of these plots will be explored more in-depth later in the book.
 
 ### Scatter Plot
 
@@ -55,7 +55,9 @@ hist(data)
 
 ### Density Plot
 
-Density plots allow you to see the distribution of your data in a more continuous manner than you might be able to achieve with a histogram.
+Density plots can be thought of as a smoothed version of a histogram. (You
+can tune the degree of smoothing, e.g. via the `adjust` argument to the 
+`density()` function.)
 
 ```{r}
 plot(density(mtcars$mpg))
@@ -117,3 +119,5 @@ print(statistically_cleaned)
 ## Resources
 
 "Statistics - Standard Deviation" by W3 Schools: <https://www.w3schools.com/statistics/statistics_standard_deviation.php>
+"Identifying outliers with the 1.5xIQR rule":
+<https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/box-whisker-plots/a/identifying-outliers-iqr-rule>

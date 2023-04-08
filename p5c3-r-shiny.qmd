@@ -4,7 +4,7 @@ R Shiny is a tool used to develop web applications and is commonly deployed in t
 
 ## Quickstart
 
-Let's create a new project containing a shiny application. Projects allow you to bundle multiple files into a single location and allow you to keep a separate workspace saved for when you are working on a specific thing. You can create a new project via the "Create a new project" button towards the top left corner in R Studio.
+Let's create a new project containing a shiny application. Projects allow you to bundle multiple files into a a single workspace. You can create a new project via the "Create a new project" button towards the top left corner in RStudio.
 
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
 #| label: new-project
@@ -40,7 +40,7 @@ This is going to create a new folder containing your project files. Choose what 
 knitr::include_graphics("images/reporting/name-directory.png", dpi = 270)
 ```
 
-If you're working in R Studio, you should now have a sample application in your source pane. We'll go more in depth into what all of this means later.
+If you're working in RStudio, you should now have a sample application in your source pane. We'll go more in depth into what all of this means later.
 
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
 #| label: sample-app
@@ -62,7 +62,7 @@ We can see that the application is using the faithful dataset to create a histog
 
 ## Basic Components of a Shiny Application
 
-Shiny applications consist of two main components: a sever function and a UI object. The server function will handle any logic you need to put into your application while the UI object will create a user interface. Additionally, you will need to include the "shiny" library and any other libraries that you use in your code. Let's break down everything that is happening in this sample application
+Shiny applications consist of two main components: a server function and a UI object. The server function will handle any logic you need to put into your application while the UI object will create a user interface. Additionally, you will need to include the "shiny" library and any other libraries that you use in your code. Let's break down everything that is happening in this sample application
 
 ### Libraries
 
@@ -75,7 +75,7 @@ library(shiny)
 
 ### UI
 
-The next thing we see in our code is the creation of our ui object. This is where the application layout is created. The first function is the "fluidPage" function. This is probably one of the most common ways to create user interfaces in shiny applications. Layouts created with the fluid page methodology are organized into rows and columns and scale to fit varying browser sizes.
+The next thing we see in our code is the creation of our UI object. This is where the application layout is created. The first function is the "fluidPage" function. This is probably one of the most common ways to create user interfaces in shiny applications. Layouts created with the fluid page methodology are organized into rows and columns and scale to fit varying browser sizes.
 
 The "titlePanel" function creates a panel with your title inside of it. In our case, this function is responsible for "Old Faithful Geyser Data" being displayed at the top of the page.
 
@@ -201,7 +201,7 @@ knitr::include_graphics("images/reporting/shinyappsio-9.png", dpi = 270)
 
 ### Configuring Account
 
-The next thing we'll need to do is to link R Studio to your ShinyApps.io account. You can do this by navigating back to R Studio and choosing the dropdown menu next to the publish button. From here, select the "Manage Accounts" option.
+The next thing we'll need to do is to link RStudio to your ShinyApps.io account. You can do this by navigating back to RStudio and choosing the dropdown menu next to the publish button. From here, select the "Manage Accounts" option.
 
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
 #| label: shinyappsio-3
@@ -237,7 +237,7 @@ Now you'll have the oppportunity to paste your token from you ShinyApps.io accou
 knitr::include_graphics("images/reporting/shinyappsio-6.png", dpi = 270)
 ```
 
-Now that R Studio is linked to your ShinyApps.io account, you can press the publish button. You'll then get a window which allows you to name your app before publishing. Once you are satisfied with the name you choose, select "Publish".
+Now that RStudio is linked to your ShinyApps.io account, you can press the publish button. You'll then get a window which allows you to name your app before publishing. Once you are satisfied with the name you choose, select "Publish".
 
 ```{r out.extra="style='background-color: #9ecff7; padding:10px; display: block; margin-left: auto; margin-right: auto; width: 80%;'"}
 #| label: shinyappsio-10

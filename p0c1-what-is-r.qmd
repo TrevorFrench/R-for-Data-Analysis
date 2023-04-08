@@ -2,7 +2,7 @@
 
 > R was a programming language that was designed specifically for the needs of statistics and data analysis. <br><br> -Hadley Wickham [@wickham21]
 
-R is a statistical programming language used commonly for data analysis across a wide array of disciplines and industries. It's often preferred over similar languages for it's robust support of statistical analysis, the ease in which one is able to create beautiful graphics, and it's open source nature amongst other reasons.
+R is a statistical programming language used commonly for data analysis across a wide array of disciplines and industries. It's often preferred over similar languages for it's robust support of statistical analysis, the ease in which one is able to create beautiful graphics, and its open source nature among other reasons.
 
 ## History
 
@@ -22,4 +22,3 @@ While R was officially first released in 1993, it wasn't until 1995 that Ross Ih
 - R User Groups: <https://www.meetup.com/pro/r-user-groups/>
 - R Studio Community: <https://community.rstudio.com/>
 - The R Journal: <https://journal.r-project.org/>
-- Microsoft R Application Network: <https://mran.microsoft.com/>
