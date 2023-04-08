@@ -2,7 +2,7 @@
 
 > "A learning organization is an organization skilled at creating, acquiring, and transferring knowledge, and at modifying its behavior to reflect new knowledge and insights."  <br><br> -David A. Garvin [@Garvin93]
 
-Once your data is prepared, you can now begin to make sense of your data and develop insights about it’s meaning. For many, this is where the data analysis process becomes the most fulfilling. This is the point where you get to reap what you've sown in the previous phases of the data analysis lifecycle.
+Once your data is prepared, you can begin to make sense of it and develop insights about its meaning. For many, this is where the data analysis process becomes the most fulfilling. This is the point where you get to reap what you've sown in the previous phases of the data analysis lifecycle.
 
 - **Summary Statistics**- Summary statistics are usually where one starts when beginning to develop insights. You may hear the phrase "Exploratory Data Analysis" (sometimes abbreviated "EDA") throughout your career. This is the point where you try to get a high-level understanding of your data through methods such as summary statistics.
 - **Regression**- Regression is a common statistical technique employed by many to make generalizations as well as predictions about data.
