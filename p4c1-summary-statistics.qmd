@@ -1,10 +1,10 @@
 # Summary Statistics
 
-Summary statistics (otherwise known as descriptive statistics) are usually where one starts when beginning to develop insights. You may hear the phrase "Exploratory Data Analysis" (sometimes abbreviated "EDA") throughout your career. This is the point where you try to get a high-level understanding of your data through methods such as summary statistics.
+Summary statistics (otherwise known as descriptive statistics) are usually where one starts when beginning to develop insights. You may hear the phrase "Exploratory Data Analysis" (sometimes abbreviated "EDA") throughout your career. This is the point where you try to get a high-level understanding of the distributions and relationships within your dataset.
 
 ## Quantitative Data
 
-When dealing with quantitative data, one of the quickest way to get a high level view of your data is by using the "summary" function. This function will return your extreme (minimum and maximum) values, your median, mean, 1st quantile, and 3rd quantile.
+When dealing with continuous data, one of the quickest ways to get a high level view of your data is by using the "summary" function. This function will return your extreme (minimum and maximum) values, your median, mean, 1st quantile, and 3rd quantile.
 
 ```{r}
 summary(mtcars$mpg)
@@ -33,7 +33,7 @@ quantile(mtcars$mpg)
 
 ## Qualitative Data
 
-If you're working with data that is categorical in nature, you can view all categories by using the "levels" function.
+If you're working with data that is categorical and encoded as a factor, you can view all categories by using the "levels" function.
 
 ```{r}
 levels(iris$Species)

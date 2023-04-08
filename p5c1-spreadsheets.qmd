@@ -1,6 +1,6 @@
 # Spreadsheets
 
-Spreadsheets are common way to communicate information to stakeholders. This chapter will go over how to export .xlsx and .csv files from R, how to format those spreadsheets, and how to add formulas to them.
+Spreadsheets are a common way to communicate information to stakeholders. This chapter will go over how to export .xlsx and .csv files from R, how to format those spreadsheets, and how to add formulas to them.
 
 ## Export
 
@@ -20,10 +20,12 @@ knitr::kable(df, format="markdown")
 ```
 
 Now, let's specify the location we want to store the CSV file at and execute the "write.csv" function.
+(We use the `file.path()` to specify a path to the `example.csv` file in a
+temporary directory that will automatically be erased when your R session ends.)
 
 ```{r}
 #| eval: false
-output <- "C:/File Location/example.csv"
+output <- file.path(tempdir(), "example.csv")
 write.csv(df, output)
 ```
 
@@ -52,7 +54,7 @@ This will yield the following result.
 knitr::include_graphics("images/reporting/csv-export-2.png", dpi = 270)
 ```
 
-Finally, you'll notice that one of the names is an "NA" value. You can tell R how to handle these values at the time of exporting your file with the "na" argument. This argument will replace any "NA" values with the value of your chooseing. Let's try replacing the "NA" value with "Unspecified".
+Finally, you'll notice that one of the names is an "NA" value. You can tell R how to handle these values at the time of exporting your file with the "na" argument. This argument will replace any "NA" values with the value of your choice. Let's try replacing the "NA" value with "Unspecified".
 
 ```{r}
 #| eval: false
@@ -70,7 +72,7 @@ knitr::include_graphics("images/reporting/csv-export-3.png", dpi = 270)
 
 ### Export .xlsx Files
 
-Excel files are handled very similarly to CSV files with the exception being that you will need to use the "write_excel" function from the "writexl" library. The following code snippet demonstrates how to export your data to an Excel file.
+Excel files are handled very similarly to CSV files except that you will need to use the "write_excel" function from the "writexl" package. The following code snippet demonstrates how to export your data to an Excel file.
 
 ```{r}
 #| eval: false
@@ -81,9 +83,7 @@ write_xlsx(df, output)
 
 ## Formatting
 
-When saving Excel workbooks, you can also leverage the "openxlsx" library to format and add formulas to your workbook. Let's use the iris dataset to demontrate these capabilities.
-
-The first thing you'll need to do is require the "openxlsx" library.
+When saving Excel workbooks, you can also leverage the "openxlsx" library to format and add formulas to your workbook. Let's use the iris dataset to demonstrate these capabilities.
 
 ```{r}
 #| eval: false
@@ -223,7 +223,7 @@ This will result in a workbook that looks like the following image.
 knitr::include_graphics("images/reporting/spreadsheets-1.png", dpi = 270)
 ```
 
-The full script is located below.
+The full script is shown below.
 
 ```{r}
 #| eval: false
