@@ -24,8 +24,6 @@ Each part will contain several chapters which cover specific ideas related to th
 
 Each part will be concluded with practical exercises for you to test your skills.
 
-Physical copies of this book are not currently available; however, you can download a pdf in the top left corner of this site. Feel free to contribute by reporting a typo or leaving a pull request at <https://github.com/TrevorFrench/R-for-Data-Analysis>.
-
 ## Statement of Need
 
 In the article titled "An empirical study of the rise of big data in business scholarship", the authors suggest that the amount of data that exists in our current society creates a "constant flow of potential new insights for business, government, education and social initiatives" [(Frizzo-Barker et al., 2016)](https://github.com/TrevorFrench/R-for-Data-Analysis/blob/main/paper/paper.bib). This presents an opportunity to educate practitioners in both industry and academia on programmatic data analysis techniques. These practitioners may have historically relied on specialists and/or methodologists to perform analyses, but it is important to ensure that analysis tools are as accessible as the data has become.
@@ -43,3 +41,13 @@ There are plenty of resources aimed at teaching specialists how to apply advance
 ## License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is free to use, and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+
+Physical copies of this book are not currently available; however, you can download a pdf in the top left corner of this site. Feel free to contribute by reporting a typo or leaving a pull request at <https://github.com/TrevorFrench/R-for-Data-Analysis>.
+
+## About Me
+
+I have an M.S. in Data Analytics, a B.S. in Business Analytics, and currently work in industry as an Analytics Manager for a software company. I began my journey into analytics by working as a Data Analyst for the university I was attending. This role allowed me to automate processes, build dashboards, deliver reports to executive stakeholders, and provide insight on how operations might be improved. I performed this role until I was promoted to lead the team. Later, I worked for a major CPG company driving pricing and promotion strategy for a large piece of the business. 
+
+Despite my education, most of my basic analytics knowledge was hard-won through self-study. I created this resource to be what I wish I had when I started my journey into the analytics domain. Additionally, I don't believe that one must be a domain expert to be effective at analyzing data. In fact, I think most people can quickly learn the skills necessary to be very effective at it.
+
+Physical copies of this book are not currently available; however, you can download a pdf in the top left corner of this site. Feel free to contribute by reporting a typo or leaving a pull request at <https://github.com/TrevorFrench/R-for-Data-Analysis>.

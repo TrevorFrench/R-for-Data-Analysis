@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>readme</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="README_files/libs/clipboard/clipboard.min.js"></script>
+<script src="README_files/libs/quarto-html/quarto.js"></script>
+<script src="README_files/libs/quarto-html/popper.min.js"></script>
+<script src="README_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="README_files/libs/quarto-html/anchor.min.js"></script>
+<link href="README_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="README_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="README_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="README_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="README_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<p><a href="https://github.com/TrevorFrench/R-for-Data-Analysis"><img src="https://raw.githubusercontent.com/TrevorFrench/R-for-Data-Analysis/main/cover.png" align="right" height="300"></a></p>
+<section id="r-for-data-analysis" class="level1">
+<h1>R for Data Analysis</h1>
+<blockquote class="blockquote">
+<p>“There is synthesis when, in combining therein judgments that are made known to us from simpler relations, one deduces judgments from them relative to more complicated relations. There is analysis when from a complicated truth one deduces more simple truths.” <br><br> -André-Marie Ampère <span class="citation" data-cites="Hofmann96">[@Hofmann96]</span></p>
+</blockquote>
+<p>Everyone is a data analyst. The purpose of this book is to inspire and enable anyone who reads it to reconsider the methods they currently employ to analyse data. This is not to suggest that the methodologies outlined will be useful or sufficient for everyone who reads it. Some analyses can be performed quickly without the need for additional computation while others will require advanced analytics techniques not outlined in this book; however, the aspiration is that all will be equipped with novel tools and ideas for approaching data analysis.</p>
+<section id="prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
+<p>No prior knowledge is required to begin this book. The content will start at the very beginning by showing you how to set up your R environment and the basics of programming in R. By the end of the book, you will be able to perform intermediate analytics techniques such as linear regression and automatic report generation.</p>
+<p>You will need an environment which you use to run your code. It is recommended that you download R and R Studio locally for this requirement. This book will walk you through how to do that as well as offer alternatives if that is not an option for you.</p>
+</section>
+<section id="structure-of-the-book" class="level2">
+<h2 class="anchored" data-anchor-id="structure-of-the-book">Structure of the Book</h2>
+<ul>
+<li><strong>Part I (Fundamentals)</strong> will introduce you to the basics of programming in the context of R.</li>
+<li><strong>Part II (Data Acquisition)</strong> will teach you how to create, import, and access data.</li>
+<li><strong>Part III (Data Preparation)</strong> will show you how to begin preparing your data for analysis.</li>
+<li><strong>Part IV (Developing Insights)</strong> goes through the process of searching for and extracting insights from your data.</li>
+<li><strong>Part V (Reporting)</strong> demonstrates how to wrap your analysis up by developing and automating reports.</li>
+</ul>
+<p>Each part will contain several chapters which cover specific ideas related to the overarching topic. At the end of each of these chapters you will find additional resources for you to use to dive deeper into the ideas.</p>
+<p>Each part will be concluded with practical exercises for you to test your skills.</p>
+</section>
+<section id="statement-of-need" class="level2">
+<h2 class="anchored" data-anchor-id="statement-of-need">Statement of Need</h2>
+<p>In the article titled “An empirical study of the rise of big data in business scholarship”, the authors suggest that the amount of data that exists in our current society creates a “constant flow of potential new insights for business, government, education and social initiatives” <a href="https://github.com/TrevorFrench/R-for-Data-Analysis/blob/main/paper/paper.bib">(Frizzo-Barker et al., 2016)</a>. This presents an opportunity to educate practitioners in both industry and academia on programmatic data analysis techniques. These practitioners may have historically relied on specialists and/or methodologists to perform analyses, but it is important to ensure that analysis tools are as accessible as the data has become.</p>
+<p>There are plenty of resources aimed at teaching specialists how to apply advanced analytics techniques to their chosen discipline; however, there is a notable lack of resources which aim to educate the general public on programmatic data analysis. This phenomenon was observed in an article titled “What is Statistics?” when the authors proclaimed “statistical education has not been sufficiently accessible.” <a href="https://github.com/TrevorFrench/R-for-Data-Analysis/blob/main/paper/paper.bib">(Brown et al., 2009)</a>. Furthermore, the contents of R for Data Analysis <a href="https://github.com/TrevorFrench/R-for-Data-Analysis/blob/main/paper/paper.bib">(French, 2022)</a> are centered around the idea of the “process of data analysis” broadly applied to any discipline. This differs from other high-quality resources, such as “R for Reproducible Scientific Analysis” <a href="https://github.com/TrevorFrench/R-for-Data-Analysis/blob/main/paper/paper.bib">(Zimmerman et al., 2019)</a>, which teaches similar topics in the context of the scientific process.</p>
+</section>
+<section id="contribution-guide" class="level2">
+<h2 class="anchored" data-anchor-id="contribution-guide">Contribution Guide</h2>
+<ul>
+<li>You can fix typos, spelling mistakes, or grammatical errors in the documentation directly using the GitHub web interface. Make sure to include a brief description of the changes you are proposing.</li>
+<li>For other suggestions or larger problems, you can create an “issue” <a href="https://github.com/TrevorFrench/R-for-Data-Analysis/issues">here</a>.</li>
+<li>Alternatively, you can create a pull request; however, it is generally a good idea to start a conversation about large changes by creating an issue before proposing them. If you have never created a pull request before, you can read more about them <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">here</a>.</li>
+<li>If you have no changes to propose but still want to contribute- feel free to search the issue board and asked to be “assigned” to an issue.</li>
+<li>Ensure that any changes in .qmd files are rendered via the <code>quarto preview</code> command</li>
+</ul>
+</section>
+<section id="license" class="level2">
+<h2 class="anchored" data-anchor-id="license">License</h2>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png"></a><br>This work is free to use, and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</p>
+<p>Physical copies of this book are not currently available; however, you can download a pdf in the top left corner of this site. Feel free to contribute by reporting a typo or leaving a pull request at <a href="https://github.com/TrevorFrench/R-for-Data-Analysis" class="uri">https://github.com/TrevorFrench/R-for-Data-Analysis</a>.</p>
+</section>
+<section id="about-me" class="level2">
+<h2 class="anchored" data-anchor-id="about-me">About Me</h2>
+<p>I have an M.S. in Data Analytics, a B.S. in Business Analytics, and currently work in industry as an Analytics Manager for a software company. I began my journey into analytics by working as a Data Analyst for the university I was attending. This role allowed me to automate processes, build dashboards, deliver reports to executive stakeholders, and provide insight on how operations might be improved. I performed this role until I was promoted to lead the team. Later, I worked for a major CPG company driving pricing and promotion strategy for a large piece of the business.</p>
+<p>Despite my education, most of my basic analytics knowledge was hard-won through self-study. I created this resource to be what I wish I had when I started my journey into the analytics domain. Additionally, I don’t believe that one must be a domain expert to be effective at analyzing data. In fact, I think most people can quickly learn the skills necessary to be very effective at it.</p>
+<p>Physical copies of this book are not currently available; however, you can download a pdf in the top left corner of this site. Feel free to contribute by reporting a typo or leaving a pull request at <a href="https://github.com/TrevorFrench/R-for-Data-Analysis" class="uri">https://github.com/TrevorFrench/R-for-Data-Analysis</a>.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
