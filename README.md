@@ -37,6 +37,7 @@ There are plenty of resources aimed at teaching specialists how to apply advance
 - Alternatively, you can create a pull request; however, it is generally a good idea to start a conversation about large changes by creating an issue before proposing them. If you have never created a pull request before, you can read more about them [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
 - If you have no changes to propose but still want to contribute- feel free to search the issue board and asked to be "assigned" to an issue.
 - Ensure that any changes in .qmd files are rendered via the `quarto preview` command
+- If changes were made to the content of the book, make sure to re-render the pdf as well.
 
 ## License
 
