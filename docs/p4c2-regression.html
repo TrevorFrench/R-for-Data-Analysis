@@ -531,11 +531,11 @@ eruptions = waiting * 0.075628 - 1.874016
 <h2 data-number="16.2" class="anchored" data-anchor-id="multiple-regression"><span class="header-section-number">16.2</span> Multiple Regression</h2>
 <p>If you had more x variables you wanted to add to your linear model, you could add them just like you would in any other math equation. Here’s an example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(data<span class="sc">$</span>y <span class="sc">~</span> data<span class="sc">$</span>x1 <span class="sc">+</span> data<span class="sc">$</span>x2 <span class="sc">-</span> data<span class="sc">$</span>x3 <span class="sc">*</span> data<span class="sc">$</span>x4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(data<span class="sc">$</span>y <span class="sc">~</span> data<span class="sc">$</span>x1 <span class="sc">+</span> data<span class="sc">$</span>x2 <span class="sc">+</span> data<span class="sc">$</span>x3 <span class="sc">+</span> data<span class="sc">$</span>x4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Additionally, you can use the “data” parameter rather than putting the name of the dataset before every variable.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(y <span class="sc">~</span> x1 <span class="sc">+</span> x2 <span class="sc">-</span> x3 <span class="sc">*</span> x4, <span class="at">data =</span> data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(y <span class="sc">~</span> x1 <span class="sc">+</span> x2 <span class="sc">+</span> x3 <span class="sc">+</span> x4, <span class="at">data =</span> data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Let’s try a real example with the mtcars dataset.</p>
 <div class="cell">
