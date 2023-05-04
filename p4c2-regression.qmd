@@ -66,14 +66,14 @@ If you had more x variables you wanted to add to your linear model, you could ad
 
 ```{r}
 #| eval: false
-lm(data$y ~ data$x1 + data$x2 - data$x3 * data$x4)
+lm(data$y ~ data$x1 + data$x2 + data$x3 + data$x4)
 ```
 
 Additionally, you can use the "data" parameter rather than putting the name of the dataset before every variable.
 
 ```{r}
 #| eval: false
-lm(y ~ x1 + x2 - x3 * x4, data = data)
+lm(y ~ x1 + x2 + x3 + x4, data = data)
 ```
 
 Let's try a real example with the mtcars dataset.
