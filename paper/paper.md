@@ -19,7 +19,7 @@ bibliography: paper.bib
 
 # Summary
 
-R for Data Analysis [@French] is a sequential learning system designed to teach anyone how to use R to analyze data. The materials can be used in aggregate to learn how to analyze data programmatically or broken into modules and used to supplement an existing educational program. Each lesson contains a conceptual overview, practical examples, resources for further study, and exercises designed to reinforce understanding.
+R for Data Analysis is a sequential learning system designed to teach anyone how to use R to analyze data. The materials can be used in aggregate to learn how to analyze data programmatically or broken into modules and used to supplement an existing educational program. Each lesson contains a conceptual overview, practical examples, resources for further study, and exercises designed to reinforce understanding.
 
 The materials have been made publicly available at: <https://trevorfrench.github.io/R-for-Data-Analysis/> and licensed under the [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 (CC BY-NC-ND 4.0) License](https://creativecommons.org/licenses/by-nc-nd/4.0/).
 
@@ -27,7 +27,7 @@ The materials have been made publicly available at: <https://trevorfrench.github
 
 In the article titled "An empirical study of the rise of big data in business scholarship", the authors suggest that the amount of data that exists in our current society creates a "constant flow of potential new insights for business, government, education and social initiatives" [@Frizzo-Barker]. This presents an opportunity to educate practitioners in both industry and academia on programmatic data analysis techniques. These practitioners may have historically relied on specialists and/or methodologists to perform analyses, but it is important to ensure that analysis tools are as accessible as the data has become.
 
-There are plenty of resources aimed at teaching specialists how to apply advanced analytics techniques to their chosen discipline; however, there is a notable lack of resources which aim to educate the general public on programmatic data analysis. This phenomenon was observed in an article titled "What is Statistics?" when the authors proclaimed "statistical education has not been sufficiently accessible." [@Brown]. Furthermore, the contents of R for Data Analysis [@French] are centered around the idea of the "process of data analysis" broadly applied to any discipline. This differs from other high-quality resources, such as "R for Reproducible Scientific Analysis" [@Zimmerman], which teaches similar topics in the context of the scientific process. 
+There are plenty of resources aimed at teaching specialists how to apply advanced analytics techniques to their chosen discipline; however, there is a notable lack of resources which aim to educate the general public on programmatic data analysis. This phenomenon was observed in an article titled "What is Statistics?" when the authors proclaimed "statistical education has not been sufficiently accessible." [@Brown]. Furthermore, the contents of R for Data Analysis are centered around the idea of the "process of data analysis" broadly applied to any discipline. This differs from other high-quality resources, such as "R for Reproducible Scientific Analysis" [@Zimmerman], which teaches similar topics in the context of the scientific process. 
 
 # Instructional Design
 
