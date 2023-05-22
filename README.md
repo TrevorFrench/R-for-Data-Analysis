@@ -1,5 +1,10 @@
 <a href='https://github.com/TrevorFrench/R-for-Data-Analysis'><img src='https://raw.githubusercontent.com/TrevorFrench/R-for-Data-Analysis/main/cover.png' align="right" height="300" /></a>
 
+[![DOI](https://jose.theoj.org/papers/10.21105/jose.00202/status.svg)](https://doi.org/10.21105/jose.00202)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7896407.svg)](https://doi.org/10.5281/zenodo.7896407)
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
+
 # R for Data Analysis
 
 > "There is synthesis when, in combining therein judgments that are made known to us from simpler relations, one deduces judgments from them relative to more complicated relations. There is analysis when from a complicated truth one deduces more simple truths."  <br><br> -André-Marie Ampère [@Hofmann96]
